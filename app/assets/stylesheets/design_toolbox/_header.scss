@@ -1,0 +1,10 @@
+h1{
+  @extend .color-blue;
+  font-weight: normal;
+}
+
+h2{
+  @extend .color-gray;
+  font-size: 1.3rem;
+  font-weight: normal;
+}
