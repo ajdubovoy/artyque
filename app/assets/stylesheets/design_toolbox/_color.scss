@@ -23,6 +23,9 @@
   &-light-gray{
     color: $light-gray;
   }
+  &-white{
+    color: $white;
+  }
 }
 
 .background, .bg{
@@ -46,5 +49,8 @@
   }
   &-light-gray{
     background-color: $light-gray;
+  }
+  &-white{
+    background-color: $white;
   }
 }

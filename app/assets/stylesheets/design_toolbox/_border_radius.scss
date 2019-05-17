@@ -1,5 +1,5 @@
-.br, .border-radius{
-  &-all{
+.border-radius, .br{
+  &-all, &{
     border-radius: $border-radius;
   }
   &-top{
