@@ -5,6 +5,9 @@
   &-blue{
     color: $blue;
   }
+  &-light-blue{
+    color: $light-blue;
+  }
   &-beige{
     color: $beige;
   }
@@ -23,6 +26,9 @@
   &-light-gray{
     color: $light-gray;
   }
+  &-white{
+    color: $white;
+  }
 }
 
 .background, .bg{
@@ -31,6 +37,9 @@
   }
   &-blue{
     background-color: $blue;
+  }
+  &-light-blue{
+    background-color: $light-blue;
   }
   &-beige{
     background-color: $beige;
@@ -46,5 +55,8 @@
   }
   &-light-gray{
     background-color: $light-gray;
+  }
+  &-white{
+    background-color: $white;
   }
 }

@@ -1,0 +1,9 @@
+.panel{
+  @include make-row();
+  @extend .m-3;
+  @extend .p-5;
+  @extend .border;
+  @extend .shadow-box-dark;
+  @extend .border-radius;
+  @extend .background-white;
+}

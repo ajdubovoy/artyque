@@ -1,0 +1,6 @@
+.border{
+  border: 1px solid #EFEFEF;
+  &-light-blue{
+    border: 1px solid $light-blue !important;
+  }
+}
