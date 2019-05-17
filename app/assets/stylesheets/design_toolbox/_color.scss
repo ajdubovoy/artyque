@@ -1,0 +1,50 @@
+.color, .c{
+  &-dark-blue{
+    color: $dark-blue;
+  }
+  &-blue{
+    color: $blue;
+  }
+  &-beige{
+    color: $beige;
+  }
+  &-pink{
+    color: $pink;
+  }
+  &-blue-gradient{
+    background: $blue-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: $dark-blue; // Fallback
+  }
+  &-gray{
+    color: $gray;
+  }
+  &-light-gray{
+    color: $light-gray;
+  }
+}
+
+.background, .bg{
+  &-dark-blue{
+    background-color: $dark-blue;
+  }
+  &-blue{
+    background-color: $blue;
+  }
+  &-beige{
+    background-color: $beige;
+  }
+  &-pink{
+    background-color: $pink;
+  }
+  &-blue-gradient{
+    background: $blue-gradient;
+  }
+  &-gray{
+    background-color: $gray;
+  }
+  &-light-gray{
+    background-color: $light-gray;
+  }
+}
