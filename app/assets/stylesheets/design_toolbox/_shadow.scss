@@ -2,7 +2,7 @@ $shadow-dark: 1px 1px 15px rgba(62, 62, 62, 0.34);
 $shadow-light: 1px 1px 15px rgba(211, 211, 211, 0.27);
 
 .shadow {
-	&-box {
+	&-box, .sb {
 		&-dark {
 			box-shadow: $shadow-dark;
 		}
@@ -10,7 +10,7 @@ $shadow-light: 1px 1px 15px rgba(211, 211, 211, 0.27);
 			box-shadow: $shadow-light;
 		}
 	}
-	&-text {
+	&-text, .st {
 		&-dark {
 			text-shadow: shadow-dark;
 		}
