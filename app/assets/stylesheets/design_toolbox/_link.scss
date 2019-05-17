@@ -1,0 +1,6 @@
+a{
+  @extend .color-light-blue;
+  &:hover{
+    @extend .color-blue;
+  }
+}
