@@ -1,0 +1,9 @@
+input{
+  @extend .form-control;
+  @extend .shadow-box-light;
+  @extend .border;
+  &:focus{
+    @extend .shadow-box-dark;
+    @extend .border-light-blue;
+  }
+}

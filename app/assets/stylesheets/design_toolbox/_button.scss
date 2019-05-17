@@ -2,9 +2,17 @@
   &-primary{
     @extend .btn;
     @extend .btn-primary;
+    @extend .shadow-box-light;
+    &:hover{
+      @extend .shadow-box-dark;
+    }
   }
   &-secondary{
     @extend .btn;
     @extend .btn-info;
+    @extend .shadow-box-light;
+    &:hover{
+      @extend .shadow-box-dark;
+    }
   }
 }

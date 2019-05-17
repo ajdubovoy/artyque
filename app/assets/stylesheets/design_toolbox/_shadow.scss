@@ -1,4 +1,4 @@
-$shadow-dark: 0px 4px 30px rgba(0, 0, 0, 0.04);
+$shadow-dark: 0px 4px 30px rgba(0, 0, 0, 0.08);
 $shadow-light: 0px 1px 20px rgba(0, 0, 0, 0.06);
 
 .shadow {
@@ -12,10 +12,10 @@ $shadow-light: 0px 1px 20px rgba(0, 0, 0, 0.06);
 	}
 	&-text, .st {
 		&-dark {
-			text-shadow: shadow-dark;
+			text-shadow: $shadow-dark;
 		}
 		&-light {
-			text-shadow: shadow-light;
+			text-shadow: $shadow-light;
 		}
 	}
 }
