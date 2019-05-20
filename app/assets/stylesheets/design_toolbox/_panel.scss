@@ -1,5 +1,6 @@
 .panel{
   @include make-row();
+  @include make-col-ready();
   @extend .m-3;
   @extend .p-5;
   @extend .border;

@@ -1,3 +1,4 @@
+// Text Color
 .color, .c{
   &-dark-blue{
     color: $dark-blue;
@@ -31,6 +32,7 @@
   }
 }
 
+// Background Color
 .background, .bg{
   &-dark-blue{
     background-color: $dark-blue;

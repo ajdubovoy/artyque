@@ -1,0 +1,17 @@
+$header-height: 70px; // Factored as a variable for ease of spacing in future
+
+.header{
+  @extend .background-dark-blue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  @extend .p-0;
+  @extend .m-0;
+  height: $header-height;
+}
+
+body{
+  margin-top: $header-height; // Offset body start to bottom of header
+  @extend .pt-5; // Additional padding
+}
