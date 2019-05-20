@@ -1,4 +1,6 @@
 class ContactFormsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :create
+
   def create
     begin
       @contact_form = ContactForm.new(params[:contact_form])
