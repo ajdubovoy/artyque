@@ -3,4 +3,12 @@
   &-light-blue{
     border: 1px solid $light-blue !important;
   }
+  &-dark-blue{
+    border: 1px solid $dark-blue !important;
+  }
+  &-bottom{
+    &-dark-blue{
+      border-bottom: 0.2rem solid $dark-blue;
+    }
+  }
 }

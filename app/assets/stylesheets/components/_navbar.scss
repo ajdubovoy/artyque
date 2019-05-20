@@ -1,0 +1,72 @@
+@mixin navbar-menu-width{
+  width: 30vw;
+  min-width: 300px;
+}
+
+.navbar{
+  .open-button{
+    @extend .flex-center;
+    width: $header-height; // Make square
+  }
+  .open-button, .close-button{
+    @extend .color-white;
+    @extend .background-blue;
+    top: 0;
+    right: 0;
+    position: absolute;
+    height: $header-height;
+    font-size: calc(#{$header-height}/3.5); // Make icon size also relative to height
+  }
+  .open-button, .close-button, .links, .social{
+    a{
+      color: $white;
+      &:hover{
+        color: $white;
+        text-decoration: none;
+      }
+    }
+  }
+  .close-button{
+    @include navbar-menu-width;
+    @extend .flex-left;
+    @extend .pl-3;
+    @extend .border-bottom-dark-blue;
+    transform-origin: top right; // For transition
+  }
+  .menu{
+    @extend .shadow-box-dark;
+    @include navbar-menu-width;
+    @extend .background-blue;
+    @extend .pl-3;
+    height: calc(100vh - #{$header-height}});
+    min-height: 100%;
+    position: absolute;
+    top: $header-height;
+    right: 0;
+    z-index: 100;
+    overflow: scroll;
+    transform-origin: top right; // For transition
+    ul.links{
+      list-style: none;
+      font-size: 1.25rem;
+      @extend .p-4;
+      font-family: $headers-font;
+      font-style: normal;
+      font-weight: normal;
+      li{
+        @extend .pt-2;
+        @extend .pb-2;
+      }
+    }
+    ul.social{
+      @extend .list-inline;
+      @extend .flex-left;
+      @extend .p-4;
+      font-size: 1.4rem;
+      li{
+        @extend .pr-3; // Inter-element spacing
+      }
+    }
+  }
+}
+

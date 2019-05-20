@@ -1,4 +1,11 @@
-input{
+@mixin placeholder($color) {
+  &::placeholder{
+    color: $color
+  }
+  caret-color: $color;
+}
+
+input, textarea, [contenteditable]{
   @extend .form-control;
   @extend .shadow-box-light;
   @extend .border;
@@ -6,4 +13,5 @@ input{
     @extend .shadow-box-dark;
     @extend .border-light-blue;
   }
+  @include placeholder($placeholder-gray);
 }
