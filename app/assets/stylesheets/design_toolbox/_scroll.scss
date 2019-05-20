@@ -1,4 +1,6 @@
 .scroll-disable{
   // Used on body when navbar is opened to prevent scroll
+  height: calc(100vh - #{$header-height});
+  min-height: 0 !important;
   overflow: hidden;
 }
