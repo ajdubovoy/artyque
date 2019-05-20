@@ -1,0 +1,19 @@
+.hidden{
+  display: none !important;
+}
+
+@keyframes slideIn {
+  0%{
+    transform: scaleX(0);
+    opacity: 0;
+  }
+
+  100%{
+    transform: scaleX(1);
+    opacity: 1.0;
+  }
+}
+
+.slide-in{
+  animation: slideIn 150ms ease-out;
+}
