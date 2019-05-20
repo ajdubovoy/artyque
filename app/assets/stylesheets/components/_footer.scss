@@ -2,16 +2,29 @@ $footer-height: 96px; // Factored as a variable for ease of spacing in future
 
 .footer{
   @extend .background-dark-blue;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 100vw;
   @extend .p-0;
   @extend .m-0;
-  height: $footer-height;
 }
 
 body{
   margin-bottom: $footer-height; // Offset body end to top of footer
-  @extend .pb-5; // Additional padding
+}
+
+// https://css-tricks.com/snippets/css/sticky-footer/
+* {
+  margin: 0;
+}
+html, body {
+  height: 100%;
+}
+.page-wrap {
+  min-height: 100%;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.footer, .page-wrap:after {
+  height: $footer-height;
 }
