@@ -1,12 +1,20 @@
 <div class="wrapper-banner">	
-	<div class="container background bg-blue-gradient">
+	<div class="banner-content bg-blue-gradient">
 	 	<div class="row">
-	 		<div class="vh-70 w-100">
-	 			<div class="col">
+	 		<div class="inner-banner w-100 position-relative d-sm-flex align-items-center">
+	 			<%= image_tag "top_wave.svg", class: "wave-top position-absolute" %>
+	 			<%= image_tag "bottom_wave.svg", class: "wave-bottom position-absolute" %>
+	 			<div class="text-lockup col-12 col-sm-6">
 					<h1 class="title">Detailed Message</h1>
-					<h1>Headers and Large Message</h1>
+					<h1 class="color c-white">Headers and Large Message</h1>
+				    <a href="#" class="button-primary">Button 1</a>
+				</div>
+				<div class="shadow sb-light background bg-dark-blue image-lockup col-12 col-sm-6">
+					<div class="image-container background bg-blue" style="background-image: url(<%= image_path 'h_img_artist.png'  %>);"></div>
+					<h1 class="banner-card-subtitle w-100 text-center position-absolute color c-white title">FOR ARTISTS</h1>
 				</div>
 	 		</div>
 		</div>
 	</div>
-</div>
+</div> 
+
