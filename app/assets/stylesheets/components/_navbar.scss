@@ -1,16 +1,19 @@
 @mixin navbar-menu-width{
   width: 30vw;
   min-width: 300px;
+  @include media-breakpoint-down(sm) {
+    width: 100vw;
+  }
 }
 
 .navbar{
   .open-button{
     @extend .flex-center;
+    @extend .background-blue;
     width: $header-height; // Make square
   }
   .open-button, .close-button{
     @extend .color-white;
-    @extend .background-blue;
     top: 0;
     right: 0;
     position: absolute;
@@ -28,9 +31,9 @@
   }
   .close-button{
     @include navbar-menu-width;
+    @extend .background-dark-blue;
     @extend .flex-left;
     @extend .pl-3;
-    @extend .border-bottom-dark-blue;
     transform-origin: top right; // For transition
   }
   .menu{
@@ -43,7 +46,7 @@
     position: absolute;
     top: $header-height;
     right: 0;
-    z-index: 100;
+    z-index: 2000;
     overflow: scroll;
     transform-origin: top right; // For transition
     ul.links{

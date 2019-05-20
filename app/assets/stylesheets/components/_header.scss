@@ -1,15 +1,28 @@
 .header{
-  @extend .background-dark-blue;
+  @extend .background-beige;
   position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   @extend .p-0;
   @extend .m-0;
+  display: flex;
+  justify-content: space-between;
   height: $header-height;
+  .image{
+    @extend .container; // Make padding responsively adjust like container
+    height: $header-height;
+    @extend .flex-left;
+    width: calc(100vw - #{$header-height});
+    .logo{
+      padding-left: 0;
+      @include media-breakpoint-up(sm) {
+        padding-left: 15px;
+      }
+    }
+  }
 }
 
 body{
   margin-top: $header-height; // Offset body start to bottom of header
-  @extend .pt-5; // Additional padding
 }

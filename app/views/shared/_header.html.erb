@@ -1,3 +1,8 @@
 <div class="header">
+  <div class="image">
+    <%= link_to root_path do %>
+      <%= image_tag 'logo-header.svg', class: 'logo' %>
+    <% end %>
+  </div>
   <%= render 'shared/navbar' %>
 </div>
