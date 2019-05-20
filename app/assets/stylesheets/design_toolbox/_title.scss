@@ -5,3 +5,8 @@
   letter-spacing: 0.67em;
   @extend .color-dark-blue;
 }
+
+.subtitle{
+  @extend .title;
+  font-size: 0.5rem;
+}
