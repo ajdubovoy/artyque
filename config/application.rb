@@ -11,7 +11,8 @@ module Artyque
     config.generators do |generate|
       generate.assets false
       generate.helper false
-      generate.test_framework  :test_unit, fixture: false
+      generate.test_framework   :rspec, :fixture => true, :views => false
+      generate.integration_tool :rspec, :fixture => true, :views => true
     end
 
     # Initialize configuration defaults for originally generated Rails version.
