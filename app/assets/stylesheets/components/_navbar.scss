@@ -1,6 +1,7 @@
 @mixin navbar-menu-width{
   width: 30vw;
   min-width: 300px;
+  z-index: 2000;
   @include media-breakpoint-down(sm) {
     width: 100vw;
   }
@@ -41,12 +42,11 @@
     @include navbar-menu-width;
     @extend .background-blue;
     @extend .pl-3;
-    height: calc(100vh - #{$header-height}});
-    min-height: 100%;
+    height: calc(100vh - #{$header-height});
+    min-height: 200px;
     position: absolute;
     top: $header-height;
     right: 0;
-    z-index: 2000;
     overflow: scroll;
     transform-origin: top right; // For transition
     ul.links{
