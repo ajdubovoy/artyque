@@ -1,6 +1,6 @@
- describe "ContactForm" do
+describe "ContactForms" do
   it "delivers a valid message" do
-    visit new_contact_form_path
+    visit '/'
     fill_in 'Name', :with => 'Aaron Sumner'
     fill_in 'Email', :with => 'aaron@everydayrails.com'
     fill_in 'Message', :with => 'What a great website.'
@@ -11,7 +11,7 @@
   end
 
   it "does not deliver a message with a missing email" do
-    visit new_contact_form_path
+    visit 'contact_forms/new'
     fill_in 'Name', :with => 'Aaron Sumner'
     fill_in 'Message', :with => 'What a great website.'
     click_button 'Send message'
@@ -21,7 +21,7 @@
 
   it "does not deliver spam" do
     pending "This does not appear to render the proper source but passes in a browser."
-    visit new_contact_form_path
+    visit '/'
     fill_in 'Name', :with => 'Aaron Sumner'
     fill_in 'Email', :with => 'spammer@spammyjunk.com'
     fill_in 'Message', :with => "All the junk you'll never need."
