@@ -1,13 +1,20 @@
+@mixin navbar-menu-width{
+  width: 30vw;
+  min-width: 300px;
+}
+
 .navbar{
   .open-button{
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: $header-height;
-    @extend .background-blue;
     @extend .flex-center;
     width: $header-height; // Make square
-    color: $white;
+  }
+  .open-button, .close-button{
+    @extend .color-white;
+    @extend .background-blue;
+    top: 0;
+    right: 0;
+    position: absolute;
+    height: $header-height;
     font-size: calc(#{$header-height}/3.5); // Make icon size also relative to height
     a{
       color: $white;
@@ -17,4 +24,11 @@
       }
     }
   }
+  .close-button{
+    @include navbar-menu-width;
+    @extend .flex-left;
+    @extend .pl-3;
+    @extend .border-bottom-dark-blue;
+  }
 }
+
