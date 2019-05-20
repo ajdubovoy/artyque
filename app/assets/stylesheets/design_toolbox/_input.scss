@@ -5,7 +5,7 @@
   caret-color: $color;
 }
 
-input, textarea, [contenteditable]{
+input, textarea, select, [contenteditable]{
   @extend .form-control;
   @extend .shadow-box-light;
   @extend .border;
@@ -14,4 +14,11 @@ input, textarea, [contenteditable]{
     @extend .border-light-blue;
   }
   @include placeholder($placeholder-gray);
+}
+
+select {
+   outline:0px;
+   border-radius: $border-radius !important;
+   -webkit-appearance: none !important;
+   // Fixes up some specificities of selects that look dumb
 }
