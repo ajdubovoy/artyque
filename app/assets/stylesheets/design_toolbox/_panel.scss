@@ -1,5 +1,6 @@
 .panel{
-  // A panel is set up with some equivalency to a Bootstrap row, so it should contain columns within. If you want to have rows inside, they should be first 
+  // A panel is set up to be a new Bootstrap container, so it can container rows and the like within.
+  @include make-container;
   @include make-col(12);
   @include media-breakpoint-down(xs) {
     margin: 2.25rem 0 !important;

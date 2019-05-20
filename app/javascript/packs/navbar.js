@@ -4,6 +4,7 @@ function initNavbar() {
   const close = document.getElementById("navbar-close");
   const menu = document.getElementById("navbar-menu");
   const body = document.querySelector("body");
+  const html = document.querySelector("html");
 
   openButton.addEventListener("click", (event) => {
     close.classList.remove("hidden");
@@ -12,6 +13,7 @@ function initNavbar() {
     menu.classList.add("slide-in");
     openButton.classList.add("hidden");
     body.classList.add("scroll-disable");
+    html.classList.add("scroll-disable");
   });
 
   closeButton.addEventListener("click", (event) => {
@@ -19,6 +21,7 @@ function initNavbar() {
     menu.classList.add("hidden");
     openButton.classList.remove("hidden");
     body.classList.remove("scroll-disable");
+    html.classList.remove("scroll-disable");
   });
 }
 
