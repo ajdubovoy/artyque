@@ -6,5 +6,7 @@ var flkty = new Flickity('.banner-carousel', {
   cellSelector: '.banner-carousel-cell',
   prevNextButtons: false,
   pageDots: true,
-  cellAlign: 'center'
+  cellAlign: 'center',
+  resize: true,
+  contain: true
 });
