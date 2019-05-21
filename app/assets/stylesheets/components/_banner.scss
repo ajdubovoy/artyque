@@ -25,6 +25,10 @@
 	.text-lockup {
 		padding: 100px 10%;
     	padding-bottom: 43px;
+    	z-index: 2000;
+    	p {
+    		text-shadow: 0px 0px 9px #192e3d;
+    	}
     	@include media-breakpoint-up(sm) {
     		padding: 0;
 	    	padding-left: 40px;

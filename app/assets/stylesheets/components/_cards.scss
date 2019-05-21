@@ -1,0 +1,40 @@
+.card, .card {
+	transition: ease all 1s;
+	margin-bottom: 20px;
+	border: 0;
+	&-artists {
+		z-index: 2;
+		img {
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 160px;
+		}
+		 @include media-breakpoint-up(sm) {
+	   		min-width: 620px;
+			float: right;
+		}
+	}
+	&-galleries {
+   		height: 350px;
+		z-index: 0;
+	     @include media-breakpoint-up(sm) {
+	   		margin-top: -60px;
+		}
+	}
+	&-collectors {
+		 @include media-breakpoint-up(sm) {
+			margin-top: 108px;
+		}
+	}
+	&:hover {
+		transform: translateY(-10px);
+		box-shadow: 0 0.5rem 42px rgba(0, 0, 0, 0.15) !important;
+	}
+}
+
+
+.text-cards {
+	z-index: 100;
+	padding: 20px;
+}
