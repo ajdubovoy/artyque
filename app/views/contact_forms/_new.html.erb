@@ -1,14 +1,18 @@
-<%= simple_form_for @contact_form do |f| %>
-  <%= f.input :role, as: :select, :required => true, label: false, collection: {
-    "Artist" => 'artist',
-    "Gallery" => 'gallery',
-    "Collector" => 'collector'
-  }, prompt: "I am a..." %>
-  <%= f.input :name, :required => true, label: false, placeholder: "Name" %>
-  <%= f.input :email, :required => true, label: false, placeholder: "Email" %>
-  <%= f.input :message, :as => :text, :required => false, label: false, placeholder: "Message (optional)" %>
-  <div class="hidden">
-    <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+<div class="row">
+  <div class="col">
+      <%= simple_form_for @contact_form do |f| %>
+      <%= f.input :role, as: :select, :required => true, label: false, collection: {
+        "Artist" => 'artist',
+        "Gallery" => 'gallery',
+        "Collector" => 'collector'
+      }, prompt: "I am a..." %>
+      <%= f.input :name, :required => true, label: false, placeholder: "Name" %>
+      <%= f.input :email, :required => true, label: false, placeholder: "Email" %>
+      <%= f.input :message, :as => :text, :required => false, label: false, placeholder: "Message (optional)" %>
+      <div class="hidden">
+        <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+      </div>
+      <%= f.button :submit, 'Send' %>
+    <% end %>
   </div>
-  <%= f.button :submit, 'Send' %>
-<% end %>
+</div>
