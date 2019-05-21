@@ -1,5 +1,6 @@
 .line-wrapper {
 	padding: 40px 0;
+	position: relative;
 	.title {
 		font-size: 12px;
 		line-height: 34px;
@@ -20,11 +21,16 @@
 
 .ellipse {
 	position: absolute;
-    width: 825px;
-    top: 170px;
-    right: 0px;
-    border-radius: 80%;
-    height: 825px;
-    z-index: -1;
-    background: linear-gradient(79.73deg, #FEF0E7 -20.82%, rgba(254, 246, 240, 0.18) 62.49%);
+    width: 560px;
+    bottom: -310px;
+    right: 0;
+    border-radius: 81%;
+    height: 530px;
+    z-index: -2;
+    background: linear-gradient(380deg, #FEF0E7 -20.82%, rgba(254, 246, 240, 0.18) 62.49%);
+    @include media-breakpoint-up(sm) {
+	    width: 780px;
+		bottom: -271px;
+		height: 730px;
+      }
 }
