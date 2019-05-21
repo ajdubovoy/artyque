@@ -1,7 +1,12 @@
-<%= render 'shared/banner' %>
+<%= render 'shared/banner_carousel_wrapper' do %>
+  <%= render 'shared/banner_carousel_content', title: "Detailed Message", header: "Header Text", button: { label: "Button 1", path: "#" }, image: "h_img_artist.png", subtitle: "for-artists" %>
+  <%= render 'shared/banner_carousel_content', title: "Detailed Message", header: "Header Text", button: { label: "Button 1", path: "#" }, image: "h_img_artist.png", subtitle: "for-artists" %>
+  <%= render 'shared/banner_carousel_content', title: "Detailed Message", header: "Header Text", button: { label: "Button 1", path: "#" }, image: "h_img_artist.png", subtitle: "for-artists" %>
+<% end %>
 <%= render 'shared/line_intro' %>
 
 <div class="form-set">
   <%= render 'contact_forms/new' %>
 </div>
 
+<%= javascript_pack_tag 'banner_carousel' %>
