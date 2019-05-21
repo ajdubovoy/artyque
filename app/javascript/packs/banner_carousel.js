@@ -8,5 +8,5 @@ var flkty = new Flickity('.banner-carousel', {
   pageDots: true,
   cellAlign: 'center',
   resize: true,
-  contain: true
+  // contain: true
 });

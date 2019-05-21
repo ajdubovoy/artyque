@@ -62,8 +62,18 @@
   
   // Banner Carousel
   .flickity-slider{
+    .banner-carousel-cell{
+      transition: all 100ms ease-out;
+    }
     .is-selected{
-      margin-left: $header-height; // Fixes offset issue
+      @include media-breakpoint-up(sm) {
+        transform: translateX(#{$header-height}); // Attempt solution of responsiveness/positioning bug TODO can be improved
+      }
+    }
+    .wave-top{
+      @include media-breakpoint-down(sm) {
+        right: 15px; // Fix mobile postioning bug
+      }
     }
   }
   .flickity-page-dots{
