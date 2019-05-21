@@ -3,6 +3,12 @@
   &-light-blue{
     border: 1px solid $light-blue !important;
   }
+  &-blue{
+    border: 1px solid $blue !important;
+    &-thick{
+      border: 1.75px solid $blue !important;
+    }
+  }
   &-dark-blue{
     border: 1px solid $dark-blue;
   }
