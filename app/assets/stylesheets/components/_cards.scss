@@ -4,6 +4,7 @@
 	border: 0;
 	&-artists {
 		z-index: 2;
+		min-height: 160px;
 		img {
 			position: absolute;
 			top: 0;
@@ -37,4 +38,10 @@
 .text-cards {
 	z-index: 100;
 	padding: 20px;
+	h2 {
+		font-size: 28px;
+	}
+	p {
+		font-size: 13px;
+	}
 }

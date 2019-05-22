@@ -1,7 +1,8 @@
-<div class="wrapper-banner">	
+<div class="wrapper-banner">
 	<div class="banner-content banner-carousel bg-blue-gradient">
-      <%= yield %>
-		</div>
+		<%= image_tag "top_wave.svg", class: "wave-top position-absolute" %>
+	    <%= image_tag "bottom_wave.svg", class: "wave-bottom position-absolute" %>
+	      <%= yield %>
 	</div>
 </div> 
 
