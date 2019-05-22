@@ -1,13 +1,14 @@
 .carousel-wrapper{
   @include media-breakpoint-down(sm) {
     overflow: hidden;
-    justify-content: right;
+    justify-content: left;
   }
   .carousel-overlay{
     z-index: $zindex-tooltip;
     @include media-breakpoint-down(sm) {
       width: 120vw;
       height: auto;
+      margin-left: -20vw;
     }
   }
   .carousel{
@@ -19,7 +20,7 @@
         width: calc(120vw - 70px);
         height: auto;
         &.is-selected{
-          margin-left: 15vw;
+          margin-left: -15vw;
         }
       }
       &.is-selected{
