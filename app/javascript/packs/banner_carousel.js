@@ -12,7 +12,7 @@ function initBannerCarousel(targetClass) {
     prevNextButtons: false,
     pageDots: true,
     cellAlign: 'center',
-    resize: true,
+    resize: false,
     // contain: true
   });
 }
