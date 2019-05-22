@@ -1,0 +1,7 @@
+<div class="laptop-carousel-wrapper flex-center w-100" style="height=<%= height %>;">
+	<div class="laptop-carousel">
+		<%= image_tag "laptop.svg", class: "position-absolute drag-disable" if laptop %>
+      <%= yield %>
+	</div>
+</div> 
+
