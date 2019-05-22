@@ -37,7 +37,10 @@
 .wrapper-banner{
   // Banner Carousel
   .flickity-viewport{
-    margin-right: calc(-1 * #{$header-height}) !important; // Makes image overhang on the right
+    margin-right: 0; // Makes image overhang on the right
+    @include media-breakpoint-up(sm) {
+        margin-right: calc(-1 * #{$header-height}) !important; // Makes image overhang on the right
+    }
   }
   .flickity-slider{
     .banner-carousel-cell{
@@ -52,6 +55,20 @@
     .wave-top{
       @include media-breakpoint-down(sm) {
         right: 15px; // Fix mobile postioning bug
+      }
+    }
+  }
+  .flickity-page-dots{
+    bottom: 10px;
+    right: 10px;
+    text-align: right;
+    .dot{
+      border-radius: $border-radius;
+      opacity: 1;
+      @extend .bg-blue;
+      @extend .border-blue-thick;
+      &.is-selected{
+        @extend .bg-white;
       }
     }
   }
