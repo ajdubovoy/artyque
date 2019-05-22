@@ -1,0 +1,10 @@
+function refreshForm(innerHTML) {
+  const contactForm = document.getElementById('new_contact_form');
+  contactForm.innerHTML = innerHTML;
+}
+
+<% if @contact_form.errors.any? %>
+  refreshForm('<%= j render "contact_forms/new" %>');
+<% else %>
+  refreshForm('<%= j render "contact_forms/success" %>');
+<% end %>
