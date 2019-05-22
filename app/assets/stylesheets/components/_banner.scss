@@ -30,9 +30,13 @@
     	p {
     		text-shadow: 0px 0px 9px #192e3d;
     	}
-    	@include media-breakpoint-up(sm) {
+      @include media-breakpoint-up(sm) {
+        padding: 0;
+        padding-left: 20px;
+    }    
+    	@include media-breakpoint-up(lg) {
     		padding: 0;
-	    	padding-left: 40px;
+	    	padding-left: 50px;
 		}
 	}
 	.image-lockup {
@@ -40,7 +44,7 @@
     	margin: auto;
     	width: 90%;
 		@include media-breakpoint-up(sm) {
-		    height: 90%;
+		    height: 80%;
 		}
 		.image-container {
 		  position: absolute;
@@ -66,7 +70,10 @@
   
   // Banner Carousel
   .flickity-viewport{
-    margin-right: calc(-1 * #{$header-height}) !important; // Makes image overhang on the right
+    margin-right: 0; // Makes image overhang on the right
+    @include media-breakpoint-up(sm) {
+        margin-right: calc(-1 * #{$header-height}) !important; // Makes image overhang on the right
+    }
   }
   .flickity-slider{
     .banner-carousel-cell{
