@@ -1,0 +1,22 @@
+@mixin break($n){
+  content: "";
+  @extend .m-#{$n};
+  @extend .p-#{$n};
+}
+.break{
+  &-1{
+    @include break(1);
+  } 
+  &-2{
+    @include break(2);
+  } 
+  &-3{
+    @include break(3);
+  } 
+  &-4{
+    @include break(4);
+  } 
+  &-5{
+    @include break(5);
+  } 
+}
