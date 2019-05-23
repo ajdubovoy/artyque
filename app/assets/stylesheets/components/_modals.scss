@@ -1,5 +1,44 @@
 
 .modal-dialog-custom {
-	max-width: 900px;
-	margin: auto;
+	max-width: 900px !important;
+	margin: auto !important;
+	.modal-header-custom {
+		padding: 20px;
+	}
+}
+
+.modal-content {
+	padding-bottom: 30px;
+	.separate-content {
+		padding: 30px 0;
+		&-bottom {
+			margin-bottom: 40px;
+		}
+	}
+}
+
+.text-body {
+	max-width: 90%;
+    margin: auto;
+    .body-title {
+    	margin: 30px 0;
+    }
+	.modal-lead-text {
+    	font-weight: bold;
+    	text-align: center;
+	    line-height: 37px;
+		font-size: 24px;
+	}
+}
+
+.wrapper-body-bullets {
+	padding-right: 10px;
+	ul {
+		max-width: 727px;
+		padding: 30px;
+		margin: auto;
+	}
+	li {
+		line-height: 30px;
+	}
 }
