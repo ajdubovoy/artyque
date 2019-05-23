@@ -1,0 +1,139 @@
+.laptop-carousel-wrapper {
+  margin: 70px 0;
+  .cta-laptop {
+    margin-top: 50px;
+     @include media-breakpoint-up(sm) {
+        margin-bottom: 70px;
+    }
+  }
+  .intro-laptop {
+    max-width: 590px;
+    margin: auto;
+    margin-bottom: 30px;
+    @include media-breakpoint-up(sm) {
+        margin-bottom: 70px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+  }
+}
+.carousel-wrapper{
+  @include media-breakpoint-down(sm) {
+    overflow: hidden;
+    justify-content: left;
+  }
+  .carousel-overlay{
+    z-index: $zindex-tooltip;
+    @include media-breakpoint-down(sm) {
+      width: 120vw;
+      height: auto;
+      margin-left: -20vw;
+    }
+  }
+  .carousel{
+    .carousel-cell{
+      opacity: 0.5;
+      transition: all 150ms ease-in;
+      z-index: 1;
+      @include media-breakpoint-down(sm) {
+        width: calc(120vw - 70px);
+        height: auto;
+        &.is-selected{
+          margin-left: -15vw;
+        }
+      }
+      &.is-selected{
+        opacity: 1;
+      }
+    }
+  }
+  .flickity-page-dots{
+    text-align: center;
+    .dot{
+      border-radius: $border-radius;
+      opacity: 1;
+      @extend .bg-blue;
+      @extend .border-blue-thick;
+      &.is-selected{
+        @extend .bg-white;
+      }
+    }
+  }
+}
+
+.carousel-laptop{
+  // Offset when laptop present
+  .flickity-viewport{
+    @extend .mb-3;
+    @extend .mt-3;
+  }
+}
+
+.wrapper-banner{
+  // Banner Carousel
+  .flickity-viewport{
+    margin-right: 0; // Makes image overhang on the right
+    @include media-breakpoint-up(sm) {
+        margin-right: calc(-1 * #{$header-height}) !important; // Makes image overhang on the right
+    }
+  }
+  .flickity-slider{
+    .banner-carousel-cell{
+      transition: all 100ms ease-out;
+    }
+    .is-selected{
+      @include media-breakpoint-up(sm) {
+        transform: translateX(#{$header-height}); // Attempt solution of responsiveness/positioning bug TODO can be improved
+        margin-left: calc(-1/2 * #{$header-height}) !important;
+      }
+    }
+    .wave-top{
+      @include media-breakpoint-down(sm) {
+        right: 15px; // Fix mobile postioning bug
+      }
+    }
+  }
+  .flickity-page-dots{
+    bottom: 10px;
+    right: 10px;
+    text-align: right;
+    .dot{
+      border-radius: $border-radius;
+      opacity: 1;
+      @extend .bg-blue;
+      @extend .border-blue-thick;
+      &.is-selected{
+        @extend .bg-white;
+      }
+    }
+  }
+  .flickity-page-dots{
+    bottom: 10px;
+    right: 10px;
+    text-align: right;
+    .dot{
+      border-radius: $border-radius;
+      opacity: 1;
+      @extend .bg-blue;
+      @extend .border-blue-thick;
+      &.is-selected{
+        @extend .bg-white;
+      }
+    }
+  }
+}
+
+.flickity-page-dots{
+  bottom: 10px;
+  right: 10px;
+  .dot{
+    border-radius: $border-radius;
+    opacity: 1;
+    @extend .bg-blue;
+    @extend .border-blue-thick;
+    &.is-selected{
+      @extend .bg-white;
+    }
+  }
+}

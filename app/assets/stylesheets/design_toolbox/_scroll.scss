@@ -4,3 +4,9 @@
   min-height: 0 !important;
   overflow: hidden;
 }
+
+.drag-disable{
+  user-drag: none;
+  user-select: none;
+  pointer-events: none;
+}
