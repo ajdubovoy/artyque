@@ -33,6 +33,13 @@
 		transform: translateY(-10px);
 		box-shadow: 0 0.5rem 42px rgba(0, 0, 0, 0.15) !important;
 	}
+	.fake-link {
+		text-decoration: underline;
+		font-style: italic;
+		&:hover {
+			opacity: .8;
+		}
+	}
 }
 
 
@@ -44,5 +51,6 @@
 	}
 	p {
 		font-size: 13px;
+		margin-bottom: 8px;
 	}
 }
