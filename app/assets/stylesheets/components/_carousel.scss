@@ -1,3 +1,23 @@
+.laptop-carousel-wrapper {
+  margin: 70px 0;
+  .cta-laptop {
+    margin-top: 50px;
+     @include media-breakpoint-up(sm) {
+        margin-bottom: 70px;
+    }
+  }
+  .intro-laptop {
+    max-width: 590px;
+    margin: auto;
+    margin-bottom: 30px;
+    @include media-breakpoint-up(sm) {
+        margin-bottom: 70px;
+    }
+    h2 {
+        font-size: 28px;
+    }
+  }
+}
 .carousel-wrapper{
   @include media-breakpoint-down(sm) {
     overflow: hidden;

@@ -1,9 +1,22 @@
-<div class="carousel-wrapper w-100 flex-center" style="height: <%= height %>px;">
-    <%= image_tag "laptop.svg", class: "position-absolute carousel-overlay drag-disable", style: "height: #{height + 30}px;" if laptop %>
-  <div class="carousel w-100 <%= "carousel-laptop" if laptop %>">
-    <% images.each do |image| %>
-      <%= image_tag image, class: 'carousel-cell carousel-image', height: height %>
-    <% end %>
+<div class="laptop-carousel-wrapper">
+	<div class="container">
+		<div class="col intro-laptop">
+			<h1 class="title">We represent</h1>
+			<h2 class="color c-blue">Artists</h2>
+		</div>
 	</div>
-</div> 
-
+	<div class="carousel-wrapper w-100 flex-center" style="height: <%= height %>px;">
+	    <%= image_tag "laptop.svg", class: "position-absolute carousel-overlay drag-disable", style: "height: #{height + 30}px;" if laptop %>
+	  <div class="carousel w-100 <%= "carousel-laptop" if laptop %>">
+	    <% images.each do |image| %>
+	      <%= image_tag image, class: 'carousel-cell carousel-image', height: height %>
+	    <% end %>
+		</div>
+	</div>
+	<br>
+	<div class="container">
+		<div class="col text-center cta-laptop">
+			<a href="#" class="button-primary">Button 1</a>
+		</div>
+	</div>
+</div>

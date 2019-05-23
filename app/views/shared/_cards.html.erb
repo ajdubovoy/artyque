@@ -1,7 +1,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-12">
-			<div class="backround bg-white shadow sb-light card card-artists">
+			<div class="backround bg-white shadow sb-light card card-artists"  data-toggle="modal" data-target="#modal_artist">
 				<div class="d-flex">
 					<div class="text-cards">
 						<h1 class="title">An Agency</h1>
@@ -13,7 +13,7 @@
 			</div>
 		</div>
 		<div class="col-12 col-sm-6">
-			<div class="backround bg-blue shadow sb-light card card-galleries">
+			<div class="backround bg-blue shadow sb-light card card-galleries" data-toggle="modal" data-target="#modal_galleries">
 				<%= image_tag "pic-2.png", style: "width: 100%" %>
 				<div class="text-cards">
 					<h1 class="color c-white title">A Solution</h1>
@@ -23,7 +23,7 @@
 			</div>
 		</div>
 		<div class="col-12 col-sm-6">
-			<div class="backround bg-white shadow sb-light card card-collectors">
+			<div class="backround bg-white shadow sb-light card card-collectors" data-toggle="modal" data-target="#modal_collectors">
 				<div class="text-cards">
 					<h1 class="title">An Advisor</h1>
 		      		<h2 class="color c-blue">For Collectors</h2>
@@ -33,3 +33,5 @@
 		</div>	
 	</div>
 </div>
+
+<%= render "shared/modals" %>
