@@ -11,6 +11,7 @@ function initBannerCarousel(targetClass) {
     cellSelector: '.banner-carousel-cell',
     prevNextButtons: false,
     pageDots: true,
+    percentPosition: false,
     cellAlign: 'center',
     resize: false,
     // contain: true
