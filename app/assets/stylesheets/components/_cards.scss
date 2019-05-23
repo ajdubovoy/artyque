@@ -36,6 +36,7 @@
 	.fake-link {
 		text-decoration: underline;
 		font-style: italic;
+    @extend .cursor-pointer;
 		&:hover {
 			opacity: .8;
 		}

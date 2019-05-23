@@ -5,6 +5,7 @@ function initNavbar() {
   const menu = document.getElementById("navbar-menu");
   const body = document.querySelector("body");
   const html = document.querySelector("html");
+  const links = document.querySelectorAll(".navbar-link");
 
   openButton.addEventListener("click", (event) => {
     close.classList.remove("hidden");
@@ -16,13 +17,25 @@ function initNavbar() {
     html.classList.add("scroll-disable");
   });
 
-  closeButton.addEventListener("click", (event) => {
+  const closeClasses = () => {
     close.classList.add("hidden");
     menu.classList.add("hidden");
     openButton.classList.remove("hidden");
     body.classList.remove("scroll-disable");
     html.classList.remove("scroll-disable");
+  }
+
+  closeButton.addEventListener("click", (event) => {
+    closeClasses();
   });
+
+  if (links) {
+    links.forEach((link) => {
+      link.addEventListener("click", (event) => {
+        closeClasses();
+      });
+    })
+  }
 }
 
 export default initNavbar;
