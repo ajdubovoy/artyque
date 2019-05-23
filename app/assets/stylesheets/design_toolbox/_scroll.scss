@@ -10,3 +10,11 @@
   user-select: none;
   pointer-events: none;
 }
+
+.scroll-smooth{
+  scroll-behavior: smooth;
+}
+
+html{
+  @extend .scroll-smooth; // For animation when clicking on a link to a div
+}

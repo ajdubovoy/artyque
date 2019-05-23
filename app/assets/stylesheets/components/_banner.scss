@@ -9,7 +9,7 @@
     }
 	}
 	.inner-banner {
-		height: 100vh;
+		height: calc(100vh - #{$header-height});
 		@include media-breakpoint-up(sm) {
 		    height: 80vh;
        padding-left: 50px;
