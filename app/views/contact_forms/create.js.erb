@@ -1,6 +1,8 @@
 function refreshForm(innerHTML) {
-  const contactForm = document.getElementById('new-contact-form');
-  contactForm.innerHTML = innerHTML;
+  const contactForms = document.querySelectorAll('.new-contact-form');
+  contactForms.forEach((form) => {
+    form.innerHTML = innerHTML;
+  });
 }
 
 <% if @contact_form.errors.any? %>
