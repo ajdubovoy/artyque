@@ -36,3 +36,42 @@
 		}
 	}
 }
+.about-section-wrapper {
+	position: relative;
+	overflow: hidden; 
+}
+
+.square-1 {
+	position: absolute;
+    width: 560px;
+    bottom: -310px;
+    right: 0;
+    height: 530px;
+    transform: rotate(40deg);
+    z-index: -2;
+    background: linear-gradient(380deg, #FEF0E7 -20.82%, rgba(254, 246, 240, 0.18) 62.49%);
+    @include media-breakpoint-up(sm) {
+	    width: 200px;
+	    bottom: -271px;
+	    height: 730px;
+	    right: 0;
+      }
+}
+
+.square-2 {
+	position: absolute;
+    width: 560px;
+    top: -310px;
+    opacity: .2;
+    right: 0;
+    height: 530px;
+    z-index: -2;
+    transform: rotate(40deg);
+    background: linear-gradient(380deg, $light-blue -20.82%, rgba(254, 246, 240, 0.18) 62.49%);
+    @include media-breakpoint-up(sm) {
+	    width: 200px;
+		bottom: -271px;
+		left: 0;
+		height: 730px;
+      }
+}
