@@ -4,3 +4,11 @@ a{
     @extend .color-blue;
   }
 }
+
+.social-link {
+  text-decoration: none;
+  @extend .color-white;
+  &:hover{
+    @extend .color-beige;
+  }
+}
