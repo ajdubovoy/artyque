@@ -17,6 +17,7 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'postmark-rails'
 
 gem 'mail_form'
 
@@ -32,4 +33,8 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'dotenv-rails'
+end
+
+group :development do
+  gem 'letter_opener'
 end

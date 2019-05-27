@@ -1,4 +1,6 @@
 class ContactForm < MailForm::Base
+  include MailForm::Delivery
+
   attribute :name,      :validate => true
   attribute :email,     :validate => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i
   attribute :role,      :validate => ['artist', 'gallery', 'collector']
