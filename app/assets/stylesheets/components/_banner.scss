@@ -7,6 +7,10 @@
 	}
 }
 
+.text-lockup {
+	max-width: 600px;
+}
+
 .wrapper-banner {
 	@extend .bg-beige;
 	.banner-content {
@@ -62,13 +66,14 @@
 			width: 100%;
 			height: 89%;
 			background-size: cover;
+			background-repeat: no-repeat;
 			background-position: center;
 		}
 	}
 	.wave {
 		&-top {
 			top: 0;
-			right: 0;
+			right: -1px;
 			width: 70vw;
 		}
 		&-bottom {
