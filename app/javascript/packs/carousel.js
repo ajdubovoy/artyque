@@ -7,12 +7,14 @@ function initCarousel(targetClass) {
   }
 
   const flkty = new Flickity(`.${targetClass}`, {
-    autoPlay: 5000,
+    autoPlay: 6000,
     cellSelector: '.carousel-cell',
     prevNextButtons: false,
     pageDots: true,
     cellAlign: 'center',
     resize: false,
+    wrapAround: true,
+    initialIndex: element.dataset.initial ? Number(element.dataset.initial) : 0
     // contain: true
   });
 }

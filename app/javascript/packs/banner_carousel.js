@@ -7,13 +7,14 @@ function initBannerCarousel(targetClass) {
   }
 
   const flkty = new Flickity(`.${targetClass}`, {
-    autoPlay: 5000,
+    autoPlay: 6000,
     cellSelector: '.banner-carousel-cell',
     prevNextButtons: false,
     pageDots: true,
     percentPosition: false,
     cellAlign: 'center',
     resize: false,
+    wrapAround: true
     // contain: true
   });
 }
