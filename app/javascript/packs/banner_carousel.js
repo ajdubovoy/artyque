@@ -14,6 +14,7 @@ function initBannerCarousel(targetClass) {
     percentPosition: false,
     cellAlign: 'center',
     resize: false,
+    wrapAround: true
     // contain: true
   });
 }

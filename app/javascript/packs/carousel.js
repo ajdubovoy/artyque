@@ -13,6 +13,8 @@ function initCarousel(targetClass) {
     pageDots: true,
     cellAlign: 'center',
     resize: false,
+    wrapAround: true,
+    initialIndex: element.dataset.initial ? Number(element.dataset.initial) : 0
     // contain: true
   });
 }
