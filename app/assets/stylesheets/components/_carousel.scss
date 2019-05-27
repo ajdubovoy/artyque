@@ -34,7 +34,7 @@
   .carousel{
     .carousel-cell{
       opacity: 0.5;
-      transition: margin 150ms ease-in;
+      transition: margin 100ms ease-out, opacity 100ms ease-out;
       z-index: 1;
       @include media-breakpoint-down(sm) {
         width: calc(120vw - 70px);
@@ -80,7 +80,7 @@
   }
   .flickity-slider{
     .banner-carousel-cell{
-      transition: margin 100ms ease-out;
+      transition: margin 100ms ease-out, opacity 100ms ease-out;
     }
     .is-selected{
       @include media-breakpoint-up(sm) {
