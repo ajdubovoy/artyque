@@ -7,7 +7,7 @@ function initCarousel(targetClass) {
   }
 
   const flkty = new Flickity(`.${targetClass}`, {
-    autoPlay: 5000,
+    autoPlay: 6000,
     cellSelector: '.carousel-cell',
     prevNextButtons: false,
     pageDots: true,
