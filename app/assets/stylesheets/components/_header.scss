@@ -10,14 +10,14 @@
   justify-content: space-between;
   height: $header-height;
   .image{
-    @extend .container; // Make padding responsively adjust like container
     height: $header-height;
     @extend .flex-left;
     width: calc(100vw - #{$header-height});
     .logo{
-      padding-left: 0;
+      @extend .ml-3;
       @include media-breakpoint-up(sm) {
-        padding-left: 15px;
+        padding-left: 0;
+        margin-left: $header-height !important;
       }
     }
   }
