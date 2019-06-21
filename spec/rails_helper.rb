@@ -41,6 +41,7 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = true
 
   config.include Capybara::DSL
+  config.include FactoryBot::Syntax::Methods
   config.include(MailerMacros)
   config.before(:each) { reset_email }
 
