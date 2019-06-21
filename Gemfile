@@ -20,7 +20,6 @@ gem 'webpacker'
 gem 'postmark-rails'
 
 gem 'mail_form'
-gem 'factory_bot_rails'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -29,6 +28,7 @@ end
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'factory_bot_rails'
   gem 'faker'
   gem 'pry-byebug'
   gem 'pry-rails'
