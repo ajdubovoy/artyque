@@ -1,6 +1,3 @@
-require 'factory_bot_rails'
-require 'faker'
-
 FactoryBot.define do
   factory :contact_form do
     first_name { Faker::Name.first_name }
