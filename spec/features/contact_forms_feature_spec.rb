@@ -1,4 +1,4 @@
-describe "ContactFormsController", type: :controller do
+describe "ContactFormsFeature", type: :feature do
   it "delivers a valid message" do
     visit '/'
     fill_in 'First name', match: :first, :with => 'Aaron'
