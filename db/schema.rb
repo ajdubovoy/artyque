@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190624102314) do
+ActiveRecord::Schema.define(version: 20190624102358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -76,6 +76,15 @@ ActiveRecord::Schema.define(version: 20190624102314) do
     t.index ["artist_id"], name: "index_links_on_artist_id"
   end
 
+  create_table "photos", force: :cascade do |t|
+    t.bigint "artwork_id"
+    t.string "attachment"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artwork_id"], name: "index_photos_on_artwork_id"
+  end
+
   create_table "resume_blocks", force: :cascade do |t|
     t.bigint "artist_id"
     t.string "title"
@@ -102,5 +111,6 @@ ActiveRecord::Schema.define(version: 20190624102314) do
   add_foreign_key "artworks", "collections"
   add_foreign_key "collections", "artists"
   add_foreign_key "links", "artists"
+  add_foreign_key "photos", "artworks"
   add_foreign_key "resume_blocks", "artists"
 end
