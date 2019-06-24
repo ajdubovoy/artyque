@@ -17,13 +17,13 @@ ActiveRecord::Schema.define(version: 20190624102444) do
 
   create_table "artists", force: :cascade do |t|
     t.bigint "user_id"
-    t.integer "color_palette"
-    t.integer "shape"
+    t.integer "color_palette", default: 1
+    t.integer "shape", default: 0
     t.string "super_title"
     t.string "title"
     t.string "description"
     t.string "button_text"
-    t.integer "layout"
+    t.integer "layout", default: 0
     t.string "video"
     t.string "quotation"
     t.string "quotation_caption"
