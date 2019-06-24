@@ -2,13 +2,13 @@ class CreateArtists < ActiveRecord::Migration[5.1]
   def change
     create_table :artists do |t|
       t.references :user, foreign_key: true
-      t.integer :color_palette
-      t.integer :shape
+      t.integer :color_palette, default: 0
+      t.integer :shape, default: 1
       t.string :super_title
       t.string :title
       t.string :description
       t.string :button_text
-      t.integer :layout
+      t.integer :layout, default: 1
       t.string :video
       t.string :quotation
       t.string :quotation_caption
