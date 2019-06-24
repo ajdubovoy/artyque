@@ -9,14 +9,6 @@ class Artist < ApplicationRecord
   enum color_palette: %i[ plain angular curved ]
   validates :color_palette, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 3 }
   validates :layout, numericality: { greater_than_or_equal_to: 1, less_than_or_equal_to: 3 }
-  validate :validate_description_word_length
   validates :button_text, length: { maximum: 30 }
-
-  def validate_description_word_length
-    return unless description
-
-    if description.split.size > 300
-      errors.add(:base, "You must have less than 300 words")
-    end
-  end
+  validates_with DescriptionWordLengthValidator
 end
