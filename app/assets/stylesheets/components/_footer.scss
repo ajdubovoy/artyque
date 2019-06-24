@@ -6,10 +6,6 @@
   @extend .flex-center;
 }
 
-body{
-  margin-bottom: $footer-height; // Offset body end to top of footer
-}
-
 // https://css-tricks.com/snippets/css/sticky-footer/
 * {
   margin: 0;
@@ -19,6 +15,8 @@ html, body {
 }
 .page-wrap {
   min-height: 100%;
+  margin-bottom: calc(-1 * #{$footer-height});
+  padding-bottom: $footer-height;
 }
 .page-wrap:after {
   content: "";
