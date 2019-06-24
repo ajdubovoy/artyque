@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  # devise_for :users
+  devise_for :users
   root to: 'pages#home'
   resources :contact_forms, only: :create
   get 'contact_forms/success', to: 'contact_forms#success', as: :contact_forms_success
