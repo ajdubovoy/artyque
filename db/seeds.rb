@@ -10,4 +10,4 @@ Artist.destroy_all
 User.destroy_all
 
 p 'Seeding admin user'
-User.create(email: 'info@artyque.com', password: '123456', admin: true)
+User.create(email: 'info@artyque.com', password: '123456', role: :admin)

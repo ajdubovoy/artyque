@@ -1,13 +1,15 @@
 <footer class="footer">
   <div class="image">
-    <%= image_tag 'logo-footer.svg', class: 'logo' %>
+    <%= link_to root_path do %>
+      <%= image_tag 'logo-footer.svg', class: 'logo' %>
+    <% end %>
   </div>
   <ul class="links">
     <li id="login-button">
       <% if user_signed_in? %>
         <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
       <% else %>
-        <%= link_to "Artist Login" %>
+        <%= link_to "Artist Login", new_user_session_path %>
       <% end %>
     </li>
   </ul>

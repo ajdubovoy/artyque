@@ -16,7 +16,7 @@
     @extend .mb-0;
     li{
       a{
-        @extend .c-white;
+        @extend .c-light-gray;
         transition: color 250ms ease-out;
         &:hover{
           @extend .c-pink;
