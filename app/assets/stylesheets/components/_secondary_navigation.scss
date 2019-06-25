@@ -17,6 +17,9 @@
       &.selected{
         @extend .border-left-blue-thick;
         padding-left: 0.5rem; // Half of border size
+        a{
+          pointer-events: none;
+        }
       }
       a{
         @extend .c-blue;
