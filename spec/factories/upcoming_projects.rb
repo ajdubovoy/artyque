@@ -5,6 +5,6 @@ FactoryBot.define do
     description { "MyString" }
     location { "MyString" }
     date { "MyString" }
-    photo { "MyString" }
+    photo { "test.jpg" }
   end
 end

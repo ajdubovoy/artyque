@@ -11,7 +11,7 @@ FactoryBot.define do
     video { "MyString" }
     quotation { "MyString" }
     quotation_caption { "MyString" }
-    photo { "MyString" }
+    photo { "test.jpg" }
     about_me { "MyString" }
   end
 end
