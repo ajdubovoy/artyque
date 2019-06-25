@@ -1,0 +1,21 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col text-center pt-3 pb-3 bg-beige w-100">
+      <h1>Admin Dashboard</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container artist-list">
+  <div class="row">
+    <div class="col">
+      <ul class="list-group">
+        <% @artists.each do |artist| %>
+          <%= link_to artist_path(artist) do %>
+            <li class="list-group-item list-group-item-action">artist.name</li>  
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
