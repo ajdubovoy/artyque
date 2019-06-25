@@ -4,4 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable,
          :recoverable, :rememberable, :validatable
   enum role: %i[ unauthorized admin artist collector gallery ]
+  has_one :artist
 end
