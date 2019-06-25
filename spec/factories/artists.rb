@@ -1,17 +1,18 @@
 FactoryBot.define do
   factory :artist do
-    user { nil }
-    color_palette { 1 }
-    shape { 1 }
-    super_title { "MyString" }
-    title { "MyString" }
-    description { "MyString" }
-    button_text { "MyString" }
-    layout { 1 }
-    video { "MyString" }
-    quotation { "MyString" }
-    quotation_caption { "MyString" }
-    photo { "test.jpg" }
-    about_me { "MyString" }
+    association :user, factory: :user, role: :artist
+    color_palette { %w[plain angular curved].sample }
+    shape { [1, 2, 3].sample }
+    super_title { Faker::Lorem.sentence(3) }
+    title { Faker::Lorem.sentence(5) }
+    description { Faker::Lorem.sentences(3).join }
+    button_text { Faker::Lorem.word }
+    layout { [1, 2, 3].sample }
+    video { "" }
+    quotation { Faker::Quote.most_interesting_man_in_the_world }
+    quotation_caption { Faker::GreekPhilosophers.name }
+    photo { "" }
+    about_me { Faker::Lorem.paragraph }
+    name { Faker::Name.name }
   end
 end

@@ -6,7 +6,7 @@ RSpec.describe AdminController, type: :controller do
 
     it "assigns the artists" do
       get :dashboard
-      expect(assigns(:artists)).to eq Artist.all
+      expect(assigns(:artists)).to match_array Artist.all
     end
   end
 end
