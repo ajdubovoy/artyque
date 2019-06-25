@@ -15,4 +15,5 @@ class Artist < ApplicationRecord
   validates_with DescriptionWordLengthValidator
   validates :name, presence: true
   mount_uploader :photo, PhotoUploader
+  mount_uploader :video, PhotoUploader
 end
