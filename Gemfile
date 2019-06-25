@@ -33,6 +33,7 @@ group :development, :test do
   gem 'capybara'
   gem 'faker'
   gem 'rails-controller-testing'
+  gem 'dotenv-rails'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
