@@ -19,12 +19,5 @@
       <li><a href="#"><i class="fab fa-instagram"></i></a></li>
       <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
     </ul>
-    <div class="login-button">
-      <% if user_signed_in? %>
-        <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "button-primary" %>
-      <% else %>
-        <%= link_to "Login", new_user_session_path, class: "button-primary" %>
-      <% end %>
-    </div>
   </div>
 </div>
