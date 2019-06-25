@@ -14,4 +14,5 @@ class Artist < ApplicationRecord
   validates :button_text, length: { maximum: 30 }
   validates_with DescriptionWordLengthValidator
   validates :name, presence: true
+  mount_uploader :photo, PhotoUploader
 end
