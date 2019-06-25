@@ -7,12 +7,12 @@ class ContactFormsController < ApplicationController
     if @contact_form.deliver
       respond_to do |format|
         format.html { redirect_to contact_forms_success_path }
-        format.js  # <-- will render `app/views/reviews/create.js.erb`
+        format.js
       end
     else
       respond_to do |format|
         format.html { render 'pages/home' }
-        format.js  # <-- idem
+        format.js
       end
     end
   end

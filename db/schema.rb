@@ -10,20 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190625082402) do
+ActiveRecord::Schema.define(version: 20190625144958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "artists", force: :cascade do |t|
     t.bigint "user_id"
-    t.integer "color_palette", default: 1
-    t.integer "shape", default: 0
+    t.integer "color_palette", default: 0
+    t.integer "shape", default: 1
     t.string "super_title"
     t.string "title"
-    t.string "description"
+    t.text "description"
     t.string "button_text"
-    t.integer "layout", default: 0
+    t.integer "layout", default: 1
     t.string "video"
     t.string "quotation"
     t.string "quotation_caption"

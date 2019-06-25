@@ -1,0 +1,13 @@
+<div class="col-12 col-sm-3">
+  <%= render 'navigation', selected: stage %>
+</div>
+<div class="col-12 col-sm-9">
+  <div class="form-panel">
+    <div id="edit-form">
+      <% case stage %>
+      <% when :header %>
+        <%= render 'header', artist: artist %>
+      <% end %>
+    </div>
+  </div>
+</div>
