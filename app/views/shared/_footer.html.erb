@@ -19,7 +19,7 @@
         </li>
       <% elsif current_user.artist? && current_user.artist %>
         <li>
-          <%= link_to "My Artist Profile", admin_dashboard_path %>
+          <%= link_to "My Artist Profile", edit_artist_path(current_user.artist) %>
         </li>
       <% end %>
     <% end %>

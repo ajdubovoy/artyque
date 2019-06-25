@@ -1,7 +1,7 @@
 class AdminPolicy < ApplicationPolicy
   class Scope < Scope
     def dashboard?
-      return user.admin?
+      return user.present? && user.admin?
     end
 
     def resolve
