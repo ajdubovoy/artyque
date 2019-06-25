@@ -32,7 +32,6 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'capybara'
   gem 'faker'
-  gem 'pundit-matchers', '~> 1.6.0'
   gem 'rails-controller-testing'
   gem 'pry-byebug'
   gem 'pry-rails'
