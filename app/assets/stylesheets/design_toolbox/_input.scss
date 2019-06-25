@@ -5,15 +5,20 @@
   caret-color: $color;
 }
 
-input, textarea, select, [contenteditable]{
+input:not([type='checkbox']), textarea, select, [contenteditable]{
   @extend .form-control;
-  @extend .shadow-box-light;
-  @extend .border;
-  &:focus{
-    @extend .shadow-box-dark;
-    @extend .border-light-blue;
+  &:not([type='submit']){
+    @extend .shadow-box-light;
+    @extend .border;
+    &:focus{
+      @extend .shadow-box-dark;
+      @extend .border-light-blue;
+    }
+    @include placeholder($placeholder-gray);
   }
-  @include placeholder($placeholder-gray);
+  &[type='submit']{
+    @extend .button-primary;
+  }
 }
 
 select {

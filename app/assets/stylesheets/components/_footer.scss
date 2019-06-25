@@ -1,9 +1,30 @@
 .footer{
   @extend .background-blue;
+  @extend .c-white;
   width: 100vw;
   @extend .p-0;
   @extend .m-0;
   @extend .flex-center;
+  ul.links{
+    list-style: none;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 100;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    @extend .pr-4;
+    @extend .mb-0;
+    li{
+      a{
+        @extend .c-light-gray;
+        transition: color 250ms ease-out;
+        &:hover{
+          @extend .c-pink;
+        }
+      }
+    }
+  }
 }
 
 // https://css-tricks.com/snippets/css/sticky-footer/

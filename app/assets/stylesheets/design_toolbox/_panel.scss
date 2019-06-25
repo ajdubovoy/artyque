@@ -4,7 +4,7 @@
   @include make-col(12);
   @include media-breakpoint-down(xs) {
     margin: 2.25rem 0 !important;
-    width: calc(100vw - 4.5rem) !important;
+    width: 100vw !important;
   }
   @extend .mt-5;
   @extend .mb-5;

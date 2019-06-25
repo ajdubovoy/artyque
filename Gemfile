@@ -21,6 +21,7 @@ gem 'postmark-rails'
 
 gem 'mail_form'
 gem 'acts_as_list'
+gem 'pundit'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
