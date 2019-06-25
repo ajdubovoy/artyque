@@ -1,27 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe ArtistPolicy, type: :policy do
-  let(:user) { User.new }
+  let(:user) { create(:user, :unauthorized) }
+  let(:scope) { Pundit.policy_scope!(user, Artist) }
 
   subject { described_class }
 
   permissions ".scope" do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :show? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :create? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :update? do
-    pending "add some examples to (or delete) #{__FILE__}"
-  end
-
-  permissions :destroy? do
-    pending "add some examples to (or delete) #{__FILE__}"
+    it "has a scope of all artists" do
+      expect(scope).to eq Artist.all
+    end
   end
 end
