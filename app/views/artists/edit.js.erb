@@ -1,0 +1,6 @@
+function refreshForm(innerHTML) {
+  const form = document.getElementById('edit-form');
+  form.innerHTML = innerHTML;
+}
+
+refreshForm('<%= j render "header", artist: @artist %>');

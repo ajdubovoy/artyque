@@ -1,6 +1,6 @@
 <nav id="edit-navigation" class="secondary-navigation">
   <ul>
-    <li class="<%= "selected" if selected == :header %>"><%= link_to 'Header', "", remote: true %></li>
+    <li class="<%= "selected" if selected == :header %>"><%= link_to 'Header', edit_artist_path(artist), remote: true %></li>
     <li class="<%= "selected" if selected == :layout %>"><%= link_to 'Layout', "", remote: true %></li>
     <li class="<%= "selected" if selected == :artworks %>"><%= link_to 'Artworks', "", remote: true %></li>
     <li class="<%= "selected" if selected == :links %>"><%= link_to 'Links', "", remote: true %></li>
