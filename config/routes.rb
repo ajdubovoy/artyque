@@ -10,5 +10,9 @@ Rails.application.routes.draw do
   get 'admin/dashboard', to: 'admin#dashboard', as: :admin_dashboard
 
   # Artists
-  resources :artists, only: %i[index show new create edit update]
+  resources :artists, only: %i[index show new create edit update] do
+    member do
+      get 'layout'
+    end
+  end
 end

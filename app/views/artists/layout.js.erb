@@ -3,4 +3,4 @@ function refreshDashboard(innerHTML) {
   form.innerHTML = innerHTML;
 }
 
-refreshDashboard('<%= j render "dashboard", artist: @artist, stage: :header %>');
+refreshDashboard('<%= j render "dashboard", artist: @artist, stage: :layout %>');

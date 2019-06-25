@@ -30,4 +30,34 @@ RSpec.describe ArtistsController, type: :controller do
       end
     end
   end
+
+  describe '#layout' do
+    context 'html' do
+      login_admin
+
+      it 'renders the right template' do
+        @artist = create(:artist)
+        get :layout, params: { id: @artist.id }
+        expect(response).to render_template :layout
+      end
+
+      it 'selects the correct artist' do
+        @artist = create(:artist)
+        get :layout, params: { id: @artist.id }
+        expect(assigns(:artist)).to be_instance_of Artist
+        expect(assigns(:artist)).to eq @artist
+      end
+    end
+
+    context 'js' do
+      login_admin
+
+      it 'renders the right template' do
+        @artist = create(:artist)
+        get :layout, params: { id: @artist.id }
+        expect(response).to render_template :layout
+        expect(response.status).to eq(200)
+      end
+    end
+  end
 end

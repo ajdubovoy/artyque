@@ -1,0 +1,20 @@
+<%= simple_form_for artist, remote: true do |f| %>
+  <h2>Layout Style</h2>
+  <div class="p-3">
+    <%= f.input :layout, collection: [1, 2, 3] %>
+  </div>
+  <h2>Banner Content</h2>
+  <div class="p-3">
+    <%= f.input :video %>
+    <%= f.input :quotation %>
+    <%= f.input :quotation_caption %>
+  </div>
+  <h2>Page Content</h2>
+  <div class="p-3">
+    <%= f.input :about_me %>
+  </div>
+  <div class="border-bottom-light-gray mb-3"></div>
+  <div class="p-3">
+    <%= f.button :submit, "Save" %>
+  </div>
+<% end %>
