@@ -1,6 +1,11 @@
 <div class="col-12 col-sm-3">
-  <%= render 'navigation', selected: :header %>
+  <%= render 'navigation', selected: stage %>
 </div>
-<div class="col-12 col-sm-9" id="edit-panel">
-  <div class="panel"></div>
+<div class="col-12 col-sm-9">
+  <div class="form-panel">
+    <% case stage %>
+    <% when :header %>
+      <%= render 'header', artist: artist %>
+    <% end %>
+  </div>
 </div>

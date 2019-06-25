@@ -13,8 +13,8 @@ count = 1
   user = User.create!(email: "artist#{count}@artyque.com", password: '123456', role: :artist)
   artist = Artist.create(
     user: user,
-    color_palette: %w[plain angular curved].sample,
-    shape: [1, 2, 3].sample,
+    shape: %i[plain angular curved].sample,
+    color_palette: [1, 2, 3].sample,
     super_title: Faker::Lorem.sentence(3),
     title: Faker::Lorem.sentence(5),
     description: Faker::Lorem.sentences(3).join,
