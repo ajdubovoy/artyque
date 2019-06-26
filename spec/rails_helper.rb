@@ -52,6 +52,7 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
   config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include ViewMacros, type: :view
   config.include Warden::Test::Helpers
 
   # RSpec Rails can automatically mix in different behaviours to your tests

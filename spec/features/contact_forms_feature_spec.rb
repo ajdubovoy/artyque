@@ -1,4 +1,6 @@
-describe "ContactFormsFeature", type: :feature do
+require 'rails_helper'
+
+describe "ContactFormsFeature", type: :view do
   it "delivers a valid message" do
     visit '/'
     fill_in 'First name', match: :first, :with => 'Aaron'

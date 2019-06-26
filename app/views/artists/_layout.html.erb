@@ -1,0 +1,47 @@
+<%= simple_form_for artist, remote: true do |f| %>
+  <h2>Layout Style</h2>
+  <div class="p-3">
+    <%= f.input :layout, collection: [1, 2, 3] %>
+  </div>
+  <h2>Banner Content</h2>
+  <div class="p-3">
+    <%= f.input :video %>
+    <%= f.input :quotation %>
+    <%= f.input :quotation_caption %>
+  </div>
+  <h2>Page Content</h2>
+  <h3>About Me</h3>
+  <div class="p-3">
+    <%= f.input :about_me, label: false %>
+  </div>
+  <% @blocks.each_with_index do |block, index| %>
+    <h3>Block <%= index + 1 %></h3>
+    <div class="p-3">
+      <%= simple_fields_for block, remote: true do |b| %>
+        <div class="form-inline pb-3">
+          <%= b.input :title, label_html: { class: 'pr-3' } %>
+        </div>
+        <% block.items.each do |item| %>
+          <div class="row">
+            <%= simple_fields_for item, remote: true do |i| %>
+              <div class="col-12 col-sm-4">
+                <%= i.input :description %>
+              </div>
+              <div class="col-12 col-sm-4">
+                <%= i.input :label %>
+              </div>
+              <div class="col-12 col-sm-4">
+                <%= i.input :year %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+  <div class="border-bottom-light-gray mb-3"></div>
+  <div class="p-3">
+    <%= f.button :submit, "Save" %>
+  </div>
+<% end %>
+

@@ -1,9 +1,9 @@
 <nav id="edit-navigation" class="secondary-navigation">
   <ul>
-    <li class="<%= "selected" if selected == :header %>"><%= link_to 'Header', "", remote: true %></li>
-    <li class="<%= "selected" if selected == :layout %>"><%= link_to 'Layout', "", remote: true %></li>
-    <li class="<%= "selected" if selected == :artworks %>"><%= link_to 'Artworks', "", remote: true %></li>
-    <li class="<%= "selected" if selected == :links %>"><%= link_to 'Links', "", remote: true %></li>
-    <li class="<%= "selected" if selected == :upcoming_projects %>"><%= link_to 'Upcoming Projects', "", remote: true %></li>
+    <li class="<%= "selected" if stage == :header %>"><%= link_to 'Header', edit_artist_path(artist), remote: true %></li>
+    <li class="<%= "selected" if stage == :layout %>"><%= link_to 'Layout', layout_artist_path(artist), remote: true %></li>
+    <li class="<%= "selected" if stage == :artworks %>"><%= link_to 'Artworks', "", remote: true %></li>
+    <li class="<%= "selected" if stage == :links %>"><%= link_to 'Links', "", remote: true %></li>
+    <li class="<%= "selected" if stage == :upcoming_projects %>"><%= link_to 'Upcoming Projects', "", remote: true %></li>
   </ul>
 </nav>

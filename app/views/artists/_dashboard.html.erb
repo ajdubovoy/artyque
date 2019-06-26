@@ -1,5 +1,5 @@
 <div class="col-12 col-sm-3">
-  <%= render 'navigation', selected: stage %>
+  <%= render 'navigation', stage: stage, artist: artist %>
 </div>
 <div class="col-12 col-sm-9">
   <div class="form-panel">
@@ -7,6 +7,8 @@
       <% case stage %>
       <% when :header %>
         <%= render 'header', artist: artist %>
+      <% when :layout %>
+        <%= render 'layout', artist: artist %>
       <% end %>
     </div>
   </div>
