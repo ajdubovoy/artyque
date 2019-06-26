@@ -15,4 +15,14 @@
       @extend .shadow-box-dark;
     }
   }
+  &-tertiary{
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .shadow-box-light;
+    background: transparent;
+    @extend .c-blue;
+    &:hover{
+      @extend .shadow-box-dark;
+    }
+  }
 }

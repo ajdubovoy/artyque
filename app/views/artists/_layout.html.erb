@@ -19,8 +19,8 @@
     <%= f.simple_fields_for :resume_blocks do |block| %>
       <%= render 'resume_block_fields', f: block %>
     <% end %>
-    <div class="p-3">
-      <%= link_to_add_association 'Add block', f, :resume_blocks %>
+    <div class="pl-3 pr-3 pb-3">
+      <%= link_to_add_association '+ Add block', f, :resume_blocks, class: 'button-tertiary w-100' %>
     </div>
   </div>
   <div class="border-bottom-light-gray mb-3"></div>
