@@ -14,31 +14,15 @@
   <div class="p-3">
     <%= f.input :about_me, label: false %>
   </div>
-  <% @blocks.each_with_index do |block, index| %>
-    <h3>Block <%= index + 1 %></h3>
+  <h2>Resume</h2>
+  <div id="resume-blocks-fields">
+    <%= f.simple_fields_for :resume_blocks do |block| %>
+      <%= render 'resume_block_fields', f: block %>
+    <% end %>
     <div class="p-3">
-      <%= simple_fields_for block, remote: true do |b| %>
-        <div class="form-inline pb-3">
-          <%= b.input :title, label_html: { class: 'pr-3' } %>
-        </div>
-        <% block.items.each do |item| %>
-          <div class="row">
-            <%= simple_fields_for item, remote: true do |i| %>
-              <div class="col-12 col-sm-4">
-                <%= i.input :description %>
-              </div>
-              <div class="col-12 col-sm-4">
-                <%= i.input :label %>
-              </div>
-              <div class="col-12 col-sm-4">
-                <%= i.input :year %>
-              </div>
-            <% end %>
-          </div>
-        <% end %>
-      <% end %>
+      <%= link_to_add_association 'Add block', f, :resume_blocks %>
     </div>
-  <% end %>
+  </div>
   <div class="border-bottom-light-gray mb-3"></div>
   <div class="p-3">
     <%= f.button :submit, "Save" %>

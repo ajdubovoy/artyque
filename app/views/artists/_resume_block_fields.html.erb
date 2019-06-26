@@ -1,0 +1,12 @@
+<div class="nested-fields">
+  <h3>Block</h3>
+  <div class="form-inline pl-3 pr-3 pt-3">
+    <%= f.input :title, label_html: { class: 'pr-3' } %>
+  </div>
+  <%= f.simple_fields_for :resume_items do |item| %>
+    <%= render 'resume_item_fields', f: item %>
+  <% end %>
+  <div class="pl-3 pr-3 pb-3">
+    <%= link_to_add_association 'Add item', f, :resume_items %>
+  </div>
+</div>
