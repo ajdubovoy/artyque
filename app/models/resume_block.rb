@@ -4,4 +4,5 @@ class ResumeBlock < ApplicationRecord
   alias_attribute :items, :resume_items
   acts_as_list scope: :artist
   validates :title, presence: true
+  accepts_nested_attributes_for :resume_items, reject_if: :all_blank, allow_destroy: true
 end
