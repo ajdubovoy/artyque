@@ -35,4 +35,11 @@ describe "ArtistsFeature", type: :view do
     expect(page.find_field('artist_layout')).to be_visible
     expect(page.find('li.selected').text).to eq 'Layout'
   end
+
+  it "displays fields for the resume blocks" do
+    login_admin
+    artist = create(:artist)
+    visit layout_artist_path(artist)
+    expect(page).to have_field('resume_block_title')
+  end
 end

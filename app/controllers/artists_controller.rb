@@ -4,7 +4,9 @@ class ArtistsController < ApplicationController
 
   def edit;end
 
-  def layout;end
+  def layout
+    @blocks = @artist.blocks
+  end
 
   private
 

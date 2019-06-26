@@ -14,5 +14,10 @@ FactoryBot.define do
     photo { "" }
     about_me { Faker::Lorem.paragraph }
     name { Faker::Name.name }
+    after :create do |artist|
+      create_list :resume_block, 3, artist: artist
+      create_list :link, 3, artist: artist
+      create_list :upcoming_project, 3, artist: artist
+    end
   end
 end

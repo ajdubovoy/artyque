@@ -3,7 +3,7 @@ FactoryBot.define do
     artist { nil }
     title { "MyString" }
     description { "MyString" }
-    url { "MyString" }
+    url { Faker::Internet.url }
     year { 1 }
     photo { "test.jpg" }
   end

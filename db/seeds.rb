@@ -1,3 +1,4 @@
+p "Destroying previous seeds"
 Artist.destroy_all
 User.destroy_all
 
@@ -28,7 +29,13 @@ count = 1
   )
   artist.remote_photo_url = 'https://unsplash.com/photos/hE8Mog4qK4Y/download?force=true'
   artist.save!
-  artist.remote_video_url = 'https://gcs-vimeo.akamaized.net/exp=1561483082~acl=%2A%2F722787376.mp4%2A~hmac=3f97e322b701a557317b025ea9f0ddbfe514e8777575b1cd819eb3b9ed9c49ac/vimeo-prod-skyfire-std-us/01/2150/8/210754313/722787376.mp4?download=1&filename=Pexels+Videos+2916.mp4'
+  artist.remote_video_url = 'https://www.videezy.com/download/5923?download_auth_hash=ce742c98&pro=false'
   artist.save!
   count += 1
+  3.times do
+    ResumeBlock.create!(
+      artist: artist,
+      title: Faker::Lorem.word
+    )
+  end
 end
