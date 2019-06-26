@@ -33,9 +33,17 @@ count = 1
   artist.save!
   count += 1
   3.times do
-    ResumeBlock.create!(
+    resume_block = ResumeBlock.create!(
       artist: artist,
       title: Faker::Lorem.word
     )
+    3.times do
+      ResumeItem.create!(
+        resume_block: resume_block,
+        description: Faker::Lorem.word,
+        label: Faker::Lorem.word,
+        year: Faker::Date.backward(2000)
+      )
+    end
   end
 end

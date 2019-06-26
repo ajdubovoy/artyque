@@ -18,7 +18,24 @@
     <h3>Block <%= index + 1 %></h3>
     <div class="p-3">
       <%= simple_fields_for block, remote: true do |b| %>
-        <%= b.input :title %>
+        <div class="form-inline pb-3">
+          <%= b.input :title, label_html: { class: 'pr-3' } %>
+        </div>
+        <% block.items.each do |item| %>
+          <div class="row">
+            <%= simple_fields_for item, remote: true do |i| %>
+              <div class="col-12 col-sm-4">
+                <%= i.input :description %>
+              </div>
+              <div class="col-12 col-sm-4">
+                <%= i.input :label %>
+              </div>
+              <div class="col-12 col-sm-4">
+                <%= i.input :year %>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
       <% end %>
     </div>
   <% end %>
@@ -27,3 +44,4 @@
     <%= f.button :submit, "Save" %>
   </div>
 <% end %>
+

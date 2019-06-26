@@ -42,4 +42,11 @@ describe "ArtistsFeature", type: :view do
     visit layout_artist_path(artist)
     expect(page).to have_field('resume_block_title')
   end
+
+  it "displays fields for the resume items" do
+    login_admin
+    artist = create(:artist)
+    visit layout_artist_path(artist)
+    expect(page).to have_field('resume_item_description')
+  end
 end
