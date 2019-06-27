@@ -7,7 +7,8 @@
     "flickity": "^2.2.0",
     "jquery": "^3.4.1",
     "package": "^1.0.1",
-    "popper.js": "^1.15.0"
+    "popper.js": "^1.15.0",
+    "sortablejs": "^1.10.0-rc3"
   },
   "devDependencies": {
     "webpack-dev-server": "^3.3.1"

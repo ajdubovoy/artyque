@@ -1,9 +1,10 @@
-<div class="nested-fields">
+<div class="nested-fields cursor-move">
   <div class="row p-3 flex-center">
     <div class="col-12 col-sm-10">
       <div class="row">
         <div class="col-12 col-sm-4">
           <%= f.input :description %>
+          <%= f.input :position, as: :hidden %>
         </div>
         <div class="col-12 col-sm-4">
           <%= f.input :label, required: false %>
