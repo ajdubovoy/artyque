@@ -45,4 +45,4 @@ function initSortable() {
   }
 }
 
-initSortable();
+export default initSortable;
