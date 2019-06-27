@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :artists, only: %i[index show new create edit update] do
     member do
       get 'layout'
+      get 'edit_collections'
     end
   end
 end
