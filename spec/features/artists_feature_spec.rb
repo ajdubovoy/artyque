@@ -71,5 +71,8 @@ describe "ArtistsFeature", type: :view do
     visit edit_collections_artist_path(artist)
     click_link "+ Add collection"
     expect(page).to have_field('Name')
+    click_link "< Back"
+    expect(page.find('li.selected').text).to eq 'Artworks'
+    expect(page).to have_text artist.collections.sample.name
   end
 end
