@@ -64,4 +64,12 @@ describe "ArtistsFeature", type: :view do
     visit edit_collections_artist_path(artist)
     expect(page.find('li.selected').text).to eq 'Artworks'
   end
+
+  it "displays the add collection form from the edit_collections page via ajax" do
+    login_admin
+    artist = create(:artist)
+    visit edit_collections_artist_path(artist)
+    click_link "+ Add collection"
+    expect(page).to have_field('Name')
+  end
 end
