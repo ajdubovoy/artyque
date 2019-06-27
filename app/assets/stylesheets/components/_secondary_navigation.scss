@@ -1,6 +1,10 @@
 .secondary-navigation{
   @extend .panel;
   padding: 0 !important;
+  @include media-breakpoint-up(sm){
+    position: sticky;
+    top: 1rem;
+  }
   ul{
     list-style: none;
     @extend .p-0;
