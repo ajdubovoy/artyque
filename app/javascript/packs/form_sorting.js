@@ -29,6 +29,7 @@ function initSortable() {
         fallbackOnBody: true,
         invertSwap: true,
         swapThreshold: 0.4,
+        dragClass: 'nested-fields',
         onSort: (event) => {
           const parent = event.item.closest('.resume-items-fields');
           const positions = parent.querySelectorAll('.artist_resume_blocks_resume_items_position');
