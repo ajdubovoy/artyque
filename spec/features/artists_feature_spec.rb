@@ -49,4 +49,30 @@ describe "ArtistsFeature", type: :view do
     visit layout_artist_path(artist)
     expect(page).to have_field('Description')
   end
+
+  it "refreshes the artworks section via ajax when coming from another section" do
+    login_admin
+    artist = create(:artist)
+    visit edit_artist_path(artist)
+    click_link "Artworks"
+    expect(page.find('li.selected').text).to eq 'Artworks'
+  end
+
+  it "displays the edit_collections page properly through html and not just js" do
+    login_admin
+    artist = create(:artist)
+    visit edit_collections_artist_path(artist)
+    expect(page.find('li.selected').text).to eq 'Artworks'
+  end
+
+  it "displays the add collection form from the edit_collections page via ajax" do
+    login_admin
+    artist = create(:artist)
+    visit edit_collections_artist_path(artist)
+    click_link "+ Add collection"
+    expect(page).to have_field('Name')
+    click_link "< Back"
+    expect(page.find('li.selected').text).to eq 'Artworks'
+    expect(page).to have_text artist.collections.sample.name
+  end
 end

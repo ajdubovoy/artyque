@@ -1,10 +1,12 @@
 class ArtistsController < ApplicationController
-  before_action :set_artist, only: %i[edit layout]
-  after_action :respond_with_js, only: %i[edit layout]
+  before_action :set_artist, only: %i[edit layout edit_collections]
+  after_action :respond_with_js, only: %i[edit layout edit_collections]
 
   def edit;end
 
   def layout;end
+
+  def edit_collections;end
 
   private
 

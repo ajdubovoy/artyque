@@ -37,12 +37,28 @@ count = 1
       artist: artist,
       title: Faker::Lorem.word
     )
+    collection = Collection.create!(
+      artist: artist,
+      name: Faker::Lorem.word
+    )
     3.times do
       ResumeItem.create!(
         resume_block: resume_block,
         description: Faker::Lorem.word,
         label: Faker::Lorem.word,
         year: Faker::Date.backward(2000)
+      )
+      Artwork.create!(
+        collection: collection,
+        name: Faker::Lorem.word,
+        description: Faker::Lorem.sentence,
+        width: rand(100),
+        height: rand(100),
+        depth: rand(100),
+        year: rand(3000),
+        medium: %w[Scuplture Painting Architecture Performance].sample,
+        price: rand(10000),
+        weight: rand(100)
       )
     end
   end

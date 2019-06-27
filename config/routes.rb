@@ -11,8 +11,10 @@ Rails.application.routes.draw do
 
   # Artists
   resources :artists, only: %i[index show new create edit update] do
+    resources :collections, only: %i[new create]
     member do
       get 'layout'
+      get 'edit_collections'
     end
   end
 end

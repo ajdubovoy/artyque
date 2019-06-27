@@ -18,6 +18,7 @@ FactoryBot.define do
       create_list :resume_block, 3, artist: artist
       create_list :link, 3, artist: artist
       create_list :upcoming_project, 3, artist: artist
+      create_list :collection, 3, artist: artist
     end
   end
 end

@@ -9,6 +9,8 @@
         <%= render 'header', artist: artist %>
       <% when :layout %>
         <%= render 'layout', artist: artist %>
+      <% when :artworks %>
+        <%= render 'edit_collections', artist: artist %>
       <% end %>
     </div>
   </div>
