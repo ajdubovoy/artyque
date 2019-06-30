@@ -75,4 +75,15 @@ describe "ArtistsFeature", type: :view do
     expect(page.find('li.selected').text).to eq 'Artworks'
     expect(page).to have_text artist.collections.sample.name
   end
+
+  it "lets you add a collection from the new collection form" do
+    login_admin
+    artist = create(:artist)
+    visit edit_collections_artist_path(artist)
+    click_link "+ Add collection"
+    fill_in 'Name', with: 'Test Name'
+    click_button 'Save'
+    expect(page.find('li.selected').text).to eq 'Artworks'
+    expect(page).to have_text 'Test Name'
+  end
 end
