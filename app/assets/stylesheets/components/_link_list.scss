@@ -1,0 +1,34 @@
+ul.link-list{
+  @extend .list-group;
+  li{
+    @extend .list-group-item;
+    @extend .list-group-item-action;
+    @extend .mt-2;
+    @extend .mb-2;
+    @extend .pt-2;
+    @extend .pb-2;
+    @extend .shadow-box-light;
+    display: flex;
+    align-items: center;
+    transition: background 150ms ease-out, box-shadow 150ms ease-out;
+    &:hover{
+      @extend .shadow-box-dark;
+    }
+    .text{
+      flex-grow: 2;
+      width: 100%;
+    }
+    .image{
+      height: 80px;
+      width: 86px;
+      @extend .mr-2;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img{
+        width: 86px;
+      }
+    }
+  }
+}

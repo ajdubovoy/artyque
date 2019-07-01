@@ -1,10 +1,19 @@
 <%= simple_form_for artist, remote: true do |f| %>
   <h2>Collections</h2>
   <div class="p-3">
-    <ul class="list-group">
+    <ul class="link-list">
       <% @artist.collections.each do |collection| %>
         <%= link_to '' do %>
-          <li class="list-group-item list-group-item-action"><%= collection.name %></li>  
+          <li>
+            <div class="text">
+              <%= collection.name %>
+            </div>
+            <div class="image">
+              <% if collection.photos.present? %>
+                <%= cl_image_tage collection.photos.first %>
+              <% end %>
+            </div>
+          </li>  
         <% end %>
       <% end %>
     </ul>
