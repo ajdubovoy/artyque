@@ -3,7 +3,7 @@
     <li class="<%= "selected" if stage == :header %>"><%= link_to 'Header', edit_artist_path(artist), remote: true %></li>
     <li class="<%= "selected" if stage == :layout %>"><%= link_to 'Layout', layout_artist_path(artist), remote: true %></li>
     <li class="<%= "selected" if stage == :artworks %>"><%= link_to 'Artworks', edit_collections_artist_path(artist), remote: true %></li>
-    <li class="<%= "selected" if stage == :links %>"><%= link_to 'Links', "", remote: true %></li>
+    <li class="<%= "selected" if stage == :links %>"><%= link_to 'Links', edit_links_artist_path(artist), remote: true %></li>
     <li class="<%= "selected" if stage == :upcoming_projects %>"><%= link_to 'Upcoming Projects', "", remote: true %></li>
   </ul>
 </nav>

@@ -14,10 +14,19 @@
   </div>
   <div class="row">
     <div class="col">
-      <ul class="list-group">
+      <ul class="link-list">
         <% @artists.each do |artist| %>
           <%= link_to edit_artist_path(artist) do %>
-            <li class="list-group-item list-group-item-action"><%= artist.name %></li>  
+            <li>
+              <div class="text">
+                <%= artist.name %>
+              </div>
+              <div class="image">
+                <% if artist.photo.present? %>
+                  <%= cl_image_tag artist.photo %>
+                <% end %>
+              </div>
+            </li>  
           <% end %>
         <% end %>
       </ul>

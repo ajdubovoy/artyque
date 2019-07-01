@@ -75,13 +75,13 @@ RSpec.describe ArtistsController, type: :controller do
 
       it 'renders the right template' do
         @artist = create(:artist)
-        get :layout, params: { id: @artist.id }
-        expect(response).to render_template :layout
+        get :edit_collections, params: { id: @artist.id }
+        expect(response).to render_template :edit_collections
       end
 
       it 'selects the correct artist' do
         @artist = create(:artist)
-        get :layout, params: { id: @artist.id }
+        get :edit_collections, params: { id: @artist.id }
         expect(assigns(:artist)).to be_instance_of Artist
         expect(assigns(:artist)).to eq @artist
       end
@@ -92,8 +92,38 @@ RSpec.describe ArtistsController, type: :controller do
 
       it 'renders the right template' do
         @artist = create(:artist)
-        get :layout, params: { id: @artist.id }
-        expect(response).to render_template :layout
+        get :edit_collections, params: { id: @artist.id }
+        expect(response).to render_template :edit_collections
+        expect(response.status).to eq(200)
+      end
+    end
+  end
+
+  describe '#edit_links' do
+    context 'html' do
+      login_admin
+
+      it 'renders the right template' do
+        @artist = create(:artist)
+        get :edit_links, params: { id: @artist.id }
+        expect(response).to render_template :edit_links
+      end
+
+      it 'selects the correct artist' do
+        @artist = create(:artist)
+        get :edit_links, params: { id: @artist.id }
+        expect(assigns(:artist)).to be_instance_of Artist
+        expect(assigns(:artist)).to eq @artist
+      end
+    end
+
+    context 'js' do
+      login_admin
+
+      it 'renders the right template' do
+        @artist = create(:artist)
+        get :edit_links, params: { id: @artist.id }
+        expect(response).to render_template :edit_links
         expect(response.status).to eq(200)
       end
     end

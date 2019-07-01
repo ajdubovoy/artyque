@@ -96,5 +96,46 @@ describe "ArtistsFeature", type: :view do
       click_button 'Save'
       expect(page).to have_text 'blank'
     end
+
+    it "displays the edit_links page properly through html and not just js" do
+      login_admin
+      artist = create(:artist)
+      visit edit_links_artist_path(artist)
+      expect(page.find('li.selected').text).to eq 'Links'
+    end
+
+    it "displays the add link form from the edit_link page via ajax" do
+      login_admin
+      artist = create(:artist)
+      visit edit_links_artist_path(artist)
+      click_link "+ Add link"
+      expect(page).to have_field('Title')
+      click_link "< Back"
+      expect(page.find('li.selected').text).to eq 'Links'
+      expect(page).to have_text artist.links.sample.title
+    end
+
+    it "lets you add a link from the new link form" do
+      login_admin
+      artist = create(:artist)
+      visit edit_links_artist_path(artist)
+      click_link "+ Add link"
+      fill_in 'Title', with: 'Test Title'
+      fill_in 'Description', with: 'Test Description'
+      fill_in 'Url', with: 'http://www.apple.com'
+      fill_in 'Year', with: '2019'
+      click_button 'Save'
+      expect(page.find('li.selected').text).to eq 'Links'
+      expect(page).to have_text 'Test Title'
+    end
+
+    it "displays errors for an invalid input to the new link form" do
+      login_admin
+      artist = create(:artist)
+      visit edit_links_artist_path(artist)
+      click_link "+ Add link"
+      click_button 'Save'
+      expect(page).to have_text 'blank'
+    end
   end
 end

@@ -11,6 +11,8 @@
         <%= render 'layout', artist: artist %>
       <% when :artworks %>
         <%= render 'edit_collections', artist: artist %>
+      <% when :links %>
+        <%= render 'edit_links', artist: artist %>
       <% end %>
     </div>
   </div>

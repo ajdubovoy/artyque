@@ -1,0 +1,7 @@
+<div class="p-3">
+  <%= link_to "< Back", edit_links_artist_path(artist), remote: true, class: 'button-tertiary' %>
+</div>
+<h2>New Link</h2>
+<%= simple_form_for [artist, link], remote: true do |f| %>
+  <%= render 'fields', f: f %>
+<% end %>
