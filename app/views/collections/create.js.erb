@@ -1,0 +1,11 @@
+function refreshForm(innerHTML) {
+  const form = document.getElementById('edit-form');
+  form.innerHTML = innerHTML;
+}
+
+<% if @collection.valid? %>
+  refreshForm('<%= j render "artists/edit_collections", artist: @artist %>');
+<% else %>
+  refreshForm('<%= j render "new", artist: @artist, collection: @collection %>');
+<% end %>
+window.init();

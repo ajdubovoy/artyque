@@ -3,6 +3,9 @@ class CollectionPolicy < ApplicationPolicy
     return user && (user.admin? || record.artist.user == user)
   end
 
+  def create?
+    return new?
+  end
 
   class Scope < Scope
     def resolve
