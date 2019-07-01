@@ -11,6 +11,10 @@ class ArtistPolicy < ApplicationPolicy
     return edit?
   end
 
+  def edit_links?
+    return edit?
+  end
+
   class Scope < Scope
     def resolve
       scope.all

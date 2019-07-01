@@ -1,24 +1,22 @@
-<%= simple_form_for artist, remote: true do |f| %>
-  <h2>Collections</h2>
-  <div class="p-3">
-    <ul class="link-list">
-      <% @artist.collections.each do |collection| %>
-        <%= link_to '' do %>
-          <li>
-            <div class="text">
-              <%= collection.name %>
-            </div>
-            <div class="image">
-              <% if collection.photos.present? %>
-                <%= cl_image_tage collection.photos.first %>
-              <% end %>
-            </div>
-          </li>  
-        <% end %>
+<h2>Collections</h2>
+<div class="p-3">
+  <ul class="link-list">
+    <% @artist.collections.each do |collection| %>
+      <%= link_to '' do %>
+        <li>
+          <div class="text">
+            <%= collection.name %>
+          </div>
+          <div class="image">
+            <% if collection.photos.present? %>
+              <%= cl_image_tage collection.photos.first %>
+            <% end %>
+          </div>
+        </li>  
       <% end %>
-    </ul>
-  </div>
-<% end %>
+    <% end %>
+  </ul>
+</div>
 
 <div class="p-3">
   <%= link_to '+ Add collection', new_artist_collection_path(@artist), remote: true, class: 'button-tertiary w-100' %>

@@ -3,8 +3,11 @@ FactoryBot.define do
     artist { nil }
     title { "MyString" }
     description { "MyString" }
-    url { Faker::Internet.url }
+    url { "https://www.apple.com" }
     year { 1 }
-    photo { "test.jpg" }
+    trait :invalid do
+      title { '' }
+      url { 'totally invalid url' }
+    end
   end
 end

@@ -1,0 +1,23 @@
+<h2>Links</h2>
+<div class="p-3">
+  <ul class="link-list">
+    <% @artist.links.each do |link| %>
+      <%= link_to edit_link_path(link), remote: true do %>
+        <li>
+          <div class="text">
+            <%= link.title %>
+          </div>
+          <div class="image">
+            <% if link.photo.present? %>
+              <%= cl_image_tage link.photo %>
+            <% end %>
+          </div>
+        </li>  
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+
+<div class="p-3">
+  <%= link_to '+ Add link', new_artist_link_path(@artist), remote: true, class: 'button-tertiary w-100' %>
+</div>
