@@ -156,7 +156,7 @@ RSpec.describe LinksController, type: :controller do
           @artist = create(:artist)
           @link = @artist.links.sample
           link_attributes = FactoryBot.attributes_for(:link, :invalid)
-          patch :update, params: { id: @link.id, link: link_attributes, format: :js }
+          patch :update, params: { id: @link.id, link: link_attributes }
           expect(response).to render_template :edit
         end
       end

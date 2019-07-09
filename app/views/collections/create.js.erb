@@ -4,8 +4,8 @@ function refreshForm(innerHTML) {
 }
 
 <% if @collection.errors.any? %>
-  refreshForm('<%= j render "artists/edit_collections", artist: @artist %>');
-<% else %>
   refreshForm('<%= j render "new", artist: @artist, collection: @collection %>');
+<% else %>
+  refreshForm('<%= j render "artists/edit_collections", artist: @artist %>');
 <% end %>
 window.init();
