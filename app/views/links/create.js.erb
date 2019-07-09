@@ -4,8 +4,8 @@ function refreshForm(innerHTML) {
 }
 
 <% if @link.errors.any? %>
-  refreshForm('<%= j render "artists/edit_links", artist: @artist, link: Link.new %>');
-<% else %>
   refreshForm('<%= j render "new", artist: @artist, link: @link %>');
+<% else %>
+  refreshForm('<%= j render "artists/edit_links", artist: @artist, link: Link.new %>');
 <% end %>
 window.init();
