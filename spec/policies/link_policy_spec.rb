@@ -3,8 +3,6 @@ require 'rails_helper'
 RSpec.describe LinkPolicy, type: :policy do
   let(:user) { User.new }
 
-  let(:user) { User.new }
-
   subject { described_class }
 
   permissions :new? do

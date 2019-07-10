@@ -6,5 +6,9 @@ FactoryBot.define do
     location { "MyString" }
     date { "MyString" }
     photo { "test.jpg" }
+
+    trait :invalid do
+      title { '' }
+    end
   end
 end
