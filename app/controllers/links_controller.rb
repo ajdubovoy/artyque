@@ -14,7 +14,7 @@ class LinksController < ApplicationController
     authorize @link
     if @link.save
       respond_to do |format|
-        format.html { redirect_to edit_links_artist_path(@link.artist) }
+        format.html { redirect_to edit_artist_path(@link.artist, stage: :links) }
         format.js
       end
     else
@@ -30,7 +30,7 @@ class LinksController < ApplicationController
   def update
     if @link.update(link_params)
       respond_to do |format|
-        format.html { redirect_to edit_links_artist_path(@link.artist) }
+        format.html { redirect_to edit_artist_path(@link.artist, stage: :links) }
         format.js
       end
     else
