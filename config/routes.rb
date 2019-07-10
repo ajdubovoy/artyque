@@ -13,11 +13,6 @@ Rails.application.routes.draw do
   resources :artists, only: %i[edit update] do
     resources :collections, only: %i[new create]
     resources :links, only: %i[new create]
-    member do
-      get 'layout'
-      get 'edit_collections'
-      get 'edit_links'
-    end
   end
 
   resources :links, only: %i[edit update]

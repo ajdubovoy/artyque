@@ -1,5 +1,5 @@
 <div class="p-3">
-  <%= link_to "< Back", edit_links_artist_path(artist), remote: true, class: 'button-tertiary' %>
+  <%= link_to "< Back", edit_artist_path(artist, stage: :links), remote: true, class: 'button-tertiary' %>
 </div>
 <h2>Edit Link</h2>
 <%= simple_form_for link, remote: true do |f| %>

@@ -1,14 +1,10 @@
 class ArtistsController < ApplicationController
-  before_action :set_artist, only: %i[edit layout edit_collections edit_links]
-  after_action :respond_with_js, only: %i[edit layout edit_collections edit_links]
+  before_action :set_artist, only: %i[edit]
+  after_action :respond_with_js, only: %i[edit]
 
-  def edit;end
-
-  def layout;end
-
-  def edit_collections;end
-
-  def edit_links;end
+  def edit
+    @stage = params[:stage].present? ? params[:stage].to_sym : :header # View decides which part of the form to render based on this
+  end
 
   private
 

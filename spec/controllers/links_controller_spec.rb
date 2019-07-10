@@ -47,7 +47,7 @@ RSpec.describe LinksController, type: :controller do
           @artist = create(:artist)
           link_attributes = FactoryBot.attributes_for(:link)
           post :create, params: { artist_id: @artist.id, link: link_attributes }
-          expect(response).to redirect_to edit_links_artist_path(@artist)
+          expect(response).to redirect_to edit_artist_path(@artist, stage: :links)
         end
       end
 
@@ -131,7 +131,7 @@ RSpec.describe LinksController, type: :controller do
           @link = @artist.links.sample
           link_attributes = FactoryBot.attributes_for(:link)
           patch :update, params: { id: @link.id, link: link_attributes }
-          expect(response).to redirect_to edit_links_artist_path(@artist)
+          expect(response).to redirect_to edit_artist_path(@artist, stage: :links)
         end
       end
 

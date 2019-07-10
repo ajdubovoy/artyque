@@ -13,7 +13,7 @@ class CollectionsController < ApplicationController
     authorize @collection
     if @collection.save
       respond_to do |format|
-        format.html { redirect_to edit_collections_artist_path(@collection.artist) }
+        format.html { redirect_to edit_artist_path(@collection.artist, stage: :artworks) }
         format.js
       end
     else

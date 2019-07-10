@@ -47,7 +47,7 @@ RSpec.describe CollectionsController, type: :controller do
           @artist = create(:artist)
           collection_attributes = FactoryBot.attributes_for(:collection)
           post :create, params: { artist_id: @artist.id, collection: collection_attributes }
-          expect(response).to redirect_to edit_collections_artist_path(@artist)
+          expect(response).to redirect_to edit_artist_path(@artist, stage: :artworks)
         end
       end
 
