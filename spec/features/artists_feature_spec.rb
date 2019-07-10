@@ -137,5 +137,46 @@ describe "ArtistsFeature", type: :view do
       click_button 'Save'
       expect(page).to have_text 'blank'
     end
+
+    it "displays the .upcoming_projects page properly through html and not just js" do
+      login_admin
+      artist = create(:artist)
+      visit edit_artist_path(artist, stage: :upcoming_projects)
+      expect(page.find('li.selected').text).to eq 'Upcoming Projects'
+    end
+
+    it "displays the add upcoming_project form from the .upcoming_projects page via ajax" do
+      login_admin
+      artist = create(:artist)
+      visit edit_artist_path(artist, stage: :upcoming_projects)
+      click_link "+ Add upcoming project"
+      expect(page).to have_field('Title')
+      click_link "< Back"
+      expect(page.find('li.selected').text).to eq 'Upcoming Projects'
+      expect(page).to have_text artist.upcoming_projects.sample.title
+    end
+
+    it "lets you add a upcoming_project from the new upcoming_project form" do
+      login_admin
+      artist = create(:artist)
+      visit edit_artist_path(artist, stage: :upcoming_projects)
+      click_link "+ Add upcoming project"
+      fill_in 'Title', with: 'Test Title'
+      fill_in 'Description', with: 'Test Description'
+      fill_in 'Location', with: 'A city near you'
+      fill_in 'Date', with: '2019'
+      click_button 'Save'
+      expect(page.find('li.selected').text).to eq 'Upcoming Projects'
+      expect(page).to have_text 'Test Title'
+    end
+
+    it "displays errors for an invalid input to the new upcoming_project form" do
+      login_admin
+      artist = create(:artist)
+      visit edit_artist_path(artist, stage: :upcoming_projects)
+      click_link "+ Add upcoming project"
+      click_button 'Save'
+      expect(page).to have_text 'blank'
+    end
   end
 end

@@ -10,9 +10,11 @@
       <% when :layout %>
         <%= render 'layout', artist: artist %>
       <% when :artworks %>
-        <%= render 'edit_collections', artist: artist %>
+        <%= render 'artworks', artist: artist %>
       <% when :links %>
-        <%= render 'edit_links', artist: artist %>
+        <%= render 'links', artist: artist %>
+      <% when :upcoming_projects %>
+        <%= render 'upcoming_projects', artist: artist %>
       <% end %>
     </div>
   </div>
