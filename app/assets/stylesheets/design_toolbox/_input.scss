@@ -48,5 +48,9 @@ select {
       border: none;
       display: none;
     }
+    &:focus, &:active{
+      @extend .shadow-box-dark;
+      @extend .border-light-blue;
+    }
   }
 }
