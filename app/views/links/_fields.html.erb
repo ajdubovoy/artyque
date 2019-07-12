@@ -3,7 +3,8 @@
   <%= f.input :description %>
   <%= f.input :url %>
   <%= f.input :year %>
-  <%= f.input :photo %>
+  <label for="photo">Photo</label>
+  <%= render 'shared/photo_uploader', f: f %>
 </div>
 <div class="border-bottom-light-gray mb-3"></div>
 <div class="p-3">

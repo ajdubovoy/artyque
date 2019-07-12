@@ -27,3 +27,26 @@ select {
    -webkit-appearance: none !important;
    // Fixes up some specificities of selects that look dumb
 }
+
+.file-input{
+  @extend .custom-file;
+  font-size: 3rem;
+  input{
+    // @extend .custom-file-input;
+    background-color: $gray;
+    font-size: 3rem;
+  }
+  label{
+    @extend .custom-file-label;
+    border: 1px solid #EFEFEF !important;
+    text-align: center;
+    font-size: 3rem;
+    color: $light-gray;
+    &::after{
+      content: '';
+      background-color: transparent;
+      border: none;
+      display: none;
+    }
+  }
+}
