@@ -5,8 +5,7 @@ export default class extends Controller {
 
   initialize() {
     this.buttonTargets.forEach((buttonTarget) => {
-      const input = this.inputTargets[0];
-      if (buttonTarget.dataset.selectValue === input.value) {
+      if (buttonTarget.dataset.selectValue === this.inputTarget.value) {
         buttonTarget.classList.add('selected');
       }
     });
@@ -18,7 +17,6 @@ export default class extends Controller {
       buttonTarget.classList.remove('selected');
     });    
     button.classList.add('selected');
-    const input = this.inputTargets[0];
-    input.value = button.dataset.selectValue;
+    this.inputTarget.value = button.dataset.selectValue;
   }
 }
