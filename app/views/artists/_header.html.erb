@@ -1,7 +1,28 @@
 <%= simple_form_for artist, remote: true do |f| %>
   <h2>Style</h2>
   <div class="p-3">
-    <%= f.input :color_palette, collection: [1, 2, 3] %>
+    <%= f.label :color_palette %>
+    <div class="stim-select mb-2" data-controller="select">
+      <div class="stim-select-button p-0" data-select-value="1" data-action="click->select#update" data-target='select.button' role="button">
+        <div class="color-strip bg-beige"></div>
+        <div class="color-strip bg-white"></div>
+        <div class="color-strip bg-blue"></div>
+        <div class="color-strip bg-dark-blue"></div>
+      </div>
+      <div class="stim-select-button p-0" data-select-value="2" data-action="click->select#update" data-target='select.button' role="button">
+        <div class="color-strip bg-gold"></div>
+        <div class="color-strip bg-pink"></div>
+        <div class="color-strip bg-beige"></div>
+        <div class="color-strip bg-dark-blue"></div>
+      </div>
+      <div class="stim-select-button p-0" data-select-value="3" data-action="click->select#update" data-target='select.button' role="button">
+        <div class="color-strip bg-dark-blue"></div>
+        <div class="color-strip bg-white"></div>
+        <div class="color-strip bg-beige"></div>
+        <div class="color-strip bg-gold"></div>
+      </div>
+      <%= f.input :color_palette, collection: [1, 2, 3], as: :hidden, input_html: { 'data-target' => 'select.input' } %>
+    </div>
     <%= f.input :shape, collection: {"Plain" => 'plain', "Angular" => 'angular', "Curved" => 'curved'} %>
   </div>
   <h2>Content</h2>

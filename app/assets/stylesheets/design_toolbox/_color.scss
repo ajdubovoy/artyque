@@ -15,6 +15,9 @@
   &-pink{
     color: $pink;
   }
+  &-gold{
+    color: $gold;
+  }
   &-blue-gradient{
     background: $blue-gradient;
     -webkit-background-clip: text;
@@ -48,6 +51,9 @@
   }
   &-pink{
     background-color: $pink;
+  }
+  &-gold{
+    background-color: $gold;
   }
   &-blue-gradient{
     background: $blue-gradient;

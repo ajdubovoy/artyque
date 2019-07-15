@@ -1,0 +1,26 @@
+// Used for custom selctors like for color scheme, etc.
+$stim-select-height: 60px;
+
+.stim-select{
+  height: $stim-select-height;
+  @extend .flex-left;
+  .stim-select-button{
+    @extend .cursor-pointer;
+    height: $stim-select-height;
+    width: calc(#{$stim-select-height} * 4 / 3);
+    @extend .flex-center;
+    @extend .button-tertiary;
+    @extend .border-white-very-thick;
+    @extend .mr-3;
+    .color-strip{
+      width: calc(#{$stim-select-height} * 4 / 3 / 4);
+      height: calc(#{$stim-select-height} - (5px * 2)); // Fixes issue where it goes over the border
+    }
+    &.selected{
+      @extend .shadow-box-dark;
+      @extend .bg-dark-blue;
+      @extend .c-white;
+      @extend .border-dark-blue-very-thick;
+    }
+  }
+}
