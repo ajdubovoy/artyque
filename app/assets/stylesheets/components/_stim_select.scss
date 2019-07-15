@@ -4,7 +4,8 @@ $stim-select-height: 60px;
 .stim-select{
   height: $stim-select-height;
   @extend .flex-left;
-  button.stim-select-button{
+  .stim-select-button{
+    @extend .cursor-pointer;
     height: $stim-select-height;
     width: calc(#{$stim-select-height} * 4 / 3);
     @extend .flex-center;
