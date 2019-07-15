@@ -3,19 +3,19 @@
   <div class="p-3">
     <%= f.label :color_palette %>
     <div class="stim-select mb-2" data-controller="select">
-      <div class="stim-select-button p-0" data-select-value="1" data-action="click->select#update" data-target='select.button' role="button">
+      <div class="stim-select-button p-0" data-select-value="1" data-action="click->select#update" data-target='select.button' role="button" title="1">
         <div class="color-strip bg-beige"></div>
         <div class="color-strip bg-white"></div>
         <div class="color-strip bg-blue"></div>
         <div class="color-strip bg-dark-blue"></div>
       </div>
-      <div class="stim-select-button p-0" data-select-value="2" data-action="click->select#update" data-target='select.button' role="button">
+      <div class="stim-select-button p-0" data-select-value="2" data-action="click->select#update" data-target='select.button' role="button" title="2">
         <div class="color-strip bg-gold"></div>
         <div class="color-strip bg-pink"></div>
         <div class="color-strip bg-beige"></div>
         <div class="color-strip bg-dark-blue"></div>
       </div>
-      <div class="stim-select-button p-0" data-select-value="3" data-action="click->select#update" data-target='select.button' role="button">
+      <div class="stim-select-button p-0" data-select-value="3" data-action="click->select#update" data-target='select.button' role="button" title="3">
         <div class="color-strip bg-dark-blue"></div>
         <div class="color-strip bg-white"></div>
         <div class="color-strip bg-beige"></div>
@@ -23,7 +23,21 @@
       </div>
       <%= f.input :color_palette, collection: [1, 2, 3], as: :hidden, input_html: { 'data-target' => 'select.input' } %>
     </div>
-    <%= f.input :shape, collection: {"Plain" => 'plain', "Angular" => 'angular', "Curved" => 'curved'} %>
+    <%= f.label :shape %>
+    <div class="stim-select mb-2" data-controller="select">
+      <div class="stim-select-button p-0" data-select-value="plain" data-action="click->select#update" data-target='select.button' role="button" title="Plain">
+        <div class="color-strip-full bg-pink"></div>
+      </div>
+      <div class="stim-select-button p-0" data-select-value="angular" data-action="click->select#update" data-target='select.button' role="button" title="Angular">
+        <div class="color-strip-half bg-pink"></div>
+        <div class="color-strip-half bg-dark-blue"></div>
+      </div>
+      <div class="stim-select-button p-0" data-select-value="curved" data-action="click->select#update" data-target='select.button' role="button" title="Curved">
+        <div class="color-strip-curved bg-pink"></div>
+        <div class="color-strip-full bg-dark-blue"></div>
+      </div>
+      <%= f.input :shape, collection: {"Plain" => 'plain', "Angular" => 'angular', "Curved" => 'curved'}, as: :hidden , input_html: { 'data-target' => 'select.input' }%>
+    </div>
   </div>
   <h2>Content</h2>
   <div class="p-3">

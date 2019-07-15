@@ -12,9 +12,36 @@ $stim-select-height: 60px;
     @extend .button-tertiary;
     @extend .border-white-very-thick;
     @extend .mr-3;
+    overflow: hidden;
+    position: relative;
+    .stim-select-button-text{
+      width: calc(#{$stim-select-height} * 4 / 3);
+      height: calc(#{$stim-select-height} - (5px * 2));
+      bottom: calc(#{$stim-select-height} / 8);
+      border-radius: 50%;
+      position: absolute;
+      z-index: 2;
+      font-size: calc(#{$stim-select-height} * 4 / 6);
+    }
     .color-strip{
       width: calc(#{$stim-select-height} * 4 / 3 / 4);
       height: calc(#{$stim-select-height} - (5px * 2)); // Fixes issue where it goes over the border
+      &-full{
+        width: calc(#{$stim-select-height} * 4 / 3);
+        height: calc(#{$stim-select-height} - (5px * 2)); // Fixes issue where it goes over the border
+      }
+      &-half{
+        width: calc(#{$stim-select-height} * 4 / 3 / 2);
+        height: calc(#{$stim-select-height} - (5px * 2)); // Fixes issue where it goes over the border
+      }
+      &-curved{
+        width: calc(#{$stim-select-height} * 4 / 3);
+        height: calc(#{$stim-select-height} - (5px * 2)); // Fixes issue where it goes over the border
+        border-radius: 50%;
+        position: absolute;
+        top: calc(#{$stim-select-height} * 4 / 3 / 4);
+        z-index: 2;
+      }
     }
     &.selected{
       @extend .shadow-box-dark;
