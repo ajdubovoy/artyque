@@ -55,19 +55,19 @@ class ArtistsController < ApplicationController
       :photo,
       :about_me,
       :name,
-      resume_blocks: [
+      resume_blocks_attributes: [
         :id,
         :title,
         :position,
         :_destroy,
-        resume_items: [
+        resume_items_attributes: [
           :id,
-          :descripton,
+          :description,
           :label,
           :year,
           :higlghlight,
           :position,
-          :_detroy
+          :_destroy
         ]
       ]
     )
