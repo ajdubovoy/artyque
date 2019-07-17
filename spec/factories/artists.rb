@@ -20,5 +20,8 @@ FactoryBot.define do
       create_list :upcoming_project, 3, artist: artist
       create_list :collection, 3, artist: artist
     end
+    trait :invalid do
+      name { "" }
+    end
   end
 end

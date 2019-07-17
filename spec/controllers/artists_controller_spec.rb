@@ -126,4 +126,65 @@ RSpec.describe ArtistsController, type: :controller do
       end
     end
   end
+
+  describe '#update' do
+    context 'valid input' do
+      context 'html' do
+        login_admin
+
+        it 'redirects to the edit artists page' do
+          @artist = create(:artist)
+          artist_attributes = FactoryBot.attributes_for(:artist)
+          patch :update, params: { id: @artist.id, artist: artist_attributes }
+          expect(response).to redirect_to edit_artist_path(@artist)
+        end
+
+        context 'and resume block is provided as nested attributes' do
+          it 'redirects to the edit artists page' do
+            @artist = create(:artist)
+            artist_attributes = FactoryBot.attributes_for(:artist)
+            artist_attributes[:resume_blocks] = FactoryBot.build_list(:resume_block, 3) # Nested attributes
+            artist_attributes[:resume_blocks][0] = FactoryBot.build_list(:resume_item, 3) # Nested attributes
+            patch :update, params: { id: @artist.id, artist: artist_attributes }
+            expect(response).to redirect_to edit_artist_path(@artist)
+          end
+        end
+      end
+
+      context 'js' do
+        login_admin
+
+        it 'returns a successful response' do
+          @artist = create(:artist)
+          artist_attributes = FactoryBot.attributes_for(:artist)
+          patch :update, params: { id: @artist.id, artist: artist_attributes, format: :js }
+          expect(response.status).to eq(200)
+        end
+      end
+    end
+
+    context 'invalid input' do
+      context 'html' do
+        login_admin
+
+        it 'rerenders the form' do
+          @artist = create(:artist)
+          artist_attributes = FactoryBot.attributes_for(:artist, :invalid)
+          patch :update, params: { id: @artist.id, artist: artist_attributes }
+          expect(response).to render_template :edit
+        end
+      end
+
+      context 'js' do
+        login_admin
+
+        it 'returns a successful response' do
+          @artist = create(:artist)
+          artist_attributes = FactoryBot.attributes_for(:artist, :invalid)
+          patch :update, params: { id: @artist.id, artist: artist_attributes, format: :js }
+          expect(response.status).to eq(200)
+        end
+      end
+    end
+  end
 end
