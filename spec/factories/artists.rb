@@ -20,5 +20,11 @@ FactoryBot.define do
       create_list :upcoming_project, 3, artist: artist
       create_list :collection, 3, artist: artist
     end
+    trait :invalid do
+      name { "" }
+    end
+    trait :with_resume_blocks do
+      resume_blocks { build_list :resume_block, 3, artist: artist }
+    end
   end
 end
