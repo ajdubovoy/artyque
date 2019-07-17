@@ -190,5 +190,16 @@ describe "ArtistsFeature", type: :view do
       expect(page.find('li.selected').text).to eq 'Header'
       expect(page).to have_field('Super title', with: 'Test Super Title')
     end
+
+    it "shows the artwork list when navigating to a collection page" do
+      login_admin
+      artist = create(:artist)
+      collection = artist.collections.sample
+      artwork = collection.artworks.sample
+      visit edit_artist_path(artist, stage: :artworks)
+      click_link collection.name
+      expect(page).to have_field 'Name'
+      expect(page).to have_text artwork.name
+    end
   end
 end
