@@ -38,5 +38,12 @@
   "name": "artyque",
   "scripts": {
   },
-  "stack": "heroku-18"
+  "stack": "heroku-18",
+  "environments": {
+    "test": {
+      "scripts": {
+        "test": "rspec"
+      }
+    }
+  }
 }
