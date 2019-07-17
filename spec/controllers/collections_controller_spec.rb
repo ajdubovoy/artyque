@@ -87,4 +87,91 @@ RSpec.describe CollectionsController, type: :controller do
       end
     end
   end
+
+  describe '#edit' do
+    context 'html' do
+      login_admin
+
+      it 'renders the right template' do
+        @artist = create(:artist)
+        @collection = @artist.collections.sample
+        get :edit, params: { id: @collection.id }
+        expect(response).to render_template :edit
+      end
+
+      it 'selects the correct collection' do
+        @artist = create(:artist)
+        @collection = @artist.collections.sample
+        get :edit, params: { id: @collection.id }
+        expect(assigns(:collection)).to be_instance_of Collection
+        expect(assigns(:collection)).to eq @collection
+      end
+    end
+
+    context 'js' do
+      login_admin
+
+      it 'renders the right template' do
+        @artist = create(:artist)
+        @collection = @artist.collections.sample
+        get :edit, params: { id: @collection.id }
+        expect(response).to render_template :edit
+        expect(response.status).to eq(200)
+      end
+    end
+  end
+
+  describe '#update' do
+    context 'valid input' do
+      context 'html' do
+        login_admin
+
+        it 'redirects to the edit collections page' do
+          @artist = create(:artist)
+          @collection = @artist.collections.sample
+          collection_attributes = FactoryBot.attributes_for(:collection)
+          patch :update, params: { id: @collection.id, collection: collection_attributes }
+          expect(response).to redirect_to edit_artist_path(@artist, stage: :artworks)
+        end
+      end
+
+      context 'js' do
+        login_admin
+
+        it 'returns a successful response' do
+          @artist = create(:artist)
+          @collection = @artist.collections.sample
+          collection_attributes = FactoryBot.attributes_for(:collection)
+          patch :update, params: { id: @collection.id, collection: collection_attributes, format: :js }
+          expect(response.status).to eq(200)
+        end
+      end
+    end
+
+    context 'invalid input' do
+      context 'html' do
+        login_admin
+
+        it 'rerenders the form' do
+          @artist = create(:artist)
+          @collection = @artist.collections.sample
+          collection_attributes = FactoryBot.attributes_for(:collection, :invalid)
+          patch :update, params: { id: @collection.id, collection: collection_attributes }
+          expect(response).to render_template :edit
+        end
+      end
+
+      context 'js' do
+        login_admin
+
+        it 'returns a successful response' do
+          @artist = create(:artist)
+          @collection = @artist.collections.sample
+          collection_attributes = FactoryBot.attributes_for(:collection, :invalid)
+          patch :update, params: { id: @collection.id, collection: collection_attributes, format: :js }
+          expect(response.status).to eq(200)
+        end
+      end
+    end
+  end
 end

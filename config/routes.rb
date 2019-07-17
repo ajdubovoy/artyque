@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     resources :upcoming_projects, only: %i[new create]
   end
 
+  resources :collections, only: %i[edit update]
   resources :links, only: %i[edit update]
   resources :upcoming_projects, only: %i[edit update]
 end
