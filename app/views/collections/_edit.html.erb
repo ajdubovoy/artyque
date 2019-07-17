@@ -3,25 +3,29 @@
 </div>
 <h2>Edit Collection</h2>
 <%= simple_form_for collection, remote: true do |f| %>
-  <%= render 'fields', f: f %>
-<% end %>
+  <%= render 'fields', f: f, hide_submit: true %>
 
-<h2>Artworks</h2>
-<div class="p-3" id="artworks">
-  <ul class="link-list">
-    <% collection.artworks.each do |artwork| %>
-      <%= link_to edit_artwork_path(artwork), remote: true do %>
-        <li>
-          <div class="text">
-            <%= artwork.name %>
-          </div>
-          <div class="image">
-            <% if artwork.photos.present? %>
-              <%= cl_image_tage artwork.photos.first %>
-            <% end %>
-          </div>
-        </li>  
+  <h2 class="border-top-light-gray">Artworks</h2>
+  <div class="p-3" id="artworks">
+    <ul class="link-list">
+      <% collection.artworks.each do |artwork| %>
+        <%= link_to edit_artwork_path(artwork), remote: true do %>
+          <li>
+            <div class="text">
+              <%= artwork.name %>
+            </div>
+            <div class="image">
+              <% if artwork.photos.present? %>
+                <%= cl_image_tage artwork.photos.first %>
+              <% end %>
+            </div>
+          </li>  
+        <% end %>
       <% end %>
-    <% end %>
-  </ul>
-</div>
+    </ul>
+  </div>
+
+  <div class="p-3" id="submit">
+    <%= f.button :submit, "Save" %>
+  </div>
+<% end %>
