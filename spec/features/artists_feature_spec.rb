@@ -6,7 +6,7 @@ describe "ArtistsFeature", type: :view do
       login_admin
       artist = create(:artist)
       visit edit_artist_path(artist)
-      expect(page.find_field('artist_color_palette')).to be_visible
+      expect(page.find_field('artist_super_title')).to be_visible
       expect(page.find('li.selected').text).to eq 'Header'
     end
 
@@ -15,7 +15,7 @@ describe "ArtistsFeature", type: :view do
       artist = create(:artist)
       visit edit_artist_path(artist)
       click_link "Layout"
-      expect(page.find_field('artist_layout')).to be_visible
+      expect(page.find_field('artist_quotation_caption')).to be_visible
       expect(page.find('li.selected').text).to eq 'Layout'
     end
 
@@ -25,7 +25,7 @@ describe "ArtistsFeature", type: :view do
       visit edit_artist_path(artist)
       click_link "Layout"
       click_link "Header"
-      expect(page.find_field('artist_color_palette')).to be_visible
+      expect(page.find_field('artist_button_text')).to be_visible
       expect(page.find('li.selected').text).to eq 'Header'
     end
 
@@ -33,7 +33,7 @@ describe "ArtistsFeature", type: :view do
       login_admin
       artist = create(:artist)
       visit edit_artist_path(artist, stage: :layout)
-      expect(page.find_field('artist_layout')).to be_visible
+      expect(page.find_field('artist_quotation')).to be_visible
       expect(page.find('li.selected').text).to eq 'Layout'
     end
 
@@ -177,6 +177,18 @@ describe "ArtistsFeature", type: :view do
       click_link "+ Add upcoming project"
       click_button 'Save'
       expect(page).to have_text 'blank'
+    end
+
+    it "properly updates when you enter new information into the .header page" do
+      login_admin
+      artist = create(:artist)
+      visit edit_artist_path(artist)
+      fill_in 'Super title', with: 'Test Super Title'
+      fill_in 'Description', with: 'Test Description'
+      fill_in 'Button text', with: 'Calls to action are important'
+      click_button 'Save'
+      expect(page.find('li.selected').text).to eq 'Header'
+      expect(page).to have_field('Super title', with: 'Test Super Title')
     end
   end
 end

@@ -1,9 +1,9 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: %i[edit update]
+  before_action :set_stage, only: %i[edit update]
   after_action :respond_with_js, only: %i[edit]
 
   def edit
-    @stage = params[:stage].present? ? params[:stage].to_sym : :header # View decides which part of the form to render based on this
   end
 
   def update
@@ -25,6 +25,11 @@ class ArtistsController < ApplicationController
   def set_artist
     @artist = Artist.find(params[:id])
     authorize @artist
+  end
+
+  def set_stage
+    # View decides which part of the form to render based on this
+    @stage = params[:stage].present? ? params[:stage].to_sym : :header
   end
 
   def respond_with_js
