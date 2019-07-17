@@ -139,10 +139,10 @@ RSpec.describe ArtistsController, type: :controller do
           expect(response).to redirect_to edit_artist_path(@artist, stage: :artists)
         end
 
-        context 'and resume blocks are provided as nested attributes' do
+        context 'and resume block is provided as nested attributes' do
           it 'redirects to the edit artists page' do
-            @artist = create(:artist, :with_resume_blocks)
-            artist_attributes = FactoryBot.attributes_for(:artist)
+            @artist = create(:artist)
+            artist_attributes = FactoryBot.attributes_for(:artist, resume_blocks: [attributes_for(:resume_block)])
             patch :update, params: { id: @artist.id, artist: artist_attributes }
             expect(response).to redirect_to edit_artist_path(@artist, stage: :artists)
           end

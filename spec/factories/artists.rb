@@ -23,8 +23,5 @@ FactoryBot.define do
     trait :invalid do
       name { "" }
     end
-    trait :with_resume_blocks do
-      resume_blocks { build_list :resume_block, 3, artist: artist }
-    end
   end
 end
