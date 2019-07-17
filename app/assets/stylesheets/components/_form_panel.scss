@@ -11,7 +11,7 @@
     @extend .border-top-light-gray;
     @extend .m-0;
     font-size: 1rem;
-    &:first-of-type{
+    &:first-of-type:not(.border-top-light-gray){
       border-top: none !important;
     }
   }

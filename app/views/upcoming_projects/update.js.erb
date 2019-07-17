@@ -6,6 +6,6 @@ function refreshForm(innerHTML) {
 <% if @upcoming_project.errors.any? %>
   refreshForm('<%= j render "edit", artist: @upcoming_project.artist, upcoming_project: @upcoming_project %>');
 <% else %>
-  refreshForm('<%= j render "artists/upcoming_projects", artist: @artist, upcoming_project: UpcomingProject.new %>');
+  refreshForm('<%= j render "artists/upcoming_projects", artist: @artist %>');
 <% end %>
 window.init();

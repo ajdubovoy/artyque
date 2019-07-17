@@ -7,6 +7,14 @@ class CollectionPolicy < ApplicationPolicy
     return new?
   end
 
+  def edit?
+    return new?
+  end
+
+  def update?
+    return new?
+  end
+
   class Scope < Scope
     def resolve
       scope.all
