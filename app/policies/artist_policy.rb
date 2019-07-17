@@ -3,15 +3,7 @@ class ArtistPolicy < ApplicationPolicy
     return user && (user.admin? || record.user == user)
   end
 
-  def layout?
-    return edit?
-  end
-
-  def edit_collections?
-    return edit?
-  end
-
-  def edit_links?
+  def update?
     return edit?
   end
 

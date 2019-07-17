@@ -1,0 +1,11 @@
+function refreshForm(innerHTML) {
+  const form = document.getElementById('edit-form');
+  form.innerHTML = innerHTML;
+}
+
+<% if @artist.errors.any? %>
+  refreshForm('<%= j render "dashboard", artist: @artist %>');
+<% else %>
+  refreshForm('<%= j render "dashboard", artist: @artist %>');
+<% end %>
+window.init();

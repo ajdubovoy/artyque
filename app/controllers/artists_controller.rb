@@ -9,7 +9,7 @@ class ArtistsController < ApplicationController
   def update
     if @artist.update(artist_params)
       respond_to do |format|
-        format.html { redirect_to edit_artist_path(@artist.artist, stage: :artists) }
+        format.html { redirect_to edit_artist_path(@artist) }
         format.js
       end
     else
