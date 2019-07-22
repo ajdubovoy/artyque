@@ -1,0 +1,4 @@
+<div class='video-uploader' data-controller="video-uploader">
+  <%= f.input :video, label: 'Video (Vimeo link)', input_html: {"data-target" => "video-uploader.input", "data-action" => "change->video-uploader#update"} %>
+  <div class="video-embed mb-2" data-target="video-uploader.embed"></div>
+</div>
