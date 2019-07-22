@@ -16,6 +16,6 @@ class Artist < ApplicationRecord
   validates :button_text, length: { maximum: 30 }
   validates_with DescriptionWordLengthValidator
   validates :name, presence: true
-  validates :video, format: /\Ahttps:\/\/vimeo\.com\/\d+\Z/, allow_blank: true
+  validates :video, format: /\Ahttps?:\/\/((www\.)?vimeo\.com\/|(www\.)?youtu\.be\/|(www\.)?youtube\.com\/watch\?v=)(?<id>.+)\z/, allow_blank: true
   mount_uploader :photo, PhotoUploader
 end
