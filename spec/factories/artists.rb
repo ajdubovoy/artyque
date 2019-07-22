@@ -8,7 +8,7 @@ FactoryBot.define do
     description { Faker::Lorem.sentences(3).join }
     button_text { Faker::Lorem.word }
     layout { [1, 2, 3].sample }
-    video { "" }
+    video { "https://vimeo.com/37672446" }
     quotation { Faker::Quote.most_interesting_man_in_the_world }
     quotation_caption { Faker::GreekPhilosophers.name }
     photo { "" }

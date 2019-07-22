@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190710093018) do
+ActiveRecord::Schema.define(version: 20190722204545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -132,6 +132,15 @@ ActiveRecord::Schema.define(version: 20190710093018) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "videos", force: :cascade do |t|
+    t.bigint "artwork_id"
+    t.string "url"
+    t.integer "position"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["artwork_id"], name: "index_videos_on_artwork_id"
+  end
+
   add_foreign_key "artists", "users"
   add_foreign_key "artworks", "collections"
   add_foreign_key "collections", "artists"
@@ -140,4 +149,5 @@ ActiveRecord::Schema.define(version: 20190710093018) do
   add_foreign_key "resume_blocks", "artists"
   add_foreign_key "resume_items", "resume_blocks"
   add_foreign_key "upcoming_projects", "artists"
+  add_foreign_key "videos", "artworks"
 end

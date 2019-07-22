@@ -277,6 +277,9 @@ GEM
     unf_ext (0.0.7.6)
     unicode-display_width (1.6.0)
     unicode_utils (1.4.0)
+    video_thumb (0.1.6)
+      json (~> 2.1)
+      nokogiri (~> 1.8)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (3.7.0)
@@ -330,6 +333,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier
+  video_thumb
   web-console (>= 3.3.0)
   webpacker
 

@@ -1,0 +1,14 @@
+.video-uploader{
+  .video-embed{
+    max-height: 0;
+    transition: max-height 500ms ease-out;
+    &.video-embed-active{
+      height: 300px;
+      max-height: 300px;
+    }
+    &.video-embed-error{
+      height: auto;
+      max-height: 100%;
+    }
+  }
+}

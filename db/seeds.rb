@@ -21,7 +21,7 @@ count = 1
     description: Faker::Lorem.sentences(3).join,
     button_text: Faker::Lorem.word,
     layout: [1, 2, 3].sample,
-    video: 'test.mp4',
+    video: 'https://vimeo.com/37672446',
     quotation: Faker::Quote.most_interesting_man_in_the_world,
     quotation_caption: Faker::GreekPhilosophers.name,
     about_me: Faker::Lorem.paragraph,
@@ -29,8 +29,8 @@ count = 1
   )
   artist.remote_photo_url = 'https://unsplash.com/photos/hE8Mog4qK4Y/download?force=true'
   artist.save!
-  artist.remote_video_url = 'https://www.videezy.com/download/5923?download_auth_hash=ce742c98&pro=false'
-  artist.save!
+  # artist.remote_video_url = 'https://www.videezy.com/download/5923?download_auth_hash=ce742c98&pro=false'
+  # artist.save!
   count += 1
   3.times do
     resume_block = ResumeBlock.create!(

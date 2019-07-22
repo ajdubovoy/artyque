@@ -41,6 +41,7 @@
   </div>
   <h2>Content</h2>
   <div class="p-3">
+    <%= render 'shared/photo_uploader', f: f, field: :photo, show_label: true %>
     <%= f.input :super_title %>
     <%= f.input :title %>
     <%= f.input :description %>
