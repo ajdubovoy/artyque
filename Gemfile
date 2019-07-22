@@ -25,6 +25,7 @@ gem 'pundit'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 gem "cocoon"
+gem 'video_thumb'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
