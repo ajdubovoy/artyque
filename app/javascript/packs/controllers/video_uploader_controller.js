@@ -3,7 +3,7 @@ import { Controller } from "stimulus"
 export default class extends Controller {
   static targets = [ "input", "embed" ]
 
-  validationExpression = /https?:\/\/vimeo\.com\/(?<id>\d+)/
+  validationExpression = /^https?:\/\/vimeo\.com\/(?<id>\d+)$/
 
   initialize() {
     this.renderEmbed();
