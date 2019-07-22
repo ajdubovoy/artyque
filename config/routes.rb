@@ -11,15 +11,10 @@ Rails.application.routes.draw do
 
   # Artists
   resources :artists, only: %i[edit update] do
-    resources :collections, only: %i[new create]
-    resources :links, only: %i[new create]
-    resources :upcoming_projects, only: %i[new create]
+    resources :collections, only: %i[new create edit update], shallow: true do
+      resources :artworks, only: %i[new create edit update], shallow: true
+    end
+    resources :links, only: %i[new create edit update], shallow: true
+    resources :upcoming_projects, only: %i[new create edit update], shallow: true
   end
-
-  resources :collections, only: %i[edit update] do
-    resources :artworks, only: %i[new create]
-  end
-  resources :links, only: %i[edit update]
-  resources :upcoming_projects, only: %i[edit update]
-  resources :artworks, only: %i[edit update]
 end
