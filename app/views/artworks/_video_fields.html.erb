@@ -1,0 +1,5 @@
+<div class="nested-fields cursor-move">
+  <%= link_to_remove_association "-", f, class: 'photo-uploader-remove' %>
+  <%= render 'shared/video_uploader', f: f, show_label: false, field: :url, multiple: true %>
+  <%= f.input :position, as: :hidden %>
+</div>

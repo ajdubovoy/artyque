@@ -16,7 +16,7 @@
             </div>
             <div class="image">
               <% if artwork.photos.present? %>
-                <%= cl_image_tage artwork.photos.first %>
+                <%= cl_image_tag artwork.photos.first.attachment %>
               <% end %>
             </div>
           </li>  
