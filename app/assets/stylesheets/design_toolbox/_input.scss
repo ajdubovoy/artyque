@@ -54,3 +54,24 @@ select {
     }
   }
 }
+
+.photo-uploader-remove{
+  // For multiple photo uploader in forms
+  position: absolute;
+  right: 20px;
+  @extend .c-white;
+  @extend .bg-dark-blue;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  @extend .flex-center;
+  @extend .mr-2;
+  margin-top: -5px;
+  @extend .shadow-box-light;
+  z-index: 1000;
+  &:hover{
+    text-decoration: none;
+    @extend .bg-blue;
+    @extend .c-white;
+  }
+}
