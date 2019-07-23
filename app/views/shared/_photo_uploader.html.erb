@@ -1,4 +1,15 @@
+<% show_label = false unless local_assigns.has_key? :show_label %>
+<% original_photo = '' unless local_assigns.has_key? :original_photo %>
 <%= f.label field if show_label %>
-<div class="file-input mb-2">
-  <%= f.input field, label: '+' %>
+<div class="photo-uploader" data-controller='photo-uploader'>
+  <div class="file-input mb-2">
+    <%= f.input field, label: '+', input_html:{ "data-target": "photo-uploader.input", "data-action": 'change->photo-uploader#update' } %>
+  </div>
+  <div class="photo-uploader-embed mb-2 shadow-box-light">
+    <% if original_photo.present? %>
+      <%= cl_image_tag original_photo, class: 'w-100', 'data-target' => 'photo-uploader.embed' %>
+    <% else %>
+      <img class="w-100" data-target='photo-uploader.embed' />
+    <% end %>
+  </div>
 </div>
