@@ -3,7 +3,7 @@
 </div>
 <h2>Edit Collection</h2>
 <%= simple_form_for collection, remote: true do |f| %>
-  <%= render 'fields', f: f, hide_submit: true %>
+  <%= render 'collections/fields', f: f, hide_submit: true %>
 
   <h2 class="border-top-light-gray">Artworks</h2>
   <div class="p-3" id="artworks">
@@ -22,6 +22,7 @@
           </li>  
         <% end %>
       <% end %>
+      <%= link_to '+ Add artwork', new_collection_artwork_path(collection), remote: true, class: 'button-tertiary w-100' %>
     </ul>
   </div>
 

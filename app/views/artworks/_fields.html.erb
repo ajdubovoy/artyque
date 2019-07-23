@@ -1,0 +1,37 @@
+<div class="p-3">
+  <%= f.label :highlight %>
+  <div class="p-2">
+    <div class="stim-select mb-2" data-controller="select">
+      <div class="stim-select-button p-0" data-select-value="true" data-action="click->select#update" data-target='select.button' role="button" title="Highlighted">
+        <div class="stim-select-button-text c-gold"><i class="fas fa-star"></i></div>
+        <div class="color-strip-full bg-dark-blue"></div>
+      </div>
+      <div class="stim-select-button p-0" data-select-value="false" data-action="click->select#update" data-target='select.button' role="button" title="Not highlighted">
+        <div class="stim-select-button-text c-dark-blue"><i class="fas fa-times"></i></div>
+        <div class="color-strip-full bg-gold"></div>
+      </div>
+      <%= f.input :highlight, as: :hidden, input_html: { 'data-target' => 'select.input' } %>
+    </div>
+  </div>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :medium %>
+  <div class="row">
+    <div class="col-12 col-sm-4">
+      <%= f.input :width %>
+    </div>
+    <div class="col-12 col-sm-4">
+      <%= f.input :height %>
+    </div>
+    <div class="col-12 col-sm-4">
+      <%= f.input :depth %>
+    </div>
+  </div>
+  <%= f.input :weight %>
+  <%= f.input :year %>
+  <%= f.input :price, label: "Price (optional)" %>
+</div>
+<div class="border-bottom-light-gray mb-3"></div>
+<div class="p-3">
+  <%= f.button :submit, "Save" %>
+</div>
