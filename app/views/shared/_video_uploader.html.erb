@@ -1,4 +1,7 @@
+<% field = :video unless local_assigns.has_key? :video %>
+<% label = 'Video (Vimeo or YouTube)' unless local_assigns.has_key? :label %>
+
 <div class='video-uploader' data-controller="video-uploader">
-  <%= f.input :video, label: 'Video (Vimeo or YouTube)', input_html: {"data-target" => "video-uploader.input", "data-action" => "change->video-uploader#update"} %>
+  <%= f.input field, label: label, input_html: {"data-target" => "video-uploader.input", "data-action" => "change->video-uploader#update"} %>
   <div class="video-embed embed-responsive mb-2" data-target="video-uploader.embed"></div>
 </div>
