@@ -11,5 +11,8 @@ FactoryBot.define do
     price { 1 }
     weight { 1 }
     highlight { false }
+    trait :invalid do
+      name { '' }
+    end
   end
 end

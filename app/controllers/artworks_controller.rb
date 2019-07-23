@@ -10,11 +10,11 @@ class ArtworksController < ApplicationController
 
   def create
     @artwork = Artwork.new(artwork_params)
-    @artwork.artist = @artist
+    @artwork.collection = @collection
     authorize @artwork
     if @artwork.save
       respond_to do |format|
-        format.html { redirect_to edit_artist_path(@artwork.artist, stage: :artworks) }
+        format.html { redirect_to edit_collection_path(@collection) }
         format.js
       end
     else
@@ -30,7 +30,7 @@ class ArtworksController < ApplicationController
   def update
     if @artwork.update(artwork_params)
       respond_to do |format|
-        format.html { redirect_to edit_artist_path(@artwork.artist, stage: :artworks) }
+        format.html { redirect_to edit_collection_path(@collection) }
         format.js
       end
     else
@@ -44,7 +44,7 @@ class ArtworksController < ApplicationController
   private
 
   def set_collection
-    @artist = Collection.find(params[:collection_id])
+    @collection = Collection.find(params[:collection_id])
   end
 
   def respond_with_js
@@ -61,6 +61,6 @@ class ArtworksController < ApplicationController
   def set_artwork
     @artwork = Artwork.find(params[:id])
     authorize @artwork
-    @artist = @artwork.artist
+    @collection = @artwork.collection
   end
 end
