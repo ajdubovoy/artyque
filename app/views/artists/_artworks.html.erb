@@ -9,7 +9,7 @@
           </div>
           <div class="image">
             <% if collection.photos.present? %>
-              <%= cl_image_tage collection.photos.first %>
+              <%= cl_image_tag collection.photos.first.attachment %>
             <% end %>
           </div>
         </li>  

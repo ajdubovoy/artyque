@@ -5,4 +5,5 @@ class Artwork < ApplicationRecord
   validates_with DescriptionWordLengthValidator
   validates :name, presence: true
   scope :highlights, -> { where(highlight: true) }
+  scope :non_highlights, -> { where(highlight: false) }
 end
