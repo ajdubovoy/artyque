@@ -43,6 +43,52 @@ function initSortable() {
       });
     });
   }
+
+  const photos = document.querySelectorAll('.photo-fields');
+  if (photos) {
+    photos.forEach((item) => {
+      var sortable = Sortable.create(item, {
+        animation: 250,
+        fallbackOnBody: true,
+        invertSwap: true,
+        swapThreshold: 0.4,
+        dragClass: 'nested-fields',
+        onSort: (event) => {
+          const parent = event.item.closest('.photo-fields');
+          const positions = parent.querySelectorAll('.artwork_photos_position');
+          let count = 1;
+          positions.forEach((position) => {
+            const input = position.querySelector('input');
+            input.value = count;
+            count += 1;
+          });
+        }
+      });
+    });
+  }
+
+  const videos = document.querySelectorAll('.video-fields');
+  if (videos) {
+    videos.forEach((item) => {
+      var sortable = Sortable.create(item, {
+        animation: 250,
+        fallbackOnBody: true,
+        invertSwap: true,
+        swapThreshold: 0.4,
+        dragClass: 'nested-fields',
+        onSort: (event) => {
+          const parent = event.item.closest('.video-fields');
+          const positions = parent.querySelectorAll('.artwork_videos_position');
+          let count = 1;
+          positions.forEach((position) => {
+            const input = position.querySelector('input');
+            input.value = count;
+            count += 1;
+          });
+        }
+      });
+    });
+  }
 }
 
 export default initSortable;

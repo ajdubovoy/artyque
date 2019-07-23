@@ -3,7 +3,7 @@
   <%= f.input :description %>
   <%= f.input :url %>
   <%= f.input :year %>
-  <%= render 'shared/photo_uploader', f: f, field: :photo, show_label: true %>
+  <%= render 'shared/photo_uploader', f: f, field: :photo, show_label: true, original_photo: @link.photo %>
 </div>
 <div class="border-bottom-light-gray mb-3"></div>
 <div class="p-3">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190722204545) do
+ActiveRecord::Schema.define(version: 20190723100224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20190722204545) do
   create_table "artworks", force: :cascade do |t|
     t.bigint "collection_id"
     t.string "name"
-    t.string "description"
+    t.text "description"
     t.integer "width"
     t.integer "height"
     t.integer "depth"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20190722204545) do
     t.string "medium"
     t.integer "price"
     t.integer "weight"
-    t.boolean "highlight"
+    t.boolean "highlight", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["collection_id"], name: "index_artworks_on_collection_id"

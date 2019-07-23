@@ -55,7 +55,30 @@ class ArtworksController < ApplicationController
   end
 
   def artwork_params
-    params.require(:artwork).permit(:name, :description, :width, :height, :depth, :year, :medium, :price, :weight, :highlight)
+    params.require(:artwork).permit(
+      :name,
+      :description,
+      :width,
+      :height,
+      :depth,
+      :year,
+      :medium,
+      :price,
+      :weight,
+      :highlight,
+      photos_attributes: [
+        :id,
+        :_destroy,
+        :attachment,
+        :position
+      ],
+      videos_attributes: [
+        :id,
+        :_destroy,
+        :url,
+        :position
+      ]
+    )
   end
 
   def set_artwork
