@@ -32,23 +32,23 @@
   <%= f.input :price, label: "Price (optional)" %>
 </div>
 <h2 class="border-top-light-gray mb-3">Photos</h2>
-<div class="p-3 multiple-upload">
+<div class="p-3 multiple-upload photo-fields row">
   <% count = 0 %>
   <%= f.simple_fields_for :photos do |photo| %>
     <% original_photo = count <= @artwork.photos.length ? @artwork.photos[count].attachment : nil %>
     <%= render 'photo_fields', f: photo, original_photo: original_photo %>
     <% count += 1 %>
   <% end %>
-  <div class="links">
+  <div class="links col-6 col-sm-4 flex-center">
     <%= link_to_add_association '+ Add photo', f, :photos, class: 'button-tertiary w-100' %>
   </div>
 </div>
 <h2 class="border-top-light-gray">Videos</h2>
-<div class="p-3 multiple-upload">
+<div class="p-3 multiple-upload video-fields row">
   <%= f.simple_fields_for :videos do |video| %>
     <%= render 'video_fields', f: video %>
   <% end%>
-  <div class="links">
+  <div class="links col-12 col-sm-6 flex-center">
     <%= link_to_add_association '+ Add video', f, :videos, class: 'button-tertiary w-100' %>
   </div>
 </div>
