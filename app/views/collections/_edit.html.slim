@@ -1,0 +1,21 @@
+.p-3
+  = link_to "< Back", edit_artist_path(artist, stage: :artworks), remote: true, class: 'button-tertiary'
+h2
+  | Edit Collection
+= simple_form_for collection, remote: true do |f|
+  = render 'collections/fields', f: f, hide_submit: true
+  h2.border-top-light-gray
+    | Artworks
+  #artworks.p-3
+    ul.link-list
+      - collection.artworks.each do |artwork|
+        = link_to edit_artwork_path(artwork), remote: true do
+          li
+            .text
+              = artwork.name
+            .image
+              - if artwork.photos.present?
+                = cl_image_tag artwork.photos.first.attachment
+      = link_to '+ Add artwork', new_collection_artwork_path(collection), remote: true, class: 'button-tertiary w-100'
+  #submit.p-3
+    = f.button :submit, "Save"

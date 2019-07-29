@@ -1,0 +1,42 @@
+= simple_form_for artist, remote: true do |f|
+  h2
+    | Layout Style
+  .p-3
+    = f.label :layout
+    .stim-select.mb-2[data-controller="select"]
+      .stim-select-button.p-0[data-select-value="1" data-action="click->select#update" data-target="select.button" role="button" title="1"]
+        .stim-select-button-text.c-dark-blue
+          | 1
+        .color-strip-full.bg-pink
+      .stim-select-button.p-0[data-select-value="2" data-action="click->select#update" data-target="select.button" role="button" title="2"]
+        .stim-select-button-text.c-dark-blue
+          | 2
+        .color-strip-full.bg-pink
+      .stim-select-button.p-0[data-select-value="3" data-action="click->select#update" data-target="select.button" role="button" title="3"]
+        .stim-select-button-text.c-dark-blue
+          | 3
+        .color-strip-full.bg-pink
+      = f.input :layout, collection: [1, 2, 3], as: :hidden, input_html: { 'data-target' => 'select.input' }
+  h2
+    | Banner Content
+  .p-3
+    = render 'shared/video_uploader', f: f
+    = f.input :quotation
+    = f.input :quotation_caption
+  h2
+    | Page Content
+  h3
+    | About Me
+  .p-3
+    = f.input :about_me, label: false
+  h2
+    | Resume
+  #resume-blocks-fields
+    = f.simple_fields_for :resume_blocks do |block|
+      = render 'resume_block_fields', f: block
+    .pl-3.pr-3.pb-3
+      = link_to_add_association '+ Add block', f, :resume_blocks, class: 'button-tertiary w-100'
+  .border-bottom-light-gray.mb-3
+  .p-3
+    = hidden_field_tag(:stage, 'layout')
+    = f.button :submit, "Save"

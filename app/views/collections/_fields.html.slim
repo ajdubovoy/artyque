@@ -1,0 +1,6 @@
+.p-3
+  = f.input :name
+- unless local_assigns[:hide_submit]
+  .border-bottom-light-gray.mb-3
+  .p-3
+    = f.button :submit, "Save"

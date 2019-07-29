@@ -1,0 +1,6 @@
+= simple_form_for [artist, collection], remote: true do |f|
+  .p-3
+    = link_to "< Back", edit_artist_path(artist, stage: :artworks), remote: true, class: 'button-tertiary'
+  h2
+    | New Collection
+  = render 'fields', f: f

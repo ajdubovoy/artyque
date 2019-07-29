@@ -1,0 +1,14 @@
+h2
+  | Collections
+.p-3
+  ul.link-list
+    - @artist.collections.each do |collection|
+      = link_to edit_collection_path(collection), remote: true do
+        li
+          .text
+            = collection.name
+          .image
+            - if collection.photos.present?
+              = cl_image_tag collection.photos.first.attachment
+.p-3
+  = link_to '+ Add collection', new_artist_collection_path(@artist), remote: true, class: 'button-tertiary w-100'

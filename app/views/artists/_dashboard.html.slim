@@ -1,0 +1,19 @@
+.col-12.col-sm-3
+  = render 'navigation', stage: stage, artist: artist
+.col-12.col-sm-9
+  .form-panel
+    #edit-form
+      - case stage
+
+      - when :header
+        = render 'header', artist: artist
+      - when :layout
+        = render 'layout', artist: artist
+      - when :artworks
+        = render 'artworks', artist: artist
+      - when :links
+        = render 'links', artist: artist
+      - when :upcoming_projects
+        = render 'upcoming_projects', artist: artist
+      - else
+        = render 'header', artist: artist

@@ -1,0 +1,6 @@
+.p-3
+  = link_to "< Back", edit_artist_path(artist, stage: :links), remote: true, class: 'button-tertiary'
+h2
+  | Edit Link
+= simple_form_for link, remote: true do |f|
+  = render 'fields', f: f
