@@ -1,0 +1,14 @@
+h2
+  | Projects
+.p-3
+  ul.link-list
+    - @artist.upcoming_projects.each do |upcoming_project|
+      = link_to edit_upcoming_project_path(upcoming_project), remote: true do
+        li
+          .text
+            = upcoming_project.title
+          .image
+            - if upcoming_project.photo.present?
+              = cl_image_tag upcoming_project.photo
+.p-3
+  = link_to '+ Add upcoming project', new_artist_upcoming_project_path(@artist), remote: true, class: 'button-tertiary w-100'

@@ -1,7 +1,0 @@
-<div class="p-3">
-  <%= link_to "< Back", edit_artist_path(artist, stage: :upcoming_projects), remote: true, class: 'button-tertiary' %>
-</div>
-<h2>New Upcoming Project</h2>
-<%= simple_form_for [artist, upcoming_project], remote: true do |f| %>
-  <%= render 'fields', f: f %>
-<% end %>

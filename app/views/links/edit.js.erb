@@ -1,7 +1,0 @@
-function refreshDashboard(innerHTML) {
-  const form = document.getElementById('edit-form');
-  form.innerHTML = innerHTML;
-}
-
-refreshDashboard('<%= j render "edit", artist: @artist, link: @link %>');
-window.init();

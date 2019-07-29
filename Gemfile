@@ -9,6 +9,8 @@ gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
 
+gem 'slim'
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'bootstrap', '~> 4.3.1'

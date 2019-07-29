@@ -1,7 +1,0 @@
-<%= simple_form_for [artist, collection], remote: true do |f| %>
-  <div class="p-3">
-    <%= link_to "< Back", edit_artist_path(artist, stage: :artworks), remote: true, class: 'button-tertiary' %>
-  </div>
-  <h2>New Collection</h2>
-  <%= render 'fields', f: f %>
-<% end %>

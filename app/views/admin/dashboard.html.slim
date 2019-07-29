@@ -1,0 +1,21 @@
+.container-fluid
+  .row
+    .col.text-center.pt-3.pb-3.bg-beige.w-100
+      h1
+        | Admin Dashboard
+.container.artist-list
+  .row.pt-3
+    .col
+      h2
+        | All Artists
+  .row
+    .col
+      ul.link-list
+        - @artists.each do |artist|
+          = link_to edit_artist_path(artist) do
+            li
+              .text
+                = artist.name
+              .image
+                - if artist.photo.present?
+                  = cl_image_tag artist.photo

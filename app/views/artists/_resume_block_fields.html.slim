@@ -1,0 +1,15 @@
+.nested-fields
+  h3
+    | Block 
+    = link_to_remove_association "- Remove", f, class: 'pl-3'
+    i.fas.fa-grip-lines.handle.pr-3.cursor-move.c-light-gray.float-right
+  .form-inline.pl-3.pr-3.pt-3
+    = f.input :title, label_html: { class: 'pr-3' }
+    = f.input :position, as: :hidden
+  .border-bottom-light-gray.mb-3.mt-3
+  .resume-items-fields
+    = f.simple_fields_for :resume_items do |item|
+      = render 'resume_item_fields', f: item
+    .pl-3.pr-3.pb-3
+      = link_to_add_association '+ Add item', f, :resume_items, class: 'button-tertiary w-100'
+  .border-bottom-light-gray.mb-3

@@ -1,0 +1,13 @@
+.nested-fields.cursor-move
+  .row.p-3.flex-center
+    .col-12.col-sm-10
+      .row
+        .col-12.col-sm-4
+          = f.input :description
+          = f.input :position, as: :hidden
+        .col-12.col-sm-4
+          = f.input :label, required: false
+        .col-12.col-sm-4
+          = f.input :year, required: false
+    .col-12.col-sm-2.font-italic
+      = link_to_remove_association "- Remove", f, class: 'pl-3'

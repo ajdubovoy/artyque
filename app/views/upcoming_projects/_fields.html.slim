@@ -1,0 +1,9 @@
+.p-3
+  = f.input :title
+  = f.input :description
+  = f.input :location
+  = f.input :date
+  = render 'shared/photo_uploader', f: f, field: :photo, show_label: true, original_photo: @upcoming_project.photo
+.border-bottom-light-gray.mb-3
+.p-3
+  = f.button :submit, "Save"
