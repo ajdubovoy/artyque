@@ -31,8 +31,13 @@
     &.banner-small{
       min-height: calc(60vh - #{$header-height});
       height: auto;
+      .image-container{
+        position: relative;
+        height: 100%;
+        width: 100%;
+      }
     }
-	}
+  }
 	.banner-card-subtitle {	
 	    bottom: 0;
 	   	font-size: 11px;

@@ -1,24 +1,26 @@
-#banner
-.wrapper-banner
+.wrapper-banner#banner
   div class=['banner-content', cp(@palette, 1, :grad)]
-    .inner-banner.w-100.position-relative.d-sm-flex.align-items-center.banner-small.row
-      - case artist.shape
-      - when :plain
-        / Display no shape w00t
-      - when :angular
-      - when :curved
-      .text-lockup.col-12.col-sm-6
-        h1 class=["title", cp(@palette, 4, :fg)]
-          = artist.super_title
-        h1
-          span class=cp(@palette, 4, :fg)
-            = artist.name + ','
-          br /
-          span class=cp(@palette, 3, :fg)
-            = artist.title
-        p class=cp(@palette, 4, :fg)
-          = artist.description
-        = link_to artist.button_text, "#content", class: ["button-primary", cp(@palette, 2, :fg), cp(@palette, 4, :bg)]
-      .image-lockup.col-12.col-sm-6
-        - if artist.photo.present?
-          div class=["image-container", "h-100", "w-100", cp(@palette, 1, :bg)] style="background-image: url('#{cl_image_path artist.photo}')"
+    .row
+      .inner-banner.w-100.position-relative.d-sm-flex.align-items-center.banner-small
+        - case artist.shape
+        - when :plain
+          / Display no shape w00t
+        - when :angular
+        - when :curved
+          = image_tag "top_wave.svg", class: "wave-top position-absolute"
+          = image_tag "bottom_wave.svg", class: "wave-bottom position-absolute"
+        .text-lockup.col-12.col-sm-6
+          h1 class=["title", cp(@palette, 4, :fg)]
+            = artist.super_title
+          h1
+            span class=cp(@palette, 4, :fg)
+              = artist.name + ','
+            br /
+            span class=cp(@palette, 3, :fg)
+              = artist.title
+          p class=cp(@palette, 4, :fg)
+            = artist.description
+          = link_to artist.button_text, "#content", class: ["button-primary", cp(@palette, 2, :fg), cp(@palette, 4, :bg)]
+        .image-lockup.col-12.col-sm-6
+          - if artist.photo.present?
+            div class=["image-container", "h-100", "w-100", cp(@palette, 1, :bg)] style="background-image: url('#{cl_image_path artist.photo}')"
