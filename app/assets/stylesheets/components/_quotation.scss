@@ -9,5 +9,9 @@
   cite{
     @extend .subtitle;
     font-style: normal;
+    font-size: 0.8rem;
+  }
+  p{
+    @extend .m-2;
   }
 }

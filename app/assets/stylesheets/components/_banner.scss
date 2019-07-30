@@ -29,12 +29,8 @@
       		max-width: 95%;
 		}
     &.banner-small{
-      height: calc(60vh - #{$header-height});
-      @include media-breakpoint-up(sm) {
-        height: 60vh;
-        padding-left: 50px;
-        max-width: 95%;
-      }
+      min-height: calc(60vh - #{$header-height});
+      height: auto;
     }
 	}
 	.banner-card-subtitle {	
