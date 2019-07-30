@@ -1,0 +1,16 @@
+.circle-container{
+  width: 100vw;
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+  .circle{
+    height: 350px;
+    width: 350px;
+    top: -50px;
+    right: -5px;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+}
