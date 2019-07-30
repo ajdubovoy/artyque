@@ -2,13 +2,17 @@
 
 // For example:
 $dark-blue: #1A2E3D;
+$dark-blue-gradient: linear-gradient(67.97deg, #1A2F3E 3.78%, #1B3F4E 112.76%);
 $blue: #274E58;
+$blue-gradient: linear-gradient(67.97deg, #234A54 3.78%, #1A2F3E 112.76%);
 $light-blue: #0081A2;
 $beige: #FEF0E7;
+$beige-gradient: linear-gradient(67.97deg, #EDDFD6 3.78%, #FEF0E7 112.76%);
 $pink: #DDCDCA;
-$blue-gradient: linear-gradient(67.97deg, #234A54 3.78%, #1A2F3E 112.76%);
+$pink-gradient: linear-gradient(67.97deg, #1C505F 3.78%, #DDCDCA 112.76%);
 $gray: #0E0000;
 $light-gray: #D0D0D0;
 $white: white;
 $placeholder-gray: #bac0c5;
 $gold: #E6E0D4;
+$gold-gradient: linear-gradient(67.97deg, #E7F1E5 3.78%, #E60D4 112.76%);

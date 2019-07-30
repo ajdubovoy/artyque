@@ -1,1 +1,3 @@
-= @artist.name
+== render 'banner', artist: @artist, palette: @palette
+- if @artist.quotation.present? || @artist.quotation_caption.present?
+  == render 'quotation', quotation: @artist.quotation, caption: @artist.quotation_caption, palette: @palette
