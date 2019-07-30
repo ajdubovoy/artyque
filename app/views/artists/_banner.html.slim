@@ -6,6 +6,8 @@
         - when :plain
           / Display no shape w00t
         - when :angular
+          = inline_svg "top_angle", class: "svg wave-top position-absolute fill-#{cp(@palette, 4, :color)}", style: "right: -15px;"
+          = inline_svg "bottom_angle", class: "svg wave-bottom position-absolute fill-#{cp(@palette, 4, :color)}", style: "left: 15px;"
         - when :curved
           = inline_svg "top_wave", class: "wave-top position-absolute fill-#{cp(@palette, 4, :color)}", style: "right: -15px;"
           = inline_svg "bottom_wave", class: "wave-bottom position-absolute fill-#{cp(@palette, 4, :color)}", style: "left: 15px;"

@@ -87,26 +87,28 @@
 }
 
 // SVG Fill
-.fill, .f{
+.fill, .f, .svg{
+  width: auto !important;
+  height: auto !important;
   &-dark-blue path{
-    fill: $dark-blue;
+    fill: $dark-blue !important;
   }
   &-blue path{
-    fill: $blue;
+    fill: $blue !important;
   }
   &-light-blue path{
-    fill: $light-blue;
+    fill: $light-blue !important;
   }
   &-beige path{
-    fill: $beige;
+    fill: $beige !important;
   }
   &-pink path{
-    fill: $pink;
+    fill: $pink !important;
   }
   &-gold path{
-    fill: $gold;
+    fill: $gold !important;
   }
   &-white path{
-    fill: $white;
+    fill: $white !important;
   }
 }
