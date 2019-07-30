@@ -2,13 +2,13 @@
   div class=['banner-content', cp(@palette, 1, :grad)]
     .row
       .inner-banner.w-100.position-relative.d-sm-flex.align-items-center.banner-small
-        - case artist.shape
+        - case artist.shape.to_sym
         - when :plain
           / Display no shape w00t
         - when :angular
         - when :curved
-          = image_tag "top_wave.svg", class: "wave-top position-absolute"
-          = image_tag "bottom_wave.svg", class: "wave-bottom position-absolute"
+          = image_tag "top_wave.svg", class: "wave-top position-absolute", style: "right: -15px"
+          = image_tag "bottom_wave.svg", class: "wave-bottom position-absolute", style: "left: 15px;"
         .text-lockup.col-12.col-sm-6
           h1 class=["title", cp(@palette, 4, :fg)]
             = artist.super_title
