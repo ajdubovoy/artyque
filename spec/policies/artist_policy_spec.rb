@@ -12,6 +12,8 @@ RSpec.describe ArtistPolicy, type: :policy do
       artist = create(:artist)
       expect(subject).to permit(user, artist)
     end
+
+    # TODO after closing profiles
   end
 
   permissions :edit? do

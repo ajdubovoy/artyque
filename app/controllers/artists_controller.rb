@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  include ColorSchemeHelper
+  include ColorPaletteHelper
   before_action :set_artist, only: %i[edit update]
   before_action :set_stage, only: %i[edit update]
   after_action :respond_with_js, only: %i[edit]
@@ -8,6 +8,7 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id]) # Written separately to prevent authorization
+    @cs = @artist.color_palette # Shortcut to pass to #cp helper
   end
 
   def edit;end
