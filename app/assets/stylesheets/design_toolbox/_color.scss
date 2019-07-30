@@ -39,24 +39,41 @@
 .background, .bg{
   &-dark-blue{
     background-color: $dark-blue;
+    &-gradient{
+      background: $dark-blue-gradient;
+      background-color: $dark-blue;
+    }
   }
   &-blue{
     background-color: $blue;
+    &-gradient{
+      background: $blue-gradient;
+      background-color: $blue;
+    }
   }
   &-light-blue{
     background-color: $light-blue;
   }
   &-beige{
     background-color: $beige;
+    &-gradient{
+      background: $beige-gradient;
+      background-color: $beige;
+    }
   }
   &-pink{
     background-color: $pink;
+    &-gradient{
+      background: $pink-gradient;
+      background-color: $pink;
+    }
   }
   &-gold{
     background-color: $gold;
-  }
-  &-blue-gradient{
-    background: $blue-gradient;
+    &-gradient{
+      background: $gold-gradient;
+      background-color: $gold;
+    }
   }
   &-gray{
     background-color: $gray;
@@ -66,5 +83,32 @@
   }
   &-white{
     background-color: $white;
+  }
+}
+
+// SVG Fill
+.fill, .f, .svg{
+  width: auto !important;
+  height: auto !important;
+  &-dark-blue path{
+    fill: $dark-blue !important;
+  }
+  &-blue path{
+    fill: $blue !important;
+  }
+  &-light-blue path{
+    fill: $light-blue !important;
+  }
+  &-beige path{
+    fill: $beige !important;
+  }
+  &-pink path{
+    fill: $pink !important;
+  }
+  &-gold path{
+    fill: $gold !important;
+  }
+  &-white path{
+    fill: $white !important;
   }
 }

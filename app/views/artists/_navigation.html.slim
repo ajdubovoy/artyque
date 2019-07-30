@@ -20,3 +20,6 @@ nav#edit-navigation.secondary-navigation
     = "selected" if stage == :upcoming_projects
     | ">
     = link_to 'Upcoming Projects', edit_artist_path(artist, stage: :upcoming_projects), remote: true
+    li
+      = link_to artist_path(referrer: :dashboard), target: :_blank do
+        | View Page <i class="fas fa-arrow-right"></i>

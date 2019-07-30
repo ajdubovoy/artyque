@@ -1,0 +1,28 @@
+.wrapper-banner#banner
+  div class=['banner-content', cp(@palette, 1, :grad)]
+    .row
+      .inner-banner.w-100.position-relative.d-sm-flex.align-items-center.banner-flexible
+        - case artist.shape.to_sym
+        - when :plain
+          / Display no shape w00t
+        - when :angular
+          = inline_svg "top_angle", class: "svg wave-top position-absolute fill-#{cp(@palette, 4, :color)}", style: "right: -15px;"
+          = inline_svg "bottom_angle", class: "svg wave-bottom position-absolute fill-#{cp(@palette, 4, :color)}", style: "left: 15px;"
+        - when :curved
+          = inline_svg "top_wave", class: "wave-top position-absolute fill-#{cp(@palette, 4, :color)}", style: "right: -15px;"
+          = inline_svg "bottom_wave", class: "wave-bottom position-absolute fill-#{cp(@palette, 4, :color)}", style: "left: 15px;"
+        .text-lockup.col-12.col-sm-6
+          h1 class=["title", cp(@palette, 4, :fg)]
+            = artist.super_title
+          h1
+            span class=cp(@palette, 4, :fg)
+              = artist.name + ','
+            br /
+            span class=cp(@palette, 3, :fg)
+              = artist.title
+          p class=cp(@palette, 4, :fg)
+            = artist.description
+          = link_to artist.button_text, "#content", class: ["button-primary", cp(@palette, 2, :fg), cp(@palette, 4, :bg)]
+        .image-lockup.col-12.col-sm-6
+          - if artist.photo.present?
+            div class=["image-container", "h-100", "w-100", cp(@palette, 1, :bg)] style="background-image: url('#{cl_image_path artist.photo}')"

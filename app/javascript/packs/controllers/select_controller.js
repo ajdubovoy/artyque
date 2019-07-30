@@ -12,11 +12,10 @@ export default class extends Controller {
   }
 
   update(event) {
-    const button = event.target.closest('.stim-select-button');
     this.buttonTargets.forEach((buttonTarget) => {
       buttonTarget.classList.remove('selected');
     });    
-    button.classList.add('selected');
-    this.inputTarget.value = button.dataset.selectValue;
+    event.currentTarget.classList.add('selected');
+    this.inputTarget.value = event.currentTarget.dataset.selectValue;
   }
 }
