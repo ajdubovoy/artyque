@@ -5,20 +5,20 @@
     = f.label :color_palette
     .stim-select.mb-2[data-controller="select"]
       .stim-select-button.p-0[data-select-value="1" data-action="click->select#update" data-target="select.button" role="button" title="1"]
-        .color-strip.bg-beige
-        .color-strip.bg-white
-        .color-strip.bg-blue
-        .color-strip.bg-dark-blue
+        div class=["color-strip", cs(1, 1, :bg)]
+        div class=["color-strip", cs(1, 2, :bg)]
+        div class=["color-strip", cs(1, 3, :bg)]
+        div class=["color-strip", cs(1, 4, :bg)]
       .stim-select-button.p-0[data-select-value="2" data-action="click->select#update" data-target="select.button" role="button" title="2"]
-        .color-strip.bg-gold
-        .color-strip.bg-pink
-        .color-strip.bg-beige
-        .color-strip.bg-dark-blue
+        div class=["color-strip", cs(2, 1, :bg)]
+        div class=["color-strip", cs(2, 2, :bg)]
+        div class=["color-strip", cs(2, 3, :bg)]
+        div class=["color-strip", cs(2, 4, :bg)]
       .stim-select-button.p-0[data-select-value="3" data-action="click->select#update" data-target="select.button" role="button" title="3"]
-        .color-strip.bg-dark-blue
-        .color-strip.bg-white
-        .color-strip.bg-beige
-        .color-strip.bg-gold
+        div class=["color-strip", cs(3, 1, :bg)]
+        div class=["color-strip", cs(3, 2, :bg)]
+        div class=["color-strip", cs(3, 3, :bg)]
+        div class=["color-strip", cs(3, 4, :bg)]
       = f.input :color_palette, collection: [1, 2, 3], as: :hidden, input_html: { 'data-target' => 'select.input' }
     = f.label :shape
     .stim-select.mb-2[data-controller="select"]

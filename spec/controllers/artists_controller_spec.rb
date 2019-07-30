@@ -1,6 +1,21 @@
 require 'rails_helper'
 
 RSpec.describe ArtistsController, type: :controller do
+  describe '#show' do
+    it 'renders the right template' do
+      @artist = create(:artist)
+      get :show, params: { id: @artist.id }
+      expect(response).to render_template :show
+    end
+
+    it 'selects the correct artist' do
+      @artist = create(:artist)
+      get :show, params: { id: @artist.id }
+      expect(assigns(:artist)).to be_instance_of Artist
+      expect(assigns(:artist)).to eq @artist
+    end
+  end
+
   describe '#edit' do
     context '.header' do
       context 'html' do

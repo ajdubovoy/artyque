@@ -6,6 +6,14 @@ RSpec.describe ArtistPolicy, type: :policy do
 
   subject { described_class }
 
+  permissions :show? do
+    it "allows access if the user is an admin" do
+      user = create(:user, :admin)
+      artist = create(:artist)
+      expect(subject).to permit(user, artist)
+    end
+  end
+
   permissions :edit? do
     it "allows access if the user is an admin" do
       user = create(:user, :admin)

@@ -1,4 +1,8 @@
 class ArtistPolicy < ApplicationPolicy
+  def show?
+    return edit?
+  end
+
   def edit?
     return user && (user.admin? || record.user == user)
   end
