@@ -85,3 +85,28 @@
     background-color: $white;
   }
 }
+
+// SVG Fill
+.fill, .f{
+  &-dark-blue path{
+    fill: $dark-blue;
+  }
+  &-blue path{
+    fill: $blue;
+  }
+  &-light-blue path{
+    fill: $light-blue;
+  }
+  &-beige path{
+    fill: $beige;
+  }
+  &-pink path{
+    fill: $pink;
+  }
+  &-gold path{
+    fill: $gold;
+  }
+  &-white path{
+    fill: $white;
+  }
+}
