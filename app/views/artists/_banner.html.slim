@@ -1,7 +1,7 @@
 .wrapper-banner#banner
   div class=['banner-content', cp(@palette, 1, :grad)]
     .row
-      .inner-banner.w-100.position-relative.d-sm-flex.align-items-center
+      .inner-banner.w-100.position-relative.d-sm-flex.align-items-center.banner-flexible
         - case artist.shape.to_sym
         - when :plain
           / Display no shape w00t

@@ -24,13 +24,17 @@
 	.inner-banner {
 		height: calc(100vh - #{$header-height});
 		@include media-breakpoint-up(sm) {
-		    height: 80vh;
-      		padding-left: 50px;
-      		max-width: 95%;
+      height: 80vh;
+      padding-left: 50px;
+      max-width: 95%;
 		}
-    &.banner-small{
-      min-height: calc(60vh - #{$header-height});
+    &.banner-flexible{
+      min-height: calc(100vh - #{$header-height});
       height: auto;
+      @include media-breakpoint-up(sm) {
+        min-height: calc(70vh - #{$header-height});
+        height: auto;
+      }
       .image-container{
         position: relative;
         height: 100%;
