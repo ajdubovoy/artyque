@@ -18,7 +18,7 @@
             span class=cp(@palette, 2, :fg)
               = artist.name + ','
             br /
-            span class=cp(@palette, 1, :fg)
+            span class=[cp(@palette, 1, :fg), 'shadow-text-light']
               = artist.title
           p class=cp(@palette, 2, :fg)
             = artist.description

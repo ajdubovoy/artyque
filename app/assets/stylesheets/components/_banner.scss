@@ -32,7 +32,7 @@
       min-height: calc(100vh - #{$header-height});
       height: auto;
       @include media-breakpoint-up(sm) {
-        min-height: calc(85vh - #{$header-height});
+        min-height: 80vh;
         height: auto;
       }
       .image-container{
