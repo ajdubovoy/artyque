@@ -1,9 +1,9 @@
 module ColorPaletteHelper
   def cp(palette, index = 1, mode = '')
     colors = case palette
-    when 1 then %w(beige white blue dark-blue)
+    when 1 then %w(pink white blue dark-blue)
     when 2 then %w(gold pink blue dark-blue)
-    when 3 then %w(dark-blue white beige gold)
+    when 3 then %w(dark-blue white beige pink)
     else %w(beige white blue dark-blue)
     end
 
