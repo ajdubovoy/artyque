@@ -1,5 +1,6 @@
 class ArtistsController < ApplicationController
   include ColorPaletteHelper
+  include VideoHelper
   before_action :set_artist, only: %i[edit update]
   before_action :set_stage, only: %i[edit update]
   after_action :respond_with_js, only: %i[edit]
