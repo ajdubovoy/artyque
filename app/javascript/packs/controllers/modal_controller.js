@@ -43,7 +43,7 @@ export default class extends Controller {
   }
 
   openAndError(event) {
-    this.contentTarget.innerHTML = "There was an error!";
+    this.contentTarget.innerHTML = "We're very sorry, but we're having trouble processing your request...";
     this.openModal();
   }
 
