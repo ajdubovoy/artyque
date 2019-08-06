@@ -4,7 +4,10 @@
 - if @artist.video.present?
   == render 'video_banner', video: @artist.video
 .ellipse
-.container#content
-  - case @artist.layout
-  - when 1 
-    == render 'layout_1', artist: @artist
+div id="content" data-controller="modal"
+  .container
+    - case @artist.layout
+    - when 1 
+      == render 'layout_1', artist: @artist
+  div class="stim-modal" data-target='modal.modal'
+    div class='stim-modal-content' data-target='modal.content'

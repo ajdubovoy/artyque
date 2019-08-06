@@ -1,3 +1,6 @@
 .row#description
   .col-12
-    == md @artist.about_me
+    == md artist.about_me
+    p
+      em
+        = link_to 'See Full Profile >', artist_path(artist), 'data-action': 'modal#update'
