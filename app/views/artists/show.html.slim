@@ -10,5 +10,9 @@ div id="content" data-controller="modal"
     - when 1 
       == render 'layout_1', artist: @artist
   div class="stim-modal d-none" data-target='modal.modal'
-    div class='stim-modal-content' data-target='modal.content'
+    .stim-modal-container
+      .stim-modal-close-button data-action="click->modal#hide"
+        a href="#"
+          <i class="fas fa-times"></i>
+      .stim-modal-content data-target='modal.content'
   div class="stim-modal-backdrop d-none" data-target='modal.backdrop' data-action='click->modal#hide'
