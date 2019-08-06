@@ -1,0 +1,11 @@
+.stim-modal-backdrop{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20000;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  opacity: 0.5;
+  backdrop-filter: blur(3px);
+}
