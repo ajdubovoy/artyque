@@ -27,6 +27,7 @@
   @extend .bg-white;
   @extend .shadow-box-dark;
   @extend .border-radius;
+  @extend .border;
 
   /* Use this for centering if unknown width/height */
   transform: translate(-50%, -50%);

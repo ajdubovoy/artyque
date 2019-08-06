@@ -11,6 +11,9 @@ Rails.application.routes.draw do
 
   # Artists
   resources :artists, only: %i[show edit update] do
+    member do
+      get 'resume'
+    end
     resources :collections, only: %i[new create edit update], shallow: true do
       resources :artworks, only: %i[new create edit update], shallow: true
     end

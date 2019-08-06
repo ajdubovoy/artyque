@@ -1,7 +1,7 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "modal", "content", "backdrop" ]
+  static targets = [ "modal", "content", "backdrop", "link" ]
 
   initialize() {
     this.modalTarget.classList.add('d-none');
@@ -30,8 +30,20 @@ export default class extends Controller {
     document.body.style.top = `-${top}px`;
   }
 
-  update(event) {
+  openWithoutUpdate(event) {
     event.preventDefault();
+    this.openModal();
+  }
+
+  openAndUpdate(event) {
+    const [data, status, xhr] = event.detail;
+    const parsedResponse = JSON.parse(xhr.response);
+    this.contentTarget.innerHTML = parsedResponse.html;
+    this.openModal();
+  }
+
+  openAndError(event) {
+    this.contentTarget.innerHTML = "There was an error!";
     this.openModal();
   }
 
