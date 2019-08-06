@@ -1,0 +1,6 @@
+.row#description
+  .col-12
+    == md artist.about_me
+    p
+      em
+        = link_to 'See Full Profile >', artist_resume_blocks_path(artist), remote: true, 'data-action': 'ajax:success->modal#openAndUpdate ajax:error->modal#openAndError', 'data-target': 'modal.link'

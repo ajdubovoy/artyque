@@ -16,5 +16,6 @@ Rails.application.routes.draw do
     end
     resources :links, only: %i[new create edit update], shallow: true
     resources :upcoming_projects, only: %i[new create edit update], shallow: true
+    resources :resume_blocks, only: %i[index]
   end
 end

@@ -1,0 +1,8 @@
+ul
+  - artist.blocks.each do |block|
+    li
+      = block.title
+      ul
+        - block.items.each do |item|
+          li
+            | #{item.label}: #{item.description} (#{item.year})
