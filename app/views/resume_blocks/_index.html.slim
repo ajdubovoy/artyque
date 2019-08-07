@@ -1,8 +1,23 @@
-ul
+.row.mb-4
+  .col-12
+    p#about-me
+      == md artist.about_me
+ul.row.resume.resume-blocks
   - artist.blocks.each do |block|
-    li
-      = block.title
-      ul
+    li.resume-block.col-12.col-sm-6.col-md-4
+      h5.resume-block-title
+        = block.title
+      ul.resume-items
         - block.items.each do |item|
-          li
-            | #{item.label}: #{item.description} (#{item.year})
+          li.resume-item
+            - if block.items.any?(&:year)
+              h6.year
+                strong
+                  | #{item.year} | 
+                span.label
+                  = item.label
+            - elsif block.items.any?(&:label)
+              h6.label
+                = item.label
+            p.description
+              = item.description
