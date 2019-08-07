@@ -1,14 +1,21 @@
 h2
   | Links
-.p-3
-  ul.link-list
-    - @artist.links.each do |link|
-      = link_to edit_link_path(link), remote: true do
-        li
-          .text
-            = link.title
-          .image
-            - if link.photo.present?
-              = cl_image_tag link.photo
-.p-3
-  = link_to '+ Add link', new_artist_link_path(@artist), remote: true, class: 'button-tertiary w-100'
+= simple_form_for @artist, remote: true do |f|
+  = hidden_field_tag(:stage, 'links')
+  .p-3
+    ul.link-list
+      .link-fields
+        = f.simple_fields_for :links do |link_form|
+          .nested-fields
+            = link_form.input :position, as: :hidden
+            = link_to edit_link_path(link_form.object), remote: true do
+              li
+                .text
+                  = link_form.object.title
+                .image
+                  - if link_form.object.photo.present?
+                    = cl_image_tag link_form.object.photo
+    .p-3
+    = link_to '+ Add link', new_artist_link_path(@artist), remote: true, class: 'button-tertiary w-100'
+  .p-3
+    = f.submit "Save Order"

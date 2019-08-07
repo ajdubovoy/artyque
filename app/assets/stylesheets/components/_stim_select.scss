@@ -2,8 +2,9 @@
 $stim-select-height: 60px;
 
 .stim-select{
-  height: $stim-select-height;
+  min-height: $stim-select-height;
   @extend .flex-left;
+  flex-wrap: wrap;
   .stim-select-button{
     @extend .cursor-pointer;
     height: $stim-select-height;
@@ -29,6 +30,14 @@ $stim-select-height: 60px;
       &-full{
         width: calc(#{$stim-select-height} * 4 / 3);
         height: calc(#{$stim-select-height} - (5px * 2)); // Fixes issue where it goes over the border
+        background-size: cover;
+        background-position: center;
+        @extend .flex-center;
+        word-wrap: break-word;
+        .small-text{
+          width: 95%;
+          font-size: 0.5em;
+        }
       }
       &-half{
         width: calc(#{$stim-select-height} * 4 / 3 / 2);

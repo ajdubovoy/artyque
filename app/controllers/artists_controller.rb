@@ -73,11 +73,11 @@ class ArtistsController < ApplicationController
       :photo,
       :about_me,
       :name,
+      :featured_artwork_id,
       resume_blocks_attributes: [
         :id,
         :title,
         :position,
-        :_destroy,
         resume_items_attributes: [
           :id,
           :description,
@@ -85,8 +85,27 @@ class ArtistsController < ApplicationController
           :year,
           :higlghlight,
           :position,
-          :_destroy
         ]
+      ],
+      collections_attributes: [
+        :id,
+        :title,
+        :position,
+        artworks_attributes: [
+          :id,
+          :title,
+          :position
+        ]
+      ],
+      upcoming_projects_attributes: [
+        :id,
+        :title,
+        :position
+      ],
+      links_attributes: [
+        :id,
+        :title,
+        :position
       ]
     )
   end
