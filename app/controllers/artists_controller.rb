@@ -73,6 +73,7 @@ class ArtistsController < ApplicationController
       :photo,
       :about_me,
       :name,
+      :featured_artwork_id,
       resume_blocks_attributes: [
         :id,
         :title,
