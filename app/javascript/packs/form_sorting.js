@@ -136,9 +136,9 @@ function initSortable() {
     });
   }
 
-  const upcoming_projects = document.querySelectorAll('.upcoming_project-fields');
-  if (upcoming_projects) {
-    upcoming_projects.forEach((item) => {
+  const upcomingProjects = document.querySelectorAll('.upcoming-project-fields');
+  if (upcomingProjects) {
+    upcomingProjects.forEach((item) => {
       var sortable = Sortable.create(item, {
         animation: 250,
         fallbackOnBody: true,
@@ -146,7 +146,7 @@ function initSortable() {
         swapThreshold: 0.4,
         dragClass: 'nested-fields',
         onSort: (event) => {
-          const parent = event.item.closest('.upcoming_project-fields');
+          const parent = event.item.closest('.upcoming-project-fields');
           const positions = parent.querySelectorAll('.artist_upcoming_projects_position');
           let count = 1;
           positions.forEach((position) => {
