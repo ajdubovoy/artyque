@@ -55,7 +55,15 @@ class CollectionsController < ApplicationController
   end
 
   def collection_params
-    params.require(:collection).permit(:name)
+    params.require(:collection).permit(
+      :name,
+      artworks_attributes: [
+        :id,
+        :title,
+        :position,
+        :_destroy,
+      ]
+    )
   end
 
   def set_collection

@@ -1,14 +1,21 @@
 h2
   | Collections
-.p-3
-  ul.link-list
-    - @artist.collections.each do |collection|
-      = link_to edit_collection_path(collection), remote: true do
-        li
-          .text
-            = collection.name
-          .image
-            - if collection.photos.present?
-              = cl_image_tag collection.photos.first.attachment
-.p-3
-  = link_to '+ Add collection', new_artist_collection_path(@artist), remote: true, class: 'button-tertiary w-100'
+= simple_form_for @artist, remote: true do |f|
+  = hidden_field_tag(:stage, 'artworks')
+  .p-3
+    ul.link-list
+      .collection-fields
+        = f.simple_fields_for :collections do |collection_form|
+          .nested-fields
+            = collection_form.input :position, as: :hidden
+            = link_to edit_collection_path(collection_form.object), remote: true do
+              li
+                .text
+                  = collection_form.object.name
+                .image
+                  - if collection_form.object.photos.present?
+                    = cl_image_tag collection_form.object.photos.first.attachment
+  .p-3
+    = link_to '+ Add collection', new_artist_collection_path(@artist), remote: true, class: 'button-tertiary w-100'
+  .p-3
+    = f.submit "Save Order"
