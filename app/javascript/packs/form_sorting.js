@@ -135,6 +135,52 @@ function initSortable() {
       });
     });
   }
+
+  const upcoming_projects = document.querySelectorAll('.upcoming_project-fields');
+  if (upcoming_projects) {
+    upcoming_projects.forEach((item) => {
+      var sortable = Sortable.create(item, {
+        animation: 250,
+        fallbackOnBody: true,
+        invertSwap: true,
+        swapThreshold: 0.4,
+        dragClass: 'nested-fields',
+        onSort: (event) => {
+          const parent = event.item.closest('.upcoming_project-fields');
+          const positions = parent.querySelectorAll('.artist_upcoming_projects_position');
+          let count = 1;
+          positions.forEach((position) => {
+            const input = position.querySelector('input');
+            input.value = count;
+            count += 1;
+          });
+        }
+      });
+    });
+  }
+
+  const links = document.querySelectorAll('.link-fields');
+  if (links) {
+    links.forEach((item) => {
+      var sortable = Sortable.create(item, {
+        animation: 250,
+        fallbackOnBody: true,
+        invertSwap: true,
+        swapThreshold: 0.4,
+        dragClass: 'nested-fields',
+        onSort: (event) => {
+          const parent = event.item.closest('.link-fields');
+          const positions = parent.querySelectorAll('.artist_links_position');
+          let count = 1;
+          positions.forEach((position) => {
+            const input = position.querySelector('input');
+            input.value = count;
+            count += 1;
+          });
+        }
+      });
+    });
+  }
 }
 
 export default initSortable;

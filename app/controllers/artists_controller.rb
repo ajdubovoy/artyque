@@ -90,13 +90,21 @@ class ArtistsController < ApplicationController
         :id,
         :title,
         :position,
-        :_destroy,
         artworks_attributes: [
           :id,
           :title,
-          :position,
-          :_destroy,
+          :position
         ]
+      ],
+      upcoming_projects_attributes: [
+        :id,
+        :title,
+        :position
+      ],
+      links_attributes: [
+        :id,
+        :title,
+        :position
       ]
     )
   end
