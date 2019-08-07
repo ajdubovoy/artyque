@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190807123356) do
+ActiveRecord::Schema.define(version: 20190807130051) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20190807123356) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "name"
+    t.bigint "featured_artwork_id"
+    t.index ["featured_artwork_id"], name: "index_artists_on_featured_artwork_id"
     t.index ["user_id"], name: "index_artists_on_user_id"
   end
 
@@ -145,6 +147,7 @@ ActiveRecord::Schema.define(version: 20190807123356) do
     t.index ["artwork_id"], name: "index_videos_on_artwork_id"
   end
 
+  add_foreign_key "artists", "artworks", column: "featured_artwork_id"
   add_foreign_key "artists", "users"
   add_foreign_key "artworks", "collections"
   add_foreign_key "collections", "artists"

@@ -1,5 +1,6 @@
 class Artist < ApplicationRecord
   belongs_to :user
+  belongs_to :featured_artwork, class_name: Artwork, optional: true, foreign_key: :featured_artwork_id
   has_many :resume_blocks, -> { order(position: :asc) }, dependent: :destroy
   has_many :resume_items, -> { order(position: :asc) }, through: :resume_blocks
   alias_attribute :items, :resume_items
