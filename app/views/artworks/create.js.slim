@@ -5,6 +5,6 @@
   | '); 
 - else
   |  refreshForm('
-  = j render "collections/edit", collection: @collection, artwork: Artwork.new
+  = j render "collections/edit", artist: @collection.artist, collection: @collection, artwork: Artwork.new
   | '); 
 |  window.init(); 
