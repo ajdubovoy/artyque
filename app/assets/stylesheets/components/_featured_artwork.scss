@@ -3,6 +3,17 @@
   $vertical-offset: 5rem;
   margin-bottom: $vertical-offset + 1.5rem;
   @extend .w-100;
+  a{
+    @extend .c-dark-blue;
+    &:hover{
+      @extend .c-blue;
+    }
+  }
+  &:hover{
+    .featured-artwork-label{
+      @extend .bg-beige;
+    }
+  }
   .featured-artwork-image{
     @extend .bg-dark-blue;
     background-attachment: center;
@@ -24,5 +35,6 @@
     right: 1ch;
     margin: 0 !important;
     bottom: -$vertical-offset;
+    transition: background-color 500ms ease-out;
   }
 }

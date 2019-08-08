@@ -1,13 +1,14 @@
 .featured-artwork
-  - if artwork.featured_photo
-    .featured-artwork-image[style="background-image: url('#{cl_image_path artwork.featured_photo}')"]
-  - else
-    .featured-artwork-image
-  .featured-artwork-label
-    h4
-      = artwork.name
-    p
-      | From "#{artwork.collection.name}"
-      - if artwork.year
-        span.year
-          |  (#{artwork.year})
+  = link_to artwork_path(artwork), remote: true, 'data-action': 'ajax:success->modal#openAndUpdate ajax:error->modal#openAndError' do
+    - if artwork.featured_photo
+      .featured-artwork-image[style="background-image: url('#{cl_image_path artwork.featured_photo}')"]
+    - else
+      .featured-artwork-image
+    .featured-artwork-label
+      h4
+        = artwork.name
+      p
+        | From "#{artwork.collection.name}"
+        - if artwork.year
+          span.year
+            |  (#{artwork.year})
