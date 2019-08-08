@@ -22,4 +22,5 @@ function init() {
 init();
 
 global.init = init;
+global.initCarousel = initCarousel;
 // Exposes the init function as a global variable so that you can call window.init() out of any vanilla JavaScript file, particular .js.erb templates, and access the Webpacked initialization function.

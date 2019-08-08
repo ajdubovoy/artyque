@@ -1,6 +1,34 @@
 require 'rails_helper'
 
 RSpec.describe ArtworksController, type: :controller do
+  login_admin
+
+  describe '#show' do
+    it 'renders the right template' do
+      @artist = create(:artist)
+      @artwork = @artist.artworks.sample
+      get :show, params: { id: @artwork.id }
+      expect(response).to render_template :show
+    end
+
+    it 'selects the correct artist' do
+      @artist = create(:artist)
+      @artwork = @artist.artworks.sample
+      get :show, params: { id: @artwork.id }
+      expect(assigns(:artwork)).to be_instance_of Artwork
+      expect(assigns(:artwork)).to eq @artwork
+    end
+
+    context 'xhr for modal' do
+      it 'renders a partial for modal' do
+        @artist = create(:artist)
+        @artwork = @artist.artworks.sample
+        get :show, params: { id: @artwork.id }, xhr: true
+        expect(JSON.parse(response.body).has_key? 'html').to be true
+      end
+    end
+  end
+
   describe '#new' do
     context 'html' do
       login_admin

@@ -5,8 +5,13 @@ class ArtistsController < ApplicationController
   before_action :set_artist, only: %i[edit update]
   before_action :set_stage, only: %i[edit update]
   after_action :respond_with_js, only: %i[edit]
-  skip_before_action :authenticate_user!, only: %i[show resume] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
-  after_action :skip_authorization, only: %i[show resume] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
+  skip_before_action :authenticate_user!, only: %i[show] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
+  after_action :skip_authorization, only: %i[show] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
+
+  def show
+    @artist = Artist.find(params[:id]) # Written separately to prevent authorization
+    @palette = @artist.color_palette # Shortcut to pass to #cp helper
+  end
 
   def new
     @artist = Artist.new
@@ -24,11 +29,6 @@ class ArtistsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def show
-    @artist = Artist.find(params[:id]) # Written separately to prevent authorization
-    @palette = @artist.color_palette # Shortcut to pass to #cp helper
   end
 
   def resume

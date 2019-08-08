@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # Artists
   resources :artists, only: %i[new create show edit update] do
     resources :collections, only: %i[new create edit update], shallow: true do
-      resources :artworks, only: %i[new create edit update], shallow: true
+      resources :artworks, only: %i[new create edit update show], shallow: true
     end
     resources :links, only: %i[new create edit update], shallow: true
     resources :upcoming_projects, only: %i[new create edit update], shallow: true
