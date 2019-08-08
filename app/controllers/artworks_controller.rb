@@ -2,6 +2,16 @@ class ArtworksController < ApplicationController
   before_action :set_collection, only: %i[new create]
   after_action :respond_with_js, only: %i[new edit]
   before_action :set_artwork, only: %i[edit update]
+  skip_before_action :authenticate_user!, only: %i[show] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
+  after_action :skip_authorization, only: %i[show] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
+
+  def show
+    @artwork = Artwork.find(params[:id]) # Written separately to prevent authorization
+    if request.xhr?
+      # For modal update
+      render json: { html: render_to_string(partial: 'show', locals: { artwork: @artwork}) }
+    end
+  end
 
   def new
     @artwork = Artwork.new

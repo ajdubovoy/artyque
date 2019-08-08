@@ -40,6 +40,7 @@ export default class extends Controller {
     const parsedResponse = JSON.parse(xhr.response);
     this.contentTarget.innerHTML = parsedResponse.html;
     this.openModal();
+    initCarousel('carousel'); // USED SPECIFICALLY IN THIS APP TO REINITIALIZE CAROUSELS (exported as a global constant in application)
   }
 
   openAndError(event) {

@@ -1,0 +1,5 @@
+.artwork
+  .artwork-photos
+    .carousel.w-100
+      - artwork.photos.each do |photo|
+        = cl_image_tag photo.attachment, class: 'carousel-cell carousel-image', width: '100%'
