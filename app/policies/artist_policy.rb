@@ -1,4 +1,12 @@
 class ArtistPolicy < ApplicationPolicy
+  def new?
+    return user.admin?
+  end
+
+  def create?
+    return new?
+  end
+
   def show?
     return edit?
   end

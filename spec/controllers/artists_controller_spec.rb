@@ -1,6 +1,42 @@
 require 'rails_helper'
 
 RSpec.describe ArtistsController, type: :controller do
+  describe '#new' do
+    login_admin
+
+    it 'renders the right template' do
+      get :new
+      expect(response).to render_template :new
+    end
+
+    it 'makes a new artist' do
+      get :new
+      expect(assigns(:artist)).to be_instance_of Artist
+    end
+  end
+
+  describe '#create' do
+    login_admin
+
+    context 'valid input' do
+      it 'redirects to the admin dashboard page' do
+        artist_attributes = FactoryBot.attributes_for(:artist)
+        user_attributes = FactoryBot.attributes_for(:user)
+        post :create, params: { artist: artist_attributes, user: user_attributes }
+        expect(response).to redirect_to admin_dashboard_path
+      end
+    end
+
+    context 'invalid input' do
+      it 'rerenders the form' do
+        artist_attributes = FactoryBot.attributes_for(:artist, :invalid)
+        user_attributes = FactoryBot.attributes_for(:user)
+        post :create, params: { artist: artist_attributes, user: user_attributes }
+        expect(response).to render_template :new
+      end
+    end
+  end
+
   describe '#show' do
     it 'renders the right template' do
       @artist = create(:artist)

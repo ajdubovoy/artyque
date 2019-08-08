@@ -5,6 +5,33 @@ RSpec.describe ArtistPolicy, type: :policy do
   let(:scope) { Pundit.policy_scope!(user, Artist) }
 
   subject { described_class }
+  permissions :new? do
+    it "allows access if the user is an admin" do
+      user = create(:user, :admin)
+      artist = create(:artist)
+      expect(subject).to permit(user, artist)
+    end
+
+    it "does not allow access if the user is not an admin" do
+      user = create(:user)
+      artist = create(:artist)
+      expect(subject).not_to permit(user, artist)
+    end
+  end
+
+  permissions :create? do
+    it "allows access if the user is an admin" do
+      user = create(:user, :admin)
+      artist = create(:artist)
+      expect(subject).to permit(user, artist)
+    end
+
+    it "does not allow access if the user is not an admin" do
+      user = create(:user)
+      artist = create(:artist)
+      expect(subject).not_to permit(user, artist)
+    end
+  end
 
   permissions :show? do
     it "allows access if the user is an admin" do
