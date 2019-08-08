@@ -1,0 +1,30 @@
+.artwork{
+  .artwork-photos{
+    img{
+      max-height: 50rem;
+      min-height: 20rem;
+    }
+    margin-bottom: 5rem;
+  }
+  .artwork-details{
+    @include media-breakpoint-up(sm) {
+      // Offset onto image but not on mobile
+      $desktop-offset: 5ch;
+      margin-left: -$desktop-offset;
+      .title{
+        margin-left: $desktop-offset - 1ch;
+        text-align: right;
+        max-width: calc(100% - 5ch);
+      }
+      .artwork-info{
+        margin-top: 0 !important;
+      }
+    }
+    @include media-breakpoint-down(xs) {
+      // Fix weird spacing bug with carousel
+      .title{
+        margin-top: 3rem;
+      }
+    }
+  }
+}

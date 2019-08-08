@@ -4,6 +4,7 @@ class ArtworksController < ApplicationController
   before_action :set_artwork, only: %i[edit update]
   skip_before_action :authenticate_user!, only: %i[show] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
   after_action :skip_authorization, only: %i[show] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
+  include VideoHelper
 
   def show
     @artwork = Artwork.find(params[:id]) # Written separately to prevent authorization

@@ -1,5 +1,35 @@
 .artwork
-  .artwork-photos
-    .carousel.w-100
-      - artwork.photos.each do |photo|
-        = cl_image_tag photo.attachment, class: 'carousel-cell carousel-image', width: '100%'
+  .row
+    .col-12.col-sm-6.artwork-photos
+      .carousel.w-100
+        - artwork.photos.each do |photo|
+          = cl_image_tag photo.attachment, class: 'carousel-cell carousel-image', width: '100%'
+    .col-12.col-sm-6
+      .artwork-details
+        .h6.title Artwork by #{artwork.collection.artist.name}
+        .panel.artwork-info
+          h3.c-dark-blue = artwork.name
+          p.c-light-gray
+            - if artwork.year
+              | #{artwork.year} — 
+            - if artwork.medium
+              = artwork.medium
+          p.small
+            = artwork.description
+          - if artwork.height || artwork.width || artwork.depth
+            p.c-light-gray.small
+              | #{artwork.height} x #{artwork.width} 
+              - if artwork.depth
+                | x #{artwork.depth}
+          - if artwork.weight
+            p.c-light-gray.small
+              | Price: #{number_to_currency artwork.price}
+          - if artwork.weight
+            p.c-light-gray.small
+              | Weight: #{artwork.weight}
+  - if artwork.videos.present?
+    .row
+      - artwork.videos.each do |video|
+        .col-6.com-sm-4.col-lg-3
+          .embed-responsive.embed-responsive-16by9.shadow-box-light
+            == video_embed video.url
