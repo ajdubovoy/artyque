@@ -1,12 +1,13 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = [ "modal", "content", "backdrop", "link" ]
+  static targets = [ "modal", "container", "content", "backdrop", "link" ]
 
   initialize() {
     this.modalTarget.classList.add('d-none');
     this.backdropTarget.classList.add('d-none');
     this.contentTarget.innerHTML = '';
+    this.modalTarget.dataset.open = false;
   }
 
   closeModal() {
@@ -20,14 +21,20 @@ export default class extends Controller {
     document.body.style.top = '';
     window.scrollTo(0, parseInt(top || '0') * -1);
     document.querySelector('html').style.scrollBehavior = scrollStyle; // Reenable smooth scrolling if enabled
+    this.modalTarget.dataset.open = false;
   }
 
   openModal() {
     const top = window.scrollY;
     this.modalTarget.classList.remove('d-none');
     this.backdropTarget.classList.remove('d-none');
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${top}px`;
+    if (this.modalTarget.dataset.open == 'true'){
+      this.containerTarget.scrollTop = 0;
+    } else {
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${top}px`;
+    }
+    this.modalTarget.dataset.open = true;
   }
 
   openWithoutUpdate(event) {

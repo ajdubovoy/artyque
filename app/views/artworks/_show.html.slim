@@ -33,7 +33,7 @@
         h5.c-light-gray Videos
     .row.mb-5
       - artwork.videos.each do |video|
-        .col-6.com-sm-4.col-lg-3
+        .col-12.col-sm-6
           .embed-responsive.embed-responsive-16by9.shadow-box-light
             == video_embed video.url
   - if artwork.collection.artworks.length > 1
