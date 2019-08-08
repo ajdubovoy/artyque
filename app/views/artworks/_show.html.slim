@@ -40,19 +40,4 @@
     .row
       .col-12
         h5.c-light-gray Other artworks from the same collection
-    .row
-      - artwork.collection.artworks.where.not(id: artwork.id).sample(3).each do |a|
-        .col-12.col-md-4
-          = link_to artwork_path(a), remote: true, 'data-action': 'ajax:success->modal#openAndUpdate ajax:error->modal#openAndError', class: 'c-dark-blue' do
-            - if a.photos.present?
-              .artwork-thumbnail[style="background-image: url('#{cl_image_path a.featured_photo, width: 100}')"]
-            - else
-              .artwork-thumbnail.bg-dark-blue
-            h6.c-dark-blue = a.name
-            p.c-light-gray
-              - if a.year
-                | #{a.year} — 
-              - if a.medium
-                = a.medium
-            p
-              = truncate a.description, length: 75
+    == render 'artworks/gallery', artworks: artwork.collection.artworks.where.not(id: artwork.id).sample(3)

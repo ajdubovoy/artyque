@@ -6,5 +6,12 @@
         = link_to 'See Full Profile >', artist_resume_blocks_path(artist), remote: true, 'data-action': 'ajax:success->modal#openAndUpdate ajax:error->modal#openAndError', 'data-target': 'modal.link'
 - if artist.featured_artwork.present?
   .row#featured-artwork
-    .col
+    .col-12
       == render 'featured_artwork', artwork: artist.featured_artwork
+.row#artworks-gallery
+  .col-12.d-flex.line-left
+    h3
+      | Artworks
+    hr.lines.w-100.ml-3
+  .col
+    == render 'artworks/gallery', artworks: artworks
