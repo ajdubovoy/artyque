@@ -8,6 +8,24 @@ class ArtistsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[show resume] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
   after_action :skip_authorization, only: %i[show resume] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
 
+  def new
+    @artist = Artist.new
+    authorize @artist
+  end
+
+  def create
+    @user = User.new(user_params)
+    @artist = Artist.new(artist_params)
+    authorize @artist
+    @artist.user = @user
+    @user.role = :artist
+    if @user.save && @artist.save
+      redirect_to admin_dashboard_path
+    else
+      render :new
+    end
+  end
+
   def show
     @artist = Artist.find(params[:id]) # Written separately to prevent authorization
     @palette = @artist.color_palette # Shortcut to pass to #cp helper
@@ -107,6 +125,15 @@ class ArtistsController < ApplicationController
         :title,
         :position
       ]
+    )
+  end
+
+  def user_params
+    # This is written separately because the new action allows for user nested attributes and therefore should only be accessed by admins
+    params.require(:user).permit(
+      :email,
+      :password,
+      :password_confirmation
     )
   end
 end

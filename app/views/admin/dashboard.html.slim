@@ -11,6 +11,10 @@
   .row
     .col
       ul.link-list
+        = link_to new_artist_path do
+          li.text-center
+            .text
+              | + Add Artist
         - @artists.each do |artist|
           = link_to edit_artist_path(artist) do
             li
