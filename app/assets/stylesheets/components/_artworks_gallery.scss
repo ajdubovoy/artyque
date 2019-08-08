@@ -1,0 +1,34 @@
+.artworks-gallery{
+  .artworks-gallery-card{
+    width: 100%;
+    height: 15rem;
+    background-size: cover;
+    background-position: center;
+    z-index: 50;
+    position: relative;
+    overflow: hidden;
+    &:hover{
+      .artworks-gallery-card-info{
+        opacity: 1;
+      }
+    }
+    .artworks-gallery-card-info{
+      @extend .shadow-text-dark;
+      opacity: 0;
+      background-color: rgba(0,0,0,0.7);
+      background-filter: blur(3px);
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 100;
+      @extend .c-white;
+      @extend .p-3;
+      display: flex;
+      justify-content: flex-end;
+      flex-direction: column; // Align at bottom of div but keep normal column orientation
+      transition: opacity 250ms ease-out;
+    }
+  }
+}
