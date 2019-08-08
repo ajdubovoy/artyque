@@ -6,6 +6,9 @@
     }
     margin-bottom: 5rem;
   }
+  h5{
+    font-family: $body-font;
+  }
   .artwork-details{
     @include media-breakpoint-up(sm) {
       // Offset onto image but not on mobile
@@ -26,5 +29,13 @@
         margin-top: 3rem;
       }
     }
+  }
+  .artwork-thumbnail{
+    height: 10rem;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    @extend .shadow-box-light;
+    @extend .mb-2;
   }
 }
