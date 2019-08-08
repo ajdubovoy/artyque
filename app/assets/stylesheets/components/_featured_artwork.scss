@@ -1,0 +1,28 @@
+.featured-artwork{
+  position: relative;
+  $vertical-offset: 5rem;
+  margin-bottom: $vertical-offset + 1.5rem;
+  @extend .w-100;
+  .featured-artwork-image{
+    @extend .bg-dark-blue;
+    background-attachment: center;
+    background-size: cover;
+    background-position: center;
+    height: 16rem;
+    @extend .w-100;
+    @extend .border-radius;
+    @extend .shadow-box-light;
+  }
+  .featured-artwork-label{
+    @extend .panel;
+    @extend .m-0;
+    @extend .p-2;
+    min-width: 25ch;
+    width: auto !important;
+    max-width: 80vw;
+    position: absolute;
+    right: 1ch;
+    margin: 0 !important;
+    bottom: -$vertical-offset;
+  }
+}
