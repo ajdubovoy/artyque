@@ -1,0 +1,10 @@
+| function refreshForm(innerHTML) { const form = document.getElementById('edit-form'); form.innerHTML = innerHTML; } 
+- if Link.exists? @link.id
+  |  refreshForm('
+  = j render "edit", artist: @link.artist, link: @link
+  | '); 
+- else
+  |  refreshForm('
+  = j render "artists/links", artist: @link.artist
+  | '); 
+|  window.init(); 

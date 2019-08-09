@@ -174,4 +174,35 @@ RSpec.describe LinksController, type: :controller do
       end
     end
   end
+
+  describe '#destroy' do
+    context 'html' do
+      login_admin
+
+      it 'redirects to the edit links page' do
+        @artist = create(:artist)
+        @link = @artist.links.sample
+        delete :destroy, params: { id: @link.id }
+        expect(response).to redirect_to edit_artist_path(@artist, stage: :links)
+      end
+
+      it 'destroys the link' do
+        @artist = create(:artist)
+        @link = @artist.links.sample
+        delete :destroy, params: { id: @link.id }
+        expect(Link.exists? @link.id).to be false
+      end
+    end
+
+    context 'js' do
+      login_admin
+
+      it 'returns a successful response' do
+        @artist = create(:artist)
+        @link = @artist.links.sample
+        delete :destroy, params: { id: @link.id }
+        expect(response.status).to eq(200)
+      end
+    end
+  end
 end

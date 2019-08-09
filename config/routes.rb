@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :collections, only: %i[index new create edit update], shallow: true do
       resources :artworks, only: %i[new create edit update show], shallow: true
     end
-    resources :links, only: %i[new create edit update], shallow: true
+    resources :links, only: %i[new create edit update destroy], shallow: true
     resources :upcoming_projects, only: %i[new create edit update], shallow: true
     resources :resume_blocks, only: %i[index]
   end
