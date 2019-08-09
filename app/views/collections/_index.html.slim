@@ -1,0 +1,10 @@
+.collections-gallery
+  - collections.each do |collection|
+    .row.mb-3
+      .col-12
+        .row.mb-2
+          h5
+            = collection.name
+        .row
+          .col-12
+            == render 'artworks/gallery', artworks: collection.artworks
