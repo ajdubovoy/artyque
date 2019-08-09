@@ -11,4 +11,6 @@ div id="content" data-controller="modal"
       == render 'layout_1', artist: @artist, artworks: @artworks
     - when 2 
       == render 'layout_2', artist: @artist, artworks: @artworks
+    - when 3 
+      == render 'layout_3', artist: @artist, artworks: @artworks
   == render 'shared/stim_modal'
