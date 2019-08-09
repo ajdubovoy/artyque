@@ -1,7 +1,17 @@
 class CollectionsController < ApplicationController
-  before_action :set_artist, only: %i[new create]
+  before_action :set_artist, only: %i[index new create]
   after_action :respond_with_js, only: %i[new]
   before_action :set_collection, only: %i[edit update]
+  skip_before_action :authenticate_user!, only: %i[index] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
+  after_action :skip_authorization, only: %i[index] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
+
+  def index
+    @collections = policy_scope @artist.collections
+    if request.xhr?
+      # For modal update
+      render json: { html: render_to_string(partial: 'index', locals: { collections: @collections}) }
+    end
+  end
 
   def new
     @collection = Collection.new

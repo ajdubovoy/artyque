@@ -3,7 +3,7 @@
   .row
   - links.each do |link|
     div class="col-#{full_width ? 12 : 6}"
-      = link_to link.url, class: 'c-dark-blue' do
+      = link_to link.url, class: 'c-dark-blue', target: '_blank' do
         .row.mb-3
           - if link.photo.present?
             .col-4.links-gallery-photo[style="background-image: url('#{cl_image_path link.photo}')"]
