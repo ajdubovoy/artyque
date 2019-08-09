@@ -10,7 +10,7 @@
           li.resume-block.col-12[data-controller="show-more"]
             h5.resume-block-title
               = block.title
-            ul.resume-items[data-target="show-more.content" data-height-limit='6rem']
+            ul.resume-items[data-target="show-more.content" data-height-limit='9rem']
               .see-more.w-100[data-target="show-more.button"]
                 = link_to "See more", artist_resume_blocks_path(artist), class: 'button-tertiary w-100', remote: true, 'data-action': 'click->show-more#toggle'
               - block.items.each do |item|
@@ -31,10 +31,19 @@
       .row#featured-artwork.mt-5.mb-5
         .col-12
           == render 'featured_artwork', artwork: artist.featured_artwork
-    .row#artworks-gallery
-      .col-12.d-flex.line-left
-        h3
-          | Artworks
-        hr.lines.w-100.ml-3
-      .col
-        == render 'artworks/gallery', artworks: artworks
+    - if artworks.present?
+      .row#artworks-gallery.mb-5
+        .col-12.d-flex.line-left
+          h3
+            | Artworks
+          hr.lines.w-100.ml-3
+        .col
+          == render 'artworks/gallery', artworks: artworks
+    - if artist.links.present?
+      .row#links-gallery.mb-5
+        .col-12.d-flex.line-left
+          h3
+            | Media & Press
+          hr.lines.w-100.ml-3
+        .col-12
+          == render 'links/gallery', links: artist.links

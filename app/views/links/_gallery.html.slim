@@ -1,0 +1,19 @@
+- full_width = true unless local_assigns.has_key? :full_width
+.links-gallery.container
+  .row
+  - links.each do |link|
+    div class="col-#{full_width ? 12 : 6}"
+      = link_to link.url, class: 'c-dark-blue' do
+        .row.mb-3
+          - if link.photo.present?
+            .col-4.links-gallery-photo[style="background-image: url('#{cl_image_path link.photo}')"]
+          - else
+            .col-4.links-gallery-photo
+          .col-8
+            h5
+              = link.title
+            p
+              == md link.description
+            - if link.year
+              p.small.c-light-gray
+                | (#{link.year})

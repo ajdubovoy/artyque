@@ -1,0 +1,20 @@
+.links-gallery{
+  .links-gallery-photo{
+    background-size: cover;
+    background-position: center;
+  }
+  p{
+    font-size: 0.85em;
+    &.small{
+      font-size: 0.75em;
+    }
+  }
+  a{
+    @extend .c-dark-blue;
+    transition: color 250ms ease-out;
+    &:hover{
+      @extend .c-blue;
+      text-decoration: none !important;
+    }
+  }
+}
