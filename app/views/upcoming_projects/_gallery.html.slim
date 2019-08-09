@@ -1,0 +1,22 @@
+.upcoming-projects-gallery.container
+  .row
+    - upcoming_projects.each do |upcoming_project|
+      .col-12.col-sm-6.col-lg-4
+        .row.mb-3
+          - if upcoming_project.photo.present?
+            .col-12.upcoming-projects-gallery-photo[style="background-image: url('#{cl_image_path upcoming_project.photo}')"]
+          - else
+            .col-12.upcoming-projects-gallery-photo
+          .col-12
+            h5
+              = upcoming_project.title
+            p
+              == md upcoming_project.description
+            - if upcoming_project.date || upcoming_project.location
+              p.small.c-light-gray
+                - if upcoming_project.location.present?
+                  span
+                    = upcoming_project.location + " "
+                - if upcoming_project.date.present?
+                  span
+                    | (#{upcoming_project.date})

@@ -49,3 +49,11 @@
           hr.lines.w-100.ml-3
         .col-12
           == render 'links/gallery', links: artist.links
+    - if artist.upcoming_projects.present?
+      .row#upcoming-projects-gallery.mb-5
+        .col-12.d-flex.line-left
+          h3
+            | Future Work
+          hr.lines.w-100.ml-3
+        .col-12
+          == render 'upcoming_projects/gallery', upcoming_projects: artist.upcoming_projects
