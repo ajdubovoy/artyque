@@ -1,0 +1,22 @@
+.upcoming-projects-gallery{
+  .upcoming-projects-gallery-photo{
+    background-size: cover;
+    background-position: center;
+    height: 10rem;
+    @extend .mb-2;
+  }
+  p{
+    font-size: 0.85em;
+    &.small{
+      font-size: 0.75em;
+    }
+  }
+  a{
+    @extend .c-dark-blue;
+    transition: color 250ms ease-out;
+    &:hover{
+      @extend .c-blue;
+      text-decoration: none !important;
+    }
+  }
+}

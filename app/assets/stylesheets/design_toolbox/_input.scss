@@ -5,15 +5,20 @@
   caret-color: $color;
 }
 
-input, textarea, select, [contenteditable]{
+input:not([type='checkbox']), textarea, select, [contenteditable]{
   @extend .form-control;
-  @extend .shadow-box-light;
-  @extend .border;
-  &:focus{
-    @extend .shadow-box-dark;
-    @extend .border-light-blue;
+  &:not([type='submit']){
+    @extend .shadow-box-light;
+    @extend .border;
+    &:focus{
+      @extend .shadow-box-dark;
+      @extend .border-light-blue;
+    }
+    @include placeholder($placeholder-gray);
   }
-  @include placeholder($placeholder-gray);
+  &[type='submit']{
+    @extend .button-primary;
+  }
 }
 
 select {
@@ -21,4 +26,52 @@ select {
    border-radius: $border-radius !important;
    -webkit-appearance: none !important;
    // Fixes up some specificities of selects that look dumb
+}
+
+.file-input{
+  @extend .custom-file;
+  font-size: 3rem;
+  input{
+    // @extend .custom-file-input;
+    background-color: $gray;
+    font-size: 3rem;
+  }
+  label{
+    @extend .custom-file-label;
+    border: 1px solid #EFEFEF !important;
+    text-align: center;
+    font-size: 3rem;
+    color: $light-gray;
+    &::after{
+      content: '';
+      background-color: transparent;
+      border: none;
+      display: none;
+    }
+    &:focus, &:active{
+      @extend .shadow-box-dark;
+      @extend .border-light-blue;
+    }
+  }
+}
+
+.photo-uploader-remove{
+  // For multiple photo uploader in forms
+  position: absolute;
+  right: 20px;
+  @extend .c-white;
+  @extend .bg-dark-blue;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  @extend .flex-center;
+  @extend .mr-2;
+  margin-top: -5px;
+  @extend .shadow-box-light;
+  z-index: 1000;
+  &:hover{
+    text-decoration: none;
+    @extend .bg-blue;
+    @extend .c-white;
+  }
 }

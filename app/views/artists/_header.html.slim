@@ -1,0 +1,45 @@
+= simple_form_for artist, remote: true do |f|
+  h2
+    | Style
+  .p-3
+    = f.label :color_palette
+    .stim-select.mb-2[data-controller="select"]
+      .stim-select-button.p-0[data-select-value="1" data-action="click->select#update" data-target="select.button" role="button" title="1"]
+        div class=["color-strip", cp(1, 1, :bg)]
+        div class=["color-strip", cp(1, 2, :bg)]
+        div class=["color-strip", cp(1, 3, :bg)]
+        div class=["color-strip", cp(1, 4, :bg)]
+      .stim-select-button.p-0[data-select-value="2" data-action="click->select#update" data-target="select.button" role="button" title="2"]
+        div class=["color-strip", cp(2, 1, :bg)]
+        div class=["color-strip", cp(2, 2, :bg)]
+        div class=["color-strip", cp(2, 3, :bg)]
+        div class=["color-strip", cp(2, 4, :bg)]
+      .stim-select-button.p-0[data-select-value="3" data-action="click->select#update" data-target="select.button" role="button" title="3"]
+        div class=["color-strip", cp(3, 1, :bg)]
+        div class=["color-strip", cp(3, 2, :bg)]
+        div class=["color-strip", cp(3, 3, :bg)]
+        div class=["color-strip", cp(3, 4, :bg)]
+      = f.input :color_palette, collection: [1, 2, 3], as: :hidden, input_html: { 'data-target' => 'select.input' }
+    = f.label :shape
+    .stim-select.mb-2[data-controller="select"]
+      .stim-select-button.p-0[data-select-value="plain" data-action="click->select#update" data-target="select.button" role="button" title="Plain"]
+        .color-strip-full.bg-pink
+      .stim-select-button.p-0[data-select-value="angular" data-action="click->select#update" data-target="select.button" role="button" title="Angular"]
+        .color-strip-half.bg-pink
+        .color-strip-half.bg-dark-blue
+      .stim-select-button.p-0[data-select-value="curved" data-action="click->select#update" data-target="select.button" role="button" title="Curved"]
+        .color-strip-curved.bg-pink
+        .color-strip-full.bg-dark-blue
+      = f.input :shape, collection: {"Plain" => 'plain', "Angular" => 'angular', "Curved" => 'curved'}, as: :hidden , input_html: { 'data-target' => 'select.input' }
+  h2
+    | Content
+  .p-3
+    = render 'shared/photo_uploader', f: f, field: :photo, show_label: true, original_photo: @artist.photo
+    = f.input :super_title
+    = f.input :title
+    = f.input :description
+    = f.input :button_text
+  .border-bottom-light-gray.mb-3
+  .p-3
+    = hidden_field_tag(:stage, 'header')
+    = f.button :submit, "Save"

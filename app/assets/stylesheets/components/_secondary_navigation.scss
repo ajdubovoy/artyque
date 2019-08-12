@@ -1,0 +1,33 @@
+.secondary-navigation{
+  @extend .panel;
+  padding: 0 !important;
+  @include media-breakpoint-up(sm){
+    position: sticky;
+    top: 1rem;
+  }
+  ul{
+    list-style: none;
+    @extend .p-0;
+    font-style: normal;
+    font-weight: normal;
+    margin-block-end: 0;
+    li{
+      @extend .pt-2;
+      @extend .pb-2;
+      padding-left: 1rem; // Set to keep text in order even when border applied on selected
+      &:not(:last-child) {
+        @extend .border-bottom-light-gray;
+      }
+      &.selected{
+        @extend .border-left-blue-thick;
+        padding-left: 0.5rem; // Half of border size
+        a{
+          pointer-events: none;
+        }
+      }
+      a{
+        @extend .c-blue;
+      }
+    }
+  }
+}

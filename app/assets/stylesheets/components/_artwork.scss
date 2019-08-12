@@ -1,0 +1,42 @@
+.artwork{
+  .artwork-photos{
+    img{
+      min-height: 20rem;
+      max-height: 100vh;
+      width: auto;
+    }
+    margin-bottom: 5rem;
+  }
+  h5{
+    font-family: $body-font;
+  }
+  .artwork-details{
+    @include media-breakpoint-up(sm) {
+      // Offset onto image but not on mobile
+      $desktop-offset: 5ch;
+      margin-left: -$desktop-offset;
+      .title{
+        margin-left: $desktop-offset - 1ch;
+        text-align: right;
+        max-width: calc(100% - 5ch);
+      }
+      .artwork-info{
+        margin-top: 0 !important;
+      }
+    }
+    @include media-breakpoint-down(xs) {
+      // Fix weird spacing bug with carousel
+      .title{
+        margin-top: 3rem;
+      }
+    }
+  }
+  .artwork-thumbnail{
+    height: 10rem;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    @extend .shadow-box-light;
+    @extend .mb-2;
+  }
+}

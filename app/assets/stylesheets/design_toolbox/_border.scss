@@ -11,5 +11,31 @@
   }
   &-dark-blue{
     border: 1px solid $dark-blue;
+    &-very-thick{
+      border: 5px solid $dark-blue;
+    }
+  }
+  &-white{
+    border: 1px solid $white;
+    &-very-thick{
+      border: 5px solid $white;
+    }
+  }
+  &-bottom{
+    &-light-gray{
+      border-bottom: 1px solid $light-gray !important;
+    }
+  }
+  &-top{
+    &-light-gray{
+      border-top: 1px solid $light-gray !important;
+    }
+  }
+  &-left{
+    &-blue{
+      &-thick{
+        border-left: 0.5rem solid $blue !important;
+      }
+    }
   }
 }

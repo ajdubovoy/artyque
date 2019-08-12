@@ -1,0 +1,17 @@
+.quotation{
+  @extend .w-100;
+  @extend .text-center;
+  @extend .p-5;
+  @extend .shadow-box-dark;
+  q{
+    font-size: 1.3rem;
+  }
+  cite{
+    @extend .subtitle;
+    font-style: normal;
+    font-size: 0.8rem;
+  }
+  p{
+    @extend .m-2;
+  }
+}

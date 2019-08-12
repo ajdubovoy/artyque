@@ -1,0 +1,51 @@
+.p-3
+  = f.label :highlight
+  .p-2
+    .stim-select.mb-2[data-controller="select"]
+      .stim-select-button.p-0[data-select-value="true" data-action="click->select#update" data-target="select.button" role="button" title="Highlighted"]
+        .stim-select-button-text.c-gold
+          i.fas.fa-star
+        .color-strip-full.bg-dark-blue
+      .stim-select-button.p-0[data-select-value="false" data-action="click->select#update" data-target="select.button" role="button" title="Not highlighted"]
+        .stim-select-button-text.c-dark-blue
+          i.fas.fa-times
+        .color-strip-full.bg-gold
+      = f.input :highlight, as: :hidden, input_html: { 'data-target' => 'select.input' }
+      p.mt-3.mb-3.small.c-light-gray
+        | The highlighted artworks are the ones that show first on your page. It's recommended to pick 4-6.
+  = f.input :name
+  = f.input :description
+  = f.input :medium
+  .row
+    .col-12.col-sm-4
+      = f.input :width
+    .col-12.col-sm-4
+      = f.input :height
+    .col-12.col-sm-4
+      = f.input :depth
+  = f.input :weight
+  = f.input :year
+  = f.input :price, label: "Price (optional)"
+h2.border-top-light-gray.mb-3
+  | Photos
+.p-3.multiple-upload.photo-fields.row
+  - count = 0
+  = f.simple_fields_for :photos do |photo|
+    - original_photo = count <= f.object.photos.length ? f.object.photos[count].attachment : nil
+    = render 'photo_fields', f: photo, original_photo: original_photo
+    - count += 1
+  .links.col-6.col-sm-4.flex-center
+    = link_to_add_association '+ Add photo', f, :photos, class: 'button-tertiary w-100'
+h2.border-top-light-gray
+  | Videos
+.p-3.multiple-upload.video-fields.row
+  = f.simple_fields_for :videos do |video|
+    = render 'video_fields', f: video
+  .links.col-12.col-sm-6.flex-center
+    = link_to_add_association '+ Add video', f, :videos, class: 'button-tertiary w-100'
+.border-bottom-light-gray.mb-3
+- if Artwork.exists? f.object.id
+  .p-3
+    = link_to "Delete artwork", artwork_path(f.object), method: :delete, class: 'button-tertiary w-100', 'data-confirm': "Are you sure?", remote: true
+.p-3
+  = f.button :submit, "Save"

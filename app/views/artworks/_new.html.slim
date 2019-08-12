@@ -1,0 +1,6 @@
+.p-3
+  = link_to "< Back", edit_collection_path(collection), remote: true, class: 'button-tertiary'
+h2
+  | New Artwork
+= simple_form_for [collection, artwork], remote: true do |f|
+  = render 'fields', f: f

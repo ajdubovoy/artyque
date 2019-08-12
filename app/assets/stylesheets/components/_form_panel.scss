@@ -1,0 +1,36 @@
+.form-panel{
+  @extend .panel;
+  padding: 0 !important;
+  h2{
+    @extend .border-bottom-light-gray;
+    font-family: $body-font;
+    font-weight: 100;
+    @extend .pt-3;
+    @extend .pb-3;
+    @extend .pl-3;
+    @extend .border-top-light-gray;
+    @extend .m-0;
+    font-size: 1rem;
+    &:first-of-type:not(.border-top-light-gray){
+      border-top: none !important;
+    }
+  }
+  h3{
+    background-color: #F0F0F0;
+    font-style: italic;
+    font-family: $body-font;
+    font-weight: 100;
+    @extend .pt-3;
+    @extend .pb-3;
+    @extend .pl-3;
+    @extend .m-0;
+    @extend .border-top-light-gray;
+    font-size: 0.9rem;
+    &:first-of-type{
+      border-top: none !important;
+    }
+  }
+  label{
+    @extend .c-light-gray;
+  }
+}

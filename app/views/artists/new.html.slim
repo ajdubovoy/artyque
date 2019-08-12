@@ -1,0 +1,27 @@
+/ Only to be accessed by Admins
+.container-fluid
+  .row
+    .col.text-center.pt-3.pb-3.bg-beige.w-100
+      h1
+        | New Artist
+.panel
+  .row
+    .col
+      = simple_form_for @artist do |f|
+        = f.input :name
+        .user-fields.mt-5.mb-5
+          h6.mb-3 Create Associated Account
+          = simple_fields_for :user do |u|
+            = u.input :email,
+                        required: true,
+                        autofocus: true,
+                        input_html: { autocomplete: "email" }
+            = u.input :password,
+                        required: true,
+                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        input_html: { autocomplete: "new-password" }
+            = u.input :password_confirmation,
+                        required: true,
+                        input_html: { autocomplete: "new-password" }
+        = f.submit
+.ellipse

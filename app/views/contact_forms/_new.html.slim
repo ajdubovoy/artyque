@@ -1,0 +1,17 @@
+.new-contact-form
+  h2.color.c-blue.text-center
+    | Get in touch
+  br
+  = simple_form_for @contact_form, remote: true do |f|
+    = f.input :role, as: :select, :required => true, label: false, collection: { "An Artist" => 'artist', "A Gallery" => 'gallery', "A Collector" => 'collector' }, prompt: "I am..."
+    .row
+      .col-sm-6
+        = f.input :first_name, :required => true, label: false, placeholder: "First name"
+      .col-sm-6
+        = f.input :last_name, :required => true, label: false, placeholder: "Last name"
+    = f.input :email, :required => true, label: false, placeholder: "Email"
+    = f.input :website, :required => false, label: false, placeholder: "Website (optional)"
+    = f.input :message, :as => :text, :required => false, label: false, placeholder: "Message (optional)"
+    .hidden
+      = f.input :nickname, :hint => 'Leave this field blank!'
+    = f.button :submit, 'Send'

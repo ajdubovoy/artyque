@@ -1,0 +1,16 @@
+== render 'banner', artist: @artist, palette: @palette
+- if @artist.quotation.present? || @artist.quotation_caption.present?
+  == render 'quotation', quotation: @artist.quotation, caption: @artist.quotation_caption, palette: @palette
+- if @artist.video.present?
+  == render 'video_banner', video: @artist.video
+.ellipse
+div id="content" data-controller="modal"
+  .container
+    - case @artist.layout
+    - when 1 
+      == render 'layout_1', artist: @artist, artworks: @artworks
+    - when 2 
+      == render 'layout_2', artist: @artist, artworks: @artworks
+    - when 3 
+      == render 'layout_3', artist: @artist, artworks: @artworks
+  == render 'shared/stim_modal'

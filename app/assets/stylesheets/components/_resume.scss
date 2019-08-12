@@ -1,0 +1,55 @@
+.resume{
+  &, ul{
+    list-style: none;
+    padding-inline-start: 0;
+  }
+  h5{
+    @extend .mb-4;
+    font-size: 2em;
+  }
+  h6{
+    font-family: $body-font;
+  }
+  p{
+    font-size: 0.9em;
+  }
+}
+
+.resume-sidebar{
+  font-size: 0.9em;
+  @extend .panel;
+  margin: 0 !important;
+  padding: 0 !important;
+  .resume-items{
+    // For show more
+    overflow: hidden;
+    position: relative;
+    transition: max-height 500ms ease-out;
+    .see-more{
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      @extend .pt-5;
+      background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+      transition: opacity 500ms ease-out;
+      .button-tertiary{
+        border: none !important;
+        box-shadow: none !important;
+      }
+    }
+  }
+  h5{
+    @extend .title;
+    margin-bottom: 1rem !important;
+    width: 100%;
+    @extend .bg-beige;
+    @extend .pt-2;
+    @extend .pb-2;
+  }
+  h5, h6{
+    font-size: 0.9em !important;
+  }
+  h5, h6, p{
+    @extend .pl-3;
+  }
+}

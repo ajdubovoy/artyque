@@ -1,5 +1,27 @@
 <footer class="footer">
   <div class="image">
-    <%= image_tag 'logo-footer.svg', class: 'logo' %>
+    <%= link_to root_path do %>
+      <%= image_tag 'logo-footer.svg', class: 'logo' %>
+    <% end %>
   </div>
+  <ul class="links">
+    <li id="login-button">
+      <% if user_signed_in? %>
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Artist Login", new_user_session_path, id: 'login' %>
+      <% end %>
+    </li>
+    <% if user_signed_in? %>
+      <% if current_user.admin? %>
+        <li>
+          <%= link_to "Admin Dashboard", admin_dashboard_path %>
+        </li>
+      <% elsif current_user.artist? && current_user.artist %>
+        <li>
+          <%= link_to "My Artist Profile", edit_artist_path(current_user.artist) %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
 </footer>

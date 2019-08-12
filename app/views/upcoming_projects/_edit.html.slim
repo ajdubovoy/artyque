@@ -1,0 +1,6 @@
+.p-3
+  = link_to "< Back", edit_artist_path(artist, stage: :upcoming_projects), remote: true, class: 'button-tertiary'
+h2
+  | Edit Upcoming Project
+= simple_form_for upcoming_project, remote: true do |f|
+  = render 'fields', f: f

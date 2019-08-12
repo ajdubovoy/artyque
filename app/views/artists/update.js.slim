@@ -1,0 +1,10 @@
+| function refreshForm(innerHTML) { const form = document.getElementById('edit-dashboard'); form.innerHTML = innerHTML; } 
+- if @artist.errors.any?
+  |  refreshForm('
+  = j render "dashboard", artist: @artist, stage: @stage
+  | '); 
+- else
+  |  refreshForm('
+  = j render "dashboard", artist: @artist, stage: @stage
+  | '); 
+|  window.init(); 

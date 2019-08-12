@@ -9,6 +9,8 @@ gem 'puma'
 gem 'rails', '5.1.5'
 gem 'redis'
 
+gem 'slim'
+
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass', '~> 5.6.1'
 gem 'bootstrap', '~> 4.3.1'
@@ -20,7 +22,13 @@ gem 'webpacker'
 gem 'postmark-rails'
 
 gem 'mail_form'
-gem 'factory_bot_rails'
+gem 'acts_as_list'
+gem 'pundit'
+gem 'cloudinary', '~> 1.9.1'
+gem 'carrierwave', '~> 1.2'
+gem "cocoon"
+gem 'inline_svg'
+gem 'bluecloth'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
@@ -28,6 +36,7 @@ end
 
 group :development, :test do
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
   gem 'capybara'
   gem 'faker'
   gem 'rails-controller-testing'

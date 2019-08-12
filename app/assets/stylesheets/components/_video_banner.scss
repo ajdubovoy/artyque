@@ -1,0 +1,16 @@
+.video-banner{
+  width: 100vw;
+  margin-left: auto;
+  margin-right: auto;
+  @extend .flex-center;
+  $ratio: 1.1;
+  @include media-breakpoint-up(sm){
+    width: calc(100vw - 2 * #{$header-height});
+  }
+  @include media-breakpoint-up(md){
+    width: calc(100vw - 2 * #{$header-height} / #{$ratio});
+  }
+  @include media-breakpoint-up(lg){
+    width: calc((100vw - 2 * #{$header-height}) / (#{$ratio} * #{$ratio}));
+  }
+}

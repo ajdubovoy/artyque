@@ -1,0 +1,31 @@
+doctype html
+html
+  head
+    meta[charset="UTF-8"]
+    meta[name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"]
+    |  <link rel="icon" href="
+    = image_path 'favicon-01.png'
+    | "> 
+    title
+      | Artyque
+      = " —— #{@title}" if @title.present?
+    = csrf_meta_tags
+    = action_cable_meta_tag
+    = stylesheet_link_tag 'application', media: 'all'
+    = stylesheet_pack_tag 'application', media: 'all'
+    / Google Analytics
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-142247307-1">
+    javascript:
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date());
+
+     gtag('config', 'UA-142247307-1');
+  body
+    = render 'shared/flashes'
+    = render 'shared/header'
+    .page-wrap
+      == yield
+    = render 'shared/footer'
+    = javascript_include_tag 'application'
+    = javascript_pack_tag 'application'
