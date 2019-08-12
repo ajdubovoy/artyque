@@ -1,0 +1,10 @@
+| function refreshForm(innerHTML) { const form = document.getElementById('edit-form'); form.innerHTML = innerHTML; } 
+- if Artwork.exists? @artwork.id
+  |  refreshForm('
+  = j render "edit", collection: @artwork.collection, artwork: @artwork
+  | '); 
+- else
+  |  refreshForm('
+  = j render "collections/edit", collection: @artwork.collection, artist: @artwork.collection.artist
+  | '); 
+|  window.init(); 

@@ -31,7 +31,7 @@ h2.border-top-light-gray.mb-3
 .p-3.multiple-upload.photo-fields.row
   - count = 0
   = f.simple_fields_for :photos do |photo|
-    - original_photo = count <= @artwork.photos.length ? @artwork.photos[count].attachment : nil
+    - original_photo = count <= f.object.photos.length ? f.object.photos[count].attachment : nil
     = render 'photo_fields', f: photo, original_photo: original_photo
     - count += 1
   .links.col-6.col-sm-4.flex-center
@@ -44,5 +44,8 @@ h2.border-top-light-gray
   .links.col-12.col-sm-6.flex-center
     = link_to_add_association '+ Add video', f, :videos, class: 'button-tertiary w-100'
 .border-bottom-light-gray.mb-3
+- if Artwork.exists? f.object.id
+  .p-3
+    = link_to "Delete artwork", artwork_path(f.object), method: :delete, class: 'button-tertiary w-100', 'data-confirm': "Are you sure?", remote: true
 .p-3
   = f.button :submit, "Save"
