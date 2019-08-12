@@ -196,4 +196,35 @@ RSpec.describe CollectionsController, type: :controller do
       end
     end
   end
+
+  describe '#destroy' do
+    context 'html' do
+      login_admin
+
+      it 'redirects to the edit collections page' do
+        @artist = create(:artist)
+        @collection = @artist.collections.sample
+        delete :destroy, params: { id: @collection.id }
+        expect(response).to redirect_to edit_artist_path(@artist, stage: :artworks)
+      end
+
+      it 'destroys the collection' do
+        @artist = create(:artist)
+        @collection = @artist.collections.sample
+        delete :destroy, params: { id: @collection.id }
+        expect(Collection.exists? @collection.id).to be false
+      end
+    end
+
+    context 'js' do
+      login_admin
+
+      it 'returns a successful response' do
+        @artist = create(:artist)
+        @collection = @artist.collections.sample
+        delete :destroy, params: { id: @collection.id }, format: :js
+        expect(response.status).to eq(200)
+      end
+    end
+  end
 end

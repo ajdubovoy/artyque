@@ -200,7 +200,7 @@ RSpec.describe LinksController, type: :controller do
       it 'returns a successful response' do
         @artist = create(:artist)
         @link = @artist.links.sample
-        delete :destroy, params: { id: @link.id }
+        delete :destroy, params: { id: @link.id }, format: :js
         expect(response.status).to eq(200)
       end
     end
