@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
   before_action :set_artist, only: %i[new create]
   after_action :respond_with_js, only: %i[new edit]
-  before_action :set_link, only: %i[edit update]
+  before_action :set_link, only: %i[edit update destroy]
   include MarkdownHelper
 
   def new
@@ -30,6 +30,20 @@ class LinksController < ApplicationController
 
   def update
     if @link.update(link_params)
+      respond_to do |format|
+        format.html { redirect_to edit_artist_path(@link.artist, stage: :links) }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render :edit }
+        format.js
+      end
+    end
+  end
+
+  def destroy
+    if @link.destroy
       respond_to do |format|
         format.html { redirect_to edit_artist_path(@link.artist, stage: :links) }
         format.js

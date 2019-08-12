@@ -171,7 +171,7 @@ RSpec.describe ArtworksController, type: :controller do
           @artwork = @collection.artworks.sample
           artwork_attributes = FactoryBot.attributes_for(:artwork)
           patch :update, params: { id: @artwork.id, artwork: artwork_attributes }
-          expect(response).to redirect_to edit_artist_path(@artist, stage: :artworks)
+          expect(response).to redirect_to edit_collection_path(@collection)
         end
       end
 
@@ -218,4 +218,37 @@ RSpec.describe ArtworksController, type: :controller do
     end
   end
 
+  describe '#destroy' do
+    context 'html' do
+      login_admin
+
+      it 'redirects to the edit collection page' do
+        @artist = create(:artist)
+        @collection = @artist.collections.sample
+        @artwork = @collection.artworks.sample
+        delete :destroy, params: { id: @artwork.id }
+        expect(response).to redirect_to edit_collection_path(@collection)
+      end
+
+      it 'destroys the artwork' do
+        @artist = create(:artist)
+        @artwork = @artist.artworks.sample
+        @collection = @artist.collections.sample
+        delete :destroy, params: { id: @artwork.id }
+        expect(Artwork.exists? @artwork.id).to be false
+      end
+    end
+
+    context 'js' do
+      login_admin
+
+      it 'returns a successful response' do
+        @artist = create(:artist)
+        @collection = @artist.collections.sample
+        @artwork = @collection.artworks.sample
+        delete :destroy, params: { id: @artwork.id }, format: :js
+        expect(response.status).to eq(200)
+      end
+    end
+  end
 end

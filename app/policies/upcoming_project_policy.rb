@@ -15,6 +15,10 @@ class UpcomingProjectPolicy < ApplicationPolicy
     return new?
   end
 
+  def destroy?
+    return new?
+  end
+
   class Scope < Scope
     def resolve
       scope.all

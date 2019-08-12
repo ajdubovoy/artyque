@@ -3,7 +3,10 @@
   = f.input :description
   = f.input :url
   = f.input :year
-  = render 'shared/photo_uploader', f: f, field: :photo, show_label: true, original_photo: @link.photo
+  = render 'shared/photo_uploader', f: f, field: :photo, show_label: true, original_photo: f.object.photo
 .border-bottom-light-gray.mb-3
+  - if Link.exists? f.object.id
+    .p-3
+      = link_to "Delete link", link_path(f.object), method: :delete, class: 'button-tertiary w-100', 'data-confirm': "Are you sure?", remote: true
 .p-3
   = f.button :submit, "Save"

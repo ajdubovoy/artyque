@@ -175,4 +175,34 @@ RSpec.describe UpcomingProjectsController, type: :controller do
     end
   end
 
+  describe '#destroy' do
+    context 'html' do
+      login_admin
+
+      it 'redirects to the edit upcoming_projects page' do
+        @artist = create(:artist)
+        @upcoming_project = @artist.upcoming_projects.sample
+        delete :destroy, params: { id: @upcoming_project.id }
+        expect(response).to redirect_to edit_artist_path(@artist, stage: :upcoming_projects)
+      end
+
+      it 'destroys the upcoming_project' do
+        @artist = create(:artist)
+        @upcoming_project = @artist.upcoming_projects.sample
+        delete :destroy, params: { id: @upcoming_project.id }
+        expect(UpcomingProject.exists? @upcoming_project.id).to be false
+      end
+    end
+
+    context 'js' do
+      login_admin
+
+      it 'returns a successful response' do
+        @artist = create(:artist)
+        @upcoming_project = @artist.upcoming_projects.sample
+        delete :destroy, params: { id: @upcoming_project.id }, format: :js
+        expect(response.status).to eq(200)
+      end
+    end
+  end
 end

@@ -1,0 +1,10 @@
+| function refreshForm(innerHTML) { const form = document.getElementById('edit-form'); form.innerHTML = innerHTML; } 
+- if UpcomingProject.exists? @upcoming_project.id
+  |  refreshForm('
+  = j render "edit", artist: @upcoming_project.artist, upcoming_project: @upcoming_project
+  | '); 
+- else
+  |  refreshForm('
+  = j render "artists/upcoming_projects", artist: @upcoming_project.artist
+  | '); 
+|  window.init(); 

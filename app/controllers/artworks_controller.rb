@@ -1,7 +1,7 @@
 class ArtworksController < ApplicationController
   before_action :set_collection, only: %i[new create]
   after_action :respond_with_js, only: %i[new edit]
-  before_action :set_artwork, only: %i[edit update]
+  before_action :set_artwork, only: %i[edit update destroy]
   skip_before_action :authenticate_user!, only: %i[show] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
   after_action :skip_authorization, only: %i[show] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
   include VideoHelper
@@ -42,6 +42,20 @@ class ArtworksController < ApplicationController
     if @artwork.update(artwork_params)
       respond_to do |format|
         format.html { redirect_to edit_collection_path(@collection) }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render :edit }
+        format.js
+      end
+    end
+  end
+
+  def destroy
+    if @artwork.destroy
+      respond_to do |format|
+        format.html { redirect_to edit_collection_path(@artwork.collection) }
         format.js
       end
     else

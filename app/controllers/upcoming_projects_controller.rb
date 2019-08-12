@@ -1,7 +1,7 @@
 class UpcomingProjectsController < ApplicationController
   before_action :set_artist, only: %i[new create]
   after_action :respond_with_js, only: %i[new edit]
-  before_action :set_upcoming_project, only: %i[edit update]
+  before_action :set_upcoming_project, only: %i[edit update destroy]
 
   def new
     @upcoming_project = UpcomingProject.new
@@ -29,6 +29,20 @@ class UpcomingProjectsController < ApplicationController
 
   def update
     if @upcoming_project.update(upcoming_project_params)
+      respond_to do |format|
+        format.html { redirect_to edit_artist_path(@upcoming_project.artist, stage: :upcoming_projects) }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render :edit }
+        format.js
+      end
+    end
+  end
+
+  def destroy
+    if @upcoming_project.destroy
       respond_to do |format|
         format.html { redirect_to edit_artist_path(@upcoming_project.artist, stage: :upcoming_projects) }
         format.js

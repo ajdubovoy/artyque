@@ -1,7 +1,7 @@
 class CollectionsController < ApplicationController
   before_action :set_artist, only: %i[index new create]
   after_action :respond_with_js, only: %i[new]
-  before_action :set_collection, only: %i[edit update]
+  before_action :set_collection, only: %i[edit update destroy]
   skip_before_action :authenticate_user!, only: %i[index] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
   after_action :skip_authorization, only: %i[index] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
 
@@ -39,6 +39,20 @@ class CollectionsController < ApplicationController
 
   def update
     if @collection.update(collection_params)
+      respond_to do |format|
+        format.html { redirect_to edit_artist_path(@collection.artist, stage: :artworks) }
+        format.js
+      end
+    else
+      respond_to do |format|
+        format.html { render :edit }
+        format.js
+      end
+    end
+  end
+
+  def destroy
+    if @collection.destroy
       respond_to do |format|
         format.html { redirect_to edit_artist_path(@collection.artist, stage: :artworks) }
         format.js
