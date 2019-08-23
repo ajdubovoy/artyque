@@ -1,10 +1,17 @@
 | function refreshForm(innerHTML) { const form = document.getElementById('edit-form'); form.innerHTML = innerHTML; } 
+| function showFlash(text) { const notice = document.getElementById('flashes'); notice.innerHTML = text; }
 - if @upcoming_project.errors.any?
   |  refreshForm('
   = j render "edit", artist: @upcoming_project.artist, upcoming_project: @upcoming_project
   | '); 
+  | showFlash('
+  = j render 'shared/flashes', notice: "Could not be saved"
+  | ');
 - else
   |  refreshForm('
   = j render "artists/upcoming_projects", artist: @artist
   | '); 
+  | showFlash('
+  = j render 'shared/flashes', notice: "Saved successfully"
+  | ');
 |  window.init(); 

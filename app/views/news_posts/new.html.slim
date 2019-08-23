@@ -5,6 +5,9 @@
       h1
         | New News Post
 .panel
+  .row.mb-3
+    .col
+      = link_to "< Back", admin_dashboard_path, class: 'button-tertiary'
   .row
     .col
       = render 'news_posts/fields'

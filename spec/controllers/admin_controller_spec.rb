@@ -13,5 +13,10 @@ RSpec.describe AdminController, type: :controller do
       get :dashboard
       expect(assigns(:news_posts)).to match_array NewsPost.all
     end
+
+    it "assigns the categories" do
+      get :dashboard
+      expect(assigns(:categories)).to match_array Category.all
+    end
   end
 end
