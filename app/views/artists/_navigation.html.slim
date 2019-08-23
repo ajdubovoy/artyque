@@ -17,14 +17,16 @@ nav#edit-navigation.secondary-navigation
     = "selected" if stage == :artworks
     | ">
     = link_to 'Artworks', edit_artist_path(artist, stage: :artworks), remote: true
-    |  <li class="
-    = "selected" if stage == :links
-    | ">
-    = link_to 'Links', edit_artist_path(artist, stage: :links), remote: true
-    |  <li class="
-    = "selected" if stage == :upcoming_projects
-    | ">
-    = link_to 'Upcoming Projects', edit_artist_path(artist, stage: :upcoming_projects), remote: true
+    / Only shown if artist has a 'more complex' layout
+    - if artist.layout > 1
+      |  <li class="
+      = "selected" if stage == :links
+      | ">
+      = link_to 'Links', edit_artist_path(artist, stage: :links), remote: true
+      |  <li class="
+      = "selected" if stage == :upcoming_projects
+      | ">
+      = link_to 'Upcoming Projects', edit_artist_path(artist, stage: :upcoming_projects), remote: true
     li.text-center
       = link_to artist_path(referrer: :dashboard), target: :_blank, class: 'button-tertiary' do
           | Preview Page
