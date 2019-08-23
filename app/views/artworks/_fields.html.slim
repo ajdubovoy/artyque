@@ -1,18 +1,8 @@
 .p-3
-  = f.label :highlight
-  .p-2
-    .stim-select.mb-2[data-controller="select"]
-      .stim-select-button.p-0[data-select-value="true" data-action="click->select#update" data-target="select.button" role="button" title="Highlighted"]
-        .stim-select-button-text.c-gold
-          i.fas.fa-star
-        .color-strip-full.bg-dark-blue
-      .stim-select-button.p-0[data-select-value="false" data-action="click->select#update" data-target="select.button" role="button" title="Not highlighted"]
-        .stim-select-button-text.c-dark-blue
-          i.fas.fa-times
-        .color-strip-full.bg-gold
-      = f.input :highlight, as: :hidden, input_html: { 'data-target' => 'select.input' }
-      p.mt-3.mb-3.small.c-dark-gray
-        | The highlighted artworks are the ones that show first on your page. It's recommended to pick 4-6.
+  = f.input :highlight
+  p.mt-3.mb-3.small.c-dark-gray
+    em
+      | The highlighted artworks are the ones that show first on your page. It's recommended to pick 4-6.
   = f.input :name
   = f.association :category
   = f.input :description
