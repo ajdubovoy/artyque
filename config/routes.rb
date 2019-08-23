@@ -18,4 +18,7 @@ Rails.application.routes.draw do
     resources :upcoming_projects, only: %i[new create edit update destroy], shallow: true
     resources :resume_blocks, only: %i[index]
   end
+
+  # News
+  resources :news_posts, only: %i[new create show edit update]
 end
