@@ -23,3 +23,23 @@
               .image
                 - if artist.photo.present?
                   = cl_image_tag artist.photo
+.container.news-post-list
+  .row.pt-3
+    .col
+      h2
+        | All News Posts
+  .row
+    .col
+      ul.link-list
+        = link_to new_news_post_path do
+          li.text-center
+            .text
+              | + Add Post
+        - @news_posts.each do |news_post|
+          = link_to edit_news_post_path(news_post) do
+            li
+              .text
+                = news_post.headline
+              .image
+                - if news_post.photo.present?
+                  = cl_image_tag news_post.photo

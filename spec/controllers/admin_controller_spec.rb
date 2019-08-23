@@ -8,5 +8,10 @@ RSpec.describe AdminController, type: :controller do
       get :dashboard
       expect(assigns(:artists)).to match_array Artist.all
     end
+
+    it "assigns the news posts" do
+      get :dashboard
+      expect(assigns(:news_posts)).to match_array NewsPost.all
+    end
   end
 end
