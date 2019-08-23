@@ -3,4 +3,8 @@ FactoryBot.define do
     headline { "MyString" }
     content { "MyText" }
   end
+
+  trait :invalid do
+    headline { "" }
+  end
 end

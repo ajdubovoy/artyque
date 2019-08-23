@@ -20,5 +20,5 @@ Rails.application.routes.draw do
   end
 
   # News
-  resources :news_posts, only: %i[new create show edit update]
+  resources :news_posts, only: %i[new create edit update]
 end
