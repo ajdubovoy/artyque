@@ -83,6 +83,7 @@ class ArtworksController < ApplicationController
     params.require(:artwork).permit(
       :name,
       :description,
+      :category_id,
       :width,
       :height,
       :depth,

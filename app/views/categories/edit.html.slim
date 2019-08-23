@@ -3,12 +3,15 @@
   .row
     .col.text-center.pt-3.pb-3.bg-beige.w-100
       h1
-        | Edit News Post
+        | Edit Artwork Category
 .panel
   .row.mb-3
     .col
       = link_to "< Back", admin_dashboard_path, class: 'button-tertiary'
   .row
     .col
-      = render 'news_posts/fields'
+      = render 'fields'
+  .row.mt-3
+    .col
+      = link_to "Delete Category", category_path(@category), method: :delete, class: %w[button-tertiary w-100], data: { confirm: 'Are you sure?' }
 .ellipse

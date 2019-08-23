@@ -14,15 +14,16 @@
       p.mt-3.mb-3.small.c-light-gray
         | The highlighted artworks are the ones that show first on your page. It's recommended to pick 4-6.
   = f.input :name
+  = f.association :category
   = f.input :description
   = f.input :medium
   .row
     .col-12.col-sm-4
-      = f.input :width
+      = f.input :width, label: "Width (cm)"
     .col-12.col-sm-4
-      = f.input :height
+      = f.input :height, label: "Height (cm)"
     .col-12.col-sm-4
-      = f.input :depth
+      = f.input :depth, label: "Depth (kg)"
   = f.input :weight
   = f.input :year
   = f.input :price, label: "Price (optional)"

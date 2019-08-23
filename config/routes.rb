@@ -21,4 +21,5 @@ Rails.application.routes.draw do
 
   # News
   resources :news_posts, only: %i[new create edit update]
+  resources :categories, only: %i[new create edit update destroy]
 end
