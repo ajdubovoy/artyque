@@ -1,10 +1,17 @@
 | function refreshForm(innerHTML) { const form = document.getElementById('edit-form'); form.innerHTML = innerHTML; } 
+| function showFlash(text) { const notice = document.getElementById('flashes'); notice.innerHTML = text; }
 - if @artwork.errors.any?
   |  refreshForm('
   = j render "edit", artwork: @artwork, collection: @artwork.collection
   | '); 
+  | showFlash('
+  = j render 'shared/flashes', notice: "Could not be saved"
+  | ');
 - else
   |  refreshForm('
   = j render "collections/edit", collection: @artwork.collection, artist: @artwork.collection.artist
   | '); 
+  | showFlash('
+  = j render 'shared/flashes', notice: "Saved successfully"
+  | ');
 |  window.init(); 

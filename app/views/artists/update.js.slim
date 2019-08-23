@@ -1,10 +1,17 @@
 | function refreshForm(innerHTML) { const form = document.getElementById('edit-dashboard'); form.innerHTML = innerHTML; } 
+| function showFlash(text) { const notice = document.getElementById('flashes'); notice.innerHTML = text; }
 - if @artist.errors.any?
   |  refreshForm('
   = j render "dashboard", artist: @artist, stage: @stage
-  | '); 
+  | ');
+  | showFlash('
+  = j render 'shared/flashes', notice: "Could not be saved"
+  | ');
 - else
   |  refreshForm('
   = j render "dashboard", artist: @artist, stage: @stage
-  | '); 
+  | ');
+  | showFlash('
+  = j render 'shared/flashes', notice: "Saved successfully"
+  | ');
 |  window.init(); 
