@@ -10,4 +10,5 @@
         .col-12.col-sm-4
           = f.input :year, required: false
     .col-12.col-sm-2.font-italic
-      = link_to_remove_association "- Remove", f, class: 'pl-3'
+      = link_to_remove_association f, class: 'pl-3' do
+        <i class="fas fa-trash"></i>

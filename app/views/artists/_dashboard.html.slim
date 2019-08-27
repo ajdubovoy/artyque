@@ -21,5 +21,5 @@
             = render 'header', artist: artist
 #frame.d-none.col-12[data-target="frame.frame"]
   = render 'frame', artist: @artist
-a.frame-open.button-tertiary[href="#" data-target='frame.button' data-action="click -> frame#toggle"]
+a.frame-open.button-tertiary.d-none.d-sm-block[href="#" data-target='frame.button']
   | Toggle Preview
