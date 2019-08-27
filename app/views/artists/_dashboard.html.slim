@@ -1,19 +1,25 @@
-.col-12.col-sm-3
-  = render 'navigation', stage: stage, artist: artist
-.col-12.col-sm-9
-  .form-panel
-    #edit-form
-      - case stage
+.col-12[data-target="frame.fixed"]
+  .row
+    .col-12.col-sm-3[data-target="frame.nav"]
+      = render 'navigation', stage: stage, artist: artist
+    .col-12.col-sm-9[data-target="frame.panel"]
+      .form-panel
+        #edit-form
+          - case stage
 
-      - when :header
-        = render 'header', artist: artist
-      - when :layout
-        = render 'layout', artist: artist
-      - when :artworks
-        = render 'artworks', artist: artist
-      - when :links
-        = render 'links', artist: artist
-      - when :upcoming_projects
-        = render 'upcoming_projects', artist: artist
-      - else
-        = render 'header', artist: artist
+          - when :header
+            = render 'header', artist: artist
+          - when :layout
+            = render 'layout', artist: artist
+          - when :artworks
+            = render 'artworks', artist: artist
+          - when :links
+            = render 'links', artist: artist
+          - when :upcoming_projects
+            = render 'upcoming_projects', artist: artist
+          - else
+            = render 'header', artist: artist
+#frame.d-none.col-12[data-target="frame.frame"]
+  = render 'frame', artist: @artist
+a.frame-open.button-tertiary[href="#" data-target='frame.button' data-action="click -> frame#toggle"]
+  | Toggle Preview
