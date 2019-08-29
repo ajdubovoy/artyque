@@ -1,8 +1,8 @@
-.col-12[data-target="frame.fixed"]
+.col-12.col-sm-4[data-target="frame.fixed"]
   .row
-    .col-12.col-sm-3[data-target="frame.nav"]
+    .col-12[data-target="frame.nav"]
       = render 'navigation', stage: stage, artist: artist
-    .col-12.col-sm-9[data-target="frame.panel"]
+    .col-12[data-target="frame.panel"]
       .form-panel
         #edit-form
           - case stage
@@ -19,7 +19,7 @@
             = render 'upcoming_projects', artist: artist
           - else
             = render 'header', artist: artist
-#frame.d-none.col-12[data-target="frame.frame"]
+#frame.d-none.d-sm-block.col-12.col-sm-8[data-target="frame.frame"]
   = render 'frame', artist: @artist
-a.frame-open.button-tertiary.d-none.d-sm-block[href="#" data-target='frame.button']
+a.frame-open.button-primary.d-none.d-sm-block[href="#" data-target='frame.button']
   | Toggle Preview
