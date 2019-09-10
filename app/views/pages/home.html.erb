@@ -23,15 +23,10 @@
 	<br>
 	<div class="container">
 		<div class="col text-center cta-laptop">
-			<a href="#contact" class="button-primary">Get in Touch</a>
+      <%= link_to "Get in Touch", contact_path, class: "button-primary" %>
 		</div>
 	</div>
 </div>
 
 <div id="about"></div>
 <%= render 'shared/about_section' %>
-
-<div id="contact"></div>
-<div class="form-set">
-  <%= render 'contact_forms/new' %>
-</div>
