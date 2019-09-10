@@ -10,7 +10,6 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id]) # Written separately to prevent authorization
-    @palette = @artist.color_palette # Shortcut to pass to #cp helper
     @artworks = @artist.artworks.highlights.present? ? @artist.artworks.highlights : @artist.artworks.first(6)
   end
 
@@ -42,7 +41,6 @@ class ArtistsController < ApplicationController
   end
 
   def edit
-    @palette = @artist.color_palette # Shortcut to pass to #cp helper
     @artworks = @artist.artworks.highlights.present? ? @artist.artworks.highlights : @artist.artworks.first(6)
   end
 
