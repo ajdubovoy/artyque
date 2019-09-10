@@ -99,7 +99,7 @@ describe "ArtistsFeature", type: :view do
       login_admin
       artist = create(:artist)
       visit edit_artist_path(artist, stage: :links)
-      expect(page.find('li.selected').text).to eq 'Links'
+      expect(page).to have_text 'Links'
     end
 
     it "displays the add link form from the .links page via ajax" do
@@ -109,7 +109,7 @@ describe "ArtistsFeature", type: :view do
       click_link "+ Add link"
       expect(page).to have_field('Title')
       click_link "< Back"
-      expect(page.find('li.selected').text).to eq 'Links'
+      expect(page).to have_text 'Links'
       expect(page).to have_text artist.links.sample.title
     end
 
@@ -123,7 +123,7 @@ describe "ArtistsFeature", type: :view do
       fill_in 'Url', with: 'http://www.apple.com'
       fill_in 'Year', with: '2019'
       click_button 'Save'
-      expect(page.find('li.selected').text).to eq 'Links'
+      expect(page).to have_text 'Links'
       expect(page).to have_text 'Test Title'
     end
 
@@ -140,7 +140,7 @@ describe "ArtistsFeature", type: :view do
       login_admin
       artist = create(:artist)
       visit edit_artist_path(artist, stage: :upcoming_projects)
-      expect(page.find('li.selected').text).to eq 'Upcoming Projects'
+      expect(page).to have_text 'Projects'
     end
 
     it "displays the add upcoming_project form from the .upcoming_projects page via ajax" do
@@ -164,7 +164,7 @@ describe "ArtistsFeature", type: :view do
       fill_in 'Location', with: 'A city near you'
       fill_in 'Date', with: '2019'
       click_button 'Save'
-      expect(page.find('li.selected').text).to eq 'Upcoming Projects'
+      expect(page).to have_text 'Links'
       expect(page).to have_text 'Test Title'
     end
 
