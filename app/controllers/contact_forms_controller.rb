@@ -11,7 +11,7 @@ class ContactFormsController < ApplicationController
       end
     else
       respond_to do |format|
-        format.html { render 'pages/home' }
+        format.html { render 'pages/contact' }
         format.js
       end
     end

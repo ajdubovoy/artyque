@@ -1,10 +1,17 @@
 class NewsPostsController < ApplicationController
   include MarkdownHelper
   before_action :set_news_post, only: %i[show edit update]
-  skip_before_action :authenticate_user!, only: %i[show]
-  after_action :skip_authorization, only: %i[show]
+  skip_before_action :authenticate_user!, only: %i[index show]
+  after_action :skip_authorization, only: %i[index show]
 
-  def show;end
+  def index
+    @news_posts = policy_scope NewsPost.all
+  end
+
+  def show
+    @next_post = @news_post.next
+    @previous_post = @news_post.previous
+  end
 
   def new
     @news_post = NewsPost.new

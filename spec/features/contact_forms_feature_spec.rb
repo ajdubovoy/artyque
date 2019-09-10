@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "ContactFormsFeature", type: :view do
   it "delivers a valid message" do
-    visit '/'
+    visit '/contact'
     fill_in 'First name', match: :first, :with => 'Aaron'
     fill_in 'Last name', match: :first, :with => 'Sumner'
     fill_in 'Email', match: :first, :with => 'aaron@everydayrails.com'
@@ -15,7 +15,7 @@ describe "ContactFormsFeature", type: :view do
   end
 
   it "does not deliver a message with a missing email" do
-    visit '/'
+    visit '/contact'
     fill_in 'First name', match: :first, :with => 'Aaron'
     fill_in 'Last name', match: :first, :with => 'Sumner'
     select 'A Gallery', from: 'contact_form_role', match: :first
@@ -26,7 +26,7 @@ describe "ContactFormsFeature", type: :view do
   end
 
   it "does not deliver spam" do
-    visit '/'
+    visit '/contact'
     fill_in 'First name', match: :first, :with => 'Aaron'
     fill_in 'Last name', match: :first, :with => 'Sumner'
     fill_in 'Email', match: :first, :with => 'spammer@spammyjunk.com'

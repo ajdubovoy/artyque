@@ -4,7 +4,6 @@ export default class extends Controller {
   static targets = [ 'button', 'fixed', 'panel', 'frame', 'nav' ]
 
   connect() {
-    this.toggleFrame();
     this.buttonTarget.addEventListener('click', this.toggle);
   }
 

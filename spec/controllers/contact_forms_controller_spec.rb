@@ -23,7 +23,7 @@ RSpec.describe ContactFormsController, type: :controller do
         it 'should re-render form' do
           contact_form_attributes = build :contact_form, :invalid
           post :create, params: { contact_form: contact_form_attributes }, format: :html
-          expect(response).to render_template 'pages/home'
+          expect(response).to render_template 'pages/contact'
         end
       end
       context 'JS' do
