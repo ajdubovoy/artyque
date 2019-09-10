@@ -44,7 +44,12 @@ class ArtistsController < ApplicationController
   def edit;end
 
   def update
-    if @artist.update(artist_params)
+    if params[:artist].include?("homepage_featured") && @artist.update(artist_params)
+        respond_to do |format|
+          format.html { redirect_to admin_dashboard_path }
+          format.js
+        end
+    elsif @artist.update(artist_params)
       respond_to do |format|
         format.html { redirect_to edit_artist_path(@artist) }
         format.js
@@ -86,6 +91,7 @@ class ArtistsController < ApplicationController
       :description,
       :button_text,
       :layout,
+      :homepage_featured,
       :video,
       :quotation,
       :quotation_caption,

@@ -1,0 +1,16 @@
+div.artist-carousel
+	- @featured_artist.each do |artist|
+		.div.artist-carousel-cell
+			.contain-featured-artist
+				.container-fluid
+					.row
+						.col-6.info-side
+							hr.features-arrtist-line
+							h4.title Featured Artist
+							br
+							h1 = artist.name
+							br
+							p.color.c-light-gray = artist.description
+							p.fake-link.color.c-blue Learn More >>
+						.col-6 
+							div.featured-artist-photo style="background-image: url(#{artist.photo});"

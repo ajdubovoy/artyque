@@ -1,0 +1,31 @@
+<div id="mission"></div>
+<%= render 'shared/line_intro' %>
+<%= render 'shared/cards' %>
+
+<div class="laptop-carousel-wrapper">
+	<div class="container">
+		<div class="col intro-laptop">
+			<h4 class="title">We represent</h1>
+			<h2 class="color c-blue">Artists</h2>
+		</div>
+	</div>
+  <%= render 'shared/carousel', laptop: true, initial: 1, height: 350, images: %w[
+  screen_a.png
+  screen_b.png
+  screen_c.png
+] %>
+	<br>
+	<div class="container">
+		<div class="col text-center cta-laptop">
+			<a href="#contact" class="button-primary">Get in Touch</a>
+		</div>
+	</div>
+</div>
+
+<div id="about"></div>
+<%= render 'shared/about_section' %>
+
+<div id="contact"></div>
+<div class="form-set">
+  <%= render 'contact_forms/new' %>
+</div>

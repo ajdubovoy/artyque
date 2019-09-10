@@ -1,1 +1,43 @@
 // Specific CSS for your home-page
+.contain-featured-artist {
+	overflow: hidden;
+	height: 500px;
+	.info-side {
+	    z-index: 1000;
+		padding: 68px;
+		height: 400px;
+	    flex-direction: column;
+	    justify-content: center;
+		hr {
+			width: 200%;
+		    border: solid 1px $beige;
+		}
+	}
+	.featured-artist-photo {
+		background-size: cover;
+	    background-position: center;
+	  	border-radius: 80% 0 0 70%;
+	    height: 660px;
+	    width: 110%;
+	    left: 0px;
+	    top: -88px;
+	    position: absolute;
+	}
+}
+
+.artist-carousel {
+	.flickity-page-dots {
+		bottom: 45px;
+	}
+}
+
+.artist-carousel-cell {
+	width: 100%;
+}
+
+#quotation-home {
+	height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
