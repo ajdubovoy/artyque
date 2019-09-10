@@ -1,11 +1,24 @@
-<%= render 'shared/banner_carousel_wrapper' do %>
-  <%= render 'shared/banner_carousel_content', title: "coming fall 2019", header: "Welcome to Artyque ", text: "We are a digital agency and platform aiming to create a European network for emerging artists, galleries and collectors to collaborate and grow together.", button: { label: "Learn More", path: "#mission" }, image: "h_img_artist.png", subtitle: "for artists" %>
-  <%= render 'shared/banner_carousel_content', title: "coming fall 2019", header: "Support, Growth, Opportunities", text: "We assist artists, provide tools for galleries, and turn the new collectors into wise tastemakers.", button: { label: "Learn More", path: "#mission" }, image: "h_img_gallery.png", subtitle: "for galleries" %>
-  <%= render 'shared/banner_carousel_content', title: "coming fall 2019", header: "Your art consultant", text: "Join us, be part of the change", button: { label: "Learn More", path: "#mission" }, image: "h_img_collector.png", subtitle: "FOR ART COLLECTORS" %>
-<% end %>
+<div class="wrapper-banner">
+	<div class="banner-content banner-carousel bg-blue-gradient">
+		<%= image_tag "top_wave.svg", class: "home-wave-top wave-top position-absolute drag-disable" %>
+	    <%= image_tag "bottom_wave.svg", class: "wave-bottom position-absolute drag-disable" %>
+		<div class="w-100 m-0 p-0">
+		  <div class="row">
+		    <div class="col-23 col-sm-6 home-banner position-relative d-sm-flex align-items-center">
+		      	<%= image_tag "banner-logo.svg", class: "logo-works" %>
+		      </div>
+		  	<div class="col-12 col-sm-6">
+		  		
+		  	</div>
+		    </div>
+		  </div>
+		</div>
 
+	</div>
+</div> 
 <%= render "shared/featured_artist" %>
 <%= render "shared/quote_block" %>
+<%= render "shared/featured-stories" %>
 
 
 
