@@ -14,8 +14,10 @@
 .wrapper-banner {
 	@extend .bg-beige;
 	.banner-content {
-	@include make-container;
+    @include make-container;
     @extend .p-0;
+    background-size: cover;
+    background-position: center;
 		@include media-breakpoint-up(sm) {
       width: calc(100vw - 2 * #{$header-height});
       margin: 0 auto;

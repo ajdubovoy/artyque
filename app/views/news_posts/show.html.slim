@@ -1,0 +1,11 @@
+.wrapper-banner
+  .banner-content.bg-blue-gradient[style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('#{cl_image_path(@news_post.photo) if @news_post.photo.present?}');"]
+    .row
+      .inner-banner.w-100.position-relative.d-sm-flex.align-items-center.inner-banner-small
+        .text-lockup
+          h1.c-white = @news_post.headline
+          p.c-pink
+#main-content.container.pt-3
+  .row.mt-3
+    .col-12
+      = md @news_post.content
