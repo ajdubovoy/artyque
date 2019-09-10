@@ -41,7 +41,10 @@ class ArtistsController < ApplicationController
     end
   end
 
-  def edit;end
+  def edit
+    @palette = @artist.color_palette # Shortcut to pass to #cp helper
+    @artworks = @artist.artworks.highlights.present? ? @artist.artworks.highlights : @artist.artworks.first(6)
+  end
 
   def update
     if params[:artist].include?("homepage_featured") && @artist.update(artist_params)

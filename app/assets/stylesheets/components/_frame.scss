@@ -1,0 +1,26 @@
+.frame{
+  width: 100%;
+  height: 100%;
+  @extend .scroll-smooth;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  @extend .mt-5;
+  @extend .shadow-box-light;
+  @extend .bg-white;
+  position: relative;
+  @include media-breakpoint-up(xs) {
+    position: sticky;
+  }
+  top: 1rem;
+  max-height: calc(100vh - 2rem);
+}
+
+.frame-open{
+  position: absolute;
+  top: 0.3rem;
+  right: 1rem;
+}
+
+#edit-dashboard{
+  position: relative;
+}
