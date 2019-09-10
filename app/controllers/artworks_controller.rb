@@ -39,7 +39,12 @@ class ArtworksController < ApplicationController
   def edit;end
 
   def update
-    if @artwork.update(artwork_params)
+    if params[:artwork].include?("homepage_featured") && @artwork.update(artwork_params)
+        respond_to do |format|
+          format.html { redirect_to admin_dashboard_path }
+          format.js
+        end
+    elsif @artwork.update(artwork_params)
       respond_to do |format|
         format.html { redirect_to edit_collection_path(@collection) }
         format.js
@@ -87,6 +92,7 @@ class ArtworksController < ApplicationController
       :width,
       :height,
       :depth,
+      :homepage_featured,
       :year,
       :medium,
       :price,

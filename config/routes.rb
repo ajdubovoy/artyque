@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   devise_for :users
+
   root to: 'pages#home'
   get '/contact', to: 'pages#contact', as: :contact
+
+  #landing pages
+  root to: 'pages#home'
+  get '/about', to: 'pages#about'
+  get '/news', to: 'pages#news'
 
   # Contact Forms
   resources :contact_forms, only: :create
@@ -11,7 +17,7 @@ Rails.application.routes.draw do
   get 'admin/dashboard', to: 'admin#dashboard', as: :admin_dashboard
 
   # Artists
-  resources :artists, only: %i[new create show edit update] do
+  resources :artists, only: %i[index new create show edit update] do
     resources :collections, only: %i[index new create edit update destroy], shallow: true do
       resources :artworks, only: %i[new create edit update show destroy], shallow: true
     end
@@ -23,4 +29,5 @@ Rails.application.routes.draw do
   # News
   resources :news_posts, only: %i[index show new create edit update]
   resources :categories, only: %i[new create edit update destroy]
+
 end

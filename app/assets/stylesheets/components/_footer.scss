@@ -50,3 +50,33 @@ html, body {
 .footer, .page-wrap:after {
   height: $footer-height;
 }
+
+.legal-foot-note {
+  h2 {
+    margin-bottom: 15px;
+  }
+  li{
+    a{
+      @extend .c-white;
+      transition: color 250ms ease-out;
+      &:hover{
+        @extend .c-pink;
+      }
+    }
+  }
+}
+
+.footer-top {
+  padding: 55px 31px;
+  background: $dark-blue;
+  .title {
+    margin-bottom: 33px;
+  }
+  ul {
+    color: white;
+  }
+  li {
+    list-style: none;
+    opacity: .5;
+  }
+}

@@ -10,19 +10,27 @@
         | Artists
   .row
     .col
-      ul.link-list
+      ul.link-list.admin
         = link_to new_artist_path do
           li.text-center
             .text
               | + Add Artist
-        - @artists.each do |artist|
+        - @artists.each_with_index do |artist, i|
           = link_to edit_artist_path(artist) do
-            li
-              .text
-                = artist.name
-              .image
-                - if artist.photo.present?
-                  = cl_image_tag artist.photo
+            = form_for artist, html: { id: "submit-artist-box-#{i}"} do |f|
+              label.featured_check
+                = f.check_box :homepage_featured, id: "artist-box-#{i}"
+                - if artist.homepage_featured?
+                  = icon('fas', 'heart')
+                  p Featured
+                - else 
+                   = icon('far', 'heart')
+              li
+                .text
+                  = artist.name
+                .image
+                  - if artist.photo.present?
+                    = cl_image_tag artist.photo
 .container.other-settings
   .row
     .col-12.col-sm-6
@@ -62,3 +70,25 @@
                 li
                   .text
                     = category.name
+    .col-12.col-sm-6
+      .row.pt-3
+        .col
+          h2
+            | Featured Artworks
+      .row
+        .col
+          ul.link-list.admin
+            a data-toggle="modal" data-target="#modal_select_artwork"
+              li.text-center
+                .text
+                  | + Add Featured Artwork
+            - @artworks_selected.each_with_index do |artwork, i|
+              = form_for artwork, html: { id: "submit-artwork-box-#{i}"} do |f|
+                label.featured_check
+                  = f.check_box :homepage_featured, id: "artwork-box-#{i}"
+                  - if artwork.homepage_featured
+                    = icon('fas', 'minus-circle')
+                li
+                  .text
+                    = artwork.name
+= render "artworks/featured_form"

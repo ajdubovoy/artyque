@@ -3,3 +3,46 @@
     margin: auto;
     padding: 26px;
 }
+
+ul.admin {
+	.edit_artist, .edit_artwork {
+		display: flex;
+		align-items: center;
+	}
+}
+
+#modal_select_artwork {
+	.artworks-modal {
+		padding: 0 40px;
+		h2 {
+			padding: 30px;
+		}
+	}
+}
+
+label.featured_check {
+	 margin-right: 20px;
+	input {
+		display: none;
+	}
+	p {
+		margin: 0;
+		font-size: 12px; 
+		}
+	i {
+	    padding: 10px;
+		font-size: 28px;
+	}
+	i.fas {
+			color: $dark-blue;
+			&:hover {
+				opacity: .5;
+			}
+		}
+	i.far {
+			opacity: .5;
+			&:hover {
+				opacity: 1;
+			}
+		}
+}

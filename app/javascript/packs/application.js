@@ -3,8 +3,10 @@ import { Application } from "stimulus";
 import { definitionsFromContext } from "stimulus/webpack-helpers";
 import initNavbar from "./navbar";
 import initBannerCarousel from "./banner_carousel";
+import initTriggerSave from "./trigger_save";
 import 'flickity/dist/flickity.min.css';
 import initCarousel from './carousel';
+import initArtistCarousel from './artist_carousel';
 import initSortable from './form_sorting';
 
 function init() {
@@ -16,6 +18,7 @@ function init() {
   initNavbar();
   initBannerCarousel('banner-carousel');
   initCarousel('carousel');
+  initArtistCarousel('artist-carousel');
   initSortable();
 }
 

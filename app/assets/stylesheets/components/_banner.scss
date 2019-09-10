@@ -107,3 +107,17 @@
 		}
 	}
 }
+
+.secondary-banner {
+  @extend .flex-center;
+  height: 35vh;
+  min-height: 10rem;
+  @extend .bg-dark-blue;
+  @extend .p-5;
+  p {
+    opacity: 0.8;
+  }
+  .banner-text{
+    width: 100%;
+  }
+}
