@@ -42,8 +42,7 @@
             | Artyque For Artists
           h4.color.c-blue.modal-lead-text
             | We are here for your success.
-        .form-set
-          = render 'contact_forms/new'
+        = link_to "Contact Us", contact_path, class: "button-primary"
 #modal_galleries.modal.fade[tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"]
   .modal-dialog.modal-dialog-custom[role="document"]
     .modal-content
@@ -86,8 +85,7 @@
             |  Get in touch now and gain early access at the 
             br
             | opening of the Artyque platform
-        .form-set
-          = render 'contact_forms/new'
+        = link_to "Contact Us", contact_path, class: "button-primary"
 #modal_collectors.modal.fade[tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"]
   .modal-dialog.modal-dialog-custom[role="document"]
     .modal-content
@@ -132,5 +130,4 @@
             | Artyque For Collectors
           h4.color.c-blue.modal-lead-text
             |  Contact us to learn more about our Membership program.
-        .form-set
-          = render 'contact_forms/new'
+        = link_to "Contact Us", contact_path, class: "button-primary"

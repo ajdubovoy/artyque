@@ -1,0 +1,17 @@
+.wrapper-banner#banner
+  div class=['banner-content', 'position-relative', 'bg-blue-gradient']
+    .row.inner-banner.w-100.d-sm-flex.align-items-center.banner-flexible
+      = inline_svg "top_wave", class: "wave-top position-absolute fill-pink"
+      = inline_svg "bottom_wave", class: "wave-bottom position-absolute fill-pink"
+      .col-12.col-md-6.text-shadow-light.c-pink
+        h2.display-center.display-3.c-white
+          | Get in touch
+        p
+          | We are always open for applications, collaborations and partnerships
+        p
+          | You can contact us by filling out this form or by writing directly to 
+          a.c-white[href="mailto:info@artyque.com" target="_blank"]
+            | info@artyque.com
+      .col-12.col-md-6
+        .form-set
+          == render 'contact_forms/new'
