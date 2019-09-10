@@ -18,4 +18,4 @@
                       = artwork.name
                     .image
                       - if artwork.photos.present?
-                        = cl_image_tag artwork.photo 
+                        = cl_image_tag artwork.photos.first.attachment.url 

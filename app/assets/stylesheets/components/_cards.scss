@@ -9,7 +9,7 @@
 			position: absolute;
 			top: 0;
 			right: 0;
-			width: 178px;
+			width: 201px;
 		}
 		 @include media-breakpoint-up(sm) {
 	   		min-width: 620px;
@@ -17,7 +17,7 @@
 		}
 	}
 	&-galleries {
-   		height: 350px;
+   		height: 384px;
 		z-index: 0;
 	     @include media-breakpoint-up(sm) {
 	   		margin-top: -60px;

@@ -8,6 +8,10 @@ class ArtistsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[show] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
   after_action :skip_authorization, only: %i[show] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
 
+  def index
+    @featured_artist = policy_scope(Artist).where(homepage_featured: true)
+  end
+
   def show
     @artist = Artist.find(params[:id]) # Written separately to prevent authorization
     @palette = @artist.color_palette # Shortcut to pass to #cp helper

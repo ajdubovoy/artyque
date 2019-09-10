@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   get '/about', to: 'pages#about'
   get '/news', to: 'pages#news'
-  get '/news', to: 'pages#news'
-
+  
   # Contact Forms
   resources :contact_forms, only: :create
   get 'contact_forms/success', to: 'contact_forms#success', as: :contact_forms_success
@@ -15,7 +14,7 @@ Rails.application.routes.draw do
   get 'admin/dashboard', to: 'admin#dashboard', as: :admin_dashboard
 
   # Artists
-  resources :artists, only: %i[new create show edit update] do
+  resources :artists, only: %i[index new create show edit update] do
     resources :collections, only: %i[index new create edit update destroy], shallow: true do
       resources :artworks, only: %i[new create edit update show destroy], shallow: true
     end

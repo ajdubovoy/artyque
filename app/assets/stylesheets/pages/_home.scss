@@ -24,6 +24,30 @@
 	}
 }
 
+.featured-artwork-photo {
+	background: lightgray;
+	background-size: cover;
+    height: 293px;
+    .overlay {
+    	    opacity: 0;
+		    left: 0;
+		    background-color: #274e58c4;
+		    height: 100%;
+		    color: white;
+		    padding: 25px;
+		    transition: ease 1s all;
+		    width: 100%;
+		    align-items: flex-start;
+		    flex-direction: column;
+		    position: absolute;
+		    display: flex;
+		    justify-content: flex-end;
+	    	&:hover {
+	   			opacity: 1;
+	    	}
+    }
+}
+
 .artist-carousel {
 	.flickity-page-dots {
 		bottom: 45px;
@@ -100,4 +124,14 @@
 			text-decoration: underline;
 		}
 	}
+}
+
+
+#mission {
+	padding: 80px;
+    height: 300px;
+    background-color: #1A2E3D;
+    p {
+    	opacity: 0.8;
+    }
 }
