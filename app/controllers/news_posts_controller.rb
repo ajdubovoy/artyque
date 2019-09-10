@@ -8,7 +8,10 @@ class NewsPostsController < ApplicationController
     @news_posts = policy_scope NewsPost.all
   end
 
-  def show;end
+  def show
+    @next_post = @news_post.next
+    @previous_post = @news_post.previous
+  end
 
   def new
     @news_post = NewsPost.new
