@@ -1,20 +1,32 @@
 require 'rails_helper'
 
 RSpec.describe NewsPostsController, type: :controller do
-  # describe '#show' do
-  #   it 'renders the right template' do
-  #     @news_post = create(:news_post)
-  #     get :show, params: { id: @news_post.id }
-  #     expect(response).to render_template :show
-  #   end
+  describe '#index' do
+    it 'renders the right template' do
+      get :index
+      expect(response).to render_template :index
+    end
 
-  #   it 'selects the correct news_post' do
-  #     @news_post = create(:news_post)
-  #     get :show, params: { id: @news_post.id }
-  #     expect(assigns(:news_post)).to be_instance_of NewsPost
-  #     expect(assigns(:news_post)).to eq @news_post
-  #   end
-  # end
+    it 'sets the news posts' do
+      get :index
+      expect(assigns(:news_posts)).to eq NewsPost.all
+    end
+  end
+
+  describe '#show' do
+    it 'renders the right template' do
+      @news_post = create(:news_post)
+      get :show, params: { id: @news_post.id }
+      expect(response).to render_template :show
+    end
+
+    it 'selects the correct news_post' do
+      @news_post = create(:news_post)
+      get :show, params: { id: @news_post.id }
+      expect(assigns(:news_post)).to be_instance_of NewsPost
+      expect(assigns(:news_post)).to eq @news_post
+    end
+  end
 
   describe '#new' do
     login_admin

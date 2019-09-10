@@ -22,6 +22,14 @@
     }
 	}
 	.inner-banner {
+    &.inner-banner-small{
+      height: 50vh;
+      min-height: 6rem;
+      @include media-breakpoint-up(sm) {
+        height: 40vh;
+      }
+    }
+    
 		height: calc(100vh - #{$header-height});
 		@include media-breakpoint-up(sm) {
       height: 80vh;
