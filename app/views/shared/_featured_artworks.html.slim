@@ -7,7 +7,7 @@
 .container
 	.row
 		- @featured_artwork.each do |artwork|
-			div.col-4.featured-artwork-photo style="background-image: url(#{artwork.photos.first.attachment.url unless !artwork.photos.present? });" 
+			div.col-12.col-sm-6.featured-artwork-photo style="background-image: url(#{artwork.photos.first.attachment.url unless !artwork.photos.present? });" 
 				.overlay
 					h2.color.c-white = artwork.name
 					p = artwork.description

@@ -110,8 +110,11 @@
 
 .secondary-banner {
   @extend .flex-center;
-  height: 35vh;
+  height: 100%;
   min-height: 10rem;
+  @include media-breakpoint-up(sm) {
+      height: 35vh;
+  }
   @extend .bg-dark-blue;
   @extend .p-5;
   p {
