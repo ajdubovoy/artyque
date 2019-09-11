@@ -1,0 +1,24 @@
+div.artist-carousel
+	- @featured_artist.each do |artist|
+		.div.artist-carousel-cell
+			.contain-featured-artist.background.bg-dark-blue
+				.container-fluid
+					.row
+						.col-6.info-side
+							hr.features-arrtist-line
+							h4.title.color.c-white Featured Artist
+							br
+							h3.color.c-white = artist.name
+							br
+							p.color.c-light-gray = artist.description
+							p.fake-link.color.c-blue Learn More >>
+						.col-6 
+							div.featured-artist-photo style="background-image:  linear-gradient(380deg, #1a2e3d 21.18%, rgba(26, 46, 61, 0.46) 42.49%), url(#{artist.photo});"
+			.container.artwork-artist-index
+				h4.title.color.c-white Featured Artwork
+				.row.shadow-box.sb-dark
+					- artist.artworks.highlights.each do |artwork|
+						div.col-4.featured-artwork-photo style="background-image: url(#{artwork.photos.first.attachment.url unless !artwork.photos.present? });" 
+							.overlay
+								h2.color.c-white = artwork.name
+								p = artwork.description

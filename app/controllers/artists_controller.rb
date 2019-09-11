@@ -10,6 +10,7 @@ class ArtistsController < ApplicationController
 
   def index
     @featured_artist = policy_scope(Artist).where(homepage_featured: true)
+    @featured_artwork = Artwork.where(homepage_featured: true)
   end
 
   def show
