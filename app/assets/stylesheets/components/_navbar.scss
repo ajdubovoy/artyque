@@ -79,18 +79,18 @@
   margin: 20px 80px;
   li {
     padding: 3px 12px;
-    transition: ease .5s all;
     color: $medium-gray;
     a{
       color: $medium-gray;
+      transition: ease .5s all;
     }
-    &:hover {
+    &:hover, &a:hover {
       color: $blue;
       text-decoration:underline;
     }
-  }
-  .active {
-    color: $blue;
-    font-weight: bolder;
+    &.active, & a.active {
+      color: $blue;
+      font-weight: bolder;
+    }
   }
 }

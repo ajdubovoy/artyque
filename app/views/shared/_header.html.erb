@@ -4,17 +4,17 @@
       <%= image_tag 'logo-header.svg', class: 'logo' unless @hidden_logo %>
     <% end %>
     <ul class="navbar-items d-sm-flex d-none">
-      <li class="active"><%= link_to "Home", root_path, class: `#{'active' if current_page?(root_path)}` %></li>
-      <li><%= link_to "Artists", artists_path , class: `#{'active' if current_page?(artists_path)}`%></li>
+      <li><%= link_to "Home", root_path, class: "#{'active' if current_page?(root_path)}" %></li>
+      <li><%= link_to "Artists", artists_path , class: "#{'active' if current_page?(artists_path)}"%></li>
     	<li>
     		<div class="dropdown">
 			  <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			    About us  <i class="fas fa-caret-down"></i>
 			  </a>
 			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <%= link_to "News", news_posts_path, class: `dropdown-item #{'active' if current_page?(news_posts_path)}` %>
-          <%= link_to "Contact", contact_path, class: `dropdown-item #{'active' if current_page?(contact_path)}` %>
-          <%= link_to "Who We Are", about_path, class: `dropdown-item #{'active' if current_page?(about_path)}` %>
+          <%= link_to "News", news_posts_path, class: "dropdown-item #{'active' if current_page?(news_posts_path)}" %>
+          <%= link_to "Contact", contact_path, class: "dropdown-item #{'active' if current_page?(contact_path)}" %>
+          <%= link_to "Who We Are", about_path, class: "dropdown-item #{'active' if current_page?(about_path)}" %>
 			  </div>
 			</div>
 		</li>
