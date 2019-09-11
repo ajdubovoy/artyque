@@ -9,8 +9,8 @@ function initArtistCarousel(targetClass) {
   const flkty = new Flickity(`.${targetClass}`, {
     autoPlay: 6000,
     cellSelector: '.artist-carousel-cell',
-    prevNextButtons: false,
-    pageDots: true,
+    prevNextButtons: true,
+    pageDots: false,
     percentPosition: false,
     resize: false,
     wrapAround: true

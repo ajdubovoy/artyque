@@ -73,3 +73,21 @@
   }
 }
 
+.navbar-items {
+  display: flex;
+  list-style: none;
+  margin: 20px 80px;
+  li {
+    padding: 3px 12px;
+    transition: ease .5s all;
+    color: #1f3d4a6b;
+    &:hover {
+      color: $blue;
+      text-decoration:underline;
+    }
+  }
+  .active {
+    color: $blue;
+    font-weight: bolder;
+  }
+}

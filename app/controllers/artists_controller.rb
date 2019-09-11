@@ -9,6 +9,7 @@ class ArtistsController < ApplicationController
   after_action :skip_authorization, only: %i[show] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
 
   def index
+    @artists = Artist.all
     @featured_artist = policy_scope(Artist).where(homepage_featured: true)
     @featured_artwork = Artwork.where(homepage_featured: true)
   end

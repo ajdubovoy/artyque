@@ -4,6 +4,14 @@
     br
     p.c-white
       | Stay up to date with the latest information about our mission to reshape the art world.
+.line-wrapper
+  .container
+    .row
+      .col.d-flex.line-left
+        h4.title
+          | Articles
+        hr.lines.w-75
+  .ellipse
 #main-content.container.pt-3
   .row
     - @news_posts.each do |news_post|
