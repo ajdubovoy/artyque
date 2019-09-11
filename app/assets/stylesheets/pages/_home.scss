@@ -133,7 +133,7 @@
 }
 
 .home-wave-top {
-	width: 55vw !important;
+	width: 45vw !important;
 }
 
 .home-banner {
@@ -144,6 +144,12 @@
 	    top: -100px;
 	    left: -21px;
 	}
+}
+
+.text-lockup-banner {
+	 h2 {
+	 	font-size: 30px; 
+	 }
 }
 
 .intro-text {
@@ -177,5 +183,3 @@
 		}
 	}
 }
-
-
