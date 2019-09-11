@@ -3,10 +3,6 @@
 		.row
 			div.col.d-flex.line-left
 				h4.title Featured Artwork
+	  .ellipse
 .container
-	.row
-		- @featured_artwork.each do |artwork|
-			div.col-4.featured-artwork-photo style="background-image: url(#{artwork.photos.first.attachment.url unless !artwork.photos.present? });" 
-				.overlay
-					h2.color.c-white = artwork.name
-					p = artwork.description
+  = render 'artworks/gallery', artworks: @featured_artwork

@@ -73,3 +73,24 @@
   }
 }
 
+.navbar-items {
+  display: flex;
+  list-style: none;
+  margin: 20px 80px;
+  li {
+    padding: 3px 12px;
+    transition: ease .5s all;
+    color: $medium-gray;
+    a{
+      color: $medium-gray;
+    }
+    &:hover {
+      color: $blue;
+      text-decoration:underline;
+    }
+  }
+  .active {
+    color: $blue;
+    font-weight: bolder;
+  }
+}

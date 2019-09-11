@@ -1,8 +1,24 @@
 <header class="header">
-  <div class="image">
+  <div class="image d-flex justify-content-between w-100">
     <%= link_to root_path do %>
       <%= image_tag 'logo-header.svg', class: 'logo' unless @hidden_logo %>
     <% end %>
+    <ul class="navbar-items d-sm-flex d-none">
+      <li class="active"><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Artists", artists_path %></li>
+    	<li>
+    		<div class="dropdown">
+			  <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    About us  <i class="fas fa-caret-down"></i>
+			  </a>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <%= link_to "News", news_posts_path, class: 'dropdown-item' %>
+          <%= link_to "Contact", contact_path, class: 'dropdown-item' %>
+          <%= link_to "Who We Are", about_path, class: 'dropdown-item' %>
+			  </div>
+			</div>
+		</li>
+    </ul>
   </div>
   <%= render 'shared/navbar' %>
 </header>

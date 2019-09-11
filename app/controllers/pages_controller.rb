@@ -13,6 +13,7 @@ class PagesController < ApplicationController
 
   def contact
     @contact_form = ContactForm.new
+    @contact_page = true
   end
 
   def privacy;end
