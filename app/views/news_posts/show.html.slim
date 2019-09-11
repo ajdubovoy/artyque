@@ -6,9 +6,10 @@
           h1.c-white = @news_post.headline
           p.c-pink = @news_post.created_at.strftime('%A, %d %B %Y')
 #main-content.container.pt-3
-  .row.mt-3
+  .row
     .col-12
-      = md @news_post.content
+      .panel
+        = md @news_post.content
   .row.mt-5
     .col-12.text-center
       - if @previous_post
