@@ -4,17 +4,17 @@
       <%= image_tag 'logo-header.svg', class: 'logo' unless @hidden_logo %>
     <% end %>
     <ul class="navbar-items">
-    	<li class="active">Home</li>
-    	<li>Artists</li>
+      <li class="active"><%= link_to "Home", root_path %></li>
+      <li><%= link_to "Artists", artists_path %></li>
     	<li>
     		<div class="dropdown">
 			  <a id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 			    About us  <i class="fas fa-caret-down"></i>
 			  </a>
 			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-			    <a class="dropdown-item" href="#">News</a>
-			    <a class="dropdown-item" href="#">Contact</a>
-			    <a class="dropdown-item" href="#">Who we are</a>
+          <%= link_to "News", news_posts_path, class: 'dropdown-item' %>
+          <%= link_to "Contact", contact_path, class: 'dropdown-item' %>
+          <%= link_to "Who We Are", about_path, class: 'dropdown-item' %>
 			  </div>
 			</div>
 		</li>
