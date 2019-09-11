@@ -94,3 +94,17 @@
     }
   }
 }
+
+.dropdown-menu{
+  // Bootstrap menu under About Us
+  @extend .shadow-box-dark;
+  @extend .border-radius;
+  a.active.dropdown-item{
+    @extend .c-white;
+  }
+  a.dropdown-item{
+    &:active{
+      @extend .c-white;
+    }
+  }
+}
