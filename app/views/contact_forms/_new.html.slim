@@ -1,6 +1,4 @@
 .new-contact-form
-  h2.color.c-blue.text-center
-    | Get in touch
   br
   = simple_form_for @contact_form, remote: true do |f|
     = f.input :role, as: :select, :required => true, label: false, collection: { "An Artist" => 'artist', "A Gallery" => 'gallery', "A Collector" => 'collector' }, prompt: "I am..."

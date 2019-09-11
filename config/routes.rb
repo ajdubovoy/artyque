@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
 
+  root to: 'pages#home'
+  get '/contact', to: 'pages#contact', as: :contact
+
   #landing pages
   root to: 'pages#home'
   get '/about', to: 'pages#about'
   get '/news', to: 'pages#news'
-  
+
   # Contact Forms
   resources :contact_forms, only: :create
   get 'contact_forms/success', to: 'contact_forms#success', as: :contact_forms_success
@@ -24,7 +27,7 @@ Rails.application.routes.draw do
   end
 
   # News
-  resources :news_posts, only: %i[new create edit update]
+  resources :news_posts, only: %i[index show new create edit update]
   resources :categories, only: %i[new create edit update destroy]
-  
+
 end

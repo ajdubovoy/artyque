@@ -1,0 +1,10 @@
+.card.news-post.w-100
+  .card-text
+    h5 = news_post.headline
+    = md_flat(truncate(news_post.content, length: 45))
+    p.small.c-light-gray = news_post.created_at.strftime('%d %b %Y')
+  - if news_post.photo.present?
+    .card-photo[style="background-image: url('#{cl_image_path news_post.photo}')"]
+  - else
+    .card-photo
+  = link_to '', news_post_path(news_post), class: 'card-link'

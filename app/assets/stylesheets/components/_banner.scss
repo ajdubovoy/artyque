@@ -14,14 +14,24 @@
 .wrapper-banner {
 	@extend .bg-beige;
 	.banner-content {
-	@include make-container;
+    @include make-container;
     @extend .p-0;
+    background-size: cover;
+    background-position: center;
 		@include media-breakpoint-up(sm) {
       width: calc(100vw - 2 * #{$header-height});
       margin: 0 auto;
     }
 	}
 	.inner-banner {
+    &.inner-banner-small{
+      height: 50vh;
+      min-height: 6rem;
+      @include media-breakpoint-up(sm) {
+        height: 40vh;
+      }
+    }
+    
 		height: calc(100vh - #{$header-height});
 		@include media-breakpoint-up(sm) {
       height: 80vh;
@@ -96,4 +106,18 @@
       left: -1px;
 		}
 	}
+}
+
+.secondary-banner {
+  @extend .flex-center;
+  height: 35vh;
+  min-height: 10rem;
+  @extend .bg-dark-blue;
+  @extend .p-5;
+  p {
+    opacity: 0.8;
+  }
+  .banner-text{
+    width: 100%;
+  }
 }

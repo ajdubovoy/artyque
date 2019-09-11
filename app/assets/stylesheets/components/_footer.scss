@@ -55,6 +55,15 @@ html, body {
   h2 {
     margin-bottom: 15px;
   }
+  li{
+    a{
+      @extend .c-white;
+      transition: color 250ms ease-out;
+      &:hover{
+        @extend .c-pink;
+      }
+    }
+  }
 }
 
 .footer-top {

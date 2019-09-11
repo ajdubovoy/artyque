@@ -1,0 +1,11 @@
+.secondary-banner
+  .banner-text
+    h1.title.c-white News
+    br
+    p.c-white
+      | Stay up to date with the latest information about our mission to reshape the art world.
+#main-content.container.pt-3
+  .row
+    - @news_posts.each do |news_post|
+      .col-12.col-sm-6.p-2.mb-2
+        = render 'card', news_post: news_post
