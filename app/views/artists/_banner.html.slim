@@ -6,11 +6,11 @@
         - when :plain
           / Display no shape w00t
         - when :angular
-          = inline_svg "top_angle", class: "svg wave-top position-absolute fill-#{cp(@palette, 1, :color)}"
-          = inline_svg "bottom_angle", class: "svg wave-bottom position-absolute fill-#{cp(@palette, 1, :color)}"
+          = inline_svg "top_angle.svg", class: "svg wave-top position-absolute fill-#{cp(@palette, 1, :color)}"
+          = inline_svg "bottom_angle.svg", class: "svg wave-bottom position-absolute fill-#{cp(@palette, 1, :color)}"
         - when :curved
-          = inline_svg "top_wave", class: "wave-top position-absolute fill-#{cp(@palette, 1, :color)}"
-          = inline_svg "bottom_wave", class: "wave-bottom position-absolute fill-#{cp(@palette, 1, :color)}"
+          = inline_svg "top_wave.svg", class: "wave-top position-absolute fill-#{cp(@palette, 1, :color)}"
+          = inline_svg "bottom_wave.svg", class: "wave-bottom position-absolute fill-#{cp(@palette, 1, :color)}"
         .text-lockup.col-12.col-sm-6
           h4 class=["title", cp(@palette, 2, :fg)]
             = artist.super_title
