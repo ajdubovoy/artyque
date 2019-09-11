@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[home contact]
+  skip_before_action :authenticate_user!
 
   def home
   	@featured_artist = Artist.where(homepage_featured: true)
@@ -14,4 +14,8 @@ class PagesController < ApplicationController
   def contact
     @contact_form = ContactForm.new
   end
+
+  def privacy;end
+
+  def impressum;end
 end

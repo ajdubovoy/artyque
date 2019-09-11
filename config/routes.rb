@@ -7,7 +7,10 @@ Rails.application.routes.draw do
   #landing pages
   root to: 'pages#home'
   get '/about', to: 'pages#about'
-  get '/news', to: 'pages#news'
+
+  # Legal
+  get '/legal/privacy', to: 'pages#privacy', as: :privacy
+  get '/legal/impressum', to: 'pages#impressum', as: :impressum
 
   # Contact Forms
   resources :contact_forms, only: :create
