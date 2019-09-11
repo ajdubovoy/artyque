@@ -5,8 +5,8 @@ class ArtistsController < ApplicationController
   before_action :set_artist, only: %i[edit update]
   before_action :set_stage, only: %i[edit update]
   after_action :respond_with_js, only: %i[edit]
-  skip_before_action :authenticate_user!, only: %i[show] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
-  after_action :skip_authorization, only: %i[show] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
+  skip_before_action :authenticate_user!, only: %i[index show] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
+  after_action :skip_authorization, only: %i[index show] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
 
   def index
     @artists = policy_scope(Artist).all
