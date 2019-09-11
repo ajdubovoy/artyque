@@ -61,7 +61,8 @@
 }
 
 .cta-wrapper {
-	height: 400px;
+	min-height: 25rem;
+  height: auto;
 	background-size: cover;
 	background-position: center;
 	.cta-text {

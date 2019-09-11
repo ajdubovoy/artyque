@@ -20,8 +20,10 @@
 		</div>
 	</div>
 </div> 
-<%= render "shared/featured_artist" %>
-<%= render "shared/quote_block" %>
-<%= render 'shared/featured_artworks' %>
-<%= render "shared/featured_stories" %>
-
+<div id="content" data-controller="modal">
+  <%= render "shared/featured_artist" %>
+  <%= render "shared/quote_block" %>
+  <%= render 'shared/featured_artworks' %>
+  <%= render "shared/featured_stories" %>
+  <%= render 'shared/stim_modal' %>
+</div>
