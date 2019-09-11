@@ -6,20 +6,31 @@ nav.navbar
     a#navbar-close-button[href="#" title="Open navigation bar"]
       i.fas.fa-times
   #navbar-menu.menu.hidden
+    ul.links.d-sm-none
+      li
+        h4.c-pink
+          | Navigation
+      li
+        = link_to 'Home', root_path, class: 'navbar-link'
+      li
+        = link_to 'Artists', artists_path, class: 'navbar-link'
+      li
+        = link_to 'News', news_posts_path, class: 'navbar-link'
+      li
+        = link_to 'Contact', contact_path, class: 'navbar-link'
+      li
+        = link_to 'Who We Are', about_path, class: 'navbar-link'
     ul.links
       li
-        a.navbar-link[href="#mission"]
-          | Our Mission
-      li
-        a.navbar-link[href="#about"]
-          | About Us
-      li
-        a.navbar-link[href="#contact"]
-          | Contact
+        h4.c-pink
+          | Artists
+      - policy_scope(Artist).all.each do |artist|
+        li
+          = link_to artist.name, artist_path(artist), class: 'navbar-link'
     ul.social
       li
-        a[href="#"]
+        a[href="https://www.instagram.com/ksenia_crm/?igshid=1j8vk08bfpfnx" target="_blank"]
           i.fab.fa-instagram
       li
-        a[href="#"]
+        a[href="https://www.linkedin.com/company/artyquecom/about/" target="_blank"]
           i.fab.fa-linkedin-in
