@@ -23,8 +23,8 @@ html
      gtag('config', 'UA-142247307-1');
   body
     = render 'shared/flashes'
-    = render 'shared/header'
     main.page-wrap
+      = render 'shared/header'
       == yield
     = render 'shared/footer'
     = javascript_include_tag 'application'

@@ -1,7 +1,7 @@
 @mixin navbar-menu-width{
   width: 30vw;
   min-width: 300px;
-  z-index: 200000;
+  z-index: 20000;
   @include media-breakpoint-down(sm) {
     width: 100vw;
   }

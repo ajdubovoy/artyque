@@ -1,6 +1,5 @@
 .header{
   @extend .background-beige;
-  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
@@ -10,7 +9,7 @@
   justify-content: space-between;
   height: $header-height;
   position: fixed;
-  z-index: 1000000;
+  z-index: 20000;
   .image{
     height: $header-height;
     @extend .flex-left;
@@ -34,4 +33,6 @@ body{
   padding-top: $header-height; // Offset body start to bottom of header
 }
 
-
+.page-wrap{
+  position: relative;
+}
