@@ -109,6 +109,7 @@
 }
 
 .secondary-banner {
+  @extend .text-center;
   @extend .flex-center;
   height: 100%;
   min-height: 10rem;
