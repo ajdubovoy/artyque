@@ -1,8 +1,8 @@
 class Artwork < ApplicationRecord
   belongs_to :collection
   belongs_to :category, optional: true
-  has_many :photos, -> { order(position: :asc) }, dependent: :destroy
-  has_many :videos, -> { order(position: :asc) }, dependent: :destroy
+  has_many :photos, -> { order(position: :asc) }, dependent: :destroy, inverse_of: :artwork
+  has_many :videos, -> { order(position: :asc) }, dependent: :destroy, inverse_of: :artwork
   acts_as_list scope: :collection
   validates_with DescriptionWordLengthValidator
   validates :name, presence: true
