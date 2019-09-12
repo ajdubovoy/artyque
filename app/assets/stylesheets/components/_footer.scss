@@ -5,6 +5,7 @@
   @extend .p-0;
   @extend .m-0;
   @extend .flex-center;
+  height: $footer-height;
   ul.links{
     list-style: none;
     font-size: 1rem;
@@ -48,7 +49,7 @@ html, body {
   display: block;
 }
 .footer, .page-wrap:after {
-  height: $footer-height;
+  // height: $footer-height;
 }
 
 .legal-foot-note {
