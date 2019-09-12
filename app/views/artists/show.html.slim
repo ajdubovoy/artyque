@@ -1,6 +1,6 @@
 == render 'banner', artist: @artist, palette: @artist.color_palette
 - if @artist.quotation.present? || @artist.quotation_caption.present?
-  == render 'quotation', quotation: @artist.quotation, caption: @artist.quotation_caption, palette: @artist.color_palette
+  == render 'quotation', quotation: @artist.quotation, caption: @artist.quotation_caption, palette: @artist.color_palette, artist: @artist
 - if @artist.video.present?
   == render 'video_banner', video: @artist.video
 .ellipse
