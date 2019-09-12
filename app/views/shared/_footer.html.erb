@@ -1,6 +1,6 @@
 <%= render "shared/contact_cta" unless @contact_page %>
 <footer class="footer">
-  <div class="d-flex">
+  <div class="inner-top-footer">
     <ul class="legal-foot-note links">
       <h5 class="color c-white">Site Map</h5>
       <li><%= link_to "Home", root_path %></li>
@@ -30,7 +30,7 @@
      
     </ul>
   </div>
-  <div class="image">
+  <div class="image d-none d-sm-block">
     <%= link_to root_path do %>
       <%= image_tag 'logo-footer.svg', class: 'logo' %>
     <% end %>
