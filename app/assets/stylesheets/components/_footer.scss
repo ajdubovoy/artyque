@@ -68,8 +68,11 @@ html, body {
 }
 
 .footer-top {
-  padding: 55px 31px;
+  @extend .pt-4;
+  @extend .pb-4;
+  padding-left: $header-height;
   background: $dark-blue;
+  font-size: 0.85em;
   .title {
     margin-bottom: 33px;
   }
