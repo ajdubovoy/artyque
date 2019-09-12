@@ -40,8 +40,9 @@
   .menu{
     @extend .shadow-box-dark;
     @include navbar-menu-width;
-    @extend .background-blue;
     @extend .pl-3;
+    background-color: rgba($blue, 0.965);
+    background-filter: blur(10px);
     height: calc(100vh - #{$header-height});
     min-height: 200px;
     position: absolute;

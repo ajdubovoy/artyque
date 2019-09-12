@@ -9,6 +9,8 @@
   display: flex;
   justify-content: space-between;
   height: $header-height;
+  position: fixed;
+  z-index: 1000000;
   .image{
     height: $header-height;
     @extend .flex-left;
@@ -18,6 +20,11 @@
       @include media-breakpoint-up(sm) {
         padding-left: 0;
         margin-left: $header-height !important;
+      }
+      transition: opacity 250ms ease;
+      opacity: 1.0;
+      &.transparent{
+        opacity: 0;
       }
     }
   }

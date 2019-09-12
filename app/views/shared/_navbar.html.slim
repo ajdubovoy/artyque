@@ -1,4 +1,4 @@
-nav.navbar
+nav.navbar.d-block.d-sm-none
   .open-button
     a#navbar-open-button[href="#" title="Open navigation bar"]
       i.fas.fa-bars
@@ -8,25 +8,15 @@ nav.navbar
   #navbar-menu.menu.hidden
     ul.links.d-sm-none
       li
-        h4.c-pink
-          | Navigation
-      li
         = link_to 'Home', root_path, class: 'navbar-link'
       li
         = link_to 'Artists', artists_path, class: 'navbar-link'
       li
-        = link_to 'News', news_posts_path, class: 'navbar-link'
+        = link_to 'About Us', about_path, class: 'navbar-link'
       li
         = link_to 'Contact', contact_path, class: 'navbar-link'
       li
-        = link_to 'Who We Are', about_path, class: 'navbar-link'
-    ul.links
-      li
-        h4.c-pink
-          | Artists
-      - policy_scope(Artist).all.each do |artist|
-        li
-          = link_to artist.name, artist_path(artist), class: 'navbar-link'
+        = link_to 'News', news_posts_path, class: 'navbar-link'
     ul.social
       li
         a[href="https://www.instagram.com/ksenia_crm/?igshid=1j8vk08bfpfnx" target="_blank"]
