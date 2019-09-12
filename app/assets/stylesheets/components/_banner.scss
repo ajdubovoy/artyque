@@ -19,7 +19,7 @@
     background-size: cover;
     background-position: center;
 		@include media-breakpoint-up(sm) {
-      width: calc(100vw - 2 * #{$header-height});
+      width: 100vw;
       margin: 0 auto;
     }
 	}
