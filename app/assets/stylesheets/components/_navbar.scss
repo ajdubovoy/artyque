@@ -41,7 +41,7 @@
     @extend .shadow-box-dark;
     @include navbar-menu-width;
     @extend .pl-3;
-    background-color: rgba($blue, 0.965);
+    background-color: $blue;
     background-filter: blur(10px);
     height: calc(100vh - #{$header-height});
     min-height: 200px;
