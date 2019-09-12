@@ -21,6 +21,11 @@
         padding-left: 0;
         margin-left: $header-height !important;
       }
+      transition: opacity 250ms ease;
+      opacity: 1.0;
+      &.transparent{
+        opacity: 0;
+      }
     }
   }
 }
