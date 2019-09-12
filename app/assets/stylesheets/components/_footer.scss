@@ -7,11 +7,11 @@
   justify-content: space-between;
   align-items: flex-start;
   width: 100vw;
-  height: 268px;
   li {
     opacity: 0.7;
   }
   ul.links{
+    margin-bottom: 19px !important;
     list-style: none;
     font-size: 1rem;
     font-style: normal;
@@ -27,6 +27,17 @@
         }
       }
     }
+  }
+  @include media-breakpoint-down(sm) {
+    display: block;
+    padding: 40px 1px;
+  }
+}
+
+.inner-top-footer {
+  display: flex;
+  @include media-breakpoint-down(sm) {
+    display: block;
   }
 }
 
