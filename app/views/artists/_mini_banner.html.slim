@@ -1,0 +1,16 @@
+/ For use in other templates with a simple banner
+.wrapper-banner#banner
+  div class=['banner-content', 'position-relative', cp(@palette, 3, :grad)]
+    .row
+      .inner-banner.w-100.d-sm-flex.align-items-center.banner-flexible.inner-banner-small
+        .text-lockup.col-12.col-sm-6
+          h4 class=["title", cp(@palette, 1, :fg)]
+            | Artwork
+          h1
+            span class=cp(@palette, 2, :fg)
+              = artist.name
+          = link_to '< Back to Page', artist_path(artist), class: "button-primary"
+        .image-lockup.col-12.col-sm-6
+          - if artist.photo.present?
+            div class=["image-container", "h-100", "w-100", cp(@palette, 4, :bg)] style="background-image: url('#{cl_image_path artist.photo}')"
+
