@@ -4,28 +4,29 @@
       .col-12
         == md artist.about_me
         = link_to 'See Full Profile >', artist_resume_blocks_path(artist), remote: true, 'data-action': 'ajax:success->modal#openAndUpdate ajax:error->modal#openAndError', 'data-target': 'modal.link', class: 'button-primary'
-    .row#resume.resume-sidebar
-      ul.row.resume.resume-blocks
-        - artist.blocks.each do |block|
-          li.resume-block.col-12[data-controller="show-more"]
-            h5.resume-block-title
-              = block.title
-            ul.resume-items[data-target="show-more.content" data-height-limit='9rem']
-              .see-more.w-100[data-target="show-more.button"]
-                = link_to "See more", artist_resume_blocks_path(artist), class: 'button-tertiary w-100', remote: true, 'data-action': 'click->show-more#toggle'
-              - block.items.each do |item|
-                li.resume-item
-                  - if block.items.any?(&:year)
-                    h6.year
-                      strong
-                        | #{item.year} | 
-                      span.label
+    - if artist.resume?
+      .row#resume.resume-sidebar
+        ul.row.resume.resume-blocks
+          - artist.blocks.each do |block|
+            li.resume-block.col-12[data-controller="show-more"]
+              h5.resume-block-title
+                = block.title
+              ul.resume-items[data-target="show-more.content" data-height-limit='9rem']
+                .see-more.w-100[data-target="show-more.button"]
+                  = link_to "See more", artist_resume_blocks_path(artist), class: 'button-tertiary w-100', remote: true, 'data-action': 'click->show-more#toggle'
+                - block.items.each do |item|
+                  li.resume-item
+                    - if block.items.any?(&:year)
+                      h6.year
+                        strong
+                          | #{item.year} | 
+                        span.label
+                          = item.label
+                    - elsif block.items.any?(&:label)
+                      h6.label
                         = item.label
-                  - elsif block.items.any?(&:label)
-                    h6.label
-                      = item.label
-                  p.description
-                    = item.description
+                    p.description
+                      = item.description
   .col-12.col-md-8
     - if artist.featured_artwork.present?
       .row#featured-artwork.mt-5.mb-5

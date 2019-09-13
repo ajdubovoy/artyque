@@ -110,6 +110,7 @@ class ArtistsController < ApplicationController
         :id,
         :title,
         :position,
+        :_destroy,
         resume_items_attributes: [
           :id,
           :description,
@@ -117,6 +118,7 @@ class ArtistsController < ApplicationController
           :year,
           :higlghlight,
           :position,
+          :_destroy
         ]
       ],
       collections_attributes: [
