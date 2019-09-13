@@ -1,10 +1,18 @@
 | function refreshForm(innerHTML) { const form = document.getElementById('edit-form'); form.innerHTML = innerHTML; } 
+| function showFlash(text) { const notice = document.getElementById('flashes'); notice.innerHTML = text; }
 - if @link.errors.any?
   |  refreshForm('
   = j render "new", artist: @artist, link: @link
   | '); 
+  | showFlash('
+  = j render 'shared/flashes', notice: "Could not be saved"
+  | ');
 - else
   |  refreshForm('
   = j render "artists/links", artist: @artist, link: Link.new
   | '); 
+  | showFlash('
+  = j render 'shared/flashes', notice: "Saved successfully"
+  | ');
 |  window.init(); 
+| $(".alert").delay(5000).fadeOut(500);
