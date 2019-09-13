@@ -51,6 +51,7 @@ class ArtistsController < ApplicationController
   end
 
   def update
+    @artworks = @artist.artworks.highlights.present? ? @artist.artworks.highlights : @artist.artworks.first(6)
     if params[:artist].include?("homepage_featured") && @artist.update(artist_params)
         respond_to do |format|
           format.html { redirect_to admin_dashboard_path }
