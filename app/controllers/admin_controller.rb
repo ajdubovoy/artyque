@@ -7,5 +7,6 @@ class AdminController < ApplicationController
     @news_posts = policy_scope(NewsPost).all
     @categories = policy_scope(Category).all
     @contact_page = true
+    @home_page_quotation = HomePageQuotation.access
   end
 end
