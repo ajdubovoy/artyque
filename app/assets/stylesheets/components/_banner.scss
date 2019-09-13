@@ -26,10 +26,10 @@
 	}
 	.inner-banner {
     &.inner-banner-small{
-      height: 50vh;
-      min-height: 6rem;
+      height: 50vh !important;
+      min-height: 6rem !important;
       @include media-breakpoint-up(sm) {
-        height: 40vh;
+        height: 40vh !important;
       }
     }
     

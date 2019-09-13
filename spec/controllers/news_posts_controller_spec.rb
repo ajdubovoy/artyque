@@ -102,4 +102,20 @@ RSpec.describe NewsPostsController, type: :controller do
       end
     end
   end
+
+  describe '#destroy' do
+    login_admin
+
+    it 'redirects correctly' do
+      @news_post = create(:news_post)
+      delete :destroy, params: { id: @news_post.id }
+      expect(response).to redirect_to admin_dashboard_path
+    end
+
+    it 'destroys the news_post' do
+      @news_post = create(:news_post)
+      delete :destroy, params: { id: @news_post.id }
+      expect(NewsPost.exists? @news_post.id).to be false
+    end
+  end
 end

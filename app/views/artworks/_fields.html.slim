@@ -13,8 +13,8 @@
     .col-12.col-sm-4
       = f.input :height, label: "Height (cm)"
     .col-12.col-sm-4
-      = f.input :depth, label: "Depth (kg)"
-  = f.input :weight
+      = f.input :depth, label: "Depth (cm)"
+  = f.input :weight, label: "Weight (kg)"
   = f.input :year
   = f.input :price, label: "Price (optional)"
 h2.border-top-light-gray.mb-3
@@ -35,8 +35,8 @@ h2.border-top-light-gray
   .links.col-12.col-sm-6.flex-center
     = link_to_add_association '+ Add video', f, :videos, class: 'button-tertiary w-100'
 .border-bottom-light-gray.mb-3
+  .p-3
+    = f.button :submit, "Save"
 - if Artwork.exists? f.object.id
   .p-3
-    = link_to "Delete artwork", artwork_path(f.object), method: :delete, class: 'button-tertiary w-100', 'data-confirm': "Are you sure?", remote: true
-.p-3
-  = f.button :submit, "Save"
+    = link_to "Delete artwork", artwork_path(f.object), method: :delete, class: 'button-danger w-100', 'data-confirm': "Are you sure?", remote: true

@@ -5,6 +5,7 @@ import initNavbar from "./navbar";
 import initBannerCarousel from "./banner_carousel";
 import initTriggerSave from "./trigger_save";
 import 'flickity/dist/flickity.min.css';
+import 'flickity-fullscreen/fullscreen.css';
 import initCarousel from './carousel';
 import initArtistCarousel from './artist_carousel';
 import initSortable from './form_sorting';

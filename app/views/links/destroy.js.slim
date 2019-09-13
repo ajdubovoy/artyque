@@ -1,10 +1,18 @@
 | function refreshForm(innerHTML) { const form = document.getElementById('edit-form'); form.innerHTML = innerHTML; } 
+| function showFlash(text) { const notice = document.getElementById('flashes'); notice.innerHTML = text; }
 - if Link.exists? @link.id
   |  refreshForm('
   = j render "edit", artist: @link.artist, link: @link
   | '); 
+  | showFlash('
+  = j render 'shared/flashes', notice: "Could not be deleted"
+  | ');
 - else
   |  refreshForm('
   = j render "artists/links", artist: @link.artist
   | '); 
+  | showFlash('
+  = j render 'shared/flashes', notice: "Successfully deleted"
+  | ');
 |  window.init(); 
+| document.body.scrollTop = document.documentElement.scrollTop = 0; // Scroll to top

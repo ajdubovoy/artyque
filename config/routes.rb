@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   end
 
   # News
-  resources :news_posts, only: %i[index show new create edit update]
+  resources :news_posts, only: %i[index show new create edit update destroy]
   resources :categories, only: %i[new create edit update destroy]
 
 end

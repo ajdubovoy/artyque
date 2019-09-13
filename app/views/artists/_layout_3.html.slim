@@ -1,8 +1,24 @@
 .row
   .col-12
+    - if artist.featured_artwork.present?
+      .row#featured-artwork.mt-5.mb-5
+        .col-12
+          == render 'featured_artwork', artwork: artist.featured_artwork
+    - if artworks.present?
+      .row#artworks-gallery.mb-5
+        .col-12.d-flex.line-left
+          hr.lines.w-100.mr-3
+          h3
+            | Artworks
+          hr.lines.w-100.ml-3
+        .col-12
+          == render 'artworks/gallery', artworks: artworks
+        .col-12
+          = link_to "See all Artwork", artist_collections_path(artist), class: 'button-tertiary w-100'
     ul.resume.resume-blocks.row.mt-5.mb-5
       li.resume-block.col-12.col-sm-6.col-md-4
-        == md artist.about_me
+        div#about-me.text-justify
+          == md artist.about_me
       - if artist.resume?
         - artist.blocks.each_with_index do |block, index|
           li.resume-block.col-12.col-sm-6.col-md-4
@@ -28,26 +44,11 @@
             / Allow variable heights with bootstrap columns
         li.resume-block.col-12.col-sm-6.col-md-4.mt-5
           = link_to 'See Full Profile >', artist_resume_blocks_path(artist), remote: true, 'data-action': 'ajax:success->modal#openAndUpdate ajax:error->modal#openAndError', 'data-target': 'modal.link', class: 'button-primary'
-    - if artist.featured_artwork.present?
-      .row#featured-artwork.mt-5.mb-5
-        .col-12
-          == render 'featured_artwork', artwork: artist.featured_artwork
-    - if artworks.present?
-      .row#artworks-gallery.mb-5
-        .col-12.d-flex.line-left
-          hr.lines.w-100.mr-3
-          h3
-            | Artworks
-          hr.lines.w-100.ml-3
-        .col-12
-          == render 'artworks/gallery', artworks: artworks
-        .col-12
-          = link_to "See all Artwork", artist_collections_path(artist), remote: true, 'data-action': 'ajax:success->modal#openAndUpdate ajax:error->modal#openAndError', class: 'button-tertiary w-100'
     - if artist.links.present?
       .row#links-gallery.mb-5
         .col-12.mb-3
           h3.title
-            | Links
+            | Media & Press
         .col-12
           == render 'links/gallery', links: artist.links
     - if artist.upcoming_projects.present?

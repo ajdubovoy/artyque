@@ -1,6 +1,6 @@
 class NewsPostsController < ApplicationController
   include MarkdownHelper
-  before_action :set_news_post, only: %i[show edit update]
+  before_action :set_news_post, only: %i[show edit update destroy]
   skip_before_action :authenticate_user!, only: %i[index show]
   after_action :skip_authorization, only: %i[index show]
 
@@ -39,6 +39,12 @@ class NewsPostsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    authorize_news_post
+    @news_post.destroy
+    redirect_to admin_dashboard_path, status: :see_other, alert: "Successfully deleted"
   end
 
   private

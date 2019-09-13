@@ -1,3 +1,4 @@
 | function refreshDashboard(innerHTML) { const form = document.getElementById('edit-dashboard'); form.innerHTML = innerHTML; } refreshDashboard('
 = j render "dashboard", artist: @artist, stage: @stage
 | '); window.init(); 
+| document.body.scrollTop = document.documentElement.scrollTop = 0; // Scroll to top

@@ -140,3 +140,15 @@
 .dot{
   border-radius: 0 !important;
 }
+
+.flickity-enabled.is-fullscreen{
+  z-index: 300000 !important;
+  background-color: rgba($white, 0.95) !important;
+  backdrop-filter: blur(3px);
+}
+.flickity-button-icon{
+  color: $blue !important;
+  &:hover{
+    color: $dark-blue !important;
+  }
+}

@@ -48,6 +48,7 @@ class ArtistsController < ApplicationController
 
   def edit
     @artworks = @artist.artworks.highlights.present? ? @artist.artworks.highlights : @artist.artworks.first(6)
+    @contact_page = true
   end
 
   def update

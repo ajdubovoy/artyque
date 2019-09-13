@@ -1,10 +1,19 @@
 | function refreshForm(innerHTML) { const form = document.getElementById('edit-form'); form.innerHTML = innerHTML; } 
+| function showFlash(text) { const notice = document.getElementById('flashes'); notice.innerHTML = text; }
 - if Collection.exists? @collection.id
   |  refreshForm('
   = j render "edit", artist: @collection.artist, collection: @collection
   | '); 
+  | showFlash('
+  = j render 'shared/flashes', notice: "Could not be deleted"
+  | ');
 - else
   |  refreshForm('
   = j render "artists/artworks", artist: @collection.artist
   | '); 
+  | showFlash('
+  = j render 'shared/flashes', notice: "Successfully deleted"
+  | ');
 |  window.init(); 
+| $(".alert").delay(5000).fadeOut(500);
+| document.body.scrollTop = document.documentElement.scrollTop = 0; // Scroll to top

@@ -16,9 +16,9 @@
             = artist.super_title
           h1
             span class=cp(@palette, 2, :fg)
-              = artist.name + ','
-            br /
-            span class=[cp(@palette, 1, :fg), 'shadow-text-light']
+              = artist.name
+          h4
+            span class=[cp(@palette, 1, :fg), 'title shadow-text-light']
               = artist.title
           p class=cp(@palette, 2, :fg)
             = artist.description

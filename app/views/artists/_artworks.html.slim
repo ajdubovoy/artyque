@@ -1,5 +1,5 @@
 h2
-  | Collections
+  | Series
 = simple_form_for @artist, remote: true do |f|
   = hidden_field_tag(:stage, 'artworks')
   .p-3
@@ -28,6 +28,6 @@ h2
                   - if collection_form.object.photos.present?
                     = cl_image_tag collection_form.object.photos.first.attachment, width: 70, height: 80, crop: :fill
   .p-3
-    = link_to '+ Add collection', new_artist_collection_path(@artist), remote: true, class: 'button-tertiary w-100'
+    = link_to '+ Add series', new_artist_collection_path(@artist), remote: true, class: 'button-tertiary w-100'
   .p-3
     = f.submit "Save"
