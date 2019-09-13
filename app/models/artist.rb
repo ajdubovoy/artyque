@@ -26,4 +26,8 @@ class Artist < ApplicationRecord
   def vimeo?
     return video.match?(/\Ahttps?:\/\/(www\.)?vimeo\.com\/(?<id>.+)\z/)
   end
+
+  def resume?
+    return resume_blocks.present?
+  end
 end

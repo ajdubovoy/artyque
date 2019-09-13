@@ -3,30 +3,31 @@
     ul.resume.resume-blocks.row.mt-5.mb-5
       li.resume-block.col-12.col-sm-6.col-md-4
         == md artist.about_me
-      - artist.blocks.each_with_index do |block, index|
-        li.resume-block.col-12.col-sm-6.col-md-4
-          h5.resume-block-title.title.c-dark-blue[style="font-size: 0.85rem;"]
-            = block.title
-          ul.resume-items
-            .see-more.w-100
-            - block.items.each do |item|
-              li.resume-item
-                - if block.items.any?(&:year)
-                  h6.year
-                    strong
-                      | #{item.year} | 
-                    span.label
+      - if artist.resume?
+        - artist.blocks.each_with_index do |block, index|
+          li.resume-block.col-12.col-sm-6.col-md-4
+            h5.resume-block-title.title.c-dark-blue[style="font-size: 0.85rem;"]
+              = block.title
+            ul.resume-items
+              .see-more.w-100
+              - block.items.each do |item|
+                li.resume-item
+                  - if block.items.any?(&:year)
+                    h6.year
+                      strong
+                        | #{item.year} | 
+                      span.label
+                        = item.label
+                  - elsif block.items.any?(&:label)
+                    h6.label
                       = item.label
-                - elsif block.items.any?(&:label)
-                  h6.label
-                    = item.label
-                p.description
-                  = item.description
-        - if index % 3 == 0
-          .clearfix
-          / Allow variable heights with bootstrap columns
-      li.resume-block.col-12.col-sm-6.col-md-4.mt-5
-        = link_to 'See Full Profile >', artist_resume_blocks_path(artist), remote: true, 'data-action': 'ajax:success->modal#openAndUpdate ajax:error->modal#openAndError', 'data-target': 'modal.link', class: 'button-primary'
+                  p.description
+                    = item.description
+          - if index % 3 == 0
+            .clearfix
+            / Allow variable heights with bootstrap columns
+        li.resume-block.col-12.col-sm-6.col-md-4.mt-5
+          = link_to 'See Full Profile >', artist_resume_blocks_path(artist), remote: true, 'data-action': 'ajax:success->modal#openAndUpdate ajax:error->modal#openAndError', 'data-target': 'modal.link', class: 'button-primary'
     - if artist.featured_artwork.present?
       .row#featured-artwork.mt-5.mb-5
         .col-12
