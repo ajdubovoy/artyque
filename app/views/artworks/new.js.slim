@@ -1,3 +1,4 @@
 | function refreshDashboard(innerHTML) { const form = document.getElementById('edit-form'); form.innerHTML = innerHTML; } refreshDashboard('
 = j render "new", collection: @collection, artwork: @artwork
 | '); window.init(); 
+| document.body.scrollTop = document.documentElement.scrollTop = 0; // Scroll to top

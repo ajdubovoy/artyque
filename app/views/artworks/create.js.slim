@@ -8,3 +8,4 @@
   = j render "collections/edit", artist: @collection.artist, collection: @collection, artwork: Artwork.new
   | '); 
 |  window.init(); 
+| document.body.scrollTop = document.documentElement.scrollTop = 0; // Scroll to top

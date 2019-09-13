@@ -18,15 +18,15 @@
             = artwork.description
           - if artwork.height || artwork.width || artwork.depth
             p.c-light-gray.small
-              | #{artwork.height} x #{artwork.width} 
+              | #{artwork.height} cm height x #{artwork.width} cm width
               - if artwork.depth
-                | x #{artwork.depth}
+                | x #{artwork.depth} cm depth
           - if artwork.weight
             p.c-light-gray.small
               | Price: #{number_to_currency artwork.price}
           - if artwork.weight
             p.c-light-gray.small
-              | Weight: #{artwork.weight}
+              | Weight: #{artwork.weight} kg
   - if artwork.videos.present?
     .row
       .col-12
@@ -39,5 +39,5 @@
   - if artwork.collection.artworks.length > 1
     .row
       .col-12
-        h5.c-light-gray Other artworks from the same collection
+        h5.c-light-gray Other artworks from the same series
     == render 'artworks/gallery', artworks: artwork.collection.artworks.where.not(id: artwork.id).sample(3)

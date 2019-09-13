@@ -8,3 +8,5 @@
   = j render "collections/edit", collection: @artwork.collection, artist: @artwork.collection.artist
   | '); 
 |  window.init(); 
+| $(".alert").delay(5000).fadeOut(500);
+| document.body.scrollTop = document.documentElement.scrollTop = 0; // Scroll to top

@@ -6,5 +6,6 @@ class AdminController < ApplicationController
     @artworks_not_selected = policy_scope(Artwork).where(homepage_featured: false);
     @news_posts = policy_scope(NewsPost).all
     @categories = policy_scope(Category).all
+    @contact_page = true
   end
 end

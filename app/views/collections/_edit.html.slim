@@ -1,7 +1,7 @@
 .p-3
   = link_to "< Back", edit_artist_path(artist, stage: :artworks), remote: true, class: 'button-tertiary'
 h2
-  | Edit Collection
+  | Edit Series
 = simple_form_for collection, remote: true do |f|
   = render 'collections/fields', f: f, hide_submit: true
   h2.border-top-light-gray
@@ -22,6 +22,6 @@ h2
         = link_to '+ Add artwork', new_collection_artwork_path(collection), remote: true, class: 'button-tertiary w-100'
   .border-bottom-light-gray.mb-3
   .p-3
-    = link_to "Delete Collection", collection_path(collection), method: :delete, class: 'button-tertiary w-100', 'data-confirm': "Are you sure?", remote: true
+    = link_to "Delete Series", collection_path(collection), method: :delete, class: 'button-tertiary w-100', 'data-confirm': "Are you sure?", remote: true
   #submit.p-3
     = f.button :submit, "Save"
