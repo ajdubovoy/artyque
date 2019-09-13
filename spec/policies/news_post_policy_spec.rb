@@ -75,4 +75,18 @@ RSpec.describe NewsPostPolicy, type: :policy do
       expect(subject).not_to permit(user, news_post)
     end
   end
+
+  permissions :destroy? do
+    it 'allows admin' do
+      user = create(:user, :admin)
+      news_post = create(:news_post)
+      expect(subject).to permit(user, news_post)
+    end
+
+    it 'denies not admin' do
+      user = create(:user)
+      news_post = create(:news_post)
+      expect(subject).not_to permit(user, news_post)
+    end
+  end
 end

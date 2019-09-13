@@ -251,4 +251,23 @@ RSpec.describe ArtworksController, type: :controller do
       end
     end
   end
+
+  describe '#destroy' do
+    login_admin
+
+    it 'redirects correctly' do
+      @artist = create(:artist)
+      @artwork = @artist.artworks.sample
+      @collection = @artwork.collection
+      delete :destroy, params: { id: @artwork.id }
+      expect(response).to redirect_to edit_collection_path(@collection)
+    end
+
+    it 'destroys the artwork' do
+      @artist = create(:artist)
+      @artwork = @artist.artworks.sample
+      delete :destroy, params: { id: @artwork.id }
+      expect(Artwork.exists? @artwork.id).to be false
+    end
+  end
 end

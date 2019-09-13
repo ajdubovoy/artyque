@@ -68,7 +68,7 @@ describe "ArtistsFeature", type: :view do
       login_admin
       artist = create(:artist)
       visit edit_artist_path(artist, stage: :artworks)
-      click_link "+ Add collection"
+      click_link "+ Add series"
       expect(page).to have_field('Name')
       click_link "< Back"
       expect(page.find('li.selected').text).to eq 'Artworks'
@@ -79,7 +79,7 @@ describe "ArtistsFeature", type: :view do
       login_admin
       artist = create(:artist)
       visit edit_artist_path(artist, stage: :artworks)
-      click_link "+ Add collection"
+      click_link "+ Add series"
       fill_in 'Name', with: 'Test Name'
       click_button 'Save'
       expect(page.find('li.selected').text).to eq 'Artworks'
@@ -90,7 +90,7 @@ describe "ArtistsFeature", type: :view do
       login_admin
       artist = create(:artist)
       visit edit_artist_path(artist, stage: :artworks)
-      click_link "+ Add collection"
+      click_link "+ Add series"
       click_button 'Save'
       expect(page).to have_text 'blank'
     end

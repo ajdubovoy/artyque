@@ -11,4 +11,7 @@
   .row
     .col
       = render 'news_posts/fields'
+  .row.mt-5
+    .col
+      = link_to "Delete post", news_post_path(@news_post), method: :delete, class: 'button-danger w-100', 'data-confirm': "Are you sure?", remote: true
 .ellipse
