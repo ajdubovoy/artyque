@@ -25,4 +25,21 @@
       @extend .shadow-box-dark;
     }
   }
+  &-danger{
+    @extend .btn;
+    @extend .btn-primary;
+    @extend .shadow-box-light;
+    @extend .bg-pink;
+    @extend .c-blue;
+    border-color: darken($pink, 15%);
+    &:hover{
+      @extend .shadow-box-dark;
+      background: darken($pink, 30%);
+      @extend .c-white;
+    }
+    &:active{
+      @extend .c-white;
+      background: darken($pink, 45%) !important;
+    }
+  }
 }

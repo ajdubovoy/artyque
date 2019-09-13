@@ -20,8 +20,8 @@ h2
                   - if artwork_form.object.photos.present?
                     = cl_image_tag artwork_form.object.photos.first.attachment
         = link_to '+ Add artwork', new_collection_artwork_path(collection), remote: true, class: 'button-tertiary w-100'
-  .border-bottom-light-gray.mb-3
-  .p-3
-    = link_to "Delete Series", collection_path(collection), method: :delete, class: 'button-tertiary w-100', 'data-confirm': "Are you sure?", remote: true
   #submit.p-3
     = f.button :submit, "Save"
+  .border-bottom-light-gray.mb-3
+  .p-3
+    = link_to "Delete Series", collection_path(collection), method: :delete, class: 'button-danger w-100', 'data-confirm': "Are you sure?", remote: true
