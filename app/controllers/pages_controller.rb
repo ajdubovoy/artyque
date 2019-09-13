@@ -6,6 +6,7 @@ class PagesController < ApplicationController
     @news_posts = NewsPost.first(4)
     @featured_artwork = Artwork.where(homepage_featured: true)
     @hidden_logo = true
+    @home_page_quotation = HomePageQuotation.access
   end
 
   def about

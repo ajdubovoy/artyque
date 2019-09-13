@@ -33,4 +33,7 @@ Rails.application.routes.draw do
   resources :news_posts, only: %i[index show new create edit update destroy]
   resources :categories, only: %i[new create edit update destroy]
 
+  # Home Page Quotation
+  resources :home_page_quotations, only: %i[edit update]
+
 end

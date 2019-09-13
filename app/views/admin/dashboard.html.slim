@@ -91,5 +91,23 @@
                 li
                   .text
                     = artwork.name
+    .col-12.col-sm-6
+      .row.pt-3
+        .col
+          h2
+            | Home Page Quotation
+      .row
+        .col
+          ul.link-list.admin
+            = link_to edit_home_page_quotation_path(@home_page_quotation)
+              li.text-center
+                .text
+                  | Edit Quotation
+              li
+                .text
+                  = @home_page_quotation.formatted_quotation
+              li
+                .text
+                  = @home_page_quotation.formatted_caption
 = render "artworks/featured_form"
 .mb-5
