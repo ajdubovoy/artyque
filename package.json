@@ -5,6 +5,7 @@
     "@rails/webpacker": "^4.0.2",
     "bootstrap": "^4.3.1",
     "flickity": "^2.2.0",
+    "flickity-fullscreen": "^1.1.1",
     "jquery": "^3.4.1",
     "package": "^1.0.1",
     "popper.js": "^1.15.0",
