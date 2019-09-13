@@ -5,6 +5,7 @@ export default class extends Controller {
 
   connect() {
     this.buttonTarget.addEventListener('click', this.toggle);
+    this.toggleFrame();
   }
 
   disconnect() {
