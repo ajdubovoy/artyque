@@ -13,6 +13,7 @@
 
 .wrapper-banner {
 	@extend .bg-beige;
+  overflow: hidden;
 	.banner-content {
     @include make-container;
     @extend .p-0;
