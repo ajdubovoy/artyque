@@ -6,16 +6,19 @@
         .row
           .col
             ul.link-list.admin
-              - @artworks_not_selected.each do |artwork|
-                = form_for artwork, html: { id: "submit-artwork-box-#{artwork.id}"} do |f|
-                  label.featured_check
-                    = f.check_box :homepage_featured, id: "artwork-box-#{artwork.id}"
-                    - if artwork.homepage_featured == false
-                      = icon('far', 'heart')
-                      p Feature
-                  li
-                    .text
-                      = artwork.name
-                    .image
-                      - if artwork.photos.present?
-                        = cl_image_tag artwork.photos.first.attachment.url 
+              - @artists.each do |artist|
+                h4.mt-3.mb.3
+                  = artist.name
+                - artist.artworks.where(homepage_featured: false).order(:name).each do |artwork|
+                  = form_for artwork, html: { id: "submit-artwork-box-#{artwork.id}"} do |f|
+                    label.featured_check
+                      = f.check_box :homepage_featured, id: "artwork-box-#{artwork.id}"
+                      - if artwork.homepage_featured == false
+                        = icon('far', 'heart')
+                        p Feature
+                    li
+                      .text
+                        = artwork.name
+                      .image
+                        - if artwork.photos.present?
+                          = cl_image_tag artwork.photos.first.attachment.url 
