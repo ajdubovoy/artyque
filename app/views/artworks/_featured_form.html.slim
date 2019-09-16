@@ -6,10 +6,10 @@
         .row
           .col
             ul.link-list.admin
-              - @artworks_not_selected.each_with_index do |artwork, i|
-                = form_for artwork, html: { id: "submit-artwork-box-#{i}"} do |f|
+              - @artworks_not_selected.each do |artwork|
+                = form_for artwork, html: { id: "submit-artwork-box-#{artwork.id}"} do |f|
                   label.featured_check
-                    = f.check_box :homepage_featured, id: "artwork-box-#{i}"
+                    = f.check_box :homepage_featured, id: "artwork-box-#{artwork.id}"
                     - if artwork.homepage_featured == false
                       = icon('far', 'heart')
                       p Feature
