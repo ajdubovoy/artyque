@@ -4,7 +4,7 @@
 - if @artist.video.present?
   == render 'video_banner', video: @artist.video
 .ellipse
-div id="content" data-controller="modal"
+section#main-content[data-controller="modal"]
   .container
     - case @artist.layout
     - when 1 
