@@ -42,14 +42,17 @@
 }
 
 .inner-footer {
-  margin: 0;
-  justify-content: flex-end;
-  background: #264e58;
-  padding: 23px;
   display: flex;
-  list-style: none;
+  flex-direction: column;
+  height: 200px;
+  padding: 0;
+  text-align: right !important;
+  justify-content: space-between;
   a {
     margin-right: 23px;
+  }
+  @include media-breakpoint-down(sm) {
+     height: 0px;
   }
 }
 

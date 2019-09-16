@@ -30,12 +30,6 @@
      
     </ul>
   </div>
-  <div class="image d-none d-sm-block">
-    <%= link_to root_path do %>
-      <%= image_tag 'logo-footer.svg', class: 'logo' %>
-    <% end %>
-  </div>
-</footer>
 <ul class="legal-foot-note inner-footer links">
   <li id="login-button">
     <% if user_signed_in? %>
@@ -55,4 +49,11 @@
       </li>
     <% end %>
   <% end %>
+    <div class="image d-none d-sm-block">
+     <%= link_to root_path do %>
+        <%= image_tag 'logo-footer.svg', class: 'logo' %>
+      <% end %>
+  </div>
+
 </ul>
+</footer>
