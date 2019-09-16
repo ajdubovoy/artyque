@@ -5,7 +5,7 @@
         .text-lockup
           h1.c-white = @news_post.headline
           p.c-pink = @news_post.created_at.strftime('%A, %d %B %Y')
-#main-content.container.pt-3.mb-5
+article#main-content.container.pt-3.mb-5
   .row.mt-3
     .col-12
       = md @news_post.content

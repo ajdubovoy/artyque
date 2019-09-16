@@ -22,7 +22,8 @@
               = artist.title
           p class=cp(@palette, 2, :fg)
             = artist.description
-          = link_to artist.button_text, "#content", class: "button-primary"
+          a.button-primary[href="#main-content"]
+            = artist.button_text
         .image-lockup.col-12.col-sm-6
           - if artist.photo.present?
             div class=["image-container", "h-100", "w-100", cp(@palette, 4, :bg)] style="background-image: url('#{cl_image_path artist.photo}')"
