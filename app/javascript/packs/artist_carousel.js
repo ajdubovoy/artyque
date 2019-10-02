@@ -12,7 +12,7 @@ function initArtistCarousel(targetClass) {
     prevNextButtons: true,
     pageDots: false,
     percentPosition: false,
-    resize: false,
+    // resize: false,
     wrapAround: true
     // contain: true
   });

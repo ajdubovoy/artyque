@@ -15,9 +15,9 @@
     @include media-breakpoint-up(sm) {
       // Offset onto image but not on mobile
       $desktop-offset: 5ch;
-      margin-left: -$desktop-offset;
+      // margin-left: -$desktop-offset;
       .title{
-        margin-left: $desktop-offset - 1ch;
+        // margin-left: $desktop-offset - 1ch;
         text-align: right;
         max-width: calc(100% - 5ch);
       }

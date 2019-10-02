@@ -1,6 +1,11 @@
 .main-banner {
+  .row{
+    height: calc(100vh - #{$header-height});
+    min-height: 710px;
+  }
 	.banner-content, .flickity-viewport {
 		min-height: 710px;
+    height: calc(100vh - #{$header-height});
 		@include media-breakpoint-up(sm) {
 			min-height: 0;	
 		}
