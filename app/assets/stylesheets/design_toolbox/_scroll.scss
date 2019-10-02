@@ -12,8 +12,10 @@
 }
 
 .scroll-smooth{
-  scroll-behavior: smooth;
-  // -webkit-overflow-scrolling: touch;
+  @include media-breakpoint-up(sm) {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 html{

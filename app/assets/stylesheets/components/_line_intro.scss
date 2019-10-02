@@ -8,6 +8,9 @@
 }
 
 .lines, .line {
+  @include media-breakpoint-down(sm) {
+    width: 30% !important;
+  }
 	border: solid 1px #fef0e6;
 	&-right {
 		padding-left: 0;
