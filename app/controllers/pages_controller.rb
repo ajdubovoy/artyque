@@ -19,5 +19,7 @@ class PagesController < ApplicationController
 
   def privacy;end
 
-  def impressum;end
+  def impressum
+    @contact_page = true
+  end
 end
