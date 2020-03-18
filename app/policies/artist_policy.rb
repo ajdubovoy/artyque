@@ -19,6 +19,10 @@ class ArtistPolicy < ApplicationPolicy
     return edit?
   end
 
+  def destroy?
+    return user.admin?
+  end
+
   class Scope < Scope
     def resolve
       scope.all

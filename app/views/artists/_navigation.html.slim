@@ -31,3 +31,8 @@ nav#edit-navigation.secondary-navigation
       = link_to artist_path(referrer: :dashboard), target: :_blank, class: 'button-tertiary' do
           | Preview Page
           i.fas.fa-arrow-right.ml-2
+    - if policy(artist).destroy?
+      li.text-center
+        = link_to artist_path(referrer: :dashboard), method: :delete, data: { confirm: "Deleting #{artist.name}'s profile cannot be undone and will remove all associated artworks. Are you sure?" }, class: 'text-danger small' do
+            i.fas.fa-trash.mr-2
+            | Delete Artist
