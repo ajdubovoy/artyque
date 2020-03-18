@@ -1,7 +1,7 @@
 .card.news-post.w-100
   .card-text
     h5 = news_post.headline
-    = md_flat(truncate(news_post.content, length: 45))
+    = md_flat(truncate(strip_tags(news_post.content), length: 45))
     p.small.c-light-gray = news_post.created_at.strftime('%d %b %Y')
     p Read More >>
   - if news_post.photo.present?
