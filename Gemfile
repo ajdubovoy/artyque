@@ -29,6 +29,7 @@ gem 'carrierwave', '~> 1.2'
 gem "cocoon"
 gem 'inline_svg'
 gem 'bluecloth'
+gem 'trix'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
