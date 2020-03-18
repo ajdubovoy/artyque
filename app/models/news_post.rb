@@ -8,6 +8,6 @@ class NewsPost < ApplicationRecord
   end
 
   def previous
-    self.class.find_by("created_at > ?", created_at)
+    self.class.where("created_at > ?", created_at).last
   end
 end
