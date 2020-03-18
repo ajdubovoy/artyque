@@ -2,7 +2,7 @@ class ArtistsController < ApplicationController
   include ColorPaletteHelper
   include VideoHelper
   include MarkdownHelper
-  before_action :set_artist, only: %i[edit update]
+  before_action :set_artist, only: %i[edit update destroy]
   before_action :set_stage, only: %i[edit update]
   after_action :respond_with_js, only: %i[edit]
   skip_before_action :authenticate_user!, only: %i[index show] # WILL EVENTUALLY BE DISABLED WHEN PROFILES CLOSED
@@ -69,6 +69,11 @@ class ArtistsController < ApplicationController
         format.js
       end
     end
+  end
+
+  def destroy
+    @artist.destroy
+    redirect_to admin_dashboard_path
   end
 
   private

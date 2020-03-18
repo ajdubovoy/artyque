@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'admin/dashboard', to: 'admin#dashboard', as: :admin_dashboard
 
   # Artists
-  resources :artists, only: %i[index new create show edit update] do
+  resources :artists do
     resources :collections, only: %i[index new create edit update destroy], shallow: true do
       resources :artworks, only: %i[new create edit update show destroy], shallow: true
     end
