@@ -1,7 +1,8 @@
 .links-gallery{
   .links-gallery-photo{
-    background-size: cover;
-    background-position: center;
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
   }
   p{
     font-size: 0.85em;

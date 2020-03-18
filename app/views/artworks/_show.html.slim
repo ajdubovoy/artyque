@@ -21,7 +21,7 @@
               | #{artwork.height} cm height x #{artwork.width} cm width
               - if artwork.depth
                 | x #{artwork.depth} cm depth
-          - if artwork.weight
+          - if artwork.price
             p.c-light-gray.small
               | Price: #{number_to_currency artwork.price}
           - if artwork.weight

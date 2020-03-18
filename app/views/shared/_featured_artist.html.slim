@@ -1,17 +1,17 @@
 div.artist-carousel
-	- @featured_artist.each do |artist|
-		.div.artist-carousel-cell
-			.contain-featured-artist
-				.container-fluid
-					.row
-						.col-12.col-sm-6.info-side
-							hr.features-arrtist-line
-							h4.title Featured Artist
-							br
-							h3 = artist.name
-							br
-							p.color.c-light-gray = artist.description
+  - @featured_artist.each do |artist|
+    .div.artist-carousel-cell
+      .contain-featured-artist
+        .container-fluid
+          .row
+            .col-12.col-sm-6.info-side
+              hr.features-arrtist-line
+              h4.title Featured Artist
+              br
+              h3 = artist.name
+              br
+              p.color.c-light-gray = artist.description
               p
                 = link_to "Learn More >>", artist_path(artist)
-						.col-12.col-sm-6 
-							div.featured-artist-photo style="background-image: url(#{artist.photo});"
+            .col-12.col-sm-6
+              div.featured-artist-photo style="background-image: url(#{artist.photo});"
