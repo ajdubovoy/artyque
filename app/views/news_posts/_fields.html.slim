@@ -1,5 +1,5 @@
 = simple_form_for @news_post do |f|
   = f.input :headline
   = render 'shared/photo_uploader', f: f, field: :photo, show_label: true, original_photo: f.object.photo
-  = f.input :content, label: 'Content (accepts Markdown)'
+  = f.input :content, as: :trix_editor
   = f.submit
