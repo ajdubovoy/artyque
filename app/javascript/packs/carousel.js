@@ -6,19 +6,17 @@ function initCarousel(targetClass) {
     return null;
   }
 
-  console.log('here')
-
   const flkty = new Flickity(`.${targetClass}`, {
     autoPlay: 6000,
     cellSelector: '.carousel-cell',
     prevNextButtons: false,
     pageDots: true,
     cellAlign: 'center',
-    resize: false,
+    resize: true,
     wrapAround: true,
     initialIndex: element.dataset.initial ? Number(element.dataset.initial) : 0,
-    fullscreen: true
-    // contain: true
+    fullscreen: true,
+    contain: true
   });
 }
 
