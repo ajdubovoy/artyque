@@ -47,7 +47,25 @@ export default class extends Controller {
     const parsedResponse = JSON.parse(xhr.response);
     this.contentTarget.innerHTML = parsedResponse.html;
     this.openModal();
-    initCarousel('carousel'); // USED SPECIFICALLY IN THIS APP TO REINITIALIZE CAROUSELS (exported as a global constant in application)
+
+    const imgs = document.images;
+    const len = imgs.length;
+    let counter = 0;
+
+    [].forEach.call(imgs, img => {
+      if (img.complete) {
+        incrementCounter();
+      } else {
+        img.addEventListener('load', incrementCounter, false);
+      }
+    });
+
+    function incrementCounter() {
+      counter += 1;
+      if ( counter === len ) {
+        initCarousel('carousel'); // USED SPECIFICALLY IN THIS APP TO REINITIALIZE CAROUSELS (exported as a global constant in application)
+      }
+    }
   }
 
   openAndError(event) {
