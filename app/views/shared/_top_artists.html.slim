@@ -1,0 +1,18 @@
+- if @featured_artists.empty?
+- else
+  .line-wrapper
+    .container
+      h4.title OUR ARTISTS
+  .container.mb-5
+    .row.artists-cards
+      - @featured_artists.each do |artist|
+        .artist-card.col-12.col-md-6.col-lg-4.align-self-star
+          .artist-image[style="background-image: url('#{cl_image_path artist.photo}')"]
+          p.artist-name #{artist.name}
+    .row.artists-buttons.mb-4
+      .col-12.col-sm-6
+        = link_to "Discover More Artists", news_posts_path, class: "button-primary artist-button"
+      .col-12.col-sm-6
+        = link_to "Available Works", news_posts_path, class: "button-primary artist-button"
+
+/ this is a comment

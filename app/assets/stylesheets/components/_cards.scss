@@ -89,6 +89,40 @@
     background-position: center;
   }
   &:hover{
-   @extend .border-light-blue; 
+   @extend .border-light-blue;
+  }
+}
+
+// -------------
+
+.artists-cards{
+  max-width: 888px;
+  margin: 0 auto;
+  .artist-card{
+    margin-bottom: 37px;
+    .artist-image{
+      margin: 0 auto;
+      max-width: 291px;
+      height: 200px;
+      width: 100%;
+      min-height: 7rem;
+      background-size: cover;
+      background-position: center;
+      border-radius: 5px;
+    }
+    .artist-name{
+      text-align: center;
+      padding-top: 12px;
+    }
+  }
+}
+
+.artists-buttons{
+  margin: 0 auto;
+  max-width: 420px;
+  text-align: center;
+  .artist-button{
+    min-width: 192px;
+    margin-bottom: 20px;
   }
 }
