@@ -101,6 +101,7 @@
   .artist-card{
     margin-bottom: 37px;
     .artist-image{
+      box-shadow: 0 0 44px rgb(150,150,150);
       margin: 0 auto;
       max-width: 291px;
       height: 200px;
@@ -126,3 +127,18 @@
     margin-bottom: 20px;
   }
 }
+
+.HIW-card{
+  text-align: center;
+  max-width: 350px;
+  margin: 77px auto 0 auto;
+  .image{
+    width: 150px;
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+    border-radius: 4px;
+  }
+}
+
