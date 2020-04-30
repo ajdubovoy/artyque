@@ -81,6 +81,13 @@
   li {
     padding: 3px 12px;
     color: $medium-gray;
+    display: flex;
+    align-items: center;
+    .nav-btn {
+      @extend .button-primary;
+      width: 144px;
+      border-radius: 2px;
+    }
     a{
       color: $medium-gray;
       transition: ease .5s all;
