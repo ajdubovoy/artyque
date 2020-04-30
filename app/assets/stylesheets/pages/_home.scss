@@ -37,7 +37,7 @@
       }
   }
 }
- 
+
 .header-text {
   font-size: 30px;
 }
@@ -103,13 +103,13 @@
   margin-bottom: 25px;
   a {
     text-decoration: none;
-  } 
+  }
   &-img {
   height: 250px;
   margin-bottom: 10px;
   transition: ease .5s all;
   border-radius: 3px;
-  background-size: cover; 
+  background-size: cover;
   background-position: center;
   }
   &:hover {
@@ -131,8 +131,8 @@
     bottom: 45px;
   }
   // box-shadow: $shadow-light;
-} 
- 
+}
+
 .artist-carousel-cell {
   width: 100%;
 }
@@ -177,7 +177,7 @@
    padding: 30px 38px;
      margin-bottom: 80px;
    h2 {
-    font-size: 30px; 
+    font-size: 30px;
    }
     @include media-breakpoint-up(sm) {
         margin-bottom: 0;
@@ -213,5 +213,15 @@
     &:hover {
       text-decoration: underline;
     }
+  }
+}
+
+.two-buttons-container{
+  margin: 0 auto;
+  max-width: 420px;
+  text-align: center;
+  .artist-button{
+    min-width: 192px;
+    margin-bottom: 20px;
   }
 }
