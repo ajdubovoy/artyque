@@ -142,6 +142,7 @@
   justify-content: center;
   align-items: center;
   max-width: 1300px;
+  overflow: hidden;
   &.about-banner {
     height: auto;
     min-height: calc(100vh - #{$header-height});
@@ -153,6 +154,26 @@
       max-width: 796px;
       margin: 0px 56px 36px 56px;
     }
+  }
+  .top-right-circle{
+    position: absolute;
+    width: 60%;
+    padding-top: 60%;
+    left: 46%;
+    top: -479.298px;
+    border-radius: 50%;
+    background: linear-gradient(79.73deg, #FEF0E7 -20.82%, rgba(254, 240, 231, 0) 62.49%);
+    opacity: 0.5;
+  }
+  .bot-left-circle{
+    position: absolute;
+    width: 60%;
+    padding-top: 60%;
+    left: 0%;
+    bottom: 2px;
+    border-radius: 50%;
+    background: linear-gradient(79.73deg, #FEF0E7 -20.82%, rgba(254, 240, 231, 0) 62.49%);
+    opacity: 0.5;
   }
   &.who-is-artyque{
     height: auto;
