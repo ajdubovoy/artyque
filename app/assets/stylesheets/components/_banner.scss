@@ -169,11 +169,23 @@
   &.secondary-banner{
     max-height: 400px;
   }
+  @media (max-width: 540px) {
+    &.secondary-banner{
+      max-height: 100vh;
+      .header-text {
+        font-size: 38px !important;
+      }
+    }
+    .main-text{
+      font-size: 31px !important;
+    }
+  }
   .main-text{
     max-width: 960px;
     margin: 0 auto;
     letter-spacing: 3px;
     font-size: 37px;
+    padding: 0 50px;
   }
   .title{
     font-weight: 300;
