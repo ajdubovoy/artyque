@@ -132,3 +132,21 @@
   }
 }
 
+
+// --------------------------------------
+
+.service-card{
+  max-width: 280px;
+  margin: 11px;
+  .image{
+    height: 145px;
+    background-position: center;
+    background-size: cover;
+  }
+  .button {
+    width: 80%;
+  }
+}
+
+
+

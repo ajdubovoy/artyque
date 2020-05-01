@@ -135,7 +135,6 @@
 // -----------------------
 
 .new-look-banner {
-  @extend .bg-blue-gradient;
   height: calc(100vh - #{$header-height});
   max-height: 900px;
   text-align: center;
@@ -151,8 +150,20 @@
     @extend .c-white;
     justify-content: normal;
     .about-text {
-      max-width: 690px;
+      max-width: 796px;
       margin: 0px 56px 36px 56px;
+    }
+  }
+  &.who-is-artyque{
+    height: auto;
+    min-height: calc(100vh - #{$header-height});
+    flex-direction: column;
+    align-items: start;
+    justify-content: normal;
+    text-align: left;
+    max-height: fit-content;
+    .who-is-text{
+      padding: 0 18%;
     }
   }
   &.secondary-banner{
