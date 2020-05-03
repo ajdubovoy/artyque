@@ -189,6 +189,9 @@
   }
   &.secondary-banner{
     max-height: 400px;
+    background: image-url('footer_bg.jpg');
+    background-size: cover;
+    background-position: center;
   }
   @media (max-width: 540px) {
     &.secondary-banner{
