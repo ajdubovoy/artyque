@@ -85,7 +85,7 @@
     align-items: center;
     .nav-btn {
       @extend .button-primary;
-      width: 144px;
+      min-width: 144px;
       border-radius: 2px;
     }
     a{
