@@ -7,7 +7,8 @@
   .container.mb-5
     .row.artists-cards
       - @featured_artists.each do |artist|
-        .artist-card.col-12.col-md-6.col-lg-4.align-self-star
+        .artist-card.col-12.col-md-6.col-lg-4.align-self-star.position-relative
+          = link_to '', artist_path(artist), class: "link-0-0"
           .artist-image[style="background-image: url('#{cl_image_path artist.photo}')"]
           p.artist-name #{artist.name}
     .row.two-buttons-container.mb-4
