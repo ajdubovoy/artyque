@@ -52,9 +52,19 @@
     min-width: 192px;
     margin-bottom: 20px;
   }
-  @media (max-width: 540px) {
-  .artist-button {
-    width: 100% !important;
+  @media (max-width: 1280px) {
+    &.lg-hide {
+      display: none;
+    }
   }
-}
+  @media (max-width: 767px) {
+    &.lg-hide {
+      display: block;
+    }
+  }
+  @media (max-width: 540px) {
+    .artist-button {
+      width: 100% !important;
+    }
+  }
 }

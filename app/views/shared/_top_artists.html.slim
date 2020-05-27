@@ -2,19 +2,31 @@
 - else
   .line-wrapper
     .container.d-flex.justify-content-between
-      h4.title. Ou Artists
+      h4.title. Our Artists
       hr.lines.w-75
-  .container.mb-5
-    .row.artists-cards
+  .fake-container.mb-5
+    .row.justify-content-between.artists-cards.justify-center-mobile
+      .artist-card.col-lg-2.bg-beige.top-artist-button
+        .left
+          p. Discover
+          p.underline. our Artists
       - @featured_artists.each do |artist|
-        .artist-card.col-12.col-md-6.col-lg-4.align-self-star.position-relative
+        - last_name = artist.name.split(' ').last
+        - first_name = artist.name.split(' ')[0..-2].join(' ')
+        .artist-card.col-12.col-md-2.col-lg-2.position-relative.bg-beige.mx-3
           = link_to '', artist_path(artist), class: "link-0-0"
-          .artist-image[style="background-image: url('#{cl_image_path artist.photo}')"]
-          p.artist-name #{artist.name}
-    .row.two-buttons-container.mb-4
-      .col-12.col-sm-6
+          p.title.f-9.mt-2. Painting
+          .artist-full-name
+            p. #{first_name}
+            p. #{last_name}
+      .artist-card.col-lg-2.bg-beige.top-artist-button
+        .right
+          p. Availabel
+          p.underline Works
+    .row.two-buttons-container.mb-4.lg-hide.justify-content-center
+      .col-12.col-sm-6.center-margin
         = link_to "Discover More Artists", artists_path, class: "button-primary artist-button"
-      .col-12.col-sm-6
+      .col-12.col-sm-6.center-margin
         = link_to "Available Works", news_posts_path, class: "button-primary artist-button"
 
 / this is a comment

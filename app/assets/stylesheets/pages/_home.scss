@@ -220,3 +220,31 @@
   max-width: 1045px;
   margin: 0 auto;
 }
+
+.top-artist-button{
+  position: relative;
+  font-size: 21px;
+  font-weight: 600;
+  @media (max-width: 767px) {
+    display: none
+  }
+  @media (max-width: 990px) {
+    width: 126px
+  }
+  .right {
+    position: absolute;
+    bottom: 0;
+    left: -11px;
+  }
+  .left {
+    position: absolute;
+    text-align: left;
+    top: 27px;
+    right: -7px;
+  }
+}
+
+
+
+
+

@@ -1,0 +1,11 @@
+.new-look-banner.sign-up-banner.bg-beige
+  .banner-content
+    .row
+      .col-12
+        h4.title.color.c-blue. STAY WITH ARTYQUE
+      .title.color.c-white.text-center.col-12
+        h4.header-text.color.mt-3.c-blue.second-font. Subscribe to our newsletter
+      = form_with(url: "#", class: "newsletter-form mt-2") do
+        = email_field_tag :email
+        = submit_tag 'Sign up', class: "button-primary submit-button"
+

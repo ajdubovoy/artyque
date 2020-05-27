@@ -143,6 +143,20 @@
   align-items: center;
   // max-width: 1300px;
   overflow: hidden;
+  strong {
+    font-weight: 600;
+  }
+  &.quote-banner{
+    background-color: $dark-blue;
+    color: white;
+    height: 288px;
+    .quote {
+      font-size: 24px;
+    }
+    .quote-author{
+
+    }
+  }
   &.about-banner {
     height: auto;
     min-height: calc(100vh - #{$header-height});
@@ -186,6 +200,9 @@
     .who-is-text{
       padding: 0 18%;
     }
+  }
+  &.sign-up-banner {
+    max-height: 400px;
   }
   &.secondary-banner{
     max-height: 400px;
