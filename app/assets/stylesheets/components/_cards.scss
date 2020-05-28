@@ -113,16 +113,39 @@
       font-size: 9px;
       letter-spacing: 3px;
     }
-    .artist-image{
-      box-shadow: 0 0 44px rgb(150,150,150);
-      margin: 0 auto;
-      max-width: 291px;
-      height: 200px;
-      width: 100%;
-      min-height: 7rem;
-      background-size: cover;
+    &.artist-background {
       background-position: center;
-      border-radius: 5px;
+      background-size: cover;
+    }
+    .artist-image-png{
+      height: 100%;
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+      height: 119%;
+      max-height: 234px;
+      width: 100%;
+      max-width: 149px;
+      bottom: 0px;
+      left: -12%;
+      @media( max-width: 1000px) {
+        background-size: contain;
+        width: 95%;
+        height: 109%;
+        left: -25%;
+      }
+      @media( max-width: 934px) {
+        height: 213px;
+        width: 145px;
+      }
+      @media (max-width: 770px) {
+        background-size: cover;
+        height: 119%;
+        width: 100%;
+        left: 10%;
+      }
+
     }
     .artist-full-name{
       font-weight: 600;

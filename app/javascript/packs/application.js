@@ -10,6 +10,7 @@ import initCarousel from './carousel';
 import initArtistCarousel from './artist_carousel';
 import initSortable from './form_sorting';
 import initResizeCircles from './resize_circles';
+import initCircleDivs from './circle_divs';
 
 function init() {
   // Stimulus.JS
@@ -23,6 +24,7 @@ function init() {
   initArtistCarousel('artist-carousel');
   initSortable();
   initResizeCircles();
+  initCircleDivs();
 }
 
 init();

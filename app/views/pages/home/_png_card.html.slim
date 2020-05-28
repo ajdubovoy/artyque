@@ -1,0 +1,7 @@
+.artist-card.col-12.col-md-2.col-lg-2.position-relative.bg-beige.mx-3.position-relative
+  .artist-image-png style="background-image: url('#{cl_image_path(artist.photo.url)}')"
+  = link_to '', artist_path(artist), class: "link-0-0"
+  p.title.f-9.mt-2. Painting
+  .artist-full-name
+    p.coachella-regular. #{first_name}
+    p.coachella-regular. #{last_name}

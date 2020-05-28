@@ -8,21 +8,17 @@
     .row.justify-content-between.artists-cards.justify-center-mobile
       .artist-card.col-lg-2.bg-beige.top-artist-button
         .left
-          p. Discover
-          p.underline. our Artists
+          p.coachella-regular Discover
+          p.underline.coachella-regular our Artists
       - @featured_artists.each do |artist|
         - last_name = artist.name.split(' ').last
         - first_name = artist.name.split(' ')[0..-2].join(' ')
-        .artist-card.col-12.col-md-2.col-lg-2.position-relative.bg-beige.mx-3
-          = link_to '', artist_path(artist), class: "link-0-0"
-          p.title.f-9.mt-2. Painting
-          .artist-full-name
-            p. #{first_name}
-            p. #{last_name}
+        - photo_extension = artist.photo.url.split('.').last
+        = photo_extension == 'png' ? (render 'pages/home/png_card', artist: artist, first_name: first_name, last_name: last_name) : render('pages/home/not_png_card', artist: artist, first_name: first_name, last_name: last_name)
       .artist-card.col-lg-2.bg-beige.top-artist-button
         .right
-          p. Availabel
-          p.underline Works
+          p.coachella-regular Available
+          p.coachella-regular Works
     .row.two-buttons-container.mb-4.lg-hide.justify-content-center
       .col-12.col-sm-6.center-margin
         = link_to "Discover More Artists", artists_path, class: "button-primary artist-button"

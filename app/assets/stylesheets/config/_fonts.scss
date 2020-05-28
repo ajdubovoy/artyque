@@ -15,4 +15,34 @@ $headers-font: "Merriweather", "Times", "serif";
   src: font-url('maverix.otf') format('opentype'),
        font-url('maverix.ttf') format('truetype');
 }
+
+@font-face {
+  font-family: 'Coachella Black';
+  src: font-url('coachella_black.otf') format('opentype');
+}
+
+@font-face {
+   font-family: 'Coachella Bold';
+  src: font-url('coachella_bold.otf') format('opentype');
+}
+
+@font-face {
+   font-family: 'Coachella Light';
+  src: font-url('coachella_light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Coachella Medium';
+  src: font-url('coachella_medium.otf') format('opentype');
+}
+@font-face {
+   font-family: 'Coachella Regular';
+  src: font-url('coachella_regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Coachella Thin';
+  src: font-url('coachella_thin.otf') format('opentype');
+}
+
+
 $title-font: "Maverix", "Times", "serif";

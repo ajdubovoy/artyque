@@ -1,0 +1,27 @@
+@-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    -webkit-animation: rotating 30s linear infinite;
+}
+
+.banner-circle {
+  position: absolute;
+  width: 123px;
+  height: 123px;
+  bottom: -90%;
+  right: 7%;
+  border-radius: 50%;
+  @media( max-width: 755px) {
+    bottom: -64%;
+  }
+  @media( max-width: 500px) {
+    bottom: -52%;
+  }
+}

@@ -51,6 +51,9 @@
   .artist-button{
     min-width: 192px;
     margin-bottom: 20px;
+    &.footer-button {
+      border-radius: 23px;
+    }
   }
   @media (max-width: 1280px) {
     &.lg-hide {
