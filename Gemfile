@@ -31,6 +31,9 @@ gem 'inline_svg'
 gem 'bluecloth'
 gem 'trix'
 
+gem 'friendly_id', '~> 5.2.4'
+gem 'gibbon'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end

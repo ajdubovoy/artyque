@@ -6,7 +6,7 @@
       hr.lines.w-75
   .fake-container.mb-5
     .row.justify-content-between.artists-cards.justify-center-mobile
-      .artist-card.col-lg-2.bg-beige.top-artist-button
+      .artist-card.col-lg-2.bg-beige.top-artist-button.d-none.d-sm-block
         = link_to '', artists_path, class: "link-0-0"
         .left
           p.coachella-regular Discover
@@ -16,7 +16,7 @@
         - first_name = artist.name.split(' ')[0..-2].join(' ')
         - photo_extension = artist.photo.url.split('.').last
         = photo_extension == 'png' ? (render 'pages/home/png_card', artist: artist, first_name: first_name, last_name: last_name) : render('pages/home/not_png_card', artist: artist, first_name: first_name, last_name: last_name)
-      .artist-card.col-lg-2.bg-beige.top-artist-button
+      .artist-card.col-lg-2.bg-beige.top-artist-button.d-none.d-sm-block
         = link_to '', '#', class: "link-0-0"
         .right
           p.coachella-regular Available
@@ -25,6 +25,5 @@
       .col-12.col-sm-6.center-margin
         = link_to "Discover More Artists", artists_path, class: "button-primary artist-button"
       .col-12.col-sm-6.center-margin
-        = link_to "Available Works", news_posts_path, class: "button-primary artist-button"
-
-/ this is a comment
+        = link_to "Available Works", artists_path, class: "button-primary artist-button"
+        / TODO change to shopify
