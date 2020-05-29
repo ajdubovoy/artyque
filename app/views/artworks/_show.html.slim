@@ -18,9 +18,9 @@
             = artwork.description
           - if artwork.height || artwork.width || artwork.depth
             p.c-light-gray.small
-              | #{artwork.height} cm height x #{artwork.width} cm width
+              | #{artwork.height} cm x #{artwork.width} cm
               - if artwork.depth
-                | x #{artwork.depth} cm depth
+                | x #{artwork.depth} cm
           - if artwork.price
             p.c-light-gray.small
               | Price: #{number_to_currency artwork.price}
