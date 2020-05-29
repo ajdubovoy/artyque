@@ -1,5 +1,5 @@
 .wrapper-banner
-  .banner-content.bg-blue-gradient[style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('#{cl_image_path(@news_post.photo) if @news_post.photo.present?}');"]
+  .banner-content.bg-blue-gradient
     .row
       .inner-banner.w-100.position-relative.d-sm-flex.align-items-center.inner-banner-small
         .text-lockup
@@ -7,14 +7,13 @@
           p.c-pink = @news_post.created_at.strftime('%A, %d %B %Y')
 article#main-content.container.pt-3.mb-5
   .row.mt-3
+    = cl_image_tag @news_post.photo, class: 'news-post-photo w-100' if @news_post.photo.present?
+  .row.mt-3
     .col-12
       = md @news_post.content
   .row.mt-5
     .col-12.text-center
       - if @previous_post
-        = link_to "< Back", news_post_path(@previous_post), class: 'button-tertiary'
-      - if @previous_post && @next_post
-        span.m-3.c-light-gray
-          | |
+        = link_to "< Previous", news_post_path(@previous_post), class: "mr-2"
       - if @next_post
-        = link_to "Next >", news_post_path(@next_post), class: 'button-tertiary'
+        = link_to "Next >", news_post_path(@next_post), class: "ml-2"

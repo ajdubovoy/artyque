@@ -1,4 +1,6 @@
 class Artist < ApplicationRecord
+  extend FriendlyId
+  friendly_id :name, use: :slugged
   belongs_to :user
   belongs_to :featured_artwork, class_name: 'Artwork', optional: true, foreign_key: :featured_artwork_id
   has_many :resume_blocks, -> { order(position: :asc) }, dependent: :destroy
