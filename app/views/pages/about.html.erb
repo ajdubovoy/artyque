@@ -1,4 +1,40 @@
-<div class="new-look-banner bg-blue-gradient about-banner"></div>
-<div class="container overflow-hidden">
+<div class="new-look-banner bg-blue-gradient about-banner position-relative height-fit">
+  <div class="wrapper-hidden">
+    <div class="top-right-circle"></div>
+    <!-- <div class="bot-left-circle"></div> -->
+    <div class="line-wrapper w-100">
+      <div class="d-flex justify-content-between align-items-center">
+        <h4 class="title color c-white ml-13perc">OUR SERVICES</h4>
+        <hr class="lines w-70">
+      </div>
+    </div>
+    <div class="fake-container">
+      <div class="about-text">
+        <p>
+          <strong>ARTYQUE</strong> is a hybrid model between a gallery and a talent agency dedicated to the career growth of emerging and mid-career artists across Europe.
+        </p>
+        <br>
+        <p>
+          Although <strong>our main focus is our artists’ career</strong>, the services of ARTYQUE agency are beneficial for those who want to start collecting emerging art or invest in it. We believe that by guiding an artist’s career we can ensure his or her growth and increase the value of his or her works in an organic and steady way.
+        </p>
+        <br>
+        <br>
+        <br>
+        <br>
+
+      </div>
+    </div>
+  </div>
+  <div class="circle-banner-container circle-left">
+    <div class="circle about-circle banner-circle bg-blue c-white rotating">
+      <p class="title"><strong>·</strong>ARTYQUE FOR<strong>·</strong> COLLECTORS</p>
+    </div>
+  </div>
+</div>
+<div style="background-image: url(<%= image_path 'bg-about.jpg' %>);" class="new-look-banner bg-blue-gradient about-banner"></div>
+<div class="container  overflow-hidden">
   <%= render "shared/who_is_artyque" %>
 </div>
+<br>
+<br>
+<%= render "shared/footer_banner" %>
