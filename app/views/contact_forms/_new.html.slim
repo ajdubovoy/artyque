@@ -1,7 +1,7 @@
 .new-contact-form
   br
   = simple_form_for @contact_form, remote: true do |f|
-    = f.input :role, as: :select, :required => true, label: false, collection: { "An Artist" => 'artist', "A Gallery" => 'gallery', "A Collector" => 'collector' }, prompt: "I am..."
+    = f.input :role, as: :select, :required => true, label: false, collection: { "An Artist" => 'artist', "A Gallery" => 'gallery', "A Collector" => 'collector', "Other" => 'other' }, prompt: "I am..."
     .row
       .col-sm-6
         = f.input :first_name, :required => true, label: false, placeholder: "First name"

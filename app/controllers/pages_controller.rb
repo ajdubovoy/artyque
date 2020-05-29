@@ -3,12 +3,13 @@ class PagesController < ApplicationController
 
   def home
     p params
-  	@featured_artists = Artist.where(homepage_featured: true)
+    @featured_artists = Artist.where(homepage_featured: true)
     @news_posts = NewsPost.first(4)
     @featured_artwork = Artwork.where(homepage_featured: true)
     # @hidden_logo = true
     @hidden_logo = false
     @home_page_quotation = HomePageQuotation.access
+    @contact_form = ContactForm.new
   end
 
   def about
