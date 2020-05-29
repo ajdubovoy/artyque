@@ -244,7 +244,31 @@
   }
 }
 
-
+.toggler-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .element {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: .3;
+    width: 136px;
+    transition: opacity .6s;
+    &.left {
+      text-align: right;
+    }
+    &.sides {
+      width: 400px;
+    }
+    &.active {
+      opacity: 1;
+    }
+    &.mid {
+      opacity: 1;
+    }
+  }
+}
 
 
 
