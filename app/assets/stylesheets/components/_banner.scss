@@ -183,6 +183,10 @@
       }
     }
   }
+  .form-text {
+    margin: 0 auto;
+    max-width: 591px;
+  }
   .top-right-circle{
     position: absolute;
     width: 60%;
@@ -267,6 +271,9 @@
   }
   .title{
     font-weight: 300;
+  }
+  &.form-banner {
+    padding: 158px 0;
   }
 }
 
