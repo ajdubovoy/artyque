@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   # Contact Forms
   resources :contact_forms, only: :create
   get 'contact_forms/success', to: 'contact_forms#success', as: :contact_forms_success
+  post 'contact_forms/subscribe', to: 'contact_forms#subscribe', as: :contact_forms_subscribe
 
   # Admin
   get 'admin/dashboard', to: 'admin#dashboard', as: :admin_dashboard
