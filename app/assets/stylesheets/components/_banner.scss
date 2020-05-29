@@ -164,12 +164,10 @@
     height: auto;
     min-height: calc(100vh - #{$header-height});
     flex-direction: column;
-    align-items: start;
     @extend .c-white;
     justify-content: normal;
     .about-text {
-      max-width: 796px;
-      margin: 0px 56px 36px 56px;
+      padding: 0 196px 40px;
     }
   }
   .top-right-circle{
@@ -200,8 +198,16 @@
     justify-content: normal;
     text-align: left;
     max-height: fit-content;
-    .who-is-text{
-      padding: 0 18%;
+    .who-is-text-double{
+      display: flex;
+      .paragraph {
+        &.right{
+          // margin-left: 7px;
+        }
+        &.left {
+          margin-right: 140px;
+        }
+      }
     }
   }
   &.sign-up-banner {

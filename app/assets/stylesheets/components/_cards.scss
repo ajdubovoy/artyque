@@ -106,6 +106,9 @@
     max-width: 273px;
     text-align: right;
     height: 197px;
+    @media (max-width: 520px) {
+      margin-top: 80px;
+    }
     p {
       margin: 0;
     }
@@ -130,7 +133,6 @@
       bottom: 0px;
       left: -12%;
       @media( max-width: 1000px) {
-        background-size: contain;
         width: 95%;
         height: 109%;
         left: -25%;
@@ -140,7 +142,6 @@
         width: 145px;
       }
       @media (max-width: 770px) {
-        background-size: cover;
         height: 119%;
         width: 100%;
         left: 10%;
@@ -185,9 +186,18 @@
   max-width: 280px;
   margin: 11px;
   .image{
-    height: 145px;
+    height: 228px;
     background-position: center;
     background-size: cover;
+    .text-title {
+      position: absolute;
+      top: 24px;
+      left: -11px;
+      font-size: 20px;
+      p {
+        margin: 0;
+      }
+    }
   }
   .button {
     width: 80%;
