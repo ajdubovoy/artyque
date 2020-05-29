@@ -163,12 +163,18 @@
   }
   &.about-banner {
     height: auto;
-    min-height: calc(100vh - #{$header-height});
+    background-size: cover;
+    background-position: center;
+    min-height: 570px;
     flex-direction: column;
     @extend .c-white;
     justify-content: normal;
     .about-text {
       padding: 0 196px 40px;
+      p {
+        max-width: 840px;
+        margin: 0 auto;
+      }
     }
   }
   .top-right-circle{
@@ -178,7 +184,7 @@
     left: 46%;
     top: -479.298px;
     border-radius: 50%;
-    background: linear-gradient(79.73deg, #FEF0E7 -20.82%, rgba(254, 240, 231, 0) 62.49%);
+    background: linear-gradient(79.73deg, rgba(254, 240, 231, .2) -20.82%, rgba(254, 240, 231, 0) 62.49%);
     opacity: 0.5;
   }
   .bot-left-circle{
