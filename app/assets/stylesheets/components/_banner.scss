@@ -179,13 +179,14 @@
     justify-content: normal;
     .about-text {
       p {
-        max-width: 840px;
         margin: 0 auto;
         padding-bottom: 60px;
         @include media-breakpoint-up(sm) {
           padding: 0 196px 40px;
           padding-bottom: 0;
+          max-width: 85%;
         }
+      }
     }
   }
   .form-text {
