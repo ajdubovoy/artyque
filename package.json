@@ -7,7 +7,7 @@
     "circletype": "^2.3.0",
     "flickity": "^2.2.0",
     "flickity-fullscreen": "^1.1.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "package": "^1.0.1",
     "popper.js": "^1.15.0",
     "rails-ujs": "^5.2.3",
