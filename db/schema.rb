@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200529154913) do
+ActiveRecord::Schema.define(version: 20200529171336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(version: 20200529154913) do
     t.bigint "featured_artwork_id"
     t.boolean "homepage_featured", default: false
     t.string "slug"
+    t.string "transparent_photo"
     t.index ["featured_artwork_id"], name: "index_artists_on_featured_artwork_id"
     t.index ["slug"], name: "index_artists_on_slug", unique: true
     t.index ["user_id"], name: "index_artists_on_user_id"

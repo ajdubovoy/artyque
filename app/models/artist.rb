@@ -24,6 +24,7 @@ class Artist < ApplicationRecord
   validates :name, presence: true
   validates :video, format: /\Ahttps?:\/\/((www\.)?vimeo\.com\/|(www\.)?youtu\.be\/|(www\.)?youtube\.com\/watch\?v=)(?<id>.+)\z/, allow_blank: true
   mount_uploader :photo, PhotoUploader
+  mount_uploader :transparent_photo, PhotoUploader
 
   def vimeo?
     return video.match?(/\Ahttps?:\/\/(www\.)?vimeo\.com\/(?<id>.+)\z/)

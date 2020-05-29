@@ -14,8 +14,7 @@
       - @featured_artists.each do |artist|
         - last_name = artist.name.split(' ').last
         - first_name = artist.name.split(' ')[0..-2].join(' ')
-        - photo_extension = artist.photo.url.split('.').last
-        = photo_extension == 'png' ? (render 'pages/home/png_card', artist: artist, first_name: first_name, last_name: last_name) : render('pages/home/not_png_card', artist: artist, first_name: first_name, last_name: last_name)
+        = artist.transparent_photo.present? ? (render 'pages/home/png_card', artist: artist, first_name: first_name, last_name: last_name) : render('pages/home/not_png_card', artist: artist, first_name: first_name, last_name: last_name)
       .artist-card.col-lg-2.bg-beige.top-artist-button.d-none.d-sm-block
         = link_to '', '#', class: "link-0-0"
         .right
