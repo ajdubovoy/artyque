@@ -15,7 +15,7 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    @artist = Artist.find(params[:id]) # Written separately to prevent authorization
+    @artist = Artist.friendly.find(params[:id]) # Written separately to prevent authorization
     @artworks = @artist.artworks.highlights.present? ? @artist.artworks.highlights : @artist.artworks.first(6)
   end
 
@@ -79,7 +79,7 @@ class ArtistsController < ApplicationController
   private
 
   def set_artist
-    @artist = Artist.find(params[:id])
+    @artist = Artist.friendly.find(params[:id])
     authorize @artist
   end
 
