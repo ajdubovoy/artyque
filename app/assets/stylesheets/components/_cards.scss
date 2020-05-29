@@ -89,6 +89,120 @@
     background-position: center;
   }
   &:hover{
-   @extend .border-light-blue; 
+   @extend .border-light-blue;
   }
 }
+
+// -------------
+
+.artists-cards{
+  @media (max-width: 767px) {
+    &.justify-center-mobile {
+      justify-content: center !important;
+    }
+  }
+  .artist-card{
+    margin-bottom: 37px;
+    max-width: 273px;
+    text-align: right;
+    height: 197px;
+    @media (max-width: 520px) {
+      margin-top: 80px;
+    }
+    p {
+      margin: 0;
+    }
+    .f-9 {
+      font-size: 9px;
+      letter-spacing: 3px;
+    }
+    &.artist-background {
+      background-position: center;
+      background-size: cover;
+    }
+    .artist-image-png{
+      height: 100%;
+      width: 100%;
+      background-position: center;
+      background-size: cover;
+      position: absolute;
+      height: 119%;
+      max-height: 234px;
+      width: 100%;
+      max-width: 149px;
+      bottom: 0px;
+      left: -12%;
+      @media( max-width: 1000px) {
+        width: 95%;
+        height: 109%;
+        left: -25%;
+      }
+      @media( max-width: 934px) {
+        height: 213px;
+        width: 145px;
+      }
+      @media (max-width: 770px) {
+        height: 119%;
+        width: 100%;
+        left: 10%;
+      }
+
+    }
+    .artist-full-name{
+      font-weight: 600;
+      font-size: 12px;
+    }
+  }
+}
+
+.HIW-card{
+  text-align: center;
+  max-width: 272px;
+  margin: 0 auto 77px auto;
+  box-shadow: 0 0 105px #9db5bb;
+  .image{
+    height: 235px;
+    background-position: center;
+    background-size: cover;
+    margin: 0 auto;
+    border-radius: 4px 4px 0 0;
+  }
+  .text {
+    padding: 0 27px 27px;
+    height: 182px;
+    margin: 0;
+    font-size: 14px;
+    @media (max-width: 767px) {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
+
+
+// --------------------------------------
+
+.service-card{
+  max-width: 280px;
+  margin: 11px;
+  .image{
+    height: 228px;
+    background-position: center;
+    background-size: cover;
+    .text-title {
+      position: absolute;
+      top: 24px;
+      left: -11px;
+      font-size: 20px;
+      p {
+        margin: 0;
+      }
+    }
+  }
+  .button {
+    width: 80%;
+  }
+}
+
+
+

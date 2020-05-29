@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   #landing pages
   root to: 'pages#home'
   get '/about', to: 'pages#about'
+  get '/services', to: 'pages#services'
 
   # Legal
   get '/legal/privacy', to: 'pages#privacy', as: :privacy

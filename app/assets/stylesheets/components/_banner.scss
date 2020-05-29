@@ -3,33 +3,32 @@
     height: calc(100vh - #{$header-height});
     min-height: 710px;
   }
-	.banner-content, .flickity-viewport {
-		min-height: 710px;
+  .banner-content, .flickity-viewport {
+    min-height: 710px;
     height: calc(100vh - #{$header-height});
-		@include media-breakpoint-up(sm) {
-			min-height: 0;	
-		}
-	}
+    @include media-breakpoint-up(sm) {
+      min-height: 0;
+    }
+  }
 }
 
 .text-lockup {
-	max-width: 600px;
+  max-width: 600px;
 }
 
 .wrapper-banner {
-	@extend .bg-beige;
+  @extend .bg-beige;
   overflow: hidden;
-	.banner-content {
+  .banner-content {
     @include make-container;
-    @extend .p-0;
     background-size: cover;
     background-position: center;
-		@include media-breakpoint-up(sm) {
-      width: 100vw;
+    @include media-breakpoint-up(sm) {
+      width: 100%;
       margin: 0 auto;
     }
-	}
-	.inner-banner {
+  }
+  .inner-banner {
     &.inner-banner-small{
       height: 50vh !important;
       min-height: 6rem !important;
@@ -37,13 +36,13 @@
         height: 40vh !important;
       }
     }
-    
-		height: calc(100vh - #{$header-height});
-		@include media-breakpoint-up(sm) {
+
+    height: calc(100vh - #{$header-height});
+    @include media-breakpoint-up(sm) {
       height: 80vh;
       padding-left: 50px;
       max-width: 95%;
-		}
+    }
     &.banner-flexible{
       min-height: calc(100vh - #{$header-height});
       height: auto;
@@ -58,60 +57,60 @@
       }
     }
   }
-	.banner-card-subtitle {	
-	    bottom: 0;
-	   	font-size: 11px;
-	    @include media-breakpoint-up(sm) {
-	    	 font-size: 14px;
-	    	 bottom: 2%;
-		}
-	}
-	.text-lockup {
-		padding: 100px 10%;
-    	padding-bottom: 43px;
-    	z-index: 2000;
-    	p.shadow {
-    		text-shadow: 0px 0px 9px #192e3d;
-    	}
+  .banner-card-subtitle {
+      bottom: 0;
+      font-size: 11px;
+      @include media-breakpoint-up(sm) {
+         font-size: 14px;
+         bottom: 2%;
+    }
+  }
+  .text-lockup {
+    padding: 100px 10%;
+      padding-bottom: 43px;
+      z-index: 2000;
+      p.shadow {
+        text-shadow: 0px 0px 9px #192e3d;
+      }
       @include media-breakpoint-up(sm) {
         padding: 0;
         padding-left: 20px;
-    }    
-    	@include media-breakpoint-up(lg) {
-    		padding: 0;
-	    	padding-left: 50px;
-		}
-	}
-	.image-lockup {
-		height: 250px;
-    	margin: auto;
-    	width: 90%;
-		@include media-breakpoint-up(sm) {
-		    height: 80%;
-		}
-		.image-container {
-		  position: absolute;
-			left: 0;
-			width: 100%;
-			height: 89%;
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center;
-		}
-	}
-	.wave {
-		&-top {
-			top: 0;
-			right: -1px;
-			width: 70vw;
-		}
-		&-bottom {
-			bottom: 0;
-			width: 45vw;
-			z-index: 1000;
+    }
+      @include media-breakpoint-up(lg) {
+        padding: 0;
+        padding-left: 50px;
+    }
+  }
+  .image-lockup {
+    height: 250px;
+      margin: auto;
+      width: 90%;
+    @include media-breakpoint-up(sm) {
+        height: 80%;
+    }
+    .image-container {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 89%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  .wave {
+    &-top {
+      top: 0;
+      right: 0;
+      width: 70vw;
+    }
+    &-bottom {
+      bottom: 0;
+      width: 45vw;
+      z-index: 1000;
       left: -1px;
-		}
-	}
+    }
+  }
 }
 
 .secondary-banner {
@@ -131,3 +130,142 @@
     width: 100%;
   }
 }
+
+// -----------------------
+
+.new-look-banner {
+  min-height: calc(75vh - #{$header-height});
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  position: relative;
+  &.wrapper-banner {
+    overflow: visible;
+  }
+  .wrapper-hidden {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  strong {
+    font-family: 'Coachella Bold'
+  }
+  &.quote-banner{
+    background-color: $dark-blue;
+    color: white;
+    height: 288px;
+    .quote {
+      font-size: 24px;
+    }
+  }
+  &.about-banner {
+    height: auto;
+    min-height: calc(100vh - #{$header-height});
+    flex-direction: column;
+    @extend .c-white;
+    justify-content: normal;
+    .about-text {
+      padding: 0 196px 40px;
+    }
+  }
+  .top-right-circle{
+    position: absolute;
+    width: 60%;
+    padding-top: 60%;
+    left: 46%;
+    top: -479.298px;
+    border-radius: 50%;
+    background: linear-gradient(79.73deg, #FEF0E7 -20.82%, rgba(254, 240, 231, 0) 62.49%);
+    opacity: 0.5;
+  }
+  .bot-left-circle{
+    position: absolute;
+    width: 60%;
+    padding-top: 60%;
+    left: 0%;
+    bottom: 2px;
+    border-radius: 50%;
+    background: linear-gradient(79.73deg, #FEF0E7 -20.82%, rgba(254, 240, 231, 0) 62.49%);
+    opacity: 0.5;
+  }
+  &.who-is-artyque{
+    height: auto;
+    min-height: calc(100vh - #{$header-height});
+    flex-direction: column;
+    align-items: start;
+    justify-content: normal;
+    text-align: left;
+    max-height: fit-content;
+    .who-is-text-double{
+      display: flex;
+      .paragraph {
+        &.right{
+          // margin-left: 7px;
+        }
+        &.left {
+          margin-right: 140px;
+        }
+      }
+    }
+  }
+  &.sign-up-banner {
+    max-height: 400px;
+    .header-text {
+      letter-spacing: 2px;
+      font-size: 38px;
+    }
+    .banner-content {
+      padding-right: 15px;
+      padding-left: 15px;
+    }
+  }
+  &.secondary-banner{
+    max-height: 400px;
+    background: image-url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    .footer-banner-text{
+      letter-spacing: 2px;
+    }
+  }
+  @media (max-width: 540px) {
+    &.secondary-banner{
+      max-height: 100vh;
+      .header-text {
+        font-size: 38px !important;
+      }
+    }
+    .main-text{
+      font-size: 31px !important;
+    }
+  }
+  .main-text{
+    max-width: 960px;
+    margin: 0 auto;
+    letter-spacing: 3px;
+    font-size: 37px;
+    padding: 0 50px;
+    letter-spacing: 0px;
+  }
+  .title{
+    font-weight: 300;
+  }
+}
+
+
+.second-font{
+  font-family: 'Merriweather Sans', sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 42px;
+  line-height: 145.5%;
+}
+
+.bold {
+  font-weight: 700;
+  letter-spacing: 0px;
+}
+

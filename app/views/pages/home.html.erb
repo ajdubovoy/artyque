@@ -1,26 +1,33 @@
-<div class="wrapper-banner main-banner">
+<!-- <div class="wrapper-banner main-banner">
 	<div class="banner-content banner-carousel bg-blue-gradient">
-		<%= image_tag "top_wave.svg", class: "home-wave-top wave-top position-absolute drag-disable" %>
-	    <%= image_tag "bottom_wave.svg", class: "wave-bottom position-absolute drag-disable" %>
+		<%#= image_tag "top_wave.svg", class: "home-wave-top wave-top position-absolute drag-disable" %>
+	    <%#= image_tag "bottom_wave.svg", class: "wave-bottom position-absolute drag-disable" %>
 		  <div class="row">
 		    <div class="col-23 col-sm-6 home-banner position-relative d-sm-flex align-items-center">
-		      	<%= image_tag "banner-logo.svg", class: "logo-works" %>
+		      	<%#= image_tag "banner-logo.svg", class: "logo-works" %>
 		      </div>
 		  	<div class="col-12 col-sm-6 d-flex align-items-center">
 		  		<div class="text-lockup-banner">
 		  			<h4 class="title color c-white">Welcome to artyque</h4>
 		  			<p class="header-text color c-white">Europe's Elite Art Agency</p>
-		  			<%= link_to "Discover Our Talent", artists_path, class: "button-primary" %>
+		  			<%#= link_to "Discover Our Talent", artists_path, class: "button-primary" %>
 		  		</div>
 		  	</div>
 		  </div>
 		</div>
 	</div>
-</div> 
-<div id="content" class="mb-5" data-controller="modal">
-  <%= render "shared/featured_artist" %>
-  <%= render "shared/quote_block" %>
-  <%= render 'shared/featured_artworks' %>
+</div> -->
+<!-- <div id="content" class="mb-5" data-controller="modal"> -->
+  <%#= render "shared/featured_artist" %>
+  <%#= render "shared/quote_block" %>
+  <%= render "shared/main_banner" %>
+  <%= render "shared/top_artists" %>
+  <%= render "shared/page_description" %>
+  <%= render "shared/how_it_works" %>
+  <%= render "shared/quote_banner" %>
+  <%#= render 'shared/featured_artworks' %>
+  <%= render "shared/footer_banner" %>
   <%= render "shared/featured_stories" %>
-  <%= render 'shared/stim_modal' %>
+  <%= render "shared/newsletter_signup" %>
+  <%#= render 'shared/stim_modal' %>
 </div>

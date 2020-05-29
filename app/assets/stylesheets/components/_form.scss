@@ -29,7 +29,7 @@ label.featured_check {
 	}
 	p {
 		margin: 0;
-		font-size: 12px; 
+		font-size: 12px;
 		}
 	i {
 	    padding: 10px;
@@ -47,4 +47,28 @@ label.featured_check {
 				opacity: 1;
 			}
 		}
+}
+
+.newsletter-form {
+  margin: 0 auto;
+  width: 62%;
+  display: flex;
+  justify-content: center;
+  .submit-button {
+    width: 169px;
+    border-radius: 0 3px 3px !important;
+  }
+  #email {
+    width: 461px;
+  }
+  @media (max-width: 767px) {
+    display: block;
+    #email {
+      width: 100%;
+    }
+    .submit-button {
+      width: 100%;
+      margin-top: 24px;
+    }
+  }
 }

@@ -43,3 +43,31 @@
     }
   }
 }
+
+.two-buttons-container{
+  margin: 0 auto;
+  max-width: 420px;
+  text-align: center;
+  .artist-button{
+    min-width: 192px;
+    margin-bottom: 20px;
+    &.footer-button {
+      border-radius: 23px;
+    }
+  }
+  @media (max-width: 1280px) {
+    &.lg-hide {
+      display: none;
+    }
+  }
+  @media (max-width: 767px) {
+    &.lg-hide {
+      display: block;
+    }
+  }
+  @media (max-width: 540px) {
+    .artist-button {
+      width: 100% !important;
+    }
+  }
+}

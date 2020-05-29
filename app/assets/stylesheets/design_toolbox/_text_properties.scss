@@ -1,0 +1,24 @@
+.underline {
+  text-decoration: underline;
+}
+.coachella{
+  &-black{
+    font-family: 'Coachella Black' !important;
+  }
+  &-bold{
+    font-family: 'Coachella Bold' !important;
+    font-weight: 600;
+  }
+  &-light{
+    font-family: 'Coachella Light' !important;
+  }
+  &-medium{
+    font-family: 'Coachella Medium' !important;
+  }
+  &-regular{
+    font-family: 'Coachella Regular' !important;
+  }
+  &-thin{
+    font-family: 'Coachella Thin' !important;
+  }
+}

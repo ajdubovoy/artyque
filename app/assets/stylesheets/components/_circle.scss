@@ -1,0 +1,39 @@
+@-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.rotating {
+    -webkit-animation: rotating 30s linear infinite;
+}
+
+.banner-circle {
+  width: 123px;
+  height: 123px;
+  border-radius: 50%;
+  @media( max-width: 755px) {
+    bottom: -64%;
+  }
+  @media( max-width: 500px) {
+    bottom: -52%;
+  }
+  &.about-circle {
+    bottom: -18%;
+  }
+}
+.circle-banner-container {
+  transform: translateY(50%);
+  width: 100%;
+  padding: 0 15px;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
+  &.circle-left {
+    justify-content: flex-start;
+  }
+}
