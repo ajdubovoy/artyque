@@ -56,6 +56,7 @@
     | Main Banner Content
   .p-3
     = render 'shared/photo_uploader', f: f, field: :photo, show_label: true, original_photo: @artist.photo
+    = render 'shared/photo_uploader', f: f, field: :transparent_photo, show_label: true, original_photo: @artist.transparent_photo
     = f.input :super_title
     = f.input :name
     = f.input :title

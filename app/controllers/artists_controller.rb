@@ -110,6 +110,7 @@ class ArtistsController < ApplicationController
       :quotation,
       :quotation_caption,
       :photo,
+      :transparent_photo,
       :about_me,
       :name,
       :featured_artwork_id,
