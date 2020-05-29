@@ -160,6 +160,18 @@
   max-width: 272px;
   margin: 0 auto 77px auto;
   box-shadow: 0 0 105px #9db5bb;
+  .image-intro-hiw {
+    width: 100%;
+    &-a {
+      margin-top: -32px;
+    }
+    &-b {
+      margin-top: -30px;
+    }
+    &-c {
+      margin-top: -37px;
+    }
+  }
   .image{
     height: 235px;
     background-position: center;
