@@ -12,11 +12,8 @@
 }
 
 .banner-circle {
-  position: absolute;
   width: 123px;
   height: 123px;
-  bottom: -90%;
-  right: 7%;
   border-radius: 50%;
   @media( max-width: 755px) {
     bottom: -64%;
@@ -27,4 +24,13 @@
   &.about-circle {
     bottom: -18%;
   }
+}
+.circle-banner-container {
+  transform: translateY(50%);
+  width: 100%;
+  padding: 0 15px;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  bottom: 0;
 }

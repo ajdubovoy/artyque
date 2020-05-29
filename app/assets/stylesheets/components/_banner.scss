@@ -3,33 +3,32 @@
     height: calc(100vh - #{$header-height});
     min-height: 710px;
   }
-	.banner-content, .flickity-viewport {
-		min-height: 710px;
+  .banner-content, .flickity-viewport {
+    min-height: 710px;
     height: calc(100vh - #{$header-height});
-		@include media-breakpoint-up(sm) {
-			min-height: 0;
-		}
-	}
+    @include media-breakpoint-up(sm) {
+      min-height: 0;
+    }
+  }
 }
 
 .text-lockup {
-	max-width: 600px;
+  max-width: 600px;
 }
 
 .wrapper-banner {
-	@extend .bg-beige;
+  @extend .bg-beige;
   overflow: hidden;
-	.banner-content {
+  .banner-content {
     @include make-container;
-    @extend .p-0;
     background-size: cover;
     background-position: center;
-		@include media-breakpoint-up(sm) {
-      width: 100vw;
+    @include media-breakpoint-up(sm) {
+      width: 100%;
       margin: 0 auto;
     }
-	}
-	.inner-banner {
+  }
+  .inner-banner {
     &.inner-banner-small{
       height: 50vh !important;
       min-height: 6rem !important;
@@ -38,12 +37,12 @@
       }
     }
 
-		height: calc(100vh - #{$header-height});
-		@include media-breakpoint-up(sm) {
+    height: calc(100vh - #{$header-height});
+    @include media-breakpoint-up(sm) {
       height: 80vh;
       padding-left: 50px;
       max-width: 95%;
-		}
+    }
     &.banner-flexible{
       min-height: calc(100vh - #{$header-height});
       height: auto;
@@ -58,60 +57,60 @@
       }
     }
   }
-	.banner-card-subtitle {
-	    bottom: 0;
-	   	font-size: 11px;
-	    @include media-breakpoint-up(sm) {
-	    	 font-size: 14px;
-	    	 bottom: 2%;
-		}
-	}
-	.text-lockup {
-		padding: 100px 10%;
-    	padding-bottom: 43px;
-    	z-index: 2000;
-    	p.shadow {
-    		text-shadow: 0px 0px 9px #192e3d;
-    	}
+  .banner-card-subtitle {
+      bottom: 0;
+      font-size: 11px;
+      @include media-breakpoint-up(sm) {
+         font-size: 14px;
+         bottom: 2%;
+    }
+  }
+  .text-lockup {
+    padding: 100px 10%;
+      padding-bottom: 43px;
+      z-index: 2000;
+      p.shadow {
+        text-shadow: 0px 0px 9px #192e3d;
+      }
       @include media-breakpoint-up(sm) {
         padding: 0;
         padding-left: 20px;
     }
-    	@include media-breakpoint-up(lg) {
-    		padding: 0;
-	    	padding-left: 50px;
-		}
-	}
-	.image-lockup {
-		height: 250px;
-    	margin: auto;
-    	width: 90%;
-		@include media-breakpoint-up(sm) {
-		    height: 80%;
-		}
-		.image-container {
-		  position: absolute;
-			left: 0;
-			width: 100%;
-			height: 89%;
-			background-size: cover;
-			background-repeat: no-repeat;
-			background-position: center;
-		}
-	}
-	.wave {
-		&-top {
-			top: 0;
-			right: -1px;
-			width: 70vw;
-		}
-		&-bottom {
-			bottom: 0;
-			width: 45vw;
-			z-index: 1000;
+      @include media-breakpoint-up(lg) {
+        padding: 0;
+        padding-left: 50px;
+    }
+  }
+  .image-lockup {
+    height: 250px;
+      margin: auto;
+      width: 90%;
+    @include media-breakpoint-up(sm) {
+        height: 80%;
+    }
+    .image-container {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 89%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+  .wave {
+    &-top {
+      top: 0;
+      right: 0;
+      width: 70vw;
+    }
+    &-bottom {
+      bottom: 0;
+      width: 45vw;
+      z-index: 1000;
       left: -1px;
-		}
-	}
+    }
+  }
 }
 
 .secondary-banner {
@@ -135,14 +134,13 @@
 // -----------------------
 
 .new-look-banner {
-  height: calc(100vh - #{$header-height});
-  max-height: 900px;
+  min-height: calc(75vh - #{$header-height});
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  // max-width: 1300px;
-  // overflow: hidden;
+  max-width: 100%;
+  position: relative;
   &.wrapper-banner {
     overflow: visible;
   }
@@ -155,9 +153,6 @@
     height: 288px;
     .quote {
       font-size: 24px;
-    }
-    .quote-author{
-
     }
   }
   &.about-banner {
@@ -215,6 +210,10 @@
     .header-text {
       letter-spacing: 2px;
       font-size: 38px;
+    }
+    .banner-content {
+      padding-right: 15px;
+      padding-left: 15px;
     }
   }
   &.secondary-banner{
