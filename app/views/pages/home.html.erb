@@ -23,8 +23,14 @@
   <%= render "shared/main_banner" %>
   <%= render "shared/top_artists" %>
   <%= render "shared/toggle" %>
-  <%= render "shared/page_description" %>
-  <%= render "shared/how_it_works" %>
+  <div class="home-tab artist-tab active">
+    <%= render "shared/artist_page_description" %>
+    <%= render "shared/artist_how_it_works" %>
+  </div>
+  <div class="home-tab collector-tab">
+    <%= render "shared/collector_page_description" %>
+    <%= render "shared/collector_how_it_works" %>
+  </div>
   <%= render "shared/quote_banner" %>
   <%#= render 'shared/featured_artworks' %>
   <%= render "shared/footer_banner" %>
