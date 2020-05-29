@@ -169,10 +169,18 @@
     height: auto;
     min-height: calc(100vh - #{$header-height});
     flex-direction: column;
+    margin-bottom: 100px;
+    @include media-breakpoint-up(sm) {
+      margin-bottom: auto;
+    }
     @extend .c-white;
     justify-content: normal;
     .about-text {
-      padding: 0 196px 40px;
+      padding-bottom: 60px;
+      @include media-breakpoint-up(sm) {
+        padding: 0 196px 40px;
+        padding-bottom: 0;
+      }
     }
   }
   .top-right-circle{
