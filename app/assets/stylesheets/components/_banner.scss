@@ -178,12 +178,11 @@
     @extend .c-white;
     justify-content: normal;
     .about-text {
-      padding: 0 12% 40px;
       p {
         margin: 0 auto;
         padding-bottom: 60px;
         @include media-breakpoint-up(sm) {
-          padding: 0 196px 40px;
+          padding: 0 12% 40px;
           padding-bottom: 0;
           max-width: 85%;
         }
