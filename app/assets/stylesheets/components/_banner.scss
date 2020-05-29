@@ -203,14 +203,17 @@
     justify-content: normal;
     text-align: left;
     max-height: fit-content;
+    padding-right: -15px;
     .who-is-text-double{
-      display: flex;
-      .paragraph {
-        &.right{
-          // margin-left: 7px;
-        }
-        &.left {
-          margin-right: 140px;
+      @include media-breakpoint-up(sm) {
+        display: flex;
+        .paragraph {
+          &.right{
+            // margin-left: 7px;
+          }
+          &.left {
+            margin-right: 140px;
+          }
         }
       }
     }
