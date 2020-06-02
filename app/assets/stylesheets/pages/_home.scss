@@ -260,6 +260,7 @@
     transition: opacity .6s;
     &.left {
       text-align: right;
+      margin-right: 2px;
     }
     &.active {
       opacity: 1;
@@ -267,6 +268,17 @@
     &.mid {
       opacity: 1;
       max-width: 80px;
+    }
+    &.left {
+      margin-left: 2px;
+    }
+    .title {
+      font-size: 0.5em;
+      @include media-breakpoint-up(sm) {
+        font-size: 0.8em;
+      }
+      padding-left: 1em;
+      padding-right: 0.5em;
     }
   }
 }
