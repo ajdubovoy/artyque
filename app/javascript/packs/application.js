@@ -11,6 +11,7 @@ import initArtistCarousel from './artist_carousel';
 import initSortable from './form_sorting';
 import initResizeCircles from './resize_circles';
 import initCircleDivs from './circle_divs';
+import toggleHomePageButton from './home_toggle_button';
 
 function init() {
   // Stimulus.JS
@@ -25,6 +26,7 @@ function init() {
   initSortable();
   initResizeCircles();
   initCircleDivs();
+  toggleHomePageButton();
 }
 
 init();
