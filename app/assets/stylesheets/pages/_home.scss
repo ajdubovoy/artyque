@@ -248,24 +248,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   .element {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     opacity: .3;
-    width: 136px;
+    flex-grow: 1;
+    width: 100%;
     transition: opacity .6s;
     &.left {
       text-align: right;
-    }
-    &.sides {
-      width: 400px;
     }
     &.active {
       opacity: 1;
     }
     &.mid {
       opacity: 1;
+      max-width: 80px;
     }
   }
 }
