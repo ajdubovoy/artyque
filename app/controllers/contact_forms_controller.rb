@@ -24,7 +24,7 @@ class ContactFormsController < ApplicationController
     @email = params[:email]
     SubscribeToNewsletterService.new(@email).call
     respond_to do |format|
-      format.html { redirect_to contact_forms_success_path }
+      format.html { render "contact_forms/success" }
       format.js
     end
   end
