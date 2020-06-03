@@ -167,8 +167,9 @@
   }
   &.about-banner {
     height: auto;
+    width: 100%;
     background-size: cover;
-    background-position: center;
+    background-position: 75% 50%; // TODO adjust if image changes
     min-height: 570px;
     flex-direction: column;
     margin-bottom: 100px;
