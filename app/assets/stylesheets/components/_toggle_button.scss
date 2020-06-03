@@ -18,8 +18,13 @@
     top: 50%;
     left: 10%;
     transition: all .4s;
+    overflow: hidden;
     &.active {
       left: calc(90% - #{$radius})
+    }
+    img {
+      width: 100%;
+      height: 100%;
     }
   }
 }
