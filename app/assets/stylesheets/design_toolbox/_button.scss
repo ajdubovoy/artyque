@@ -1,3 +1,6 @@
+.btn {
+  border-radius: 23px !important;
+}
 .button{
   &-primary{
     @extend .btn;
