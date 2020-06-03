@@ -33,19 +33,12 @@
     </ul>
   </div>
   <div class="image d-none d-sm-block">
-    <%= link_to root_path do %>
+    <%= link_to user_signed_in? ? destroy_user_session_path : new_user_session_path, method: user_signed_in? ? :get : :delete  do %>
       <%= image_tag 'logo-footer.svg', class: 'logo' %>
     <% end %>
   </div>
 </footer>
 <ul class="legal-foot-note inner-footer links">
-  <li id="login-button">
-    <% if user_signed_in? %>
-      <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "Artist Login", new_user_session_path, id: 'login' %>
-    <% end %>
-  </li>
   <% if user_signed_in? %>
     <% if current_user.admin? %>
       <li>
