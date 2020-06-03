@@ -1,61 +1,61 @@
 .card, .card {
-	border-radius: 28px 30px 130px;
+  border-radius: 28px 30px 130px;
     overflow: hidden;
-	transition: ease all 1s;
-	margin-bottom: 20px;
-	border: 0;
-	&-artists {
-		z-index: 2;
-		min-height: 160px;
-		img {
-			position: absolute;
-			top: 0;
-			right: 0;
-			width: 201px;
-		}
-		 @include media-breakpoint-up(sm) {
-	   		min-width: 620px;
-			float: right;
-		}
-	}
-	&-galleries {
-   		height: 384px;
-		z-index: 0;
-	     @include media-breakpoint-up(sm) {
-	   		margin-top: -60px;
-	   		min-width: 330px;
-		}
-	}
-	&-collectors {
-		 @include media-breakpoint-up(sm) {
-			margin-top: 108px;
-		}
-	}
-	&:hover {
-		transform: translateY(-10px);
-		box-shadow: 0 0.5rem 42px rgba(0, 0, 0, 0.15) !important;
-	}
-	.fake-link {
-		text-decoration: underline;
-		font-style: italic;
+  transition: ease all 1s;
+  margin-bottom: 20px;
+  border: 0;
+  &-artists {
+    z-index: 2;
+    min-height: 160px;
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 201px;
+    }
+     @include media-breakpoint-up(sm) {
+        min-width: 620px;
+      float: right;
+    }
+  }
+  &-galleries {
+      height: 384px;
+    z-index: 0;
+       @include media-breakpoint-up(sm) {
+        margin-top: -60px;
+        min-width: 330px;
+    }
+  }
+  &-collectors {
+     @include media-breakpoint-up(sm) {
+      margin-top: 108px;
+    }
+  }
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0.5rem 42px rgba(0, 0, 0, 0.15) !important;
+  }
+  .fake-link {
+    text-decoration: underline;
+    font-style: italic;
     @extend .cursor-pointer;
-		&:hover {
-			opacity: .8;
-		}
-	}
+    &:hover {
+      opacity: .8;
+    }
+  }
 }
 
 
 .text-cards {
-	z-index: 100;
-	padding: 20px;
-	.card-title {
-		font-size: 28px;
-	}
-	p {
-		font-size: 13px;
-		margin-bottom: 8px;
-	}
+  z-index: 100;
+  padding: 20px;
+  .card-title {
+    font-size: 28px;
+  }
+  p {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
 }
 
 .card.news-post{
@@ -184,6 +184,7 @@
     height: 182px;
     margin: 0;
     font-size: 14px;
+    text-align: left;
     @media (max-width: 767px) {
       display: flex;
       align-items: center;
