@@ -254,6 +254,8 @@
     background-position: center;
     .footer-banner-text{
       letter-spacing: 2px;
+      font-weight: 300 !important;
+      text-transform: uppercase;
     }
   }
   @media (max-width: 540px) {
