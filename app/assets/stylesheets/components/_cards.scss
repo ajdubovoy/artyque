@@ -123,15 +123,17 @@
     .artist-image-png{
       height: 100%;
       width: 100%;
-      background-position: center;
-      background-size: cover;
       position: absolute;
-      height: 119%;
+      height: 120%;
       max-height: 234px;
       width: 100%;
       max-width: 149px;
       bottom: 0px;
       left: -12%;
+      img {
+        object-fit: contain;
+        height: 100%;
+      }
       @media( max-width: 1000px) {
         width: 95%;
         height: 109%;
