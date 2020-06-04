@@ -30,7 +30,7 @@
 .circle-banner-container {
   transform: translateY(50%);
   width: 100%;
-  padding: 0 15px;
+  padding: 0 15%;
   display: flex;
   justify-content: flex-end;
   position: absolute;
@@ -38,4 +38,15 @@
   &.circle-left {
     justify-content: flex-start;
   }
+  .fill-link {
+  }
+}
+.fill-link {
+  display: bock;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2500;
+  height: 100%;
+  width: 100%;
 }

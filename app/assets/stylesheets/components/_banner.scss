@@ -135,10 +135,7 @@
 
 .new-look-banner {
   min-height: calc(100vh - #{$header-height});
-  @include media-breakpoint-up(sm) {
-    min-height: calc(75vh - #{$header-height});
-    height: auto;
-  }
+  height: auto;
   text-align: center;
   display: flex;
   justify-content: center;
