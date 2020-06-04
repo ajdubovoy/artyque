@@ -10,18 +10,18 @@
       <li><%= link_to "About", about_path, class: "#{'active' if current_page?(about_path)}" %></li>
       <li><%= link_to "Contact us", contact_path, class: "nav-btn" %></li>
 
-    	<!-- <li>
-    		<div class="dropdown">
-			  <a id="dropdownMenuButton" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			    About us  <i class="fas fa-caret-down"></i>
-			  </a>
-			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <!-- <li>
+        <div class="dropdown">
+        <a id="dropdownMenuButton" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          About us  <i class="fas fa-caret-down"></i>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <%#= link_to "Who We Are", about_path, class: "dropdown-item #{'active' if current_page?(about_path)}" %>
           <%#= link_to "Contact", contact_path, class: "dropdown-item #{'active' if current_page?(contact_path)}" %>
           <%#= link_to "News", news_posts_path, class: "dropdown-item #{'active' if current_page?(news_posts_path)}" %>
-			  </div>
-			</div>
-		</li> -->
+        </div>
+      </div>
+    </li> -->
     </ul>
   </div>
   <%= render 'shared/navbar' %>

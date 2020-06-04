@@ -300,3 +300,15 @@
   letter-spacing: 0px;
 }
 
+.instagram-link {
+  color: $white;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(50%) rotate(90deg);
+  font-size: 0.7em;
+  z-index: 2500;
+  &:hover {
+    color: $white;
+  }
+}
