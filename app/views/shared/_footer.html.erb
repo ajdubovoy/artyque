@@ -32,10 +32,17 @@
 
     </ul>
   </div>
-  <div class="image d-none d-sm-block">
-    <%= link_to user_signed_in? ? destroy_user_session_path : new_user_session_path, method: user_signed_in? ? :get : :delete  do %>
-      <%= image_tag 'logo-footer.svg', class: 'logo' %>
+  <% if user_signed_in? %>
+    <%= link_to destroy_user_session_path, method: :delete  do %>
+      <div class="image d-none d-sm-block" style="z-index: 2500">
+        <%= image_tag 'logo-footer.svg', class: 'logo' %>
     <% end %>
+    <% else %>
+      <%= link_to new_user_session_path  do %>
+        <div class="image d-none d-sm-block" style="z-index: 2500">
+          <%= image_tag 'logo-footer.svg', class: 'logo' %>
+    <% end %>
+  <% end %>
   </div>
 </footer>
 <ul class="legal-foot-note inner-footer links">

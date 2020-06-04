@@ -70,6 +70,7 @@ html, body {
 .page-wrap:after {
   content: "";
   display: block;
+  z-index: -1;
 }
 .footer, .page-wrap:after {
   // height: $footer-height;
