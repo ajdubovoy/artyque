@@ -2,8 +2,10 @@
   .artworks-gallery-card{
     width: 100%;
     height: 15rem;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
+    background-color: $gold;
     z-index: 50;
     position: relative;
     overflow: hidden;

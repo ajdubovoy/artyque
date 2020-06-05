@@ -1,51 +1,51 @@
 .about-section {
-	max-width: 700px;
-	padding: 70px 25px;
-	margin: auto;
-	.t-about {
-		margin-bottom: 70px;
-    	font-size: 16px;
-	}
-	.person-lockup {
-		@extend .mb-2;
-		.name-lockup {
+  max-width: 700px;
+  padding: 70px 25px;
+  margin: auto;
+  .t-about {
+    margin-bottom: 70px;
+      font-size: 16px;
+  }
+  .person-lockup {
+    @extend .mb-2;
+    .name-lockup {
       h4{
         font-size: 1.3rem;
       }
-			h5 {
-				font-size: 10px;
-			}
-		}
-	}
-	.icons-lockup {
-		ul {
-			list-style: none;
-		    margin-bottom: 0;
-		    padding: 0;
-		}
-		li {
-			color: white;
-			padding: 10px 15px;
-    		font-size: 20px;
-		}
-	}
-	.text {
+      h5 {
+        font-size: 10px;
+      }
+    }
+  }
+  .icons-lockup {
+    ul {
+      list-style: none;
+        margin-bottom: 0;
+        padding: 0;
+    }
+    li {
+      color: white;
+      padding: 10px 15px;
+        font-size: 20px;
+    }
+  }
+  .text {
     @extend .mt-4;
-		h4 {
-			font-size: 28px;
-		}
-		p {
-			font-size: 13px;
-		}
-	}
+    h4 {
+      font-size: 28px;
+    }
+    p {
+      font-size: 13px;
+    }
+  }
 }
 .about-section-wrapper {
-	position: relative;
-	overflow: hidden; 
+  position: relative;
+  overflow: hidden; 
 }
 
 .square-1 {
-	position: absolute;
+  position: absolute;
     width: 560px;
     bottom: -310px;
     right: 0;
@@ -54,15 +54,15 @@
     z-index: -2;
     background: linear-gradient(380deg, #FEF0E7 -20.82%, rgba(254, 246, 240, 0.18) 62.49%);
     @include media-breakpoint-up(sm) {
-	    width: 200px;
-	    bottom: -271px;
-	    height: 730px;
-	    right: 0;
+      width: 200px;
+      bottom: -271px;
+      height: 730px;
+      right: 0;
       }
 }
 
 .square-2 {
-	position: absolute;
+  position: absolute;
     width: 560px;
     top: -310px;
     opacity: .2;
@@ -72,9 +72,9 @@
     transform: rotate(40deg);
     background: linear-gradient(380deg, $light-blue -20.82%, rgba(254, 246, 240, 0.18) 62.49%);
     @include media-breakpoint-up(sm) {
-	    width: 200px;
-		bottom: -271px;
-		left: 0;
-		height: 730px;
+      width: 200px;
+    bottom: -271px;
+    left: 0;
+    height: 730px;
       }
 }

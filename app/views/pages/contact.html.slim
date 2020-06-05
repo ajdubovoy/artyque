@@ -5,11 +5,19 @@
     .banner-content
       .row
         .col-12
-          h4.coachella-regular.text-center.c-white.form-text.mb-5 Are you interested in an artwork? Do you want to be represented by us? Are you open for collaboration?
+          h4.coachella-regular.text-center.c-white.form-text.mb-5[style="line-height: 1.75;"]
+            | Are you interested in an artwork?
+            br
+            | Do you want to be represented by us?
+            br
+            | Are you open for collaboration?
       .row.mt-5
         .col-12.col-md-5.
           .form-desc
-            p.coachella-light.c-white We are looking forward to hearing from you. Please, fill the form or contact us via <strong class="coachella-black">info@artyque.com</strong>
+            p.coachella-light.c-white
+              | We are looking forward to hearing from you.
+            p.coachella-light.c-white
+              | Please, fill the form or contact us via <a href="mailto:info@artyque.com" target="_blank" class="c-white">info@artyque.com</a>
         .col-12.col-md-7
           .form-set
             == render 'contact_forms/new'

@@ -3,6 +3,8 @@
   img.wave-bottom.position-absolute.drag-disable src="#{image_path('bottom_wave.svg')}"
   .fake-container
     .banner-content
+      a[href="https://www.instagram.com/artyqueagency/" target="_blank" class="instagram-link title d-none d-md-block"]
+        | Instagram
       .row
         .col-12
           h4.title.color.c-white. ARTYQUE AGENCY
@@ -12,5 +14,6 @@
           .col-12.col-sm-6
             = link_to "Get in Touch", contact_path, class: "button-primary artist-button"
   .circle-banner-container
+    = link_to '', services_path, class: "fill-link"
     .circle.banner-circle.bg-blue.c-white.rotating
-      p.title. <strong>·</strong>ARTYQUE FOR<strong>·</strong> COLLECTORS
+      p.title. <strong>·</strong> ARTYQUE FOR <strong>·</strong> COLLECTORS

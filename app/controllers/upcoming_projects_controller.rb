@@ -58,7 +58,7 @@ class UpcomingProjectsController < ApplicationController
   private
 
   def set_artist
-    @artist = Artist.find(params[:artist_id])
+    @artist = Artist.friendly.find(params[:artist_id])
   end
 
   def respond_with_js

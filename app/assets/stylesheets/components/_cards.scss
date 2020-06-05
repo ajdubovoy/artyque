@@ -102,6 +102,11 @@
     }
   }
   .artist-card{
+    &:hover, &:focus, &:active {
+      .to-underline:after {
+        right: 0;
+      }
+    }
     margin-bottom: 37px;
     max-width: 273px;
     text-align: right;
@@ -123,15 +128,17 @@
     .artist-image-png{
       height: 100%;
       width: 100%;
-      background-position: center;
-      background-size: cover;
       position: absolute;
-      height: 119%;
+      height: 120%;
       max-height: 234px;
       width: 100%;
       max-width: 149px;
       bottom: 0px;
       left: -12%;
+      img {
+        object-fit: contain;
+        height: 100%;
+      }
       @media( max-width: 1000px) {
         width: 95%;
         height: 109%;
@@ -156,6 +163,7 @@
 }
 
 .HIW-card{
+  min-height: 500px;
   text-align: center;
   max-width: 272px;
   margin: 0 auto 77px auto;
@@ -198,6 +206,9 @@
 .service-card{
   max-width: 280px;
   margin: 11px;
+  p {
+    font-size: 14px;
+  }
   .image{
     height: 228px;
     background-position: center;
@@ -215,6 +226,29 @@
   .button {
     width: 80%;
   }
+  &:hover, &:focus, &:active {
+    .to-underline:after {
+      right: 0;
+    }
+  }
+}
+.to-underline {
+  display: inline;
+  position: relative;
+  overflow: hidden;
+}
+.to-underline:after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 100%;
+  bottom: -5px;
+  background: #000;
+  height: 2px;
+  transition-property: left right;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
 }
 
 
