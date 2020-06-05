@@ -10,7 +10,7 @@
         = link_to '', artists_path, class: "link-0-0"
         .left
           p.coachella-regular Discover
-          p.underline.coachella-regular our Artists
+          p.to-underline.coachella-regular our Artists
       - @featured_artists.each do |artist|
         - last_name = artist.name.split(' ').last
         - first_name = artist.name.split(' ')[0..-2].join(' ')
@@ -19,7 +19,7 @@
         = link_to '', '#', class: "link-0-0"
         .right
           p.coachella-regular Available
-          p.coachella-regular.underline Works
+          p.coachella-regular.to-underline Works
     .row.two-buttons-container.mb-4.lg-hide.justify-content-center.d-block.d-sm-none
       .col-12.col-sm-6.center-margin
         = link_to "Discover More Artists", artists_path, class: "button-primary artist-button"

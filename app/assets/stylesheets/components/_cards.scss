@@ -102,6 +102,11 @@
     }
   }
   .artist-card{
+    &:hover, &:focus, &:active {
+      .to-underline:after {
+        right: 0;
+      }
+    }
     margin-bottom: 37px;
     max-width: 273px;
     text-align: right;
@@ -217,6 +222,29 @@
   .button {
     width: 80%;
   }
+  &:hover, &:focus, &:active {
+    .to-underline:after {
+      right: 0;
+    }
+  }
+}
+.to-underline {
+  display: inline;
+  position: relative;
+  overflow: hidden;
+}
+.to-underline:after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 100%;
+  bottom: -5px;
+  background: #000;
+  height: 2px;
+  transition-property: left right;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
 }
 
 
