@@ -113,11 +113,21 @@
   }
 }
 
+.new-look-banner {
+  &.secondary-banner, &.quote-banner, &.sign-up-banner {
+    min-height: fit-content;
+  }
+  .banner-content {
+    @extend .pt-5;
+    @extend .mt-5;
+    @extend .pb-5;
+    @extend .mb-5;
+  }
+}
+
 .secondary-banner {
   @extend .text-center;
   @extend .flex-center;
-  height: 100%;
-  min-height: 10rem;
   @include media-breakpoint-up(sm) {
       height: 35vh;
   }
@@ -300,7 +310,7 @@
 .instagram-link {
   color: $white;
   position: absolute;
-  top: 50%;
+  top: 75%;
   right: 0;
   transform: translateY(50%) rotate(90deg);
   font-size: 0.7em;

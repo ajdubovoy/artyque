@@ -19,12 +19,7 @@
       </div>
     </div>
   </div>
-  <div class="circle-banner-container circle-left">
-    <%= link_to '', services_path, class: "fill-link" %>
-    <div class="circle about-circle banner-circle bg-blue c-white rotating">
-      <p class="title"><strong>·</strong>ARTYQUE FOR<strong>·</strong> COLLECTORS</p>
-    </div>
-  </div>
+  <%= render "shared/circle_collectors" %>
 </div>
 <div style="background-image: url(<%= image_path 'bg-about.jpg' %>);" class="new-look-banner bg-blue-gradient about-banner"></div>
 <div class="container  overflow-hidden">
