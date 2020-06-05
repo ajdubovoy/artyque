@@ -14,7 +14,7 @@
                 p
                   = link_to "Learn More", artist_path(artist), class: "button-secondary"
               .col-12.col-sm-6 
-                div.featured-artist-photo style="background-image: linear-gradient(380deg, #1a2e3d 21.18%, rgba(26, 46, 61, 0.46) 42.49%), url(#{cl_image_path artist.photo if artist.photo.present?});"
+                div.featured-artist-photo style="background-image: linear-gradient(380deg, #1a2e3d 12%, rgba(26, 46, 61, 0.46) 24%), url(#{cl_image_path artist.photo if artist.photo.present?});"
         .container.artwork-artist-index.d-none.d-sm-block
           h4.title.color.c-white Featured Artwork
           = render 'artworks/gallery', artworks: artist.artworks.highlights, remote: false
