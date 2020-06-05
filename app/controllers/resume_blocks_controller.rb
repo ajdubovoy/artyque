@@ -4,7 +4,7 @@ class ResumeBlocksController < ApplicationController
   include MarkdownHelper
   def index
     # For modal
-    @artist = Artist.find(params[:artist_id]) # Not authorized
+    @artist = Artist.friendly.find(params[:artist_id]) # Not authorized
     @blocks = policy_scope @artist.resume_blocks
     if request.xhr?
       # For modal update

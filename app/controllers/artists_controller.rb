@@ -39,7 +39,7 @@ class ArtistsController < ApplicationController
 
   def resume
     # For modal
-    @artist = Artist.find(params[:id]) # Written separately to prevent authorization
+    @artist = Artist.friendly.find(params[:id]) # Written separately to prevent authorization
     if request.xhr?
       # For modal update
       render json: { html: render_to_string(partial: 'artists/resume', artist: @artist) }
