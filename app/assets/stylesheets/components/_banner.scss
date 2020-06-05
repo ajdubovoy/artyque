@@ -305,7 +305,9 @@
   transform: translateY(50%) rotate(90deg);
   font-size: 0.7em;
   z-index: 2500;
+  transition: color 250ms ease;
   &:hover {
-    color: $white;
+    color: $pink;
+    text-decoration: none;
   }
 }
