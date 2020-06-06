@@ -123,10 +123,11 @@
           .banner-content
             .row
               .col-12
-                h4.title.color.c-dark-blue. Send us your portfolio
-                h4.title.color.c-dark-blue. & artist statement
+                h4.title.color.c-dark-blue. Create Synergy
               .title.color.c-dark-blue.text-center.col-12
-                h4.header-text.mt-3.c-dark-blue.coachella-black.footer-banner-text. Your Agent. Your Success.
+                h4.header-text.mt-3.c-dark-blue.coachella-black.footer-banner-text. Let’s succeed together 
               .row.two-buttons-container.mt-4
                 .col-12.col-sm-6
-                  = link_to "Apply", "#", class: "button-primary artist-button footer-button"
+                  = link_to "Get in touch", contact_path, class: "button-primary artist-button footer-button"
+                .col-12.col-sm-6
+                  = link_to "Available Works", artists_path, class: "button-secondary artist-button footer-button"
