@@ -107,6 +107,8 @@
         right: 0;
       }
     }
+    display: flex;
+    padding-left: 0;
     margin-bottom: 37px;
     max-width: 273px;
     text-align: right;
@@ -126,30 +128,18 @@
       background-size: cover;
     }
     .artist-image-png{
-      position: absolute;
-      bottom: 0px;
-      left: 0;
-      height: 120%;
+      height: 100%;
       max-height: 234px;
       width: 100%;
       max-width: 149px;
+      transform-origin: bottom left;
+      transform: scale(1.2);
+      display: flex;
+      justify-content: flex-start;
       img {
         object-fit: contain;
         height: 100%;
       }
-      @media( max-width: 1000px) {
-        width: 95%;
-        height: 109%;
-      }
-      @media( max-width: 934px) {
-        height: 213px;
-        width: 145px;
-      }
-      @media (max-width: 770px) {
-        height: 119%;
-        width: 100%;
-      }
-
     }
     .artist-full-name{
       font-weight: 600;

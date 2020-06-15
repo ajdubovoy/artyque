@@ -3,13 +3,14 @@
     <%= link_to root_path do %>
       <%= image_tag 'logo-header.svg', class: "logo #{'transparent' if @hidden_logo}", 'data-target': 'header.logo' %>
     <% end %>
-    <ul class="navbar-items d-sm-flex d-none">
+    <ul class="navbar-items d-md-flex d-none">
       <li><%= link_to "Home", root_path, class: "#{'active' if current_page?(root_path)}" %></li>
       <li><%= link_to "Artists", artists_path , class: "#{'active' if current_page?(artists_path)}"%></li>
       <li><%= link_to "Services", services_path, class: "#{'active' if current_page?(services_path)}" %></li>
       <li><%= link_to "About", about_path, class: "#{'active' if current_page?(about_path)}" %></li>
       <li><%= link_to "Viewing Room", "https://artyque-shop.myshopify.com" %></li>
-      <li><%= link_to "Contact us", contact_path, class: "nav-btn" %></li>
+      <li><%= link_to "Contact us", contact_path, class: "#{'active' if current_page?(contact_path)} d-block d-lg-none" %></li>
+      <li><%= link_to "Contact", contact_path, class: "nav-btn d-none d-lg-block" %></li>
 
       <!-- <li>
         <div class="dropdown">
