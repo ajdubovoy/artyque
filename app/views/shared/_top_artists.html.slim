@@ -16,7 +16,7 @@
         - first_name = artist.name.split(' ')[0..-2].join(' ')
         = artist.transparent_photo.present? ? (render 'pages/home/png_card', artist: artist, first_name: first_name, last_name: last_name) : render('pages/home/not_png_card', artist: artist, first_name: first_name, last_name: last_name)
       .artist-card.col-lg-2.bg-gold.top-artist-button.d-none.d-sm-block
-        = link_to '', '#', class: "link-0-0"
+        = link_to '', 'https://artyque-shop.myshopify.com', class: "link-0-0"
         .right
           p.coachella-regular ARTYQUE
           p.coachella-regular.to-underline Viewing Room
@@ -25,4 +25,3 @@
         = link_to "Discover More Artists", artists_path, class: "button-primary artist-button"
       .col-12.col-sm-6.center-margin
         = link_to "Viewing Room", 'https://artyque-shop.myshopify.com', class: "button-primary artist-button"
-        / TODO change to shopify
