@@ -1,9 +1,10 @@
-.artist-card.col-12.col-md-2.col-lg-2.position-relative.bg-gold.mx-3.position-relative
+.artist-card.col-12.col-lg-2.position-relative.bg-gold.mx-3.position-relative
   .artist-image-png
     = cl_image_tag artist.transparent_photo
   = link_to '', artist_path(artist), class: "link-0-0"
-  p.title.f-9.mt-2
-    = artist.category || artist.super_title
-  .artist-full-name
-    p.coachella-regular. #{first_name}
-    p.coachella-regular. #{last_name}
+  div
+    p.title.f-9.mt-2.more-z
+      = artist.category || artist.super_title
+    .artist-full-name.more-z
+      p.coachella-regular. #{first_name}
+      p.coachella-regular. #{last_name}
