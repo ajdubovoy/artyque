@@ -126,15 +126,13 @@
       background-size: cover;
     }
     .artist-image-png{
-      height: 100%;
-      width: 100%;
       position: absolute;
+      bottom: 0px;
+      left: 0;
       height: 120%;
       max-height: 234px;
       width: 100%;
       max-width: 149px;
-      bottom: 0px;
-      left: -12%;
       img {
         object-fit: contain;
         height: 100%;
@@ -142,7 +140,6 @@
       @media( max-width: 1000px) {
         width: 95%;
         height: 109%;
-        left: -25%;
       }
       @media( max-width: 934px) {
         height: 213px;
@@ -151,7 +148,6 @@
       @media (max-width: 770px) {
         height: 119%;
         width: 100%;
-        left: 10%;
       }
 
     }
