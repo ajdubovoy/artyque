@@ -108,6 +108,11 @@
       }
     }
     display: flex;
+    justify-content: space-between;
+    & > * {
+      flex-grow: 1;
+      flex-basis: min-content;
+    }
     padding-left: 0;
     margin-bottom: 37px;
     max-width: 273px;
@@ -127,11 +132,11 @@
       background-position: center;
       background-size: cover;
     }
+    .more-z {
+      z-index: 50;
+    }
     .artist-image-png{
-      height: 100%;
-      max-height: 234px;
-      width: 100%;
-      max-width: 149px;
+      width: 50%;
       transform-origin: bottom left;
       transform: scale(1.2);
       display: flex;
