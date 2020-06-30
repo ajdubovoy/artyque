@@ -12,8 +12,8 @@ const moveBall = () => {
 };
 const toggleHomePageButton = () => {
   const toggler = document.querySelector('#toggle-state')
-  toggler.style.display = 'none';
   if (toggler) {
+    toggler.style.display = 'none';
     toggler.addEventListener('change', moveBall)
   }
 }
