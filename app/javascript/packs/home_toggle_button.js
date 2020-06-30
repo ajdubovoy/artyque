@@ -11,9 +11,10 @@ const moveBall = () => {
   collectorTab.classList.toggle('active')
 };
 const toggleHomePageButton = () => {
-  const toggler = document.querySelector('.toggle-button')
+  const toggler = document.querySelector('#toggle-state')
+  toggler.style.display = 'none';
   if (toggler) {
-    toggler.addEventListener('click', moveBall)
+    toggler.addEventListener('change', moveBall)
   }
 }
 
