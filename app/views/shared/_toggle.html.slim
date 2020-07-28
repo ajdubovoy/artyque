@@ -1,12 +1,13 @@
-.toggler-section
-  .element.left.sides.active
-    .title FOR ARTISTS
-    hr.line.w-100.text-right.no-margin
-  .element.mid
-    .toggle-button
-      .ball
-        .ball-logo
-        = image_tag "logo-footer-blue.png"
-  .element.right.sides
-    .title. FOR COLLECTORS
-    hr.line.w-100.no-margin
+label.toggler-section for="toggle-state"
+  input type="checkbox" name="toggle-state" id="toggle-state" hidden="true"
+    .element.left.sides.active
+      .title FOR ARTISTS
+      hr.line.w-100.text-right.no-margin
+    .element.mid
+      .toggle-button
+        .ball
+          .ball-logo
+          = image_tag "logo-footer-blue.png"
+    .element.right.sides
+      .title. FOR COLLECTORS
+      hr.line.w-100.no-margin

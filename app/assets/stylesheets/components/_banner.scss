@@ -30,8 +30,8 @@
   }
   .inner-banner {
     &.inner-banner-small{
-      height: 50vh !important;
-      min-height: 6rem !important;
+      min-height: 50vh !important;
+      height: fit-content !important;
       @include media-breakpoint-up(sm) {
         height: 40vh !important;
       }
@@ -167,7 +167,8 @@
   &.quote-banner{
     background-color: $dark-blue;
     color: white;
-    height: 288px;
+    min-height: 288px;
+    height: fit-content;
     .quote {
       font-size: 24px;
     }
